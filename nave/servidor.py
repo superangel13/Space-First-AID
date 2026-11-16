@@ -330,12 +330,18 @@ class Manejador(BaseHTTPRequestHandler):
         raise ErrorAPI(404, f"Ruta desconocida: {m} /api/{r}")
 
 
-def main():
+def crear_servidor():
+    """Prepara la base de datos, arranca el enlace y devuelve el servidor (sin bloquear)."""
     bd.iniciar()
     enlace._al_recibir_resultado = resultado_de_tierra
     enlace.arrancar()
     srv = ThreadingHTTPServer((config.HOST, config.PUERTO), Manejador)
-    print(f"Nave lista en http://localhost:{config.PUERTO}  ·  base de datos: {config.BD.name}  ·  Tierra: {config.TIERRA_URL}")
+    print(f"Nave lista en http://localhost:{config.PUERTO}  ·  base de datos: {config.BD}  ·  Tierra: {config.TIERRA_URL}")
+    return srv
+
+
+def main():
+    srv = crear_servidor()
     try:
         srv.serve_forever()
     except KeyboardInterrupt:

@@ -1,0 +1,50 @@
+# Construye el ejecutable de Space First AID para Windows, macOS y Linux.
+# - Se corre a mano desde la pestaña Actions ("Run workflow") o al subir a main.
+# - Al crear una etiqueta como v1.0.0, además publica los ejecutables en Releases.
+name: Ejecutables
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  construir:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: "1"   # acentos y símbolos en la consola de Windows
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller pillow
+
+      - name: Probar el motor clínico
+        run: python herramientas/prueba_motor.py
+
+      - name: Construir el ejecutable
+        run: python herramientas/construir_ejecutable.py
+
+      - name: Guardar el ejecutable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpaceFirstAID-${{ matrix.os }}
+          path: dist/*.zip
+
+      - name: Publicar en Releases (solo con etiqueta v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip

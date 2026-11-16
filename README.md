@@ -35,6 +35,35 @@ TIERRA_URL=http://IP-DE-LA-OTRA:8766 python3 iniciar.py --solo-nave
 
 Al apagar el wifi, la nave sigue funcionando y guarda todo en la cola. Al volver la señal, envía lo pendiente por prioridad.
 
+## Ejecutable (sin instalar Python)
+
+En **Releases** (o en la pestaña **Actions**, si se generó ahí) hay un ejecutable para cada sistema:
+
+| Sistema | Archivo | Cómo abrirlo |
+|---|---|---|
+| Windows | `SpaceFirstAID.exe` | Doble clic. Si Windows SmartScreen avisa: «Más información» → «Ejecutar de todas formas» |
+| macOS (Apple Silicon) | `SpaceFirstAID` | Doble clic: se abre en la Terminal. Si dice que el desarrollador no está identificado: clic derecho → Abrir → Abrir |
+| Linux | `SpaceFirstAID` | `./SpaceFirstAID` |
+
+Se abre una ventana de texto, que hay que dejar abierta, y el navegador con la app. Para apagarla, se cierra esa ventana. El programa incluye Python, SQLite, la pantalla y el detector de manos, y funciona sin internet.
+
+Los datos se guardan en la carpeta del usuario:
+
+- **macOS:** `~/Library/Application Support/Space First AID`
+- **Windows:** `%APPDATA%\Space First AID`
+- **Linux:** `~/.local/share/Space First AID`
+
+### Construirlo tú
+
+Cada sistema construye su propio ejecutable: el de Windows se arma en Windows.
+
+```bash
+pip install pyinstaller pillow
+python herramientas/construir_ejecutable.py      # resultado en dist/
+```
+
+El flujo `.github/workflows/ejecutables.yml` arma los tres sistemas en GitHub Actions cada vez que se sube a `main`. Al crear una etiqueta `v1.0.0`, además los publica en Releases.
+
 ## Primer uso
 
 1. **Registro de la misión:** nombre, destino (opciones preestablecidas), duración, fecha de inicio y de 1 a 6 tripulantes con su rol, sexo, edad, condición física y antecedentes médicos.

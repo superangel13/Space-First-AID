@@ -14,3 +14,7 @@ __pycache__/
 
 # Archivos grandes de investigación (no van al repositorio)
 *.zip
+
+# Ejecutable (se construye con herramientas/construir_ejecutable.py)
+build/
+dist/

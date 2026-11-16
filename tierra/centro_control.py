@@ -16,10 +16,20 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-RAIZ = Path(__file__).resolve().parent.parent
-BD = Path(os.environ.get("TIERRA_BD", Path(__file__).with_name("tierra.db")))
+EMPAQUETADO = getattr(sys, "frozen", False)
+RAIZ = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent.parent))
+
+
+def _bd_defecto():
+    if not EMPAQUETADO:
+        return Path(__file__).with_name("tierra.db")
+    from nave.config import carpeta_usuario          # misma carpeta de datos del usuario
+    return carpeta_usuario() / "tierra.db"
+
+
+BD = Path(os.environ.get("TIERRA_BD") or _bd_defecto())
 HOST = os.environ.get("TIERRA_HOST", "127.0.0.1")
-PUERTO = int(os.environ.get("PORT") or os.environ.get("TIERRA_PUERTO") or 8766)
+PUERTO = int(os.environ.get("TIERRA_PUERTO") or os.environ.get("PORT") or 8766)
 PARAM = json.loads((RAIZ / "datos" / "muestras.json").read_text(encoding="utf-8"))
 
 
@@ -175,11 +185,15 @@ class H(BaseHTTPRequestHandler):
         return self._json(200, {"ok": True})
 
 
-def main():
+def crear_servidor():
     db().close()
-    print(f"Centro de control en http://localhost:{PUERTO}  ·  base de datos: {BD.name}")
+    print(f"Centro de control en http://localhost:{PUERTO}  ·  base de datos: {BD}")
+    return ThreadingHTTPServer((HOST, PUERTO), H)
+
+
+def main():
     try:
-        ThreadingHTTPServer((HOST, PUERTO), H).serve_forever()
+        crear_servidor().serve_forever()
     except KeyboardInterrupt:
         pass
 
