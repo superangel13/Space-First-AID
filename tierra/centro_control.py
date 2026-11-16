@@ -92,14 +92,14 @@ def tablero(aviso=""):
             else:
                 campos.append(f"<label>{esc(a['nombre'])} {esc(a.get('unidad', ''))}<input name='{a['id']}' inputmode='decimal' value='{esc(ab.get(a['id'], ''))}'></label>")
         return (f"<details open><summary><b>{esc(m['codigo'])}</b> · {esc(P['nombre'])} de {esc(m['tripulante'])} · a bordo: {esc(m['resultado_a_bordo'])}</summary>"
-                f"<form class='lab' method='post' action='/resultado'><input type='hidden' name='codigo' value='{esc(m['codigo'])}'>{''.join(campos)}"
+                f"<form class='lab' method='post' action='resultado'><input type='hidden' name='codigo' value='{esc(m['codigo'])}'>{''.join(campos)}"
                 f"<button>Enviar resultado de laboratorio</button></form></details>")
 
     lab = "".join(form(m) for m in pend) or "<p class='m'>No hay muestras pendientes de laboratorio.</p>"
     hechas = "".join(f"<tr><td>{esc(m['codigo'])}</td><td>{esc(m['tripulante'])}</td><td>{esc(m['tipo'])}</td><td><span class='p ok'>Resultado enviado a la nave</span></td></tr>" for m in mu if m["hecho"])
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Centro de control · Space First AID</title><style>{CSS}</style></head><body><div class="w">
-<h1>Centro de control · Space First AID</h1><p class="m">Paquetes de la nave y laboratorio. Base de datos: {esc(BD.name)}. <a href="/" style="color:#5FD3F3">Actualizar</a></p>
+<h1>Centro de control · Space First AID</h1><p class="m">Paquetes de la nave y laboratorio. Base de datos: {esc(BD.name)}. <a href="./" style="color:#5FD3F3">Actualizar</a></p>
 {f"<p class='p ok' style='display:inline-block;padding:8px 12px'>{esc(aviso)}</p>" if aviso else ""}
 <div class="k"><div>Paquetes<b>{tot}</b></div><div>Alertas<b style="color:#FF5468">{p1}</b></div><div>Muestras por analizar<b style="color:#F5B841">{len(pend)}</b></div>
 <div>Último paquete<b style="font-size:16px">{esc(rows[0]['recibido'][11:19]) if rows else '—'}</b></div></div>
@@ -150,7 +150,7 @@ class H(BaseHTTPRequestHandler):
     def do_POST(self):
         n = int(self.headers.get("Content-Length") or 0)
         raw = self.rfile.read(n) if n else b""
-        if self.path.startswith("/resultado"):
+        if self.path.rstrip("/").endswith("/resultado"):
             f = {k: v[0] for k, v in parse_qs(raw.decode()).items() if v and v[0].strip()}
             codigo = f.pop("codigo", None)
             con = db()
@@ -161,7 +161,7 @@ class H(BaseHTTPRequestHandler):
                 con.commit()
             con.close()
             self.send_response(303)
-            self.send_header("Location", "/?aviso=ok")
+            self.send_header("Location", "./?aviso=ok")
             self.end_headers()
             return
         if not self.path.startswith("/api/paquetes"):

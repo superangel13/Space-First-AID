@@ -136,7 +136,22 @@ python3 herramientas/prueba_motor.py
 
 Esta prueba evalúa a una persona sana, cada síntoma solo, los 903 pares de síntomas y 9 casos clínicos típicos. Una persona sana y un síntoma aislado no deben generar advertencias.
 
-## Subirlo a un servidor con dominio
+## Publicarlo en línea (Render)
+
+El archivo `render.yaml` ya trae la configuración:
+
+1. Entra a [render.com](https://render.com) con tu cuenta de GitHub.
+2. Ve a **New → Blueprint** y elige este repositorio.
+3. Da clic en **Apply**.
+
+En unos minutos queda en `https://space-first-aid.onrender.com` (o el nombre que asigne Render):
+
+- La app de la nave está en `/`.
+- El centro de control de la Tierra está en `/tierra/`.
+
+El sitio arranca con la misión demo cargada. En el plan gratis se "duerme" si nadie entra en un rato: la primera visita tarda unos 30 a 50 segundos. Al reiniciarse, vuelve a la misión demo.
+
+## Subirlo a otro servidor con dominio
 
 El mismo código corre en un servidor. Se configura con variables de entorno:
 
@@ -159,6 +174,15 @@ Antes de publicarlo hay que cuidar dos cosas:
 - Los tripulantes, sus signos vitales y la misión demo son **de ejemplo**. Los signos vitales llegarían del sensor portátil.
 - **Los rangos de las muestras de orina, sangre y saliva (`datos/muestras.json`) son de ejemplo** y se van a reemplazar por valores de referencia verificados.
 - Las reglas orientan y priorizan. **No sustituyen al cirujano de vuelo.**
+
+## Uso de inteligencia artificial
+
+Las reglas de NASA Space Apps piden declararlo:
+
+- **Código:** escrito por el equipo con ayuda de Claude (Anthropic), un asistente de programación. Lo usamos para estructurar el proyecto, escribir y depurar el código en Python y JavaScript, y verificar fuentes. Los commits hechos con su ayuda lo indican con la línea `Co-Authored-By: Claude`.
+- **La idea, el diseño de la solución y las decisiones médicas y de datos son del equipo.** Las reglas clínicas salen de documentos de NASA citados en la app.
+- **Imágenes:** el logo y el ícono son del equipo. No hay imágenes ni videos generados con IA dentro de la app.
+- **La app no usa IA para decidir:** el motor clínico son reglas fijas y verificables, tomadas del ISS Medical Checklist de NASA.
 
 ## Licencia
 

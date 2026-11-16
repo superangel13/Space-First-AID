@@ -10,7 +10,7 @@ Space First AID · servidor de la nave
 Uso:  python3 -m nave.servidor        (desde la carpeta del proyecto)
 Solo usa la biblioteca estándar de Python 3.
 """
-import datetime, json, mimetypes, re, sys, unicodedata
+import datetime, json, mimetypes, re, sys, unicodedata, urllib.request, urllib.error
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
@@ -225,9 +225,31 @@ class Manejador(BaseHTTPRequestHandler):
             tipo += "; charset=utf-8"
         self._enviar(200, p.read_bytes(), tipo)
 
+    def _tierra(self, metodo):
+        """Muestra el centro de control de la Tierra dentro del mismo sitio (/tierra/)."""
+        if not self.path.startswith("/tierra/"):                # /tierra -> /tierra/ (enlaces relativos)
+            self.send_response(301)
+            self.send_header("Location", "/tierra/")
+            self.end_headers()
+            return
+        resto = self.path[len("/tierra"):]
+        n = int(self.headers.get("Content-Length") or 0)
+        cuerpo = self.rfile.read(n) if n else None
+        req = urllib.request.Request(config.TIERRA_URL + resto, data=cuerpo, method=metodo,
+                                     headers={"Content-Type": self.headers.get("Content-Type") or "application/x-www-form-urlencoded"})
+        try:
+            with urllib.request.urlopen(req, timeout=8) as r:
+                return self._enviar(r.status, r.read(), r.headers.get("Content-Type") or "text/html; charset=utf-8")
+        except urllib.error.HTTPError as e:
+            return self._enviar(e.code, e.read(), e.headers.get("Content-Type") or "text/plain; charset=utf-8")
+        except Exception:
+            return self._enviar(503, "<h1>El centro de control no responde</h1><p>Sin señal con la Tierra.</p>".encode(), "text/html; charset=utf-8")
+
     def _manejar(self, metodo):
         u = urlparse(self.path)
         ruta = u.path
+        if ruta == "/tierra" or ruta.startswith("/tierra/"):
+            return self._tierra(metodo)
         try:
             if ruta.startswith("/api/"):
                 datos = self._cuerpo() if metodo in ("POST", "PUT") else {}
@@ -333,6 +355,8 @@ class Manejador(BaseHTTPRequestHandler):
 def crear_servidor():
     """Prepara la base de datos, arranca el enlace y devuelve el servidor (sin bloquear)."""
     bd.iniciar()
+    if config.DEMO_AUTOMATICA and not bd.fila("SELECT id FROM mision WHERE id=1"):
+        crear_mision(cargar("mision_demo"), demo=True)          # sitio en línea: listo para los jueces
     enlace._al_recibir_resultado = resultado_de_tierra
     enlace.arrancar()
     srv = ThreadingHTTPServer((config.HOST, config.PUERTO), Manejador)

@@ -1,0 +1,18 @@
+# Publicación en línea en Render (https://render.com) · plan gratis
+# En Render: New → Blueprint → elegir este repositorio → Apply.
+# La app queda en https://<nombre>.onrender.com y el centro de control en /tierra/
+services:
+  - type: web
+    name: space-first-aid
+    runtime: python
+    plan: free
+    buildCommand: python --version
+    startCommand: python iniciar.py --sin-navegador
+    healthCheckPath: /api/salud
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: NAVE_HOST
+        value: "0.0.0.0"
+      - key: NAVE_DEMO_AUTOMATICA
+        value: "1"

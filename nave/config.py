@@ -31,3 +31,5 @@ PUERTO = int(os.environ.get("NAVE_PUERTO") or os.environ.get("PORT") or 8000)
 BD = Path(os.environ.get("NAVE_BD") or (carpeta_usuario() / "nave.db" if EMPAQUETADO else RAIZ / "nave" / "nave.db"))
 TIERRA_URL = os.environ.get("TIERRA_URL", "http://127.0.0.1:8766").rstrip("/")
 INTERVALO_ENLACE_S = float(os.environ.get("NAVE_INTERVALO_ENLACE", 4))
+# En el sitio en línea conviene que la misión demo ya esté cargada al abrirlo.
+DEMO_AUTOMATICA = os.environ.get("NAVE_DEMO_AUTOMATICA", "0") == "1"
