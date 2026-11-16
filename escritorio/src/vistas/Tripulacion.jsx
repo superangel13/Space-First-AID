@@ -1,6 +1,9 @@
 // Sección Tripulacion
 // Estructura transcrita de la versión web original (app/index.html).
-export default function Tripulacion({ oculto }) {
+import { CirculosTripulacion, EncabezadoDetalle } from '../componentes/Tripulantes.jsx';
+import { ListaAvisos } from '../componentes/Avisos.jsx';
+
+export default function Tripulacion({ oculto, N }) {
   return (
     <>
     <section className={"page"} id={"v-tripulacion"} hidden={oculto}>
@@ -17,8 +20,8 @@ export default function Tripulacion({ oculto }) {
           </p>
         </div>
       </div>
-      <div className={"crewgrid"} id={"crewgrid"} />
-      <div className={"selhead"} id={"selHead"} />
+      <CirculosTripulacion N={N} />
+      <EncabezadoDetalle N={N} />
       <div className={"card phead"}>
         <div className={"who"}>
           <span className={"av xl"} id={"pAv"} />
@@ -60,7 +63,7 @@ export default function Tripulacion({ oculto }) {
           <p className={"muted small"}>
             {"Cada condición del checklist médico de NASA se evalúa con sus 3 indicios: síntomas, signos vitales, pruebas y muestras de laboratorio. 2 de 3 = advertencia, 3 de 3 = alerta."}
           </p>
-          <div id={"dxList"} style={{"display": "grid", "gap": "10px"}} />
+          <ListaAvisos N={N} />
           <a className={"btn ghost sm"} href={"#valoracion"} style={{"justifySelf": "start"}}>
             {"Registrar síntomas o muestras"}
           </a>

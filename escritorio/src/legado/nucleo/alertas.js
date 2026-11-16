@@ -64,8 +64,7 @@ function randomCase(){const keys=Object.keys(SCN).filter(k=>k!=='normal'),cs=CRE
 function setTraining(on){AL.training=on;clearInterval(AL.trainT);if(on){AL.trainT=setInterval(()=>{if(!AL.list.some(a=>a.lvl>=2))randomCase()},45000);randomCase()}render()}
 function refreshAlertUI(){const act=AL.list,crit=act.filter(a=>a.lvl>=2),top=crit[0]||act[0];
   $$('[data-abdg]').forEach(b=>{b.hidden=!act.length;b.textContent=act.length;b.classList.toggle('w',!crit.length)});
-  const bar=$('#abar');if(!top||CUR==='alertas'){bar.hidden=true}else{bar.hidden=false;bar.classList.toggle('w',top.lvl<2);$('#abarT').textContent=`${top.lvl>=2?'ALERTA':'AVISO'} · ${who(top.id)}`;$('#abarX').textContent=`${aName(top)}${top.val?' · '+top.val:''}${act.length>1?` · y ${act.length-1} más`:''}`}
+  SFA.bump();
   const sig=act.map(a=>a.key+a.lvl).join('|');if(sig===AL.sig)return;AL.sig=sig;
   if(CUR==='alertas')renderAlertas();else if(CUR==='panel'){renderBioTexts()}else if(CUR==='tripulacion'){renderCrewGrid()}}
-$('#abar').onclick=()=>location.hash='alertas';
 

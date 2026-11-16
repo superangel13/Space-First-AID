@@ -14,7 +14,7 @@ const PARTES = [
   'ui/encabezado.js', 'ui/selector.js', 'vistas/panel.js', 'vistas/persona.js', 'juegos/orbita.js',
   'juegos/calibracion.js', 'juegos/manos.js', 'vistas/referencias.js', 'nucleo/signos.js',
   'nucleo/alertas.js', 'nucleo/predicciones.js', 'vistas/mision.js', 'ui/cuerpo3d.js', 'vistas/alertas.js',
-  'ui/ambiente.js', 'vistas/midia.js', 'motor/clinico.js', 'vistas/sintomas.js', 'vistas/muestras.js',
+  'ui/ambiente.js', 'vistas/midia.js', 'motor/clinico.js', 'vistas/sintomas.js',
   'ui/alerta_grande.js', 'ui/sirena.js', 'ui/circadiano.js', 'juegos/mente.js', 'nucleo/enlace.js',
   'vistas/pruebas.js', 'main.js', '_exporta.js',
 ];

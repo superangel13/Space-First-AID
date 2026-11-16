@@ -1,6 +1,8 @@
 // Sección Panel
 // Estructura transcrita de la versión web original (app/index.html).
-export default function Panel({ oculto }) {
+import { GuiaDeSueno, ResumenTripulacion } from '../componentes/PanelResumen.jsx';
+
+export default function Panel({ oculto, N }) {
   return (
     <>
     <section className={"page"} id={"v-panel"} hidden={oculto}>
@@ -53,22 +55,8 @@ export default function Panel({ oculto }) {
           </div>
         </div>
       </div>
-      <div className={"card hero"}>
-        <div id={"heroRing"} />
-        <div>
-          <span className={"cap"} id={"heroCap"} />
-          <h1 id={"heroTitle"} />
-          <p className={"muted"} id={"heroSub"} />
-          <div className={"lg3"} id={"heroLg"} />
-        </div>
-        <div className={"hside"}>
-          <span className={"cap"} style={{"display": "block", "marginBottom": "10px"}}>
-            {"Hoy conviene"}
-          </span>
-          <div className={"actions"} id={"heroAct"} />
-        </div>
-      </div>
-      <div className={"card circ"} id={"circ"} />
+      <ResumenTripulacion N={N} />
+      <GuiaDeSueno N={N} />
       <div className={"card pad"}>
         <div className={"rowb"}>
           <h3>

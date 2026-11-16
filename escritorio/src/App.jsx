@@ -8,7 +8,7 @@ import { SFA, useEvento } from './bus.js';
 import Registro from './Registro.jsx';
 import Intro from './estructura/Intro.jsx';
 import Encabezado from './estructura/Encabezado.jsx';
-import BarraAlerta from './estructura/BarraAlerta.jsx';
+import { AlertaGrande, BarraAlerta } from './componentes/AlertasFlotantes.jsx';
 import Subnav, { PRUEBAS } from './estructura/Subnav.jsx';
 import Pie from './estructura/Pie.jsx';
 import PanelEnlace from './estructura/PanelEnlace.jsx';
@@ -71,14 +71,14 @@ function Aplicacion() {
     <>
       <Intro />
       <Encabezado N={N} grupo={grupo} abrirEnlace={() => setEnlace(true)} />
-      <BarraAlerta />
+      <BarraAlerta N={N} ruta={ruta} />
       <main className="wrap">
         <Subnav ruta={ruta} />
-        <Panel oculto={seccion !== 'panel'} />
-        <Tripulacion oculto={seccion !== 'tripulacion'} />
+        <Panel oculto={seccion !== 'panel'} N={N} />
+        <Tripulacion oculto={seccion !== 'tripulacion'} N={N} />
         <Orbita oculto={seccion !== 'orbita'} />
         <Manos oculto={seccion !== 'manos'} />
-        <Valoracion oculto={seccion !== 'valoracion'} />
+        <Valoracion oculto={seccion !== 'valoracion'} N={N} />
         <Mente oculto={seccion !== 'mente'} />
         <Alertas oculto={seccion !== 'alertas'} />
         <Mision oculto={seccion !== 'mision'} />
@@ -89,6 +89,7 @@ function Aplicacion() {
       <PanelEnlace N={N} abierto={enlace} cerrar={() => setEnlace(false)} />
       <NavInferior grupo={grupo} />
       <Capas />
+      <AlertaGrande N={N} />
     </>
   );
 }

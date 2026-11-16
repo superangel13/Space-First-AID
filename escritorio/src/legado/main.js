@@ -10,7 +10,7 @@ function alCambiarRuta(v){
   if(PRUEBAS_RUTAS.includes(v)&&S.ultPrueba!==v){S.ultPrueba=v;save()}
   window.scrollTo(0,0);render()}
 function render(){renderPickers();
-  ({panel:renderPanel,tripulacion:renderPersona,valoracion:()=>{renderSintomas();renderMuestras()},animo:renderMente,orbita:()=>{W=0;renderOrbita()},
+  ({panel:renderPanel,tripulacion:renderPersona,valoracion:renderSintomas,animo:renderMente,orbita:()=>{W=0;renderOrbita()},
     alcance:()=>renderManos('alcance'),trazo:()=>renderManos('trazo'),letra_c:()=>renderManos('letra_c'),amsler:()=>renderManos('amsler'),
     alertas:renderAlertas,mision:renderMision,midia:renderMiDia,referencias:renderEvidence})[CUR]();
   refreshAlertUI();vizKick();SFA.bump()}

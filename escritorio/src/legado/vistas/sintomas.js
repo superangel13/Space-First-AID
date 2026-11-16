@@ -38,10 +38,9 @@ function dxCard(r,open){const lv=r.lvl;return `<div class="dxc l${lv}"><div clas
   ${r.ctx.length?`<div class="small muted"><b style="color:var(--text)">Contexto que suma riesgo:</b> ${esc(r.ctx.join(' · '))}</div>`:''}${r.k.note?`<p class="note">${esc(r.k.note)}</p>`:''}
   ${lv||open?`<details ${lv===2?'open':''}><summary class="small" style="cursor:pointer;font-weight:800">Protocolo de NASA (${r.k.steps.length} pasos)</summary><ol class="small" style="margin:8px 0 0;padding-left:20px;display:grid;gap:4px">${r.k.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol></details>`:''}
   <div class="srcl">${r.k.src.map(s=>s.u?`<a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a>`:`<span class="small muted" style="padding:5px 10px;border-radius:999px;background:var(--s1)">${esc(s.t)}</span>`).join('')}</div></div>`}
-function renderDxMini(){const R=evalKB(cur()).filter(r=>r.lvl||r.red.length);$('#dxMini').innerHTML=R.length?R.map(r=>`<div class="act ${r.lvl>=2?'bad':'warn'}"><span class="ic">!</span><div><b>${esc(r.k.n)}</b><span class="t">${esc(presentas(r))}</span></div></div>`).join(''):'<div class="act good"><span class="ic">✓</span><div><b>Sin advertencias</b><span class="t">El motor no encuentra 2 de 3 indicios de ninguna condición.</span></div></div>'}
-function renderDx(){const c=cur(),R=evalKB(c),act=R.filter(r=>r.hit||r.red.length);
-  const groups={};act.forEach(r=>(groups[r.k.sys]=groups[r.k.sys]||[]).push(r));
-  $('#dxList').innerHTML=act.length?Object.entries(groups).map(([g,rs])=>`<span class="sysh">${esc(g)}</span>${rs.map(r=>dxCard(r)).join('')}`).join(''):'<div class="dxc"><b>Sin indicios</b><p class="muted small">Con lo registrado y los datos de los sensores no hay ninguna condición con indicios. Las condiciones se evalúan con tus síntomas, tus signos vitales, tus pruebas y el contexto de la misión.</p></div>'}
+/* los avisos los pinta React (src/componentes/Avisos.jsx) */
+function renderDxMini(){SFA.bump()}
+function renderDx(){SFA.bump()}
 $('#sxSend').onclick=async()=>{const c=cur(),st=sxState(c),R=await syncClin(c,false,true),items=Object.keys(st.cur.items).filter(id=>st.cur.items[id].v>0);
   const top=R.find(r=>r.lvl),lvl=top?top.lvl:0,txt=items.length?`${items.length} síntoma${items.length>1?'s':''}: ${items.map(id=>SX[id].n.toLowerCase()).join(', ')}${top?` → ${top.k.n}`:''}`:'Sin síntomas';
   st.hist.unshift({t:Date.now(),txt,lvl,items:JSON.parse(JSON.stringify(st.cur))});st.hist.length=Math.min(st.hist.length,60);

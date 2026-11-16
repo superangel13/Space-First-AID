@@ -1,6 +1,9 @@
 // Sección Valoracion
 // Estructura transcrita de la versión web original (app/index.html).
-export default function Valoracion({ oculto }) {
+import { ResumenAvisos } from '../componentes/Avisos.jsx';
+import Muestras from '../componentes/Muestras.jsx';
+
+export default function Valoracion({ oculto, N }) {
   return (
     <>
     <section className={"page"} id={"v-valoracion"} hidden={oculto}>
@@ -78,35 +81,13 @@ export default function Valoracion({ oculto }) {
               {"Resumen"}
             </span>
           </div>
-          <div id={"dxMini"} style={{"display": "grid", "gap": "8px"}} />
+          <ResumenAvisos N={N} />
           <a className={"btn ghost sm"} href={"#tripulacion"} style={{"justifySelf": "start"}}>
             {"Ver avisos completos"}
           </a>
         </div>
       </div>
-      <div className={"card pad mu"} id={"muestras"}>
-        <div className={"rowb"}>
-          <div>
-            <span className={"cap"}>
-              {"Laboratorio"}
-            </span>
-            <h2 style={{"fontSize": "22px", "marginTop": "4px"}}>
-              {"Muestras de orina, sangre y saliva"}
-            </h2>
-          </div>
-          <div className={"seg"} id={"muTipo"} role={"group"} aria-label={"Tipo de muestra"} />
-        </div>
-        <p className={"muted small"} id={"muInfo"} />
-        <div className={"mugrid"}>
-          <form className={"muform"} id={"muForm"} autoComplete={"off"} />
-          <div style={{"display": "grid", "gap": "12px", "alignContent": "start"}}>
-            <h3>
-              {"Resultados vigentes"}
-            </h3>
-            <div id={"muVig"} style={{"display": "grid", "gap": "10px"}} />
-          </div>
-        </div>
-      </div>
+      <Muestras N={N} visible={!oculto} />
       <div className={"card pad"} style={{"display": "grid", "gap": "10px"}}>
         <h3>
           {"Historial de registros"}

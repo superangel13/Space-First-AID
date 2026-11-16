@@ -4,9 +4,6 @@ export default function Capas() {
   return (
     <>
     <div className={"toast"} id={"toast"} role={"status"} aria-live={"polite"} />
-    <div className={"bigal"} id={"bigal"} hidden role={"alertdialog"} aria-modal={"true"} aria-labelledby={"bigT"}>
-      <div className={"bx"} id={"bigBx"} />
-    </div>
     <div className={"modal"} id={"modal"} hidden>
       <div className={"card pad"}>
         <div className={"rowb"}>
