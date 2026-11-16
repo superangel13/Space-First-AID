@@ -57,7 +57,7 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: "false"
         run: |
           npm ci
-          npm run empaquetar
+          npm run empaquetar -- --publish never
 
       - name: Guardar el programa de escritorio
         uses: actions/upload-artifact@v4
