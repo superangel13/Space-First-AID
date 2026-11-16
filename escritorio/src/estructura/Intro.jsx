@@ -5,12 +5,17 @@ import { useEffect, useRef, useState } from 'react';
 export default function Intro({ alTerminar }) {
   const video = useRef(null);
   const [saliendo, setSaliendo] = useState(false);
-  const [oculto, setOculto] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [oculto, setOculto] = useState(() => {
+    let vista = false;
+    try { vista = sessionStorage.getItem('sfa.intro') === '1'; } catch (e) { /* sin almacenamiento */ }
+    return vista || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
   const terminado = useRef(false);
 
   const terminar = () => {
     if (terminado.current) return;
     terminado.current = true;
+    try { sessionStorage.setItem('sfa.intro', '1'); } catch (e) { /* sin almacenamiento */ }
     setSaliendo(true);
     setTimeout(() => { setOculto(true); try { video.current.pause(); } catch (e) { /* ya estaba en pausa */ } if (alTerminar) alTerminar(); }, 750);
   };

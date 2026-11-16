@@ -29,6 +29,7 @@ function TarjetaCondicion({ r }) {
           </span>
         </div>
         <p style={{ fontWeight: 800 }}>{r.presentas}</p>
+        <details className="dxmas"><summary className="small">Ver indicadores, protocolo y fuentes</summary>
         {r.desc && r.desc.length > 0 && nivel > 0 && (
           <p className="small" style={{ color: 'var(--muted)' }}><b style={{ color: 'var(--text)' }}>Nivel reducido:</b> {r.desc.join(' · ')}</p>
         )}
@@ -49,6 +50,7 @@ function TarjetaCondicion({ r }) {
             ? <a key={i} href={s.u} target="_blank" rel="noopener">{s.t}</a>
             : <span key={i} className="small muted" style={{ padding: '5px 10px', borderRadius: 999, background: 'var(--s1)' }}>{s.t}</span>))}
         </div>
+        </details>
       </div>
     </div>
   );
@@ -58,7 +60,7 @@ function TarjetaCondicion({ r }) {
 export function ListaAvisos({ N }) {
   useLatido();
   if (!N) return <div id="dxList" style={{ display: 'grid', gap: 10 }} />;
-  const activos = N.evalKB(N.cur()).filter(r => r.hit || r.red.length);
+  const activos = N.evalKB(N.cur()).filter(r => r.lvl || r.hit >= 2);
   const grupos = {};
   activos.forEach(r => { (grupos[r.k.sys] = grupos[r.k.sys] || []).push(r); });
   return (
@@ -69,7 +71,7 @@ export function ListaAvisos({ N }) {
           {rs.map(r => <TarjetaCondicion key={r.k.id} r={r} />)}
         </div>
       )) : (
-        <div className="dxc"><b>Sin indicios</b><p className="muted small">Con lo registrado y los datos de los sensores no hay ninguna condición con indicios. Las condiciones se evalúan con tus síntomas, tus signos vitales, tus pruebas, tus muestras y el contexto de la misión.</p></div>
+        <div className="dxc"><b>Sin riesgos activos</b><p className="muted small">Ningún problema del documento de parámetros tiene 2 o más indicadores.</p></div>
       )}
     </div>
   );

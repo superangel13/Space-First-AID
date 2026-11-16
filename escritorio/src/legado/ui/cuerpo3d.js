@@ -47,7 +47,7 @@ function t3Frame(time,dt){if(T3.fb){if(T3.fbk!==S.sel+AL.list.length){T3.fbk=S.s
     const rc=mx>=2?RED:mx===1?AMB:!L.on?GRY:CYAN;f.ring.material.color.copy(rc);f.disc.material.color.copy(rc);f.ring.material.opacity=isS?.95:.45;f.disc.material.opacity=isS?.18+.06*pulse:.06;f.ring.scale.setScalar(isS?1.12+.04*Math.sin(time*2):1);
     v.set(f.grp.position.x,-.02,f.grp.position.z).project(T3.cam);const lx=(v.x*.5+.5)*w,ly=(-v.y*.5+.5)*h;
     if(lx>-40&&lx<w+40)labs.push({c,x:lx,y:Math.min(ly+6,h-46),isS,lvl:mx,L});
-    if(isS){v.set(f.grp.position.x,1.86,f.grp.position.z).project(T3.cam);T3.selTop={c,x:(v.x*.5+.5)*w,y:Math.max(14,(-v.y*.5+.5)*h)}}
+    if(isS){v.set(f.grp.position.x,1.86,f.grp.position.z).project(T3.cam);T3.selTop={c,x:clamp((v.x*.5+.5)*w,70,w-70),y:Math.max(62,(-v.y*.5+.5)*h)}}
     if(isS)AL.list.filter(a=>(a.id===c.id||(a.id==='nave'&&a.type==='tormenta'))&&aPart(a)).forEach((a,i)=>{const k=aPart(a),o=(f.org[k]&&f.org[k][0])||null,p=o?o.position.clone():new THREE.Vector3(0,1.1,0);f.grp.localToWorld(p);p.project(T3.cam);tags.push({x:(p.x*.5+.5)*w,y:(-p.y*.5+.5)*h,a,i})})});
   T3.R.render(T3.scene,T3.cam);
   $('#l3').innerHTML=(T3.selTop?`<div class="tsel" style="left:${T3.selTop.x}px;top:${T3.selTop.y}px;--pc:${T3.selTop.c.col}"><b>${esc(T3.selTop.c.n)}</b><span>seleccionado</span><i></i></div>`:'')+labs.map(o=>`<div class="tlab ${o.isS?'sel':''}" data-id="${o.c.id}" style="left:${o.x}px;top:${o.y}px"><b>${esc(o.c.n)}</b><span style="${o.lvl>=2?'background:rgba(255,84,104,.18);color:#FF8A98':o.lvl?'background:rgba(245,184,65,.16);color:#F5B841':!o.L.on?'background:var(--s3);color:var(--muted)':'background:rgba(95,211,243,.12);color:#5FD3F3'}">${o.lvl>=2?'Alerta':o.lvl?'Advertencia':!o.L.on?'Sin sensor':Math.round(o.L.v.hr)+' lpm'}</span></div>`).join('')+
@@ -66,7 +66,9 @@ function viz(ts){if(!['panel','tripulacion','alertas'].includes(CUR)){vizOn=fals
 
 /* ===== modelo 3D de una sola persona (sección Tripulación) ===== */
 const T3S={yaw:0,drag:false,idle:0};
-function t3SoloBuild(){const host=$('#solo3d');if(!host||T3S.R||T3S.fb)return;
+function t3SoloBuild(){const host=$('#solo3d');if(!host)return;
+  if(T3S.R&&T3S.host!==host){host.appendChild(T3S.R.domElement);T3S.host=host;const w=host.clientWidth||420,h=host.clientHeight||420;T3S.R.setSize(w,h);T3S.cam.aspect=w/h;T3S.cam.updateProjectionMatrix();T3S.ro&&T3S.ro.disconnect();T3S.ro=new ResizeObserver(()=>{const W=host.clientWidth,H=host.clientHeight;if(W&&H){T3S.R.setSize(W,H);T3S.cam.aspect=W/H;T3S.cam.updateProjectionMatrix()}});T3S.ro.observe(host);return}
+  if(T3S.R||T3S.fb)return;
   try{if(!HAS3||!window.BODY_MESH)throw 0;T3S.R=new THREE.WebGLRenderer({antialias:true,alpha:true})}catch(e){T3S.fb=true;host.innerHTML='<svg id="solo2d" viewBox="0 0 360 440" style="width:100%;height:100%"></svg>';return}
   const R=T3S.R,W=host.clientWidth||420,H=host.clientHeight||420;R.setPixelRatio(Math.min(2,devicePixelRatio||1));R.setSize(W,H);host.appendChild(R.domElement);
   const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(22,W/H,.1,30),geo=bodyGeo(),sph=new THREE.SphereGeometry(1,22,16);

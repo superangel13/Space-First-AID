@@ -8,24 +8,31 @@ import { useEffect, useReducer, useRef, useState } from 'react';
 import { API } from '../api.js';
 import { useLatido } from '../bus.js';
 import { ResumenAvisos } from '../componentes/Avisos.jsx';
-import Muestras from '../componentes/Muestras.jsx';
+import Dispositivos from '../componentes/Dispositivos.jsx';
+import Accidentes from '../componentes/Accidentes.jsx';
 
-// Regiones de la silueta → zona del catálogo de síntomas.
+// El cuerpo está dibujado con las zonas mismas: lo que se ve es exactamente lo que se toca.
+const BRAZOS = (
+  <><rect x="34" y="90" width="22" height="138" rx="11" transform="rotate(9 45 159)" /><rect x="144" y="90" width="22" height="138" rx="11" transform="rotate(-9 155 159)" /></>
+);
+const PIERNAS = <><rect x="70" y="234" width="28" height="172" rx="13" /><rect x="102" y="234" width="28" height="172" rx="13" /></>;
 const ZONAS = {
-  f: [['cabeza', 'ellipse', 100, 34, 24, 28], ['cara', 'rect', 80, 30, 40, 22], ['cuello', 'rect', 88, 62, 24, 20], ['gen', 'rect', 66, 84, 68, 62], ['abd', 'rect', 70, 148, 60, 52], ['pelvis', 'rect', 72, 202, 56, 34], ['piel', 'arms'], ['piernas', 'legs']],
-  b: [['cabeza', 'rect', 82, 40, 36, 40], ['piel', 'rect', 66, 84, 68, 60], ['pelvis', 'rect', 72, 146, 56, 46], ['pelvis', 'flank'], ['piernas', 'legs']],
+  f: [
+    ['piel', <g>{BRAZOS}</g>], ['piernas', <g>{PIERNAS}</g>],
+    ['cabeza', <circle cx="100" cy="38" r="26" />], ['cara', <ellipse cx="100" cy="44" rx="15" ry="13" />],
+    ['cuello', <rect x="90" y="64" width="20" height="18" rx="6" />], ['gen', <rect x="60" y="82" width="80" height="66" rx="20" />],
+    ['abd', <rect x="64" y="148" width="72" height="50" rx="14" />], ['pelvis', <rect x="64" y="198" width="72" height="38" rx="14" />],
+  ],
+  b: [
+    ['piel', <g>{BRAZOS}<rect x="60" y="82" width="80" height="66" rx="20" /></g>], ['piernas', <g>{PIERNAS}</g>],
+    ['cabeza', <g><circle cx="100" cy="38" r="26" /><rect x="90" y="64" width="20" height="18" rx="6" /></g>],
+    ['pelvis', <g><rect x="64" y="148" width="72" height="50" rx="14" /><rect x="64" y="198" width="72" height="38" rx="14" /></g>],
+  ],
 };
-const SILUETA = 'M100 8c14 0 24 11 24 26 0 12-6 21-14 25v8c18 2 34 8 38 22l10 70c2 12 4 30 6 44 1 8-8 10-10 2l-10-60-4 4 2 46c0 8-2 14-4 22l-6 150c0 10-14 10-14 0l-6-130h-4l-6 130c0 10-14 10-14 0l-6-150c-2-8-4-14-4-22l2-46-4-4-10 60c-2 8-11 6-10-2 2-14 4-32 6-44l10-70c4-14 20-20 38-22v-8c-8-4-14-13-14-25 0-15 10-26 24-26z';
 const colorNivel = v => (v >= 7 ? 'var(--bad)' : v >= 4 ? 'var(--warn)' : 'var(--good)');
 
-function Zona({ z, clase, elegir }) {
-  const [id, tipo, ...a] = z;
-  const p = { className: clase, onClick: () => elegir(id) };
-  if (tipo === 'ellipse') return <ellipse {...p} cx={a[0]} cy={a[1]} rx={a[2]} ry={a[3]} />;
-  if (tipo === 'rect') return <rect {...p} x={a[0]} y={a[1]} width={a[2]} height={a[3]} rx="12" />;
-  if (tipo === 'arms') return <g {...p}><path d="M60 92l-14 66-8 76 14 2 12-76 10-50z" /><path d="M140 92l14 66 8 76-14 2-12-76-10-50z" /></g>;
-  if (tipo === 'legs') return <g {...p}><rect x="70" y="240" width="28" height="170" rx="12" /><rect x="102" y="240" width="28" height="170" rx="12" /></g>;
-  return <g {...p}><ellipse cx="66" cy="168" rx="12" ry="20" /><ellipse cx="134" cy="168" rx="12" ry="20" /></g>;
+function Zona({ id, forma, clase, elegir }) {
+  return <g className={clase} onClick={() => elegir(id)}>{forma}</g>;
 }
 
 function Opciones({ opciones, valor, elegir }) {
@@ -83,8 +90,7 @@ function RegistroSintomas({ N }) {
             </div>
           </div>
           <svg id="bmSvg" viewBox="0 0 200 420" aria-label="Mapa del cuerpo">
-            <path d={SILUETA} fill="#121A24" stroke="#26344A" strokeWidth="1.5" />
-            {ZONAS[lado].map((z, i) => <Zona key={i} z={z} elegir={setZona} clase={['rg', zonaActiva(z[0]) && 'on', zona === z[0] && 'sel'].filter(Boolean).join(' ')} />)}
+            {ZONAS[lado].map(([id, forma], i) => <Zona key={i} id={id} forma={forma} elegir={setZona} clase={['rg', zonaActiva(id) && 'on', zona === id && 'sel'].filter(Boolean).join(' ')} />)}
             <text x="100" y="418" textAnchor="middle" fill="#5A6576" fontSize="11" fontFamily="Manrope" fontWeight="700">{lado === 'f' ? 'FRENTE' : 'ESPALDA'}</text>
           </svg>
           <div className="row" style={{ gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -238,13 +244,14 @@ export default function Valoracion({ oculto, N }) {
         <div>
           <span className="cap">Signos, síntomas, registro personal y muestras · se procesa en Python</span>
           <h1>Valoración</h1>
-          <p>Registra lo que notas tocando el cuerpo, tu registro personal y los resultados de orina, sangre y saliva. Todo se cruza con el documento de parámetros en el motor clínico de la nave.</p>
+          <p>Registra lo que notas tocando el cuerpo y tu registro personal; los signos vitales, el sueño y las muestras llegan solos de los dispositivos. Todo se cruza con el documento de parámetros en el motor clínico de la nave.</p>
         </div>
       </div>
       {N && <RegistroSintomas N={N} />}
       {N && <RegistroPersonal N={N} />}
-      <Muestras N={N} visible={!oculto} />
+      <Dispositivos N={N} visible={!oculto} />
       {N && <Simulador N={N} />}
+      {N && <Accidentes N={N} />}
     </section>
   );
 }

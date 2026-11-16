@@ -91,7 +91,7 @@ export default function Mente({ oculto }) {
           </div>
         </div>
       </div>
-      <div className={"card pad"} style={{"display": "grid", "gap": "14px"}}>
+      <div hidden className={"card pad"} style={{"display": "grid", "gap": "14px"}}>
         <div className={"rowb"}>
           <h3>
             {"Juegos de la mente"}

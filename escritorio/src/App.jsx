@@ -137,7 +137,7 @@ export default function App() {
     (async () => {
       let m;
       try {
-        [m, window.PROB] = await Promise.all([API.get('mision'), fetch('/datos/problemas.json').then(r => r.json())]);
+        [m, window.PROB, window.ACC] = await Promise.all([API.get('mision'), fetch('/datos/problemas.json').then(r => r.json()), fetch('/datos/accidentes.json').then(r => r.json())]);
       } catch (e) { setFase('sin-motor'); return; }
       if (!m.mision) { setDestinos(m.destinos); setFase('registro'); return; }
       try {

@@ -16,7 +16,7 @@ function Tarjeta({ N, c }) {
         <span className={'st ' + s.l}>{s.t}</span>
       </div>
       <div className="cc-tot"><span className="cap">Estado general</span><b className="num">{total == null ? '—' : total + ' %'}</b></div>
-      <BarrasSistemas N={N} sis={N.SIS[c.id]} />
+      <CirculosSistemas N={N} sis={N.SIS[c.id]} tam={58} detalle={false} />
       <div className="cc-v" data-ccv={c.id} />
       <div className="cc-a">
         {avisos.length ? avisos.map((a, i) => <span key={i} className={'ch ' + a.l}><IconoAviso />{a.t}</span>) : <span className="ch g">Sin alertas</span>}

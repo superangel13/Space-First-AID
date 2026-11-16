@@ -68,3 +68,12 @@ function refreshAlertUI(){const act=AL.list,crit=act.filter(a=>a.lvl>=2),top=cri
   const sig=act.map(a=>a.key+a.lvl).join('|');if(sig===AL.sig)return;AL.sig=sig;
   if(CUR==='alertas')renderAlertas();else if(CUR==='panel'){renderBioTexts()}else if(CUR==='tripulacion'){renderCrewGrid()}}
 
+
+/* ---------- simulación de accidentes (NASA Human System Risks) ---------- */
+function simularAccidente(c,acc){S.acc=S.acc||{};S.acc[c.id]=acc.id;const t=acc.vitales||{};
+  SCN['acc_'+acc.id]={n:acc.n,d:'Accidente simulado',t:b=>({...b,hr:b.hr+(t.hr||0),spo2:b.spo2+(t.spo2||0),sbp:b.sbp+(t.sbp||0),dbp:b.dbp+(t.sbp?Math.round(t.sbp*.6):0),temp:b.temp+(t.temp||0),rr:b.rr+(t.rr||0)})};
+  const L=LV[c.id];L.on=true;L.scen='acc_'+acc.id;L.fix=false;
+  const a=raise({id:c.id,type:'acc-'+acc.id,lvl:2,name:'Accidente: '+acc.n,val:acc.riesgo,steps:acc.protocolo,part:acc.parte,src:'accidente',force:true});
+  if(a){a.acc=acc;a.seen=false;bigAlert(a)}save();SFA.bump()}
+function quitarAccidente(c){const id=S.acc&&S.acc[c.id];if(!id)return;delete S.acc[c.id];LV[c.id].scen='normal';LV[c.id].fix=true;
+  const a=AL.list.find(x=>x.key===c.id+':acc-'+id);if(a)closeA(a,'Accidente atendido');save();SFA.bump()}

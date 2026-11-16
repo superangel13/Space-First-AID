@@ -260,3 +260,41 @@ main:not(.con-lateral)>.contenido{grid-column:1/-1}
 @keyframes check{from{stroke-dashoffset:40}to{stroke-dashoffset:0}}
 @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @media (prefers-reduced-motion:reduce){.pasoA{opacity:1;animation:none}.escena *{animation:none!important}.tsel{animation:none}}
+
+/* ======== ajustes: mapa del cuerpo, selector lateral, dispositivos y accidentes ======== */
+/* el cuerpo está hecho de las zonas: una sola figura */
+.bm .rg{fill:#121A24;stroke:#2F3D52;stroke-width:1.5;cursor:pointer;transition:fill .2s}
+.bm .rg:hover{fill:#1B2A3A;stroke:rgba(95,211,243,.6)}
+.bm .rg.on{fill:rgba(245,184,65,.38);stroke:var(--warn)}
+.bm .rg.sel{stroke:#fff;stroke-width:2.6}
+/* letra del avatar centrada en la vista lateral */
+.lat-who>div span{display:block;font-size:12.5px;color:var(--muted)}
+.lat-who .av{display:grid;place-items:center;flex:none}
+/* avisos resumidos */
+.dxmas summary{cursor:pointer;font-weight:800;color:var(--muted);margin-top:4px}
+.dxmas[open] summary{margin-bottom:8px}
+/* tarjetas de tripulantes con círculos */
+.cc .sisgrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cc .sis b{font-size:11px}
+/* dispositivos */
+.dispgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.disp{display:grid;border-radius:18px;overflow:hidden;background:var(--s1);border:1px solid var(--line)}
+.disp-vid{position:relative;aspect-ratio:3/2;background:#0B0F14}
+.disp-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.disp-est{position:absolute;left:10px;top:10px;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(5,7,10,.75)}
+.disp-est i{width:8px;height:8px;border-radius:50%}
+.disp-est.ok{color:var(--good)}.disp-est.ok i{background:var(--good);box-shadow:0 0 0 0 rgba(52,227,154,.7);animation:pulsoDisp 1.6s infinite}
+.disp-est.off{color:var(--warn)}.disp-est.off i{background:var(--warn)}
+@keyframes pulsoDisp{70%{box-shadow:0 0 0 8px rgba(52,227,154,0)}100%{box-shadow:0 0 0 0 rgba(52,227,154,0)}}
+.disp-cuerpo{display:grid;gap:6px;padding:12px 14px}
+.disp-cuerpo>div:first-child b{display:block;font-family:var(--display);font-size:17px}
+.drow{display:flex;justify-content:space-between;gap:8px;font-size:13px;border-top:1px solid var(--line);padding-top:6px}
+.drow span{color:var(--muted)}
+.labgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.labcol{display:grid;gap:4px;align-content:start;background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:12px}
+.labrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;font-size:12.5px;padding:4px 0;border-top:1px solid var(--line)}
+.labrow span{color:var(--muted)}.labrow em{grid-column:1/-1;font-style:normal;font-size:11px;color:var(--dim)}
+/* accidentes */
+.accprev{display:grid;gap:6px;background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.accprev ol{margin:0;padding-left:18px;display:grid;gap:2px}
+.acclist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:10px}

@@ -87,23 +87,23 @@ export function AlertaGrande({ N }) {
   }, [a, N]);
 
   if (!a || !N) return <div className="bigal" id="bigal" hidden role="alertdialog" aria-modal="true" />;
-  const c = N.CREW.find(x => x.id === a.id), r = a.res, tormenta = a.type === 'tormenta';
+  const c = N.CREW.find(x => x.id === a.id), r = a.res, tormenta = a.type === 'tormenta', acc = a.acc;
   const pasos = N.aSteps(a);
-  const sistemas = r ? r.k.sistemas.map(s => window.PROB.sistemas[s].nombre) : tormenta ? ['Radiación', 'Inmunológico'] : [];
-  const partes = r ? [r.k.part] : tormenta ? ['body'] : [];
+  const sistemas = r ? r.k.sistemas.map(s => window.PROB.sistemas[s].nombre) : acc ? acc.sistemas.map(s => window.PROB.sistemas[s].nombre) : tormenta ? ['Radiación', 'Inmunológico'] : [];
+  const partes = r ? [r.k.part] : acc ? [acc.parte] : tormenta ? ['body'] : [];
   const cerrar = () => { a.seen = true; setA(null); N.render(); };
   return (
     <div className="bigal" id="bigal" role="alertdialog" aria-modal="true" aria-labelledby="bigT">
       <div className="bx bx-emerg">
         <div className="hd2">
           <span className="ico">!</span>
-          <div><span className="cap" style={{ color: '#FF9AA6' }}>Emergencia · {N.who(a.id)}{c ? ' · ' + c.r : ''}</span><h2 id="bigT">{tormenta ? 'Tormenta de radiación: todos al refugio' : N.aName(a)}</h2></div>
+          <div><span className="cap" style={{ color: '#FF9AA6' }}>{acc ? 'Accidente' : 'Emergencia'} · {N.who(a.id)}{c ? ' · ' + c.r : ''}</span><h2 id="bigT">{tormenta ? 'Tormenta de radiación: todos al refugio' : N.aName(a)}</h2></div>
         </div>
         <div className="emerg-grid">
           <Escena partes={partes} tormenta={tormenta} />
           <div style={{ display: 'grid', gap: 12, alignContent: 'start' }}>
             <div><span className="cap">Qué pasó</span>
-              <p style={{ fontWeight: 800, marginTop: 4 }}>{r ? r.presentas : `Radiación en la cabina: ${a.val}. Evento de partículas solares en curso.`}</p>
+              <p style={{ fontWeight: 800, marginTop: 4 }}>{r ? r.presentas : acc ? acc.que_es : `Radiación en la cabina: ${a.val}. Evento de partículas solares en curso.`}</p>
               {r && <p className="small muted" style={{ marginTop: 4 }}>{r.k.explicacion}</p>}
             </div>
             <div><span className="cap">Sistemas atacados</span>
@@ -116,14 +116,14 @@ export function AlertaGrande({ N }) {
             )}
           </div>
         </div>
-        <div><span className="cap">Protocolo y contramedida</span>
+        <div><span className="cap">{acc ? 'Protocolo del accidente' : 'Protocolo y contramedida'}</span>
           <ol className="pasosA">{pasos.map((s, i) => <PasoAnimado key={i} texto={s} i={i} activo={i === paso % pasos.length} hecho={i < paso % pasos.length} />)}</ol>
         </div>
         {r && r.k.parametros && (
           <details><summary className="small" style={{ cursor: 'pointer', fontWeight: 800 }}>Parámetros estables a vigilar</summary>
             <ul className="small" style={{ marginTop: 6 }}>{r.k.parametros.map((x, i) => <li key={i}>{x}</li>)}</ul></details>
         )}
-        <p className="note">{r ? r.k.src.map(s => s.t).join(' · ') : 'NASA-STD-3001 · documento de parámetros'} · Enviada a la Tierra con prioridad 1.</p>
+        <p className="note">{r ? r.k.src.map(s => s.t).join(' · ') : acc ? <a href={acc.u} target="_blank" rel="noopener">NASA Human System Risks · {acc.riesgo}</a> : 'NASA-STD-3001 · documento de parámetros'} · Enviada a la Tierra con prioridad 1.</p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <button className="btn" type="button" style={{ background: '#fff' }} autoFocus onClick={cerrar}>Entendido, la estamos atendiendo</button>
           <button className="btn ghost" type="button" onClick={() => { cerrar(); window.location.hash = 'alertas'; }}>Abrir el centro de alertas</button>
