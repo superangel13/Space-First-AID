@@ -8,18 +8,44 @@ Cuando la Tierra está lejos o se pierde la señal, la tripulación tiene que de
 
 La versión más nueva es el programa de escritorio en [`escritorio/`](escritorio/README.md): pantalla en **React**, ventana en **Electron** y motor en **Python + SQLite** incluido.
 
-- **Descargarlo:** en **Releases** hay un `.zip` para macOS, instalador `.exe` para Windows y `.AppImage` para Linux. El programa no está firmado: en Mac se abre con clic derecho → Abrir; en Windows, con «Más información» → «Ejecutar de todas formas».
-- **Correrlo desde el código** (Node 20+ y Python 3.9+):
+## Cómo instalarlo
+
+No hace falta instalar Python ni nada más: el programa trae todo y funciona sin internet.
+
+1. Entra a **[Releases](https://github.com/superangel13/Space-First-AID/releases/latest)**.
+2. En **Assets**, descarga el archivo de tu sistema:
+
+| Sistema | Archivo | Pasos |
+|---|---|---|
+| **macOS** (Apple Silicon: M1, M2, M3, M4) | El que termina en `-arm64-mac.zip` | 1. Doble clic al `.zip` para descomprimirlo. 2. Arrastra **Space First AID** a **Aplicaciones**. 3. Ábrelo con clic derecho → **Abrir** → **Abrir**. Si macOS no deja abrirlo: **Ajustes del Sistema → Privacidad y seguridad → «Abrir de todos modos»**. |
+| **Windows** 10 u 11 | El `.exe` con `Setup` en el nombre (instalador) o el otro `.exe` (portable, sin instalar) | 1. Doble clic al archivo. 2. Si aparece «Windows protegió tu PC»: **Más información → Ejecutar de todas formas**. 3. El instalador deja un acceso directo en el escritorio y en el menú Inicio. |
+| **Linux** (x64) | El que termina en `.AppImage` | En la terminal, dentro de la carpeta de descargas: `chmod +x *.AppImage` y luego `./Space*.AppImage`. |
+
+3. La primera vez se ve la animación de entrada y después el **registro de la misión** (destino Luna, Marte u otro; tripulantes de 20 años o más). También puedes elegir **Ver misión demo**.
+4. Para las pruebas con la mano, el programa pide permiso para usar la **cámara**.
+
+Los avisos de macOS y Windows aparecen porque el programa no está firmado con un certificado de pago. No es un virus.
+
+Si macOS dice que la app «está dañada», ábrela una vez con este comando en la Terminal:
 
 ```bash
-cd escritorio
+xattr -cr "/Applications/Space First AID.app"
+```
+
+**Dónde guarda los datos:** macOS en `~/Library/Application Support/Space First AID`, Windows en `%APPDATA%\Space First AID` y Linux en `~/.local/share/Space First AID`. Para empezar de cero, borra esa carpeta.
+
+### Correrlo desde el código
+
+Necesitas Node 20 o más nuevo y Python 3.9 o más nuevo:
+
+```bash
+git clone https://github.com/superangel13/Space-First-AID.git
+cd Space-First-AID/escritorio
 npm install
 npm run inicio
 ```
 
-Al abrirlo: animación de entrada → registro de la misión (destino Luna, Marte u otro; tripulantes de 20 años o más) o misión demo.
-
-### Qué hace
+## Qué hace
 
 | Sección | Qué hace |
 |---|---|
@@ -34,7 +60,7 @@ Los datos de los dispositivos y los tripulantes de la demo son **simulados**: en
 
 ## Versión web (anterior, solo Python)
 
-## Cómo correrlo
+### Cómo correrlo (versión web)
 
 Solo necesitas **Python 3.9 o más nuevo**. No hay que instalar nada más.
 
@@ -65,9 +91,9 @@ TIERRA_URL=http://IP-DE-LA-OTRA:8766 python3 iniciar.py --solo-nave
 
 Al apagar el wifi, la nave sigue funcionando y guarda todo en la cola. Al volver la señal, envía lo pendiente por prioridad.
 
-## Ejecutable (sin instalar Python)
+## Ejecutable de la versión web (sin instalar Python)
 
-En **Releases** (o en la pestaña **Actions**, si se generó ahí) hay un ejecutable para cada sistema:
+En **Releases** también están los archivos `SpaceFirstAID-<sistema>.zip`. Son la versión web anterior, que se abre en el navegador:
 
 | Sistema | Archivo | Cómo abrirlo |
 |---|---|---|
@@ -104,14 +130,14 @@ npm install
 npm run inicio
 ```
 
-## Primer uso
+### Primer uso (versión web)
 
 1. **Registro de la misión:** nombre, destino (opciones preestablecidas), duración, fecha de inicio y de 1 a 6 tripulantes con su rol, sexo, edad, condición física y antecedentes médicos.
 2. O **Ver misión demo:** Luna ida y vuelta, 180 días, día 42, con Grover, Payán, Valentina y Camilia (datos inventados).
 
 Del registro dependen las vigilancias por antecedente, la trayectoria y las zonas de gravedad y radiación.
 
-## Secciones
+### Secciones (versión web anterior)
 
 | Sección | Qué hace |
 |---|---|
