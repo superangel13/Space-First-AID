@@ -72,6 +72,7 @@ escritorio/
 - Panel de enlace con la Tierra.
 - Resumen de la tripulación y guía de sueño (ritmo circadiano).
 - Círculos de cada tripulante, y avisos y riesgos.
+- Registro de síntomas con el mapa del cuerpo.
 - Muestras de orina, sangre y saliva.
 - Barra de alerta y ventana de alerta crítica.
 
@@ -79,7 +80,6 @@ escritorio/
 
 - Gemelo 3D y modelo 3D por persona (three.js).
 - Detalle de la persona (métricas y gráfica de tendencia).
-- Registro de síntomas con el mapa del cuerpo.
 - ¿Cómo te sientes? y juegos de cognición.
 - Órbita (PVT) y pruebas de mano y vista (lienzos).
 - Centro de alertas, Misión, Mi día y Referencias.
