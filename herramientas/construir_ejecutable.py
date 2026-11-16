@@ -27,9 +27,13 @@ NOMBRE = "SpaceFirstAID"
 
 def main():
     os.chdir(RAIZ)
-    datos = [("app", "app"), ("datos", "datos"), ("nave/esquema.sql", "nave")]
+    # --motor: solo el motor (Python + SQLite), sin pantalla, para el programa de escritorio
+    # de Electron (escritorio/), que trae su propia pantalla en React.
+    solo_motor = "--motor" in sys.argv
+    datos = [("datos", "datos"), ("nave/esquema.sql", "nave")] + ([] if solo_motor else [("app", "app")])
+    salida = str(RAIZ / "escritorio" / "motor") if solo_motor else "dist"
     cmd = [sys.executable, "-m", "PyInstaller", "iniciar.py", "--onefile", "--console", "--noconfirm", "--clean",
-           "--name", NOMBRE, "--distpath", "dist", "--workpath", "build", "--specpath", "build",
+           "--name", NOMBRE, "--distpath", salida, "--workpath", "build", "--specpath", "build",
            "--collect-submodules", "nave", "--collect-submodules", "tierra"]
     for src, dst in datos:
         cmd += ["--add-data", f"{RAIZ / src}{SEP}{dst}"]
@@ -39,6 +43,9 @@ def main():
     print("Construyendo:", " ".join(cmd[3:8]), "…")
     subprocess.run(cmd, check=True)
 
+    if solo_motor:
+        print(f"\nMotor listo en {salida}")
+        return
     exe = RAIZ / "dist" / (NOMBRE + (".exe" if os.name == "nt" else ""))
     sistema = {"Darwin": "macOS", "Windows": "Windows", "Linux": "Linux"}.get(platform.system(), platform.system())
     arq = platform.machine().lower().replace("x86_64", "x64").replace("amd64", "x64")

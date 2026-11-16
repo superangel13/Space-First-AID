@@ -64,6 +64,16 @@ python herramientas/construir_ejecutable.py      # resultado en dist/
 
 El flujo `.github/workflows/ejecutables.yml` arma los tres sistemas en GitHub Actions cada vez que se sube a `main`. Al crear una etiqueta `v1.0.0`, además los publica en Releases.
 
+## Programa de escritorio (React + Electron)
+
+En la carpeta [`escritorio/`](escritorio/README.md) está la misma app como programa de escritorio: la pantalla en **React**, la ventana en **Electron** y el mismo motor en **Python + SQLite**, incluido dentro del programa.
+
+```bash
+cd escritorio
+npm install
+npm run inicio
+```
+
 ## Primer uso
 
 1. **Registro de la misión:** nombre, destino (opciones preestablecidas), duración, fecha de inicio y de 1 a 6 tripulantes con su rol, sexo, edad, condición física y antecedentes médicos.
