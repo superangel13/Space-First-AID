@@ -9,7 +9,7 @@ from pathlib import Path
 # dentro del paquete (solo lectura) y las bases de datos van a una carpeta del usuario.
 EMPAQUETADO = getattr(sys, "frozen", False)
 RAIZ = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent.parent))
-APP = RAIZ / "app"                                       # pantalla (HTML, CSS, JS)
+APP = Path(os.environ.get("NAVE_APP") or RAIZ / "app")   # pantalla; el programa de escritorio usa la suya
 DATOS = RAIZ / "datos"                                   # parámetros en JSON
 
 
