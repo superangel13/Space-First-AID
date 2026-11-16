@@ -80,6 +80,7 @@
     if (!/[A-Za-zÁÉÍÓÚáéíóúÑñ]{2}/.test(n)) return n;   // números y símbolos: nada que traducir
     var may = conMayusculas(n);
     if (may != null) return may;
+    if (exacto.has(n + '.')) return String(exacto.get(n + '.')).replace(/\.$/, '');   // la misma oración sin punto final
     var nums = n.match(NUM);
     if (nums) {
       var kn = n.replace(NUM, '#');

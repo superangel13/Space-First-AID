@@ -111,3 +111,9 @@ PVT-B mediana ms	PVT-B median ms
 FC reposo	Resting HR
 bono de racha	streak bonus
 avanzas a {0}	you advance to {0}
+Presentas todos los indicadores de {0} ({1} de {2}).	You have all the indicators of {0} ({1} of {2}).
+Se activa el protocolo de emergencia.	The emergency protocol is activated.
+Presentas {0} de {1} indicadores de {2}.	You have {0} of {1} indicators of {2}.
+Si aparecen todos, se activa la emergencia.	If all of them appear, the emergency is activated.
+lo registraste ({0})	you recorded it ({0})
+lo registraste	you recorded it
