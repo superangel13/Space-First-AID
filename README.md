@@ -2,7 +2,37 @@
 
 **Apoyo médico a bordo para tripulaciones en misiones lejanas.** Proyecto para el NASA Space Apps Challenge 2026.
 
-Cuando la Tierra está lejos o se pierde la señal, la tripulación tiene que detectar y atender sola los problemas de salud. Space First AID junta en una sola herramienta los signos vitales, los síntomas, las muestras de laboratorio y las pruebas de atención y visión. Los cruza con los criterios del **ISS Medical Checklist de NASA** y avisa con tiempo, con el protocolo a seguir. Todo funciona **sin internet** en la computadora de la nave y se sincroniza con el centro de control en la Tierra cuando hay señal.
+Cuando la Tierra está lejos o se pierde la señal, la tripulación tiene que detectar y atender sola los problemas de salud. Space First AID junta en una sola herramienta los signos vitales, los síntomas, los datos de los dispositivos de NASA (actígrafo, Bio-Monitor y Bio-Analyzer) y las pruebas de atención y visión. Los cruza con **10 problemas de salud de vuelos largos** (documento de parámetros del equipo, basado en fuentes de NASA) y avisa con tiempo, con el protocolo y la contramedida. Todo funciona **sin internet** en la computadora de la nave y se sincroniza con el centro de control en la Tierra cuando hay señal.
+
+## Versión principal: programa de escritorio (React + Electron)
+
+La versión más nueva es el programa de escritorio en [`escritorio/`](escritorio/README.md): pantalla en **React**, ventana en **Electron** y motor en **Python + SQLite** incluido.
+
+- **Descargarlo:** en **Releases** hay un `.zip` para macOS, instalador `.exe` para Windows y `.AppImage` para Linux. El programa no está firmado: en Mac se abre con clic derecho → Abrir; en Windows, con «Más información» → «Ejecutar de todas formas».
+- **Correrlo desde el código** (Node 20+ y Python 3.9+):
+
+```bash
+cd escritorio
+npm install
+npm run inicio
+```
+
+Al abrirlo: animación de entrada → registro de la misión (destino Luna, Marte u otro; tripulantes de 20 años o más) o misión demo.
+
+### Qué hace
+
+| Sección | Qué hace |
+|---|---|
+| **Panel** | Círculos por sistema del cuerpo (inmunológico, cardiovascular, neuro-ocular, cognitivo, radiación, músculo y hueso), gemelo digital 3D, guía de sueño circadiano y datos del trayecto: gravedad, radiación y distancia |
+| **Tripulación** | Lista con círculos por sistema; al tocar a una persona se abre su página con modelo 3D, signos vitales, avisos y perfil previo al vuelo |
+| **Valoración** | Mapa del cuerpo para registrar signos y síntomas; registro personal (carga de trabajo, estrés PSS-10, ánimo, equipo); datos del **actígrafo, Bio-Monitor y Bio-Analyzer** (sangre, orina y saliva); simulador de emergencias; simulador de **accidentes** con protocolos basados en *NASA Human System Risks* |
+| **Pruebas** | ¿Cómo te sientes?, Órbita (PVT), coordinación ojo-mano y prueba de visión con la cámara. Menos de 70 % manda una alerta y afecta los sistemas |
+| **Alertas** | Algunos indicadores de un problema = alerta. **Todos** = ventana de emergencia con el protocolo paso a paso y animaciones. Tormenta solar → todos al refugio |
+| **Enlace con la Tierra** | Cola por prioridad (alertas, resúmenes, detalle). Sin señal, la vista del médico avisa y todo queda en la bitácora |
+
+Los datos de los dispositivos y los tripulantes de la demo son **simulados**: en una misión real llegarían de los equipos a bordo.
+
+## Versión web (anterior, solo Python)
 
 ## Cómo correrlo
 
@@ -129,22 +159,20 @@ space-first-aid/
 - **Base de datos:** SQLite (`nave.db` en la nave y `tierra.db` en la Tierra). Se crean solas al arrancar.
 - **Parámetros:** todos en `datos/*.json`. Cambiar un umbral ahí lo cambia para Python y para la pantalla.
 
-### Motor clínico
+### Motor clínico (`nave/motor/clinico.py`)
 
-Toma 16 condiciones del *ISS Medical Checklist* de NASA (JSC-48522) y sus fichas de condición médica del Human Research Roadmap. Cada una tiene 3 indicios (tríada):
+Usa como única metodología el **documento de parámetros del equipo** (`datos/problemas.json` y `datos/muestras.json`): 10 problemas de vuelos largos (mareo espacial, SANS, redistribución de fluidos, pérdida ósea, inmunodisregulación, fatiga crónica, deterioro conductual, cálculo renal, estrés por aislamiento y pródromo por radiación). Cada uno tiene signos y síntomas, sistema afectado, explicación, contramedida o protocolo y parámetros estables.
 
-- **2 de 3** = advertencia.
-- **3 de 3** = alerta con el protocolo de NASA.
-- **Señales de alarma** = alerta directa.
-- **Capa de descarte:** el indicio principal es obligatorio, se exige la exposición necesaria (por ejemplo, una caminata espacial para descompresión) y los criterios de exclusión bajan un nivel.
-
-El motor también cruza los resultados de laboratorio. Por ejemplo, la sangre en la orina cuenta para cálculo renal e infección urinaria, y el virus en la saliva cuenta para la reactivación de herpes.
+- **2 o más indicadores** = alerta.
+- **Todos los indicadores** = emergencia con ventana y protocolo.
+- Los indicadores pueden ser síntomas, sueño, autorreporte, pruebas, laboratorio (Bio-Analyzer, con rangos por sexo) o contexto de la misión (días en microgravedad, tormenta solar).
+- Cada sistema del cuerpo se califica de 0 a 100.
 
 ```bash
 python3 herramientas/prueba_motor.py
 ```
 
-Esta prueba evalúa a una persona sana, cada síntoma solo, los 903 pares de síntomas y 9 casos clínicos típicos. Una persona sana y un síntoma aislado no deben generar advertencias.
+La prueba revisa que una persona sana no tenga alertas, que un síntoma solo no genere alerta y que cada uno de los 10 problemas llegue a emergencia con todos sus indicadores.
 
 ## Publicarlo en línea (Render)
 
@@ -182,7 +210,8 @@ Antes de publicarlo hay que cuidar dos cosas:
 
 - Solo fuentes de NASA y asociadas, de acceso abierto. La lista está en la sección **Referencias** de la app y en `docs/inventario_datos.html`.
 - Los tripulantes, sus signos vitales y la misión demo son **de ejemplo**. Los signos vitales llegarían del sensor portátil.
-- **Los rangos de las muestras de orina, sangre y saliva (`datos/muestras.json`) son de ejemplo** y se van a reemplazar por valores de referencia verificados.
+- Los rangos de orina, sangre y saliva (`datos/muestras.json`) salen del documento de parámetros del equipo. Los umbrales de signos vitales (`datos/umbrales.json`) son de NASA y del equipo.
+- Los protocolos de accidentes (`datos/accidentes.json`) se basan en [NASA Human System Risks](https://www.nasa.gov/hhp/human-system-risks/).
 - Las reglas orientan y priorizan. **No sustituyen al cirujano de vuelo.**
 
 ## Uso de inteligencia artificial
@@ -191,8 +220,8 @@ Las reglas de NASA Space Apps piden declararlo:
 
 - **Código:** escrito por el equipo con ayuda de Claude (Anthropic), un asistente de programación. Lo usamos para estructurar el proyecto, escribir y depurar el código en Python y JavaScript, y verificar fuentes. Los commits hechos con su ayuda lo indican con la línea `Co-Authored-By: Claude`.
 - **La idea, el diseño de la solución y las decisiones médicas y de datos son del equipo.** Las reglas clínicas salen de documentos de NASA citados en la app.
-- **Imágenes:** el logo y el ícono son del equipo. No hay imágenes ni videos generados con IA dentro de la app.
-- **La app no usa IA para decidir:** el motor clínico son reglas fijas y verificables, tomadas del ISS Medical Checklist de NASA.
+- **Imágenes:** el logo y el ícono son del equipo. Los videos de los dispositivos se hicieron con código (Remotion), no con IA generativa.
+- **La app no usa IA para decidir:** el motor clínico son reglas fijas y verificables, tomadas del documento de parámetros del equipo.
 
 ## Licencia
 
