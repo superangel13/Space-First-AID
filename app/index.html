@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Space First AID</title>
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/secciones.css">
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <video id="introV" src="media/logo-reveal.mp4" muted playsinline preload="auto"></video>
+  <button type="button" id="skip">Saltar intro</button>
+</div>
+
+<header class="top">
+  <div class="wrap hd">
+    <a class="brand" href="#panel" aria-label="Space First AID, inicio">
+      <svg class="mark" width="34" height="34" viewBox="0 0 200 200" fill="none" aria-hidden="true"><path id="mkRing" stroke="#F2F5F8" stroke-width="15" stroke-linecap="round"/><path class="pl" d="M 22 112 L 70 112 C 74 112 76 104 80 104 C 84 104 86 112 90 112 L 98 112 L 104 122 L 124 30 L 134 132 L 140 112 L 150 112 C 156 112 158 102 164 102 C 170 102 172 112 178 112" stroke="#34E39A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><circle id="mkSat" r="10" fill="#34E39A"/></svg>
+      <b>SPACE FIRST <span>AID</span></b>
+    </a>
+    <nav class="tabs" aria-label="Secciones"><a href="#panel">Panel</a><a href="#tripulacion">Tripulación</a><a href="#valoracion">Valoración</a><a href="#pruebas" data-grupo="pruebas">Pruebas</a><a href="#mision">Misión</a><a href="#midia">Mi día</a></nav>
+    <div class="hright">
+      <span class="met" id="met"></span>
+      <button class="chip" id="linkChip" type="button" title="Estado del enlace con la Tierra"><span class="dot w" id="linkDot"></span><span id="linkTxt">Sin señal</span></button>
+      <div class="role" role="group" aria-label="Vista"><button type="button" data-r="crew" aria-pressed="true"><span class="l">Tripulante</span><span class="s">Tripulante</span></button><button type="button" data-r="med" aria-pressed="false"><span class="l">Médico en Tierra</span><span class="s">Médico</span></button></div><button class="sirena" id="sirena" type="button" aria-label="Alertas" title="Centro de alertas"><span class="sir-luz"></span><svg class="sir-ic" viewBox="0 0 48 48" aria-hidden="true"><path class="sir-base" d="M8 40h32v4H8z"/><path class="sir-domo" d="M13 40V25a11 11 0 0 1 22 0v15z"/><path class="sir-brillo" d="M18 27a6 6 0 0 1 5-6" fill="none" stroke-width="3" stroke-linecap="round"/><g class="sir-rayos" stroke-width="3" stroke-linecap="round"><path d="M24 4v5M9 10l3.5 3.5M39 10l-3.5 3.5M3 23h5M40 23h5"/></g></svg><span class="bdg" data-abdg hidden></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="abar" id="abar" hidden role="alert"><div class="wrap"><span class="pul"></span><b id="abarT"></b><span class="at" id="abarX"></span><span class="btn sm" style="background:#fff;color:#05070A">Ver</span></div></div>
+
+<main class="wrap">
+<nav class="subnav" id="pruebasNav" hidden aria-label="Pruebas">
+  <a href="#animo"><b>1</b>¿Cómo te sientes?</a><a href="#orbita"><b>2</b>Órbita · PVT</a><a href="#alcance"><b>3</b>Seguir puntos</a><a href="#trazo"><b>4</b>Círculo con la mano</a><a href="#letra_c"><b>5</b>La C abierta</a><a href="#amsler"><b>6</b>Rejilla de Amsler</a>
+</nav>
+<!-- ================= PANEL ================= -->
+<section class="page" id="v-panel">
+  <div class="card twin">
+    <div class="rowb"><div><span class="cap">Gemelo digital de la tripulación · en vivo</span><h2 style="font-size:22px;margin-top:4px">Toca a una persona para ver su estado</h2></div><div class="cleg"><span><i style="background:#5FD3F3"></i>En rango</span><span><i style="background:#F5B841"></i>Advertencia</span><span><i style="background:#FF5468"></i>Alerta</span><span id="bioG" class="muted"></span></div></div>
+    <div class="av3d" id="av3d"><div id="l3"></div><span class="hint">Arrastra para girar · toca a una persona</span></div>
+    <div class="twin-sel">
+      <div class="bwho"><span class="cap" id="bioCap"></span><h2 id="bioName"></h2><span class="st" id="bioSt"></span></div>
+      <div id="bioV"></div>
+      <div class="twin-act"><a class="btn go sm" href="#valoracion">Registrar síntomas</a><a class="btn ghost sm" href="#tripulacion">Ver su detalle</a></div>
+    </div>
+  </div>
+
+  <div class="card hero">
+    <div id="heroRing"></div>
+    <div>
+      <span class="cap" id="heroCap"></span>
+      <h1 id="heroTitle"></h1>
+      <p class="muted" id="heroSub"></p>
+      <div class="lg3" id="heroLg"></div>
+    </div>
+    <div class="hside"><span class="cap" style="display:block;margin-bottom:10px">Hoy conviene</span><div class="actions" id="heroAct"></div></div>
+  </div>
+
+  <div class="card circ" id="circ"></div>
+
+  <div class="card pad">
+    <div class="rowb"><h3>Misión · día <span id="tlDay"></span> de <span id="tlLen"></span></h3><a class="btn ghost sm" href="#mision">Abrir la trayectoria →</a></div>
+    <div class="mini-m" style="margin-top:12px"><svg class="msvg" id="miniSvg" viewBox="0 0 1400 330" aria-label="Posición de la nave"></svg><div class="mtiles" id="miniTiles" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0"></div></div>
+    <div class="rowb" style="margin-top:18px"><span class="cap">Revisiones de ojos del calendario de NASA en la ISS</span></div>
+    <div class="tl" id="tl"></div>
+  </div>
+
+  <div class="card pad" id="medConsole" hidden style="display:grid;gap:14px">
+    <div class="rowb"><div><span class="cap">Solo vista médico en Tierra</span><h3 style="margin-top:4px">Consola de la tripulación · valores exactos</h3></div><button class="btn ghost sm" id="csvBtn" type="button">Ver datos en CSV</button></div>
+    <div class="tscroll"><table class="tbl" id="medTbl"></table></div>
+    <p class="note">Entre paréntesis: cambio contra la mediana de los días 1 a 14 de cada persona. Color: más de 1 o 2 desviaciones de su propia variación (z).</p>
+  </div>
+
+  <p class="note">Prototipo con datos de ejemplo. El índice de preparación es una fórmula de este prototipo (sueño 35 %, atención 35 %, corazón 30 %) que compara a cada persona con su propia línea base. Los círculos de cada tripulante están en Tripulación.</p>
+</section>
+
+<!-- ================= TRIPULACIÓN ================= -->
+<section class="page" id="v-tripulacion" hidden>
+  <div class="ptitle"><div><span class="cap">Estado de salud de cada tripulante</span><h1>Tripulación</h1><p>Toca a una persona para ver todo su detalle: signos vitales, avisos y riesgos que detecta el sistema y su modelo 3D.</p></div></div>
+  <div class="crewgrid" id="crewgrid"></div>
+  <div class="selhead" id="selHead"></div>
+  <div class="card phead">
+    <div class="who"><span class="av xl" id="pAv"></span><div><span class="cap" id="pRole"></span><h1 id="pName"></h1><span class="st" id="pSt"></span></div></div>
+    <div class="todo"><span class="cap">Qué hacer hoy</span><div class="actions" id="pTodo"></div></div>
+  </div>
+  <div class="pgrid2">
+    <div class="card pad solo" style="display:grid;gap:10px"><div class="rowb"><h3>Modelo 3D</h3><span class="cap" id="soloCap">Arrastra para girar</span></div><div class="solo3d" id="solo3d"></div><div class="cleg" id="soloLeg"></div></div>
+    <div class="card pad dxcol" style="display:grid;gap:12px;align-content:start"><div class="rowb"><h3>Avisos y riesgos</h3><span class="cap">Lo que el sistema ve · motor en Python</span></div><p class="muted small">Cada condición del checklist médico de NASA se evalúa con sus 3 indicios: síntomas, signos vitales, pruebas y muestras de laboratorio. 2 de 3 = advertencia, 3 de 3 = alerta.</p><div id="dxList" style="display:grid;gap:10px"></div><a class="btn ghost sm" href="#valoracion" style="justify-self:start">Registrar síntomas o muestras</a></div>
+  </div>
+  <div class="pgrid">
+    <div class="card mlist" id="mlist" role="group" aria-label="Métricas"></div>
+    <div class="pcenter">
+      <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Signos vitales en vivo</h3><span class="cap" id="pVitCap">Sensor portátil</span></div><div id="pVit"></div></div>
+      <div class="card focus">
+        <div class="ftop"><div id="bigRing"></div><div class="ftxt"><span class="cap" id="fCap"></span><h2 id="fTitle"></h2><p class="say" id="fSay"></p><p class="why" id="fWhy"></p></div></div>
+        <div class="brk" id="fBrk"></div>
+      </div>
+      <div class="card pad" style="display:grid;gap:12px">
+        <div class="rowb"><h3 id="cTitle"></h3><span class="cap">Sensor portátil · últimos 21 días</span></div>
+        <div class="chartwrap"><svg id="chart" role="img" aria-label="Tendencia"></svg><div class="tip" id="tip" hidden></div></div>
+        <div class="cleg" id="cLeg"></div>
+      </div>
+      <div class="card pad" id="pMed" hidden style="display:grid;gap:12px"></div>
+    </div>
+    <div class="pright">
+      <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Mapa del cuerpo</h3><span class="cap" id="zN"></span></div><svg id="bodymap" viewBox="0 0 360 440" role="img" aria-label="Zonas del cuerpo con vigilancia"></svg><div class="zl" id="zl"></div></div>
+      <div class="card pad" style="display:grid;gap:14px"><div class="rowb"><h3>Perfil previo al vuelo</h3><span class="cap" id="pN"></span></div><p class="muted small">Marca antecedentes: se activan vigilancias según lo que NASA ha visto en astronautas con antecedentes parecidos.</p><div class="chips" id="hx"></div><div class="chips" id="fit"></div><div class="watch" id="watch"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ÓRBITA ================= -->
+<section class="page" id="v-orbita" hidden>
+  <div class="ptitle"><div><span class="cap">Juego diario · por dentro es la prueba de reacción de NASA</span><h1>Órbita</h1><span class="pvt-sub">PVT (psychomotor vigilance test) · prueba de vigilancia psicomotora</span></div><div class="pick" data-pick></div></div>
+  <div class="stage">
+    <canvas id="game" aria-label="Órbita: toca cuando se encienda el anillo"></canvas>
+    <div class="hud" id="hud" hidden>
+      <div><span class="cap">Puntos</span><span class="num" id="hScore">0</span><span class="ghost" id="hGhost"></span></div>
+      <div style="text-align:center"><span class="combo" id="hCombo"></span></div>
+      <div class="hud-r"><span class="cap" id="hMode"></span><span class="num" id="hTime">3:00</span></div>
+    </div>
+    <div class="overlay" id="gOver"><div class="obox" id="gBox"></div></div>
+  </div>
+  <div class="hub">
+    <div class="card pad pilot" id="hPilot"></div>
+    <div class="card pad" id="hMis" style="display:grid;gap:12px"></div>
+    <div class="card pad" id="hRec" style="display:grid;gap:14px"></div>
+    <div class="card pad span2" style="display:grid;gap:6px"><div class="rowb"><h3>Ruta a la Luna</h3><span class="cap" id="routeCap"></span></div><svg id="route" viewBox="0 0 760 190" role="img" aria-label="Ruta de la Tierra a la Luna"></svg><div class="rlab"><span>Tierra</span><span id="routeNext" style="text-align:center"></span><span>Luna</span></div></div>
+    <div class="card pad" style="display:grid;gap:12px;justify-items:start"><span class="cap">Postal de la ruta</span><div id="postalNow" style="width:100%"></div></div>
+    <div class="card pad span2" style="display:grid;gap:12px"><div class="rowb"><h3>Bitácora</h3><span class="cap" id="logN"></span></div><div class="logg" id="logg"></div></div>
+    <div class="card pad" style="display:grid;gap:16px"><h3>Color del anillo</h3><div class="skins" id="skins"></div><p class="muted small">Se desbloquean al subir de rango o en las cápsulas de suministros.</p><div style="border-top:1px solid var(--line);padding-top:14px;display:grid;gap:6px"><h3 style="font-size:16px">Tu privacidad</h3><p class="muted small">Puntos, insignias y tiempos son tuyos. A la Tierra solo va si estás <b style="color:var(--text)">en forma</b> o <b style="color:var(--text)">necesitas descanso</b>, salvo que compartas más en <a href="#enlace">Enlace</a>. Nadie ve tu puntaje.</p></div></div>
+    <div class="card pad span2" style="display:grid;gap:12px"><div class="rowb"><h3>Insignias</h3><span class="cap" id="badgeN"></span></div><div class="badges" id="badges"></div></div>
+    <div class="card pad" style="display:grid;gap:10px"><span class="cap">Cómo mide sin preguntar</span><p class="small" style="line-height:1.6">El turno oficial sigue las reglas de la <b>PVT-B</b> de NASA: 3 minutos, el anillo se enciende cada 1 a 4 s, una respuesta de 355 ms o más es un lapso y una de menos de 100 ms es anticipación. Es la prueba más sensible a la falta de sueño.</p><p class="small muted" id="pvtSrc"></p></div>
+  </div>
+</section>
+
+<!-- ================= PRUEBAS DE MANO Y VISTA ================= -->
+<section class="page" id="v-manos" hidden>
+  <div class="ptitle"><div><span class="cap" id="mnCap"></span><h1 id="mnTitle"></h1><p id="mnDesc"></p></div><div class="pick" data-pick></div></div>
+  <div class="mngrid">
+    <div class="card pad" style="display:grid;gap:12px">
+      <div class="mnbar"><div class="seg" id="mnModo" role="group" aria-label="Cómo se controla"><button type="button" data-m="puntero">Ratón o dedo</button><button type="button" data-m="camara">Cámara (mano)</button></div><div class="seg" id="mnOjo" role="group" aria-label="Ojo" hidden><button type="button" data-o="OI">Ojo izquierdo</button><button type="button" data-o="OD">Ojo derecho</button></div><button class="btn go sm" id="mnGo" type="button">Iniciar</button></div>
+      <div class="mnstage" id="mnStage"><video id="mnVideo" playsinline muted hidden></video><canvas id="mnCanvas" width="720" height="480"></canvas></div>
+      <div class="dirs" id="mnDirs" hidden><button type="button" data-d="3" aria-label="Arriba">↑</button><button type="button" data-d="2" aria-label="Izquierda">←</button><button type="button" data-d="0" aria-label="Derecha">→</button><button type="button" data-d="1" aria-label="Abajo">↓</button></div>
+      <div class="row" id="mnCtl" hidden></div>
+      <p class="small muted" id="mnStatus"></p>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <div class="card pad" style="display:grid;gap:10px"><div class="rowb"><h3>Resultado</h3><span class="cap">Interpretado por Python</span></div><div id="mnRes" class="small muted">Completa la prueba para ver tu puntaje contra tu línea base (tus primeras 3 sesiones).</div></div>
+      <div class="card pad" style="display:grid;gap:10px"><h3>Cómo se califica</h3><div id="mnScore" class="small"></div></div>
+      <div class="card pad" style="display:grid;gap:10px"><div class="rowb"><h3>Historial</h3><span class="cap" id="mnHistN"></span></div><div id="mnHist" class="alog"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALORACIÓN ================= -->
+<section class="page" id="v-valoracion" hidden>
+  <div class="ptitle"><div><span class="cap">Síntomas y muestras · se procesa en Python</span><h1>Valoración</h1><p>Registra cómo te sientes tocando el cuerpo y captura los resultados de orina, sangre y saliva. Todo se cruza en el motor clínico de la nave.</p></div><div class="pick" data-pick></div></div>
+  <div class="sgrid">
+    <div class="card pad bm" style="display:grid;gap:10px"><div class="rowb"><h3>Toca la zona</h3><div class="seg" id="bmSide"><button type="button" data-s="f" aria-pressed="true">Frente</button><button type="button" data-s="b" aria-pressed="false">Espalda</button></div></div><svg id="bmSvg" viewBox="0 0 200 420" aria-label="Mapa del cuerpo"></svg><button class="btn ghost sm" id="bmGen" type="button">Síntomas generales, sueño y ánimo</button></div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3 id="sxZone">Elige una zona</h3><span class="cap">Toca lo que sientes</span></div><div class="sxc" id="sxChips"></div></div>
+      <div class="card pad" style="display:grid;gap:10px"><div class="rowb"><h3>Tu registro</h3><span class="cap" id="sxN"></span></div><div id="sxList" style="display:grid;gap:8px"></div><div id="sxQ" style="display:grid;gap:8px"></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn go" id="sxSend" type="button">Guardar y evaluar</button><button class="btn ghost sm" id="sxClear" type="button">Borrar todo</button></div></div>
+    </div>
+    <div class="card pad" style="display:grid;gap:10px;align-content:start"><div class="rowb"><h3>Lo que el sistema ve</h3><span class="cap">Resumen</span></div><div id="dxMini" style="display:grid;gap:8px"></div><a class="btn ghost sm" href="#tripulacion" style="justify-self:start">Ver avisos completos</a></div>
+  </div>
+  <div class="card pad mu" id="muestras">
+    <div class="rowb"><div><span class="cap">Laboratorio</span><h2 style="font-size:22px;margin-top:4px">Muestras de orina, sangre y saliva</h2></div><div class="seg" id="muTipo" role="group" aria-label="Tipo de muestra"></div></div>
+    <p class="muted small" id="muInfo"></p>
+    <div class="mugrid"><form class="muform" id="muForm" autocomplete="off"></form><div style="display:grid;gap:12px;align-content:start"><h3>Resultados vigentes</h3><div id="muVig" style="display:grid;gap:10px"></div></div></div>
+  </div>
+  <div class="card pad" style="display:grid;gap:10px"><h3>Historial de registros</h3><div class="alog" id="sxHist"></div></div>
+</section>
+
+<!-- ================= MENTE ================= -->
+<section class="page" id="v-mente" hidden>
+  <div class="ptitle"><div><span class="cap">Salud mental sin vigilancia · batería Cognition de NASA</span><h1>¿Cómo te sientes?</h1><p>NASA define un cambio conductual como cualquier baja en el ánimo, la cognición, la moral o la convivencia que afecte el desempeño. Aquí se miden esas tres cosas con un check-in de 10 segundos y juegos cortos. Todo se queda en la nave salvo que tú lo compartas.</p></div><div class="pick" data-pick></div></div>
+  <div class="mgrid">
+    <div class="card pad" style="display:grid;gap:14px"><div class="rowb"><h3>Tu clima interior</h3><span class="cap" id="ciWhen"></span></div><p class="muted small">Arrastra la luz hacia donde estás hoy: a la derecha si te sientes bien, a la izquierda si no tanto; arriba con energía, abajo cansado.</p>
+      <div class="agrid2" id="ag2"><div class="cross"></div><span class="ax" style="top:8px;left:50%;transform:translateX(-50%)">Con energía</span><span class="ax" style="bottom:8px;left:50%;transform:translateX(-50%)">Sin energía</span><span class="ax" style="left:8px;top:50%;transform:translateY(-50%)">Mal</span><span class="ax" style="right:8px;top:50%;transform:translateY(-50%)">Bien</span><div class="orb" id="orb"></div></div>
+      <span class="cap">¿Cómo está la convivencia hoy?</span><div class="lvl5" id="team5"></div>
+      <button class="btn go" id="ciSave" type="button">Guardar check-in</button></div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Tríada conductual</h3><span class="cap" id="mtN"></span></div><div class="crit" id="mTri"></div><p class="note" id="mTriSrc"></p></div>
+      <div class="card pad" style="display:grid;gap:10px"><div class="rowb"><h3>Últimos 14 días</h3><span class="cap">Ánimo · convivencia · cognición</span></div><svg id="mChart" viewBox="0 0 600 180" style="width:100%;height:auto"></svg><div class="cleg"><span><i style="background:#A28CFF"></i>Ánimo</span><span><i style="background:#34E39A"></i>Convivencia</span><span><i style="background:#5FD3F3"></i>Cognición</span></div></div>
+    </div>
+  </div>
+  <div class="card pad" style="display:grid;gap:14px"><div class="rowb"><h3>Juegos de la mente</h3><span class="cap">Versiones cortas de pruebas de la batería Cognition de NASA</span></div><div class="games" id="games"></div><div class="gstage" id="gStage"><div style="text-align:center;color:var(--muted)">Elige un juego</div></div></div>
+</section>
+
+<!-- ================= ALERTAS ================= -->
+<section class="page" id="v-alertas" hidden>
+  <div class="ptitle"><div><span class="cap">Detecta, predice y guía</span><h1>Centro de alertas</h1><p>Las alertas salen solas de los signos vitales en vivo, de las revisiones de ojos, del entorno de la nave y de los pronósticos. Cada una dice qué hacer en pasos simples y se envía a la Tierra con prioridad.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn go" id="genCase" type="button">Generar caso aleatorio</button><button class="btn ghost" id="trainBtn" type="button"></button></div></div>
+  <div class="akpi" id="aKpi"></div>
+  <div class="agrid">
+    <div style="display:grid;gap:14px" id="aList"></div>
+    <div class="card pad" style="display:grid;gap:14px">
+      <div><h3>Simulador de casos</h3><p class="muted small" style="margin-top:4px">Elige a una persona y una situación. Sus signos vitales cambian poco a poco y el sistema la detecta solo.</p></div>
+      <div class="pick" data-pick></div>
+      <div class="scen" id="scenP"></div>
+      <span class="cap">Toda la nave</span>
+      <div class="scen" id="scenS"></div>
+      <button class="btn ghost sm" id="scenReset" type="button">Regresar a todos a la normalidad</button>
+    </div>
+  </div>
+  <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Pronósticos</h3><span class="cap">Tendencia de los últimos 10 días · próximos 7</span></div><p class="muted small">Si la tendencia sigue igual, esto es lo que podría pasar. Puedes convertir un pronóstico en alerta preventiva.</p><div class="pgrid2" id="aPred"></div></div>
+  <div class="two">
+    <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Entorno de la nave</h3><span class="cap">Simulado</span></div><div class="gauges" data-env></div></div>
+    <div class="card pad" style="display:grid;gap:12px"><h3>Bitácora de alertas</h3><div class="alog" id="aLog"></div></div>
+  </div>
+</section>
+
+<!-- ================= MISIÓN ================= -->
+<section class="page" id="v-mision" hidden>
+  <div class="ptitle"><div><span class="cap" id="mCapT">Trayectoria y entorno</span><h1 id="mH1">Misión</h1><p id="mP"></p></div></div>
+  <div class="card pad">
+    <svg class="msvg" id="mSvg" viewBox="0 0 1400 330" role="img" aria-label="Trayectoria Tierra–Luna"></svg>
+    <div class="zbar" id="zBar"></div>
+    <div class="cleg" id="zLeg" style="margin-top:10px"></div>
+    <div class="mctl">
+      <button class="btn go sm" id="mPlay" type="button"></button>
+      <div class="seg" id="mSpd" role="group" aria-label="Velocidad"><button type="button" data-s="1">1 día/s</button><button type="button" data-s="5">5 días/s</button><button type="button" data-s="20">20 días/s</button></div>
+      <input type="range" id="mScrub" min="0" max="100" step="0.01" aria-label="Día de la misión">
+      <button class="btn ghost sm" id="mToday" type="button">Ir a hoy</button>
+      <button class="btn ghost sm" id="mStormBtn" type="button" style="color:var(--rad)">Simular tormenta solar</button>
+    </div>
+    <div class="mtiles" id="mTiles"></div>
+    <p class="note" style="margin-top:12px">Modelo educativo. Datos publicados: límite de carrera de 600 mSv (NASA), unos 1.8 mSv por día en el espacio profundo (medido por la nave del rover Curiosity) y pérdida ósea de 1 a 1.5 % por mes en microgravedad (NASA). Las demás tasas por zona son aproximaciones del modelo; el efecto de la gravedad lunar en el hueso aún no se conoce y el modelo usa la mitad.</p>
+  </div>
+  <div class="two">
+    <div class="card pad" style="display:grid;gap:14px"><div class="rowb"><h3>Cada tripulante en este punto</h3><span class="cap" id="mCrewCap"></span></div><div class="bars" id="mCrew"></div></div>
+    <div class="card pad" style="display:grid;gap:12px"><h3>Bitácora del viaje</h3><div class="alog" id="mLog"></div></div>
+  </div>
+</section>
+
+<!-- ================= MI DÍA ================= -->
+<section class="page" id="v-midia" hidden>
+  <div class="ptitle"><div><span class="cap">Herramientas de la tripulación</span><h1>Mi día</h1><p>Lo práctico para cada tripulante: metas del día, agenda, una pausa para respirar, el aire de la nave y mensajes a casa.</p></div><div class="pick" data-pick></div></div>
+  <div class="dgrid3">
+    <div class="card pad" style="display:grid;gap:14px"><h3>Metas de hoy</h3><div class="dr"><div id="dRing"></div><div class="dbtns" id="dBtns"></div></div></div>
+    <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Agenda</h3><span class="cap" id="agNow"></span></div><div class="ag" id="ag"></div></div>
+    <div class="card pad" style="display:grid;gap:10px"><h3>Respira</h3><p class="muted small">Dos minutos para bajar el ritmo antes de dormir o después de una tarea pesada.</p><div class="breath"><div class="bc" id="bc"><b id="bcT">Listo</b></div><button class="btn go sm" id="bcBtn" type="button">Empezar · 2 min</button><span class="muted small" id="bcN"></span></div></div>
+  </div>
+  <div class="two">
+    <div class="card pad" style="display:grid;gap:12px"><div class="rowb"><h3>Aire y entorno de la nave</h3><span class="cap">Simulado</span></div><div class="gauges" data-env></div></div>
+    <div class="card pad msgs"><h3>Mensaje a casa</h3><p class="muted small">Privado: viaja cifrado por el enlace y la app no lo lee. Llega con el retraso de la señal.</p><textarea id="msgT" placeholder="Escribe a tu familia…" maxlength="400"></textarea><div><button class="btn go sm" id="msgB" type="button">Enviar</button></div><div class="msgs" id="msgL"></div></div>
+  </div>
+</section>
+
+
+<!-- ================= REFERENCIAS ================= -->
+<section class="page" id="v-referencias" hidden>
+  <div class="ptitle"><div><span class="cap">Totalmente verificable · solo NASA y ESA</span><h1>Los 4 puntos que resolvemos</h1><p>Cada uno parte de un hueco documentado en el sistema médico de NASA para misiones lejanas y se apoya en fuentes oficiales. A = norma, documento oficial o estudio sólido. B = estudio en pocos astronautas.</p></div></div>
+  <div class="fgrid" id="focus4"></div>
+  <div class="two">
+    <div class="card pad" style="display:grid;gap:12px"><h3>Qué es real y qué es de ejemplo</h3><ul class="sim" id="simList"></ul><div><button class="btn ghost sm" id="resetBtn" type="button">Reiniciar la demostración</button></div></div>
+    <div class="card pad" style="display:grid;gap:12px"><h3>Fuentes</h3><ul class="srcs" id="srcs"></ul></div>
+  </div>
+</section>
+<footer class="pie"><a href="#referencias" class="pie-ref">Referencias y fuentes</a><span id="pieMis"></span><button type="button" id="nuevaMision" class="pie-ref">Nueva misión</button></footer>
+</main>
+
+<div class="dlg" id="enlacePanel" hidden role="dialog" aria-modal="true" aria-labelledby="enlT"><div class="card pad dlg-in">
+  <div class="rowb"><div><span class="cap">Funciona sin señal</span><h2 id="enlT">Enlace con la Tierra</h2></div><button class="btn ghost sm" id="enlCerrar" type="button">Cerrar</button></div>
+  <p class="muted small">Todo se guarda primero en la nave (SQLite). Cuando hay señal, el servidor en Python lo envía por prioridad: alertas, luego resúmenes y al final el detalle. Los resultados del laboratorio en Tierra regresan por el mismo enlace.</p>
+  <svg id="linkSvg" viewBox="0 0 560 170" aria-hidden="true"></svg>
+  <div class="lrow"><span id="lShip"></span><span id="lDelay"></span><span>Centro de control</span></div>
+  <div class="enl-ctl"><button class="btn go sm" id="linkBtn" type="button">Simular pérdida de señal</button><span class="small" id="lStat"></span></div>
+  <div class="q" id="queue"></div>
+  <details class="enl-priv"><summary>Qué ve la Tierra</summary>
+    <label class="sw"><input type="checkbox" checked disabled><div><b>Estado general y alertas</b><p class="muted small">Siempre activo: es lo mínimo que el equipo necesita.</p></div></label>
+    <label class="sw"><input type="checkbox" id="pr1"><div><b>Detalle de Órbita</b><p class="muted small">Tiempos de reacción de cada turno oficial.</p></div></label>
+    <label class="sw"><input type="checkbox" id="pr2"><div><b>Antecedentes</b><p class="muted small">Para que el médico de vuelo revise tu plan.</p></div></label>
+    <label class="sw"><input type="checkbox" id="pr3" checked><div><b>Revisiones de ojos</b><p class="muted small">Recomendado: ayuda a detectar SANS a tiempo.</p></div></label>
+  </details>
+</div></div>
+
+<nav class="bottom" aria-label="Secciones">
+  <a href="#panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 8.5 8.5"/></svg>Panel</a>
+  <a href="#tripulacion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="9" r="3.2"/><circle cx="16.5" cy="9" r="3.2"/><path d="M2.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M11 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/></svg>Tripulación</a>
+  <a href="#valoracion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6v4H9zM7 5H5v16h14V5h-2"/><path d="M9 13h6M12 10v6"/></svg>Valoración</a>
+  <a href="#pruebas" data-grupo="pruebas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="9.5" ry="4" transform="rotate(-25 12 12)"/><circle cx="12" cy="12" r="2.6"/></svg>Pruebas</a>
+  <a href="#mas" id="moreBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>Más</a>
+</nav>
+<div class="sheet" id="sheet" hidden><div class="sh">
+  <a href="#mision"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="17" r="3"/><circle cx="19" cy="6" r="2.2"/><path d="M8 15c4-1 7-4 9-7" stroke-dasharray="2 2.5"/></svg>Misión</a>
+  <a href="#midia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>Mi día</a>
+  <a href="#alertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0"/></svg>Alertas</a>
+  <a href="#referencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7M9 8h3"/></svg>Referencias</a>
+</div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="bigal" id="bigal" hidden role="alertdialog" aria-modal="true" aria-labelledby="bigT"><div class="bx" id="bigBx"></div></div>
+<div class="modal" id="modal" hidden><div class="card pad"><div class="rowb"><h3 id="mTitle"></h3><button class="btn ghost sm" id="mClose" type="button">Cerrar</button></div><textarea id="mText" readonly></textarea><p class="note">Selecciona y copia. En la misión real esto viaja por el enlace como paquete de detalle.</p></div></div>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/body_mesh.js"></script>
+<script src="js/nucleo/api.js"></script>
+<script src="js/vistas/registro.js"></script>
+<script src="js/arranque.js"></script>
+</body>
+</html>

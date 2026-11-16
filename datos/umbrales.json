@@ -1,0 +1,37 @@
+{
+  "_nota": "Umbrales que usan el servidor de la nave (Python) y la pantalla. Cambiar aquí cambia ambos. 'aviso' = nivel 1, 'critico' = nivel 2.",
+  "signos": {
+    "hr":   {"nombre": "Pulso", "unidad": "lpm", "aviso_alto": 110, "critico_alto": 130, "aviso_bajo": 45, "critico_bajo": 40},
+    "spo2": {"nombre": "Oxígeno en sangre", "unidad": "%", "aviso_bajo": 95, "critico_bajo": 92, "critico_incluye_igual": true},
+    "sbp":  {"nombre": "Presión sistólica", "unidad": "mmHg", "aviso_alto": 140, "critico_alto": 160, "aviso_bajo": 90, "critico_bajo": 80},
+    "dbp":  {"nombre": "Presión diastólica", "unidad": "mmHg", "aviso_alto": 90, "critico_alto": 100},
+    "temp": {"nombre": "Temperatura", "unidad": "°C", "aviso_alto": 37.8, "critico_alto": 38.3, "_fuente": "ISS Medical Checklist (JSC-48522): fiebre = más de 37.8 °C"},
+    "rr":   {"nombre": "Respiración", "unidad": "por min", "aviso_alto": 25, "critico_alto": 30}
+  },
+  "clinico": {
+    "fiebre_c": 37.8,
+    "agua_meta_ml": 2500,
+    "agua_baja_ml": 2000,
+    "sueno_bajo_h": 6,
+    "ejercicio_meta_min": 90,
+    "ejercicio_bajo_min": 60,
+    "hueso_perdida_pct": 1.5,
+    "co2_alto_ppm": 4000,
+    "atencion_baja_pct": 70,
+    "cognicion_baja_pct": 85,
+    "animo_bajo": -0.15,
+    "convivencia_baja": 2.2,
+    "dolor_intenso": 7,
+    "dolor_muy_intenso": 8,
+    "adaptacion_gravedad_dias": 3,
+    "hora_cierre_dia_utc": 20
+  },
+  "pruebas": {
+    "peor_que_base_pct": 20,
+    "sesiones_base": 3,
+    "pvt_lapso_ms": 500,
+    "pvt_lapsos_aviso": 3,
+    "pvt_lapsos_critico": 8,
+    "contraste_alto_pct": 10
+  }
+}

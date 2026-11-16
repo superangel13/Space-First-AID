@@ -1,0 +1,17 @@
+{
+  "_nota": "Misión ficticia para la demostración. Los nombres son del equipo; los datos médicos son inventados.",
+  "nombre": "Misión demo · Luna ida y vuelta",
+  "destino": "luna_base",
+  "duracion": 180,
+  "dia_actual": 42,
+  "tripulantes": [
+    {"id": "grover", "nombre": "Grover", "rol": "Ingeniera de sistemas", "sexo": "f", "edad": 34, "condicion": "media", "antecedentes": ["ojo"], "color": "#5B9DFF",
+     "sim": {"hr": 66, "sl": 7.4, "rt": 296, "sp": 98, "prior": 84, "rate": 0.47, "ev": {"spToday": -6}, "bp": [114, 74], "temp": 36.6, "rr": 14}},
+    {"id": "payan", "nombre": "Payán", "rol": "Especialista en caminatas espaciales", "sexo": "m", "edad": 37, "condicion": "alta", "antecedentes": ["rinon"], "color": "#34E39A",
+     "sim": {"hr": 53, "sl": 7.5, "rt": 276, "sp": 99, "prior": 148, "rate": 0.5, "eva": true, "ev": {}, "bp": [118, 76], "temp": 36.5, "rr": 12}},
+    {"id": "vale", "nombre": "Valentina", "rol": "Comandante", "sexo": "f", "edad": 41, "condicion": "alta", "antecedentes": ["presion"], "color": "#F5B841",
+     "sim": {"hr": 57, "sl": 7.2, "rt": 285, "sp": 98, "prior": 126, "rate": 0.46, "ev": {}, "bp": [134, 86], "temp": 36.5, "rr": 13, "vis": {"OI": {"am": "ok", "lc": 6}, "OD": {"am": "marcas", "lc": 4}}}},
+    {"id": "cam", "nombre": "Camilia", "rol": "Oficial médica", "sexo": "f", "edad": 32, "condicion": "media", "antecedentes": ["apnea"], "color": "#FF6B7D",
+     "sim": {"hr": 62, "sl": 7.3, "rt": 292, "sp": 98, "prior": 58, "rate": 0.47, "ev": {"sl": -1.6, "rt": 0.14, "hr": 0.08}, "bp": [112, 72], "temp": 36.7, "rr": 15, "vis": {"OI": {"am": "ok", "lc": 6}, "OD": {"am": "ok", "lc": 5}}}}
+  ]
+}

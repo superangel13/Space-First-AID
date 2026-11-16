@@ -1,0 +1,96 @@
+[
+  {
+    "id": "luna_base",
+    "nombre": "Luna · ida y vuelta con estancia en la base",
+    "descripcion": "Salida de la Tierra, cruce de los cinturones de Van Allen, tránsito de unos 3 días, descenso, estancia en la base lunar (0.17 g) y regreso.",
+    "zonas": [
+      "atm",
+      "leo",
+      "vin",
+      "slot",
+      "vout",
+      "mag",
+      "cis",
+      "lor",
+      "dsc",
+      "sur",
+      "asc",
+      "ret",
+      "ree"
+    ],
+    "zona_estancia": "sur",
+    "duraciones": [
+      30,
+      90,
+      180
+    ],
+    "duracion_defecto": 180,
+    "gravedad_estancia": 0.17
+  },
+  {
+    "id": "luna_orbita",
+    "nombre": "Luna · ida y vuelta en órbita lunar (estación Gateway)",
+    "descripcion": "Igual que la anterior pero la tripulación se queda en órbita alrededor de la Luna, en microgravedad, sin bajar a la superficie.",
+    "zonas": [
+      "atm",
+      "leo",
+      "vin",
+      "slot",
+      "vout",
+      "mag",
+      "cis",
+      "lor",
+      "ret",
+      "ree"
+    ],
+    "zona_estancia": "lor",
+    "duraciones": [
+      21,
+      30,
+      60
+    ],
+    "duracion_defecto": 30,
+    "gravedad_estancia": 0
+  },
+  {
+    "id": "luna_sobrevuelo",
+    "nombre": "Luna · sobrevuelo ida y vuelta (unos 10 días)",
+    "descripcion": "Viaje corto alrededor de la Luna y regreso directo, sin alunizar, como el plan de Artemis II.",
+    "zonas": [
+      "atm",
+      "leo",
+      "vin",
+      "slot",
+      "vout",
+      "mag",
+      "cis",
+      "lor",
+      "ret",
+      "ree"
+    ],
+    "zona_estancia": "lor",
+    "duraciones": [
+      10
+    ],
+    "duracion_defecto": 10,
+    "gravedad_estancia": 0
+  },
+  {
+    "id": "orbita_baja",
+    "nombre": "Órbita baja terrestre · estación espacial",
+    "descripcion": "Estancia en una estación a unos 400 km, por debajo de los cinturones de Van Allen. Unas 16 vueltas a la Tierra por día.",
+    "zonas": [
+      "atm",
+      "leo",
+      "ree"
+    ],
+    "zona_estancia": "leo",
+    "duraciones": [
+      30,
+      90,
+      180
+    ],
+    "duracion_defecto": 180,
+    "gravedad_estancia": 0
+  }
+]

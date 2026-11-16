@@ -1,0 +1,16 @@
+# Bases de datos (se crean solas al arrancar)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sistema
+.DS_Store
+
+# Archivos grandes de investigación (no van al repositorio)
+*.zip

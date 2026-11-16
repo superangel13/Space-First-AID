@@ -1,0 +1,44 @@
+{
+  "_nota": "PARÁMETROS DE EJEMPLO (ficticios) para probar el sistema. Se reemplazan por los valores de referencia verificados. Tipos: 'num' = número con rango; 'cual' = resultado cualitativo (negativo, trazas, +, ++, +++).",
+  "regla_origen": "Si una muestra tiene resultado del laboratorio en Tierra, ese manda sobre el análisis previo hecho a bordo.",
+  "tipos": {
+    "orina": {
+      "nombre": "Orina",
+      "equipo_a_bordo": "Tira reactiva y analizador portátil",
+      "analitos": [
+        {"id": "ph", "nombre": "pH", "tipo": "num", "unidad": "", "normal": [5.0, 7.5], "aviso": [4.5, 8.0], "paso": 0.5},
+        {"id": "densidad", "nombre": "Densidad", "tipo": "num", "unidad": "", "normal": [1.005, 1.025], "aviso": [1.003, 1.030], "paso": 0.001, "nota_alto": "Orina concentrada: posible deshidratación"},
+        {"id": "sangre", "nombre": "Sangre", "tipo": "cual", "aviso_desde": "trazas", "critico_desde": "++", "nota": "Sangre en orina: se cruza con el motor (cálculo renal, infección)"},
+        {"id": "leucocitos", "nombre": "Leucocitos", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
+        {"id": "nitritos", "nombre": "Nitritos", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++"},
+        {"id": "proteina", "nombre": "Proteína", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
+        {"id": "glucosa", "nombre": "Glucosa", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
+        {"id": "calcio", "nombre": "Calcio en orina", "tipo": "num", "unidad": "mg/día", "normal": [100, 250], "aviso": [50, 300], "critico": [null, 400], "nota_alto": "Calcio alto en orina: el hueso libera calcio en microgravedad y favorece cálculos"}
+      ]
+    },
+    "sangre": {
+      "nombre": "Sangre",
+      "equipo_a_bordo": "Analizador de sangre portátil (gota de sangre)",
+      "analitos": [
+        {"id": "hemoglobina", "nombre": "Hemoglobina", "tipo": "num", "unidad": "g/dL", "normal": [12.0, 17.0], "aviso": [11.0, 18.0], "critico": [8.0, null], "paso": 0.1},
+        {"id": "leucocitos_s", "nombre": "Leucocitos", "tipo": "num", "unidad": "mil/µL", "normal": [4.0, 11.0], "aviso": [3.5, 12.0], "critico": [2.0, 20.0], "paso": 0.1, "nota_alto": "Leucocitos altos: posible infección"},
+        {"id": "glucosa_s", "nombre": "Glucosa", "tipo": "num", "unidad": "mg/dL", "normal": [70, 110], "aviso": [60, 140], "critico": [50, 250]},
+        {"id": "creatinina", "nombre": "Creatinina", "tipo": "num", "unidad": "mg/dL", "normal": [0.6, 1.2], "aviso": [0.5, 1.5], "critico": [null, 2.0], "paso": 0.1, "nota_alto": "Función del riñón: revisar con el cirujano de vuelo"},
+        {"id": "calcio_s", "nombre": "Calcio", "tipo": "num", "unidad": "mg/dL", "normal": [8.6, 10.3], "aviso": [8.2, 10.8], "critico": [7.5, 12.0], "paso": 0.1},
+        {"id": "potasio", "nombre": "Potasio", "tipo": "num", "unidad": "mmol/L", "normal": [3.5, 5.0], "aviso": [3.2, 5.3], "critico": [2.8, 6.0], "paso": 0.1},
+        {"id": "sodio", "nombre": "Sodio", "tipo": "num", "unidad": "mmol/L", "normal": [135, 145], "aviso": [132, 148], "critico": [125, 155]}
+      ]
+    },
+    "saliva": {
+      "nombre": "Saliva",
+      "equipo_a_bordo": "Kit de saliva (prueba rápida)",
+      "analitos": [
+        {"id": "cortisol", "nombre": "Cortisol (mañana)", "tipo": "num", "unidad": "nmol/L", "normal": [5, 25], "aviso": [3, 30], "paso": 0.5, "nota_alto": "Cortisol alto: estrés sostenido"},
+        {"id": "ebv", "nombre": "Virus Epstein-Barr (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++", "nota": "Reactivación viral: se cruza con el motor (herpes)"},
+        {"id": "vzv", "nombre": "Virus varicela-zóster (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++", "nota": "Reactivación de varicela-zóster: se cruza con el motor (herpes)"},
+        {"id": "hsv1", "nombre": "Herpes simple 1 (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++"}
+      ]
+    }
+  },
+  "escala_cualitativa": ["negativo", "trazas", "+", "++", "+++"]
+}

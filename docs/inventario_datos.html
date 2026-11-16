@@ -1,0 +1,282 @@
+<title>Inventario de datos clínicos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@600;700&display=swap">
+<style>
+/* Layout: encabezado con criterio y hallazgos, luego tabla filtrable (tarjetas en teléfono) */
+:root{
+  --bg:#F5F7FA;--panel:#FFFFFF;--line:#DCE2EA;--fg:#14202E;--mute:#5B6878;--accent:#2457C5;
+  --ok:#11795A;--okbg:#E2F4EC;--rev:#9A5A00;--revbg:#FDF0D9;--no:#B4233B;--nobg:#FBE4E8;--demo:#55607A;--demobg:#E8EBF2;
+  --display:'Sora',system-ui,sans-serif;--body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D131C;--panel:#141C27;--line:#26313F;--fg:#E6ECF3;--mute:#93A0B2;--accent:#7DA6FF;
+  --ok:#4FD1A0;--okbg:#10302A;--rev:#F2B451;--revbg:#33260F;--no:#FF7F92;--nobg:#3A1720;--demo:#A9B3C7;--demobg:#222B38;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D131C;--panel:#141C27;--line:#26313F;--fg:#E6ECF3;--mute:#93A0B2;--accent:#7DA6FF;
+  --ok:#4FD1A0;--okbg:#10302A;--rev:#F2B451;--revbg:#33260F;--no:#FF7F92;--nobg:#3A1720;--demo:#A9B3C7;--demobg:#222B38;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(26px,4vw,36px)}
+h2{font-size:19px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.lead{color:var(--mute);max-width:72ch;margin:8px 0 0}
+.head{display:grid;gap:6px}
+.crit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.vc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:6px;align-content:start;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.vc:hover{border-color:var(--accent)}
+.vc[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
+.vc:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vc .n{font:600 30px var(--display);font-variant-numeric:tabular-nums}
+.vc p{margin:0;color:var(--mute);font-size:13.5px}
+.pill{display:inline-flex;align-items:center;gap:6px;font:600 12px var(--body);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.p-util{color:var(--ok);background:var(--okbg)}.p-rev{color:var(--rev);background:var(--revbg)}.p-desc{color:var(--no);background:var(--nobg)}.p-demo{color:var(--demo);background:var(--demobg)}
+.find{display:grid;gap:12px}
+.flist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.flist li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--rev);border-radius:8px;padding:12px 14px;font-size:14px}
+.flist li.no{border-left-color:var(--no)}
+.flist b{display:block;margin-bottom:2px}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:500 13px var(--body);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+#q{flex:1 1 220px;min-width:0;font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.count{font:500 13px var(--mono);color:var(--mute)}
+.tbox{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{position:sticky;top:0;background:var(--panel);text-align:left;font:600 12px var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--mute);padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.dato b{display:block}
+td.dato .g{font:500 11px var(--mono);color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+td.val{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+td.src{color:var(--mute);font-size:13px}
+td.src a{color:var(--accent)}
+.org{font:500 11.5px var(--mono);color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:1px 6px;white-space:nowrap}
+td.do{font-size:13.5px}
+.star{color:var(--rev);font-size:16px}
+.who{font:600 12px var(--body);padding:3px 9px;border-radius:999px;white-space:nowrap;display:inline-block}
+.w-doc,.w-aut{color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.w-fin,.w-ext{color:var(--no);background:var(--nobg)}
+.acc{font:500 12.5px var(--mono);white-space:nowrap}
+.acc.o{color:var(--ok)}.acc.r{color:var(--rev)}.acc.x{color:var(--no)}
+.acc{white-space:normal}
+td .nt{display:block;color:var(--mute);font-size:12.5px;margin-top:3px}
+.empty{padding:28px;text-align:center;color:var(--mute)}
+.foot{color:var(--mute);font-size:13px;max-width:80ch}
+@media (max-width:860px){
+  .crit{grid-template-columns:repeat(2,minmax(0,1fr))}
+  table,tbody,tr,td{display:block}thead{display:none}
+  tr{padding:14px;border-bottom:1px solid var(--line);display:grid;gap:6px}
+  td{border:0;padding:0}
+  td[data-l]::before{content:attr(data-l);display:block;font:600 11px var(--body);text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+}
+@media (max-width:420px){.crit{grid-template-columns:1fr}}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <span class="eyebrow">Space First AID · auditoría de datos · 15 nov 2026</span>
+    <h1>Inventario de datos clínicos</h1>
+    <p class="lead">Cada fuente, número y regla que usa la app, sacado directo del código. Cada fila responde dos preguntas: ¿el número sale tal cual de un documento de NASA o ESA, o lo pusimos nosotros? ¿Lo dejamos, lo revisamos o lo quitamos?</p>
+  </header>
+
+  <section style="display:grid;gap:12px" id="fuentes">
+    <h2>Fuentes confiables que usamos</h2>
+    <p class="lead" style="margin:0">Solo las fuentes que sirven ahora. La estrella marca las que traen un dato clave para el motor. Las que no son de NASA están marcadas para que el equipo decida si se incluyen. Todo se puede consultar sin pagar. PubMed es gratis: siempre muestra el resumen, y PubMed Central (enlaces “PMC”) tiene el artículo completo. Cuando un artículo es de pago, solo usamos cifras que vienen en su resumen gratis, o lo cambiamos por una versión gratis de NASA. Acceso comprobado el 15 de noviembre.</p>
+    <div class="ctrl">
+      <div class="seg" id="fq" role="group" aria-label="Quién la publica"></div>
+      <div class="seg" id="ft" role="group" aria-label="Filtros extra"></div>
+      <span class="count" id="fcnt"></span>
+    </div>
+    <div class="tbox">
+      <table>
+        <thead><tr><th></th><th>Fuente</th><th>Qué nos da</th><th>¿Es de NASA?</th><th>Acceso</th></tr></thead>
+        <tbody id="ftb"></tbody>
+      </table>
+    </div>
+    <p class="foot">Se dejaron fuera a propósito: ESA Concordia y Mars-500 (estudios análogos en la Tierra), datos rusos y vuelos privados (SpaceX, Axiom).</p>
+  </section>
+
+  <section class="crit" id="crit" aria-label="Veredictos"></section>
+
+  <section class="find">
+    <h2>Lo primero que hay que arreglar</h2>
+    <ul class="flist">
+      <li class="no"><b>Insomnio puede dar falsa alarma</b>Dormir menos de 6 h y una atención lenta bastan para la advertencia, aunque la persona no se queje de nada. Como el promedio en la ISS es 6.1 h, casi la mitad de las noches quedan debajo. Hay que exigir “te cuesta dormir” como indicio principal.</li>
+      <li class="no"><b>Dos umbrales de fiebre distintos</b>El motor clínico usa más de 37.8 °C (del checklist). El semáforo de signos vitales usa 37.5 y 38.3 °C. Hay que dejar solo 37.8.</li>
+      <li><b>Signos vitales sin cita</b>Los cortes de pulso, oxígeno, presión y respiración son convenciones clínicas de la Tierra. Hay que buscar su respaldo en NASA o compararlos con la línea base de cada persona.</li>
+      <li><b>CO₂ en ppm sin límite de NASA</b>NASA da el límite de CO₂ en mmHg. Hay que convertir los cortes y citar la norma.</li>
+      <li><b>Índice de preparación inventado</b>Los pesos 35/35/30 son nuestros. Hay que mostrarlo como índice de demostración o quitarlo.</li>
+      <li class="no"><b>Concordia contradice la regla del equipo</b>Es un estudio análogo hecho en la Tierra, igual que Mars-500, que ya sacamos. No alimenta ninguna regla, así que se puede quitar sin perder nada.</li>
+    </ul>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Todas las filas</h2>
+    <div class="ctrl">
+      <div class="seg" id="grp" role="group" aria-label="Tipo de dato"></div>
+      <input id="q" type="search" placeholder="Buscar: fiebre, SANS, 600, Agha…" aria-label="Buscar en el inventario">
+      <span class="count" id="cnt"></span>
+    </div>
+    <div class="tbox">
+      <table>
+        <thead><tr><th>Veredicto</th><th>Dato o parámetro</th><th>Valor en la app</th><th>Origen</th><th>Fuente y dónde se usa</th><th>Qué hacer</th></tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden>No hay filas con ese filtro.</div>
+    </div>
+    <p class="foot">Origen: <b>NASA directo</b> quiere decir que el número o el criterio está escrito en el documento citado. <b>NASA + corte nuestro</b> quiere decir que el dato es de NASA, pero el punto de corte lo elegimos nosotros. <b>Convención clínica</b> es una práctica médica general sin documento de NASA en la app. <b>Regla nuestra</b> es una decisión de diseño del equipo. <b>Simulado</b> es dato de ejemplo para la demo. Revisado contra <span style="font-family:var(--mono)">space_first_aid.html</span>, versión del 15 de noviembre.</p>
+  </section>
+</div>
+
+<script>
+const V={util:['Útil','p-util','Respaldo directo de NASA o ESA, o un método sin afirmación médica. Se queda.'],rev:['Revisar','p-rev','Sirve, pero el número es nuestro o falta la cita. Buscar respaldo o ajustar.'],desc:['Descartar','p-desc','Sin respaldo o contradice las reglas del equipo. Quitar.'],demo:['Demostración','p-demo','Dato simulado. Solo para la demo, nunca como evidencia.']};
+const G={fuente:'Fuentes',umbral:'Umbrales',motor:'Reglas del motor',demo:'Datos simulados'};
+const L=(t,u)=>u?`<a href="${u}" target="_blank" rel="noopener">${t}</a>`:t;
+const HRR='https://humanresearchroadmap.nasa.gov/evidence/reports/';
+const R=[
+// ---------- FUENTES ----------
+['fuente','util','ISS Medical Checklist (JSC-48522)','Síntomas, signos y pasos de 13 condiciones, con página','NASA directo','Síntomas, alertas y protocolos','Es el núcleo del motor. El enlace público de nasa.gov ya no abre: citarlo por número de documento y página y guardar nuestra copia del PDF.'],
+['fuente','util','Fichas de condición médica (Human Research Roadmap)','14 fichas: definición, causas y riesgo de cada condición','NASA directo',L('Fichas HRR','https://humanresearchroadmap.nasa.gov/Evidence/medicalConditions/Nephrolithiasis.pdf')+' · fuentes de cada condición','Abrir los 14 enlaces antes de presentar para confirmar que cargan.'],
+['fuente','util','NASA-STD-3001 Vol. 1 Rev C','Límite de radiación de carrera: 600 mSv','NASA directo',L('NASA-STD-3001','https://standards.nasa.gov/sites/default/files/standards/NASA/C//nasa-std-3001-vol-1-rev-c-signature.pdf')+' · Misión, Persona, consola médica','Se queda.'],
+['fuente','util','Reporte de cáncer por radiación (HRR)','600 mSv (repite la norma)','NASA directo',L('Reporte de cáncer',HRR+'HRP-ER-CANCER-SR-20260811.pdf')+' · Misión','El enlace abre (comprobado el 15 de noviembre). Se queda junto a la norma.'],
+['fuente','util','Zeitlin et al. 2013 (rover Curiosity)','1.8 mSv por día en espacio profundo; 0.66 Sv ida y vuelta a Marte','NASA directo',L('PubMed 23723233','https://pubmed.ncbi.nlm.nih.gov/23723233/')+' · tramo cislunar de Misión','Se queda.'],
+['fuente','util','Reporte de osteoporosis (HRR)','Pérdida ósea de 1 a 1.5 % por mes','NASA directo',L('Osteo.pdf',HRR+'Osteo.pdf')+' · modelo de hueso','Se queda.'],
+['fuente','util','Reporte de sueño (HRR)','6.1 h promedio en la ISS (21 astronautas); la PVT es la prueba más sensible a la falta de sueño','NASA directo',L('Sleep.pdf',HRR+'Sleep.pdf')+' · Insomnio, Órbita','Se queda. Ojo: el 6.1 h es un promedio, no un umbral (ver la fila de insomnio).'],
+['fuente','util','Basner, Mollicone y Dinges 2011 (PVT-B)','3 min · intervalos de 1 a 4 s · lapso ≥ 355 ms · anticipación < 100 ms','NASA directo',L('PubMed 22025811','https://pubmed.ncbi.nlm.nih.gov/22025811/')+' · Órbita, consola médica','Se queda.'],
+['fuente','util','Batería Cognition (NASA Standard Measures)','Pruebas BART, ERT, Fractal 2-Back y PVT','NASA directo',L('UPenn Cognition','https://www.med.upenn.edu/uep/cognition.html')+' · juegos de Mente','Las pruebas son de NASA; la forma de puntuarlas es nuestra (ver Mente).'],
+['fuente','util','Hardware y datos SANS en la ISS','Agudeza y Amsler en los días 30, 90 y R-30 desde 2010','NASA directo',L('NTRS 20180004916','https://ntrs.nasa.gov/citations/20180004916')+' · Visión, línea de tiempo','Se queda.'],
+['fuente','util','Reporte de evidencia SANS 2022','Visión de cerca alterada; desplazamiento hipermetrópico ≥ +0.50 D','NASA directo',L('SANS EB 2022',HRR+'SANS%20EB%202022%20FINAL_8-15-22.pdf')+' · condición SANS','La app no mide dioptrías; usa la lectura de cerca como aproximación. Decirlo así en la presentación.'],
+['fuente','util','Reporte de salud conductual 2025 (BMed)','Cambio adverso = baja en ánimo, cognición, moral o convivencia','NASA directo',L('BMed 2025',HRR+'HRP-ER-BMED-HFBP-20250210.pdf')+' · Cambio conductual','La definición no trae números; los cortes son nuestros (ver Mente).'],
+['fuente','util','OCHMO-MTB-002 (condiciones con dispensa)','Antecedentes aprobados: hipertensión, cálculos, arritmia tratada, prótesis de cadera, apnea leve…','NASA directo',L('MTB-002','https://www.nasa.gov/wp-content/uploads/2024/09/ochmo-mtb-002-waivered-health-conditions.pdf')+' · Perfil prevuelo','Se queda.'],
+['fuente','util','Zwart et al. 2016','Genotipo y vitaminas B se asocian con cambios oculares (49 astronautas)','NASA directo',L('PubMed 26316272','https://pubmed.ncbi.nlm.nih.gov/26316272/')+' · Perfil: Visión','Se queda.'],
+['fuente','util','Agha et al. 2020','Mejor condición física previa, menos reactivación viral (22 astronautas)','NASA directo',L('DOI','https://doi.org/10.1096/fj.201902327R')+' · Perfil: Defensas; Herpes','Bien para el perfil. También se usó para ligar dormir poco con herpes, y el estudio no habla de sueño (ver la fila de herpes).'],
+['fuente','util','Auñón-Chancellor et al. 2020','Trombosis yugular durante el vuelo','NASA directo',L('NEJM','https://doi.org/10.1056/NEJMc1905875')+' · Perfil: Coagulación','Es un solo caso: sirve como antecedente, no para calcular riesgo.'],
+['fuente','util','Khine et al. 2018','Cambios de la aurícula izquierda tras 6 meses en la ISS','NASA directo',L('PubMed 29752376','https://pubmed.ncbi.nlm.nih.gov/29752376/')+' · Perfil: Ritmo','Se queda.'],
+['fuente','util','NASA/NSBRI 2014 · Sexo y género','Mareo al ponerse de pie tras el vuelo, más frecuente en mujeres','NASA directo',L('PMC4235984','https://pmc.ncbi.nlm.nih.gov/articles/PMC4235984/')+' · Perfil: Regreso','El enlace de la app lleva al artículo de salud conductual (Goel). El dato está en el de sistema cardiovascular (Platts 2014, PMC4236093): cambiar el enlace.'],
+['fuente','rev','Cálculos renales en astronautas (NTRS)','Respaldo general del antecedente de cálculos','NASA directo',L('NTRS 20150020958','https://ntrs.nasa.gov/citations/20150020958')+' · Perfil: Riñón','Sacar la cifra concreta que da (incidencia o factores) y usarla; hoy solo se cita de forma general.'],
+['fuente','util','Arquitectura CDSS de ExMC (HRP-48032)','Diseño de un sistema de apoyo a decisiones clínicas','NASA directo',L('NTRS 20220017856','https://ntrs.nasa.gov/citations/20220017856')+' · Evidencia','Solo da contexto: justifica el diseño, no aporta umbrales.'],
+['fuente','util','EIMO (operación médica independiente de la Tierra)','Confianza de la tripulación y salud conductual','NASA directo',L('NTRS 20240011658','https://ntrs.nasa.gov/citations/20240011658')+' · Evidencia','Contexto para la presentación.'],
+['fuente','util','Russell et al. 2023','Valor de un CDSS; más de 20 min de retraso de comunicación con Marte','NASA directo',L('PMC10284846','https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10284846/')+' · Evidencia','Contexto para la presentación.'],
+['fuente','util','Safe Passage (National Academies, 2001)','Los astronautas tienden a no reportar síntomas','Hecho para NASA',L('Cap. 8','https://www.nationalacademies.org/read/10218/chapter/8')+' · Evidencia','Argumento para tener pruebas objetivas (PVT, visión) además del reporte de síntomas. Nivel B.'],
+['fuente','desc','ESA · Aislamiento en Concordia','Estudios de aislamiento en la Antártida','ESA (análogo en la Tierra)','Evidencia','Es un análogo, el mismo tipo de dato que Mars-500, que ya sacamos. No alimenta ninguna regla: quitar.'],
+// ---------- UMBRALES ----------
+['umbral','util','Fiebre (motor clínico)','> 37.8 °C','NASA directo','Checklist «COUGH» · infecciones y cálculo renal','Se queda. Es el valor de referencia para unificar.'],
+['umbral','rev','Temperatura (semáforo de signos vitales)','37.5 °C advertencia · 38.3 °C alerta','Convención clínica','Signos vitales en vivo','No coincide con el 37.8 °C del checklist. Unificar en 37.8.'],
+['umbral','rev','Frecuencia cardiaca','≥ 110 o < 45 advertencia · ≥ 130 o < 40 alerta','Convención clínica','Signos vitales en vivo','Sin cita en la app. Buscar respaldo en NASA o compararla con la línea base personal.'],
+['umbral','rev','Saturación de oxígeno (SpO₂)','< 95 % advertencia · ≤ 92 % alerta','Convención clínica','Signos vitales en vivo','Sin cita en la app. Igual que arriba.'],
+['umbral','rev','Presión arterial','PAS ≥ 140 o < 90, PAD ≥ 90 advertencia · PAS ≥ 160 o < 80, PAD ≥ 100 alerta','Convención clínica','Signos vitales en vivo; Dolor de pecho','Sin cita en la app. Igual que arriba.'],
+['umbral','rev','Frecuencia respiratoria','≥ 25 advertencia · ≥ 30 alerta','Convención clínica','Signos vitales en vivo','Sin cita en la app. Igual que arriba.'],
+['umbral','rev','Caída de oxígeno contra la línea base','≥ 4 puntos debajo de la mediana personal','Regla nuestra','Alerta de oxígeno en Equipo','Idea razonable, pero sin respaldo publicado. Buscarlo o marcarla como regla de diseño.'],
+['umbral','util','Línea base personal','Mediana de los días 1 a 14 · banda p10 a p90 · z ≥ 1 amarillo, z ≥ 2 rojo','Regla nuestra (método)','Consola médica','Es un método estadístico, no una afirmación médica. Mantener y explicarlo.'],
+['umbral','rev','Meta de sueño','8 h = 100 puntos · aviso si < 80 puntos (≈ 6.4 h)','Regla nuestra','Equipo, Persona','Buscar en el reporte de sueño las horas programadas en la ISS y usar ese número como meta.'],
+['umbral','rev','Puntuación de corazón','−4 puntos por cada 1 % sobre la base · aviso si < 70 (≈ 7.5 % arriba)','Regla nuestra','Equipo','Sin respaldo. Mejor mostrar el pulso contra la banda personal.'],
+['umbral','rev','Puntuación de atención (PVT-B)','−4 puntos por cada 1 % más lento · aviso si < 70','Regla nuestra','Equipo, Insomnio, Cambio conductual','La PVT-B se lee por lapsos y mediana. Cambiar el corte a número de lapsos contra la línea base.'],
+['umbral','desc','Índice de preparación','35 % sueño + 35 % atención + 30 % corazón · ≥ 70 verde, ≥ 45 amarillo','Regla nuestra','Pantalla principal','Pesos inventados. Quitarlo como dato clínico o dejarlo solo como visual con la etiqueta “índice de demostración”.'],
+['umbral','rev','Agua diaria','Meta 2.5 L · aviso si < 2.0 L','Regla nuestra','Cálculo renal, Infección urinaria','Buscar la recomendación de líquidos en la ficha de nefrolitiasis de NASA y citarla.'],
+['umbral','rev','Ejercicio diario','Meta 90 min · aviso si < 60 min','Regla nuestra','Pérdida de hueso','Buscar el tiempo de ejercicio programado en la ISS y citarlo.'],
+['umbral','util','Pérdida ósea en microgravedad','1.25 % por mes (punto medio de 1 a 1.5)','NASA directo','Modelo de Misión','Se queda.'],
+['umbral','rev','Pérdida ósea en la Luna (0.17 g)','La mitad: 0.625 % por mes','Supuesto nuestro','Modelo de Misión','No hay dato de NASA sobre hueso a 0.17 g. Mostrarlo como supuesto.'],
+['umbral','desc','Ajuste de hueso por condición física','× 0.75 condición alta · × 1.3 condición baja','Regla nuestra','Modelo de hueso','Sin respaldo. Quitar.'],
+['umbral','rev','Corte de pérdida ósea','> 1.5 %','NASA + corte nuestro','Condición Pérdida de hueso','El corte lo elegimos sobre la tasa de NASA. Decirlo así o justificarlo.'],
+['umbral','util','Límite de radiación de carrera','600 mSv','NASA directo','Misión, consola médica','Se queda.'],
+['umbral','util','Dosis en espacio profundo','1.8 mSv por día','NASA directo','Tramo cislunar','Se queda.'],
+['umbral','rev','Dosis por zona de la ruta','Van Allen interno 15 · externo 8 · entre cinturones 2 · órbita baja 0.5 · órbita lunar 1.4 · superficie 0.6 mSv/día','Ilustrativo','Gráfico de ruta a la Luna','Solo el 1.8 tiene cita. Conseguir cifras de NASA (Apolo, Artemis I) o marcar el resto como ilustrativo.'],
+['umbral','rev','CO₂ en cabina','> 4000 ppm (indicio de dolor de cabeza) · 5000 aviso · 6000 alerta','Regla nuestra','Nave, Dolor de cabeza','NASA da el límite en mmHg (NASA-STD-3001 y reglas de vuelo de la ISS). Convertir y citar.'],
+['umbral','util','Dolor intenso','7 de 10 o más','Convención clínica','Fractura, Dolor de pecho, Pérdida de hueso','Escala numérica estándar de 0 a 10, donde 7 a 10 es dolor intenso. Se queda.'],
+['umbral','rev','Agudeza visual','Peor por 0.2 logMAR o más (2 líneas) contra el día 30','Convención clínica','SANS','Criterio clínico común, pero no viene en el reporte SANS. Citarlo como convención.'],
+['umbral','rev','Sensibilidad al contraste','Baja de 0.3 log CS o más','Convención clínica','Visión','Igual que arriba.'],
+['umbral','rev','Visión de cerca','Más de 2 tamaños N peor que el día 30, a 40 cm','Regla nuestra','SANS','Aproxima el desplazamiento de +0.50 D, pero no equivale exacto. Decirlo así.'],
+['umbral','util','Rejilla de Amsler','Cualquier zona marcada','NASA directo','SANS','Es parte del protocolo SANS de la ISS. Se queda.'],
+['umbral','desc','Coordinación ojo-mano','> 20 % más lento que la base','Regla nuestra','Visión','No forma parte del protocolo SANS ni de la tríada. Dejarlo como juego, sin aviso.'],
+['umbral','util','Calibración de pantalla','Tarjeta de 85.6 mm','Estándar técnico (ISO/IEC 7810)','Visión','Se queda.'],
+['umbral','rev','Ánimo bajo','Promedio de los últimos 3 check-ins < 43 de 100','Regla nuestra','Cambio conductual','La definición de NASA no da número. Buscar respaldo o marcarlo como regla de diseño.'],
+['umbral','rev','Convivencia baja','≤ 2.2 de 5','Regla nuestra','Cambio conductual','Igual que arriba.'],
+['umbral','rev','Juegos de Mente','< 85 % de la línea base personal','Regla nuestra','Cambio conductual','Igual que arriba.'],
+['umbral','rev','Sueño corto (insomnio)','< 6 h','NASA + corte nuestro','Insomnio','Con un promedio de 6.1 h, casi la mitad de las noches quedan debajo, y la advertencia sale aunque la persona no se queje. Exigir “te cuesta dormir” como indicio principal.'],
+['umbral','rev','Herpes: tercer indicio','Dormir < 6 h','Regla nuestra','Reactivación de herpes','Agha 2020 respalda condición física, no sueño. Cambiarlo a condición física baja o quitarlo.'],
+['umbral','util','Ventana de mareo espacial','3 días tras un cambio de gravedad (60 a 80 % lo sufre en los días 1 a 3)','NASA directo','Mareo espacial','Se queda.'],
+['umbral','util','Ventana de descompresión','Caminata espacial en las últimas 24 h','NASA directo','Enfermedad por descompresión','Se queda.'],
+['umbral','rev','Alargamiento de la columna','1 a 2 %','NASA directo (por confirmar)','Texto de Dolor de espalda','Confirmar la cifra exacta en la ficha de NASA de dolor de espalda.'],
+// ---------- MOTOR ----------
+['motor','util','Regla de la tríada','2 de 3 = advertencia · 3 de 3 = alerta · señal de alarma = alerta','Regla nuestra','Las 16 condiciones','No es de NASA: presentarla como regla de diseño del equipo.'],
+['motor','util','Capa de descarte','Indicio principal obligatorio · exposición requerida · exclusiones que bajan un nivel','NASA directo','12 condiciones','Las exclusiones salen del checklist y las fichas. Bajó las advertencias en persona sana de 11.8 % a 4.0 % (903 pares).'],
+['motor','util','Tríadas tal cual del checklist o la ficha','Cálculo renal, infección urinaria, mareo espacial, dolor de cabeza, descompresión, infección respiratoria, dolor de espalda, radiación','NASA directo','Síntomas','Se quedan.'],
+['motor','rev','Tríadas con un indicio nuestro','Esguince (empezó tras esfuerzo), herpes (sueño), SANS (cortes), insomnio (6 h), conducta (cortes de Mente), hueso (1.5 %, ejercicio), dolor de pecho (rango de signos), fractura (dolor ≥ 7)','NASA + corte nuestro','Síntomas','El nombre del indicio es de NASA; el corte numérico es nuestro. Revisar uno por uno con las filas de Umbrales.'],
+['motor','util','Señales de alarma del dolor de cabeza','Cambios en la vista, zumbido, cuello rígido, molestia con la luz, dolor intenso','NASA directo','Dolor de cabeza','Salen del checklist «HEADACHE». Se quedan.'],
+['motor','util','Prueba de falsas alarmas','903 pares de síntomas + 13 casos tipo','Prueba nuestra','Documento técnico','Es nuestra validación interna. Mostrarla como tal.'],
+// ---------- DEMO ----------
+['demo','demo','Tripulación de 6','Nombres, roles y antecedentes','Simulado','Toda la app','Personas ficticias. No usar como casos reales.'],
+['demo','demo','42 días de sueño, pulso, reacción y SpO₂','Semilla fija por persona (pulso 53 a 66, sueño 7.1 a 7.5 h, reacción 276 a 300 ms)','Simulado','Equipo, Persona, consola, CSV','Nunca presentarlo como datos de astronautas.'],
+['demo','demo','Dosis previas y diarias','30 a 148 mSv previos · 0.46 a 0.5 mSv/día con picos','Simulado','Persona, Misión','Ejemplo. El límite de 600 mSv sí es real.'],
+['demo','demo','Caída de ánimo de Cam','Check-ins sembrados a la baja','Simulado','Mente','Ejemplo para enseñar el aviso.'],
+['demo','demo','Escenarios del simulador','Cálculo renal, SANS, caída, descompresión, tormenta solar, CO₂…','Simulado','Alertas','Para la demo en vivo.'],
+['demo','demo','Ambiente de cabina','O₂ 20.9 % · 101.3 kPa · 22.4 °C · 44 % · tormenta 1900 µSv/h','Simulado','Nave','Los cortes de los medidores tampoco tienen cita.'],
+];
+const st={v:null,g:'all',q:''};
+try{const s=JSON.parse(localStorage.getItem('inv.f')||'{}');Object.assign(st,s,{q:''})}catch(e){}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function renderCrit(){document.getElementById('crit').innerHTML=Object.entries(V).map(([k,[n,c,d]])=>`<button type="button" class="vc" data-v="${k}" aria-pressed="${st.v===k}"><span class="pill ${c}">${n}</span><span class="n">${R.filter(r=>r[1]===k).length}</span><p>${d}</p></button>`).join('');
+  document.querySelectorAll('.vc').forEach(b=>b.onclick=()=>{st.v=st.v===b.dataset.v?null:b.dataset.v;sv();render()})}
+function renderGrp(){document.getElementById('grp').innerHTML=[['all','Todo'],...Object.entries(G)].map(([k,n])=>`<button type="button" data-g="${k}" aria-pressed="${st.g===k}">${n}</button>`).join('');
+  document.querySelectorAll('#grp button').forEach(b=>b.onclick=()=>{st.g=b.dataset.g;sv();render()})}
+function sv(){try{localStorage.setItem('inv.f',JSON.stringify({v:st.v,g:st.g}))}catch(e){}}
+function render(){renderCrit();renderGrp();const q=st.q.toLowerCase();
+  const rows=R.filter(r=>(!st.v||r[1]===st.v)&&(st.g==='all'||r[0]===st.g)&&(!q||r.join(' ').toLowerCase().includes(q)));
+  document.getElementById('tb').innerHTML=rows.map(r=>{const [g,v,dato,val,org,src,todo]=r;return `<tr><td data-l=""><span class="pill ${V[v][1]}">${V[v][0]}</span></td><td class="dato"><span class="g">${G[g]}</span><b>${esc(dato)}</b></td><td class="val" data-l="Valor en la app">${esc(val)}</td><td data-l="Origen"><span class="org">${esc(org)}</span></td><td class="src" data-l="Fuente y dónde se usa">${src}</td><td class="do" data-l="Qué hacer">${esc(todo)}</td></tr>`}).join('');
+  document.getElementById('empty').hidden=rows.length>0;
+  document.getElementById('cnt').textContent=`${rows.length} de ${R.length} filas`}
+document.getElementById('q').addEventListener('input',e=>{st.q=e.target.value;render()});
+render();
+
+/* ---------- fuentes confiables ---------- */
+const W={doc:['Documento oficial de NASA','w-doc'],aut:['Artículo de NASA (autores o datos de NASA)','w-aut'],fin:['No es de NASA · financiado por NASA','w-fin'],ext:['No es de NASA','w-ext']};
+const PMC=id=>`https://pmc.ncbi.nlm.nih.gov/articles/${id}/`,PM=id=>`https://pubmed.ncbi.nlm.nih.gov/${id}/`,NT=id=>`https://ntrs.nasa.gov/citations/${id}`,MC='https://humanresearchroadmap.nasa.gov/Evidence/medicalConditions/';
+// [estrella, nombre, url, qué nos da, quién, acceso: o=abierto completo, r=solo resumen gratis, nota]
+const F=[
+[1,'ISS Medical Checklist (JSC-48522)',null,'Síntomas, signos y pasos de 13 de las 16 condiciones, con página','doc','o','Documento público, pero el enlace de nasa.gov ya no abre. Usamos la copia del PDF que tenemos.'],
+[1,'Fichas de condición médica del Human Research Roadmap (14)',MC+'Nephrolithiasis.pdf','Definición, causas y factores de riesgo de cada condición; exclusiones de la capa de descarte','doc','o','Los 14 enlaces abren (comprobado hoy).'],
+[1,'Reporte de evidencia SANS 2022',HRR+'SANS%20EB%202022%20FINAL_8-15-22.pdf','Síntomas de SANS; desplazamiento hipermetrópico de +0.50 D o más','doc','o',''],
+[1,'NASA-STD-3001 Vol. 1 Rev C','https://standards.nasa.gov/sites/default/files/standards/NASA/C//nasa-std-3001-vol-1-rev-c-signature.pdf','Límite de radiación de carrera de 600 mSv; norma de salud de la tripulación','doc','o',''],
+[1,'Reporte de evidencia de osteoporosis',HRR+'Osteo.pdf','Pérdida ósea de 1 a 1.5 % por mes','doc','o',''],
+[1,'Reporte de evidencia de sueño',HRR+'Sleep.pdf','6.1 h de sueño promedio en la ISS; la PVT es la prueba más sensible a la falta de sueño','doc','o',''],
+[1,'Reporte de salud conductual 2025',HRR+'HRP-ER-BMED-HFBP-20250210.pdf','Definición de cambio conductual adverso','doc','o',''],
+[0,'Reporte de cáncer por radiación',HRR+'HRP-ER-CANCER-SR-20260811.pdf','Riesgo de cáncer y límite de 600 mSv','doc','o','El enlace sí abre (comprobado hoy).'],
+[0,'OCHMO-MTB-002 · Condiciones con dispensa','https://www.nasa.gov/wp-content/uploads/2024/09/ochmo-mtb-002-waivered-health-conditions.pdf','Antecedentes con los que NASA ha aprobado astronautas: base del perfil prevuelo','doc','o',''],
+[0,'SANS-Related ISS Hardware & Data (Brunstetter)',NT('20180004916'),'Agudeza y Amsler en los días 30, 90 y R-30','doc','o',''],
+[0,'NASA Astronaut Urinary Conditions (Law y Cole)',NT('20150020958'),'Condiciones urinarias y cálculos en astronautas','doc','o','Falta sacar las cifras concretas para usarlas en el perfil.'],
+[0,'Concepto de operaciones del CDSS de ExMC (Krihak, Russell)',NT('20220017856'),'Cómo NASA diseña un sistema de apoyo a decisiones clínicas','doc','o','Contexto de diseño, no umbrales.'],
+[0,'Reuniones técnicas de EIMO (Lemery, Berens)',NT('20240011658'),'Operación médica independiente de la Tierra','doc','o','Contexto para la presentación.'],
+[1,'Brunstetter et al. 2024 · JAMA Ophthalmology',PMC('PMC11273286'),'Caso real de SANS severo en un astronauta con 2 factores predisponentes','aut','o',''],
+[1,'Zwart et al. 2016 · FASEB J',PMC('PMC4684521'),'Genotipo y vitaminas B se asocian con cambios oculares (49 astronautas)','aut','o',''],
+[0,'Garrett-Bakelman et al. 2019 · Estudio de los gemelos',PMC('PMC7580864'),'Un año en la ISS comparado con un gemelo en la Tierra','aut','o',''],
+[0,'Russell et al. 2023 · npj Microgravity',PMC('PMC10284846'),'Valor de un CDSS; más de 20 min de retraso con Marte','aut','o',''],
+[0,'Platts et al. 2014 · Sexo y género: sistema cardiovascular',PMC('PMC4236093'),'Mareo al ponerse de pie tras el vuelo, más frecuente en mujeres','aut','o','Serie de NASA y NSBRI. La app hoy enlaza al artículo de salud conductual (Goel, PMC4235984); este es el que respalda el dato.'],
+[1,'JPL (NASA) · Data From NASA Rover’s Voyage to Mars Aids Planning','https://www.jpl.nasa.gov/news/data-from-nasa-rovers-voyage-to-mars-aids-planning/','1.8 mSv por día de rayos cósmicos en el viaje a Marte (dato del rover Curiosity)','doc','o','Versión gratis del dato de Zeitlin 2013. Citar esta.'],
+[1,'Reporte de evidencia: riesgo de cálculos renales (2024)',NT('20240012429'),'Riesgo de cálculos en astronautas y medidas para bajarlo','doc','o','Versión gratis que cubre lo de Smith 2015.'],
+[1,'Marshall-Goebel et al. 2019 · JAMA Network Open',PMC('PMC6902784'),'11 astronautas: flujo estancado o invertido en la yugular en 6 (55 %) y un trombo oclusivo','aut','o','Versión gratis y más completa que Auñón-Chancellor 2020. Citar esta.'],
+[0,'Zeitlin et al. 2013 · Science (rover Curiosity)',PM('23723233'),'0.66 Sv en el viaje redondo más corto a Marte','aut','x','El 0.66 Sv está en el resumen gratis, pero el 1.8 mSv/día solo está en el texto de pago. Para ese dato, citar la nota de JPL.'],
+[1,'Mader et al. 2011 · Ophthalmology',PM('21849212'),'7 astronautas: 5 con edema del disco óptico y desplazamiento de +0.50 D o más; visión peor en 29 % (vuelos cortos) y 60 % (largos) de unos 300','aut','r','Todas esas cifras están en el resumen gratis de PubMed. El reporte SANS 2022 (gratis) lo resume.'],
+[1,'Kerstman et al. 2012 · Aviat Space Environ Med',PM('22272509'),'Dolor de espalda por adaptación en 52 % (382 de 728); la posición fetal alivia en 91 %','aut','r','Las cifras están en el resumen gratis. Hay una presentación de NASA gratis del mismo estudio: '+L('NTRS 20090019566',NT('20090019566'))],
+[0,'Smith et al. 2015 · Bone',PM('26456109'),'El riesgo de cálculos sube en vuelo, sobre todo por orinar poco; lo más fácil para bajarlo es beber más','aut','r','Está en el resumen gratis. No da una meta en litros.'],
+[0,'Agha et al. 2020 · FASEB J',PM('31908052'),'22 astronautas: mejor condición aeróbica previa, 29 % menos riesgo de reactivación viral','aut','r','Las cifras están en el resumen gratis. Coautores de NASA. No habla de sueño.'],
+[0,'Auñón-Chancellor et al. 2020 · NEJM',PM('31893522'),'Trombosis yugular durante el vuelo','aut','x','Es una carta sin resumen: no se puede leer gratis. Usar Marshall-Goebel 2019.'],
+[0,'Khine et al. 2018 · Circ Arrhythm Electrophysiol',PM('29752376'),'13 astronautas: la aurícula izquierda crece temporalmente tras 6 meses; fibrilación en ≈5 % de los astronautas activos','ext','r','Las cifras están en el resumen gratis. Los autores son de universidades y usan datos de astronautas de NASA.'],
+[1,'Basner, Mollicone y Dinges 2011 · PVT-B',PMC('PMC3197786'),'Reglas de la PVT-B: 3 min, intervalos de 1 a 4 s, lapso de 355 ms o más, anticipación menor a 100 ms','fin','o','Universidad de Pensilvania. Es la única fuente de las reglas de Órbita.'],
+[1,'Basner et al. 2015 · Batería Cognition',PMC('PMC4691281'),'Las pruebas BART, ERT, Fractal 2-Back y PVT que usan los juegos de Mente','fin','o','Universidad de Pensilvania. NASA la adoptó como medida estándar.'],
+[0,'Safe Passage (National Academies, 2001)','https://www.nationalacademies.org/read/10218/chapter/8','Los astronautas tienden a no reportar síntomas','ext','o','Hecho por encargo de NASA. Sirve como argumento, no como umbral.'],
+];
+const fs={q:'all',open:false,star:false};
+function renderF(){
+  document.getElementById('fq').innerHTML=[['all','Todas'],['nasa','Solo de NASA'],['no','No son de NASA']].map(([k,n])=>`<button type="button" data-k="${k}" aria-pressed="${fs.q===k}">${n}</button>`).join('');
+  document.getElementById('ft').innerHTML=[['open','Solo gratis completo'],['star','Solo las ★']].map(([k,n])=>`<button type="button" data-t="${k}" aria-pressed="${fs[k]}">${n}</button>`).join('');
+  document.querySelectorAll('#fq button').forEach(b=>b.onclick=()=>{fs.q=b.dataset.k;renderF()});
+  document.querySelectorAll('#ft button').forEach(b=>b.onclick=()=>{fs[b.dataset.t]=!fs[b.dataset.t];renderF()});
+  const rows=F.filter(r=>(fs.q==='all'||(fs.q==='nasa'?['doc','aut'].includes(r[4]):['fin','ext'].includes(r[4])))&&(!fs.open||r[5]==='o')&&(!fs.star||r[0]));
+  document.getElementById('ftb').innerHTML=rows.map(([s,n,u,d,w,a,nt])=>`<tr><td data-l="">${s?'<span class="star" title="Dato clave">★</span>':''}</td><td class="dato"><b>${u?L(esc(n),u):esc(n)}</b></td><td data-l="Qué nos da">${esc(d)}${nt?`<span class="nt">${nt}</span>`:''}</td><td data-l="¿Es de NASA?"><span class="who ${W[w][1]}">${W[w][0]}</span></td><td data-l="Acceso"><span class="acc ${a}">${a==='o'?'Gratis completo':a==='r'?'Resumen gratis (el dato está ahí)':'De pago · usar la alternativa'}</span></td></tr>`).join('');
+  document.getElementById('fcnt').textContent=`${rows.length} de ${F.length} fuentes`}
+renderF();
+</script>
