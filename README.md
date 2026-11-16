@@ -4,6 +4,10 @@
 
 Cuando la Tierra está lejos o se pierde la señal, la tripulación tiene que detectar y atender sola los problemas de salud. Space First AID junta en una sola herramienta los signos vitales, los síntomas, los datos de los dispositivos de NASA (actígrafo, Bio-Monitor y Bio-Analyzer) y las pruebas de atención y visión. Los cruza con **10 problemas de salud de vuelos largos** (documento de parámetros del equipo, basado en fuentes de NASA) y avisa con tiempo, con el protocolo y la contramedida. Todo funciona **sin internet** en la computadora de la nave y se sincroniza con el centro de control en la Tierra cuando hay señal.
 
+## Video pitch (30 s)
+
+▶️ [Ver el video pitch](docs/SpaceFirstAID-pitch.mp4) · capturas reales de la app en inglés con narración ([descargar](https://github.com/superangel13/Space-First-AID/raw/main/docs/SpaceFirstAID-pitch.mp4)). Hecho con Remotion: `herramientas/remotion_pitch.tsx`.
+
 ## Versión principal: programa de escritorio (React + Electron)
 
 La versión más nueva es el programa de escritorio en [`escritorio/`](escritorio/README.md): pantalla en **React**, ventana en **Electron** y motor en **Python + SQLite** incluido.
