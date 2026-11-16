@@ -3,6 +3,7 @@
 // Al continuar se despliega una tarjeta por tripulante con su rol, datos y antecedentes
 // médicos. Todo se guarda en SQLite a través del motor en Python.
 import { useEffect, useRef, useState } from 'react';
+import { SelectorIdioma } from './Idioma.jsx';
 import { API } from './api.js';
 import { ANTECEDENTES, COLORES, ROLES } from './datos/antecedentes.js';
 
@@ -79,6 +80,7 @@ export default function Registro({ destinos }) {
             <path d="M22 112H70l10-8 10 8h8l6 10 20-92 10 102 8-20h36" stroke="#34E39A" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <b>SPACE FIRST <span>AID</span></b>
+          <SelectorIdioma className="reg-idioma" />
         </div>
         <span className="cap">Antes de despegar</span>
         <h1>Registro de la misión</h1>

@@ -1,0 +1,425 @@
+450|Crew member {0}'s age can't be under 20.
+451|Done
+452|Medical history turns on monitoring based on what NASA approves with follow-up (for example, kidney stones: hydration and periodic urine tests).
+453|Medium
+454|Female
+455|Name
+456|Mission name
+457|Optional
+458|Other medical history or allergies
+459|Step 1 of 2
+460|Enter the destination, the duration and each crew member with their medical history. Monitoring, thresholds and the trajectory all depend on this registration.
+461|Mission registration
+462|Role
+463|Sex
+464|Crew member {0}
+465|Crew members
+466|One fewer
+467|One more
+468|View demo mission
+469|can't be under 20.
+470|{0} days
+471|Just want to see it in action?
+472|Error
+473|Accident
+474|Choose an accident: {0}'s vital signs change and the window opens with the accident protocol, just like in emergencies.
+475|Protocol
+476|Accident protocols and simulation
+477|Remove accident
+478|Human System Risks of spaceflight · NASA
+479|Simulate on {0}
+480|View all accident protocols ({0})
+481|. Solar particle event in progress.
+482|Open the alert center
+483|Emergency
+484|Got it, we're handling it
+485|NASA-STD-3001 · parameters document
+486|Stable parameters to monitor
+487|Step {0}.
+488|Accident protocol
+489|Protocol and countermeasure
+490|What happened
+491|Cabin radiation:
+492|Cabin radiation: {0}. Solar particle event in progress.
+493|Signs and symptoms that confirm it
+494|Affected systems
+495|Radiation storm: everyone to the shelter
+496|View
+497|more
+498|· and {0} more
+499|Warning
+500|Alert
+501|Context that adds risk:
+502|The engine doesn't find 2 of 3 signs for any condition.
+503|No problem in the parameters document has 2 or more indicators.
+504|Reduced level:
+505|NASA protocol ({0} steps)
+506|Red flag: {0}
+507|No warnings
+508|No active risks
+509|View indicators, protocol and sources
+510|of 3
+511|{0} of 3
+512|7 h or more
+513|Actigraph
+514|Analyzing sample…
+515|Analyze {0}
+516|Smart shirt · Canadian Space Agency
+517|Connected · live
+518|Connected · ready
+519|Connected · synced today 06:00
+520|Data that arrives on its own · no manual entry
+521|{0}'s connected devices
+522|In range
+523|Out of range
+524|Simulated readings
+525|Stable parameter
+526|Pressure
+527|7-day average
+528|Wrist watch · sleep and activity
+529|Check that the shirt is on and the band is turned on.
+530|Blood, urine and saliva · Canadian Space Agency
+531|No data from last night
+532|No sensor signal
+533|Last night's sleep
+534|no reading
+535|vs. your baseline
+536|Onboard analysis · preliminary
+537|Enter at least one value.
+538|Abnormal example
+539|Normal example
+540|Onboard equipment:
+541|Collection date and time
+542|Saving and analyzing in Python…
+543|Save onboard analysis and send to Earth
+544|Lab
+545|Earth lab · current
+546|Sample
+547|Sample {0} saved
+548|Urine, blood and saliva samples
+549|Current results
+550|No samples yet for this person.
+551|Sample type
+553|less than
+554|less than {0}
+555|more than
+556|more than {0}
+557|compared with your baseline
+558|{0} · {1} · queued for Earth
+559|· queued for Earth
+560|8.5 h of sleep
+561|Last night
+562|Worth checking on
+563|Worth checking on {0}.
+564|Wake up
+565|Sleep
+566|Day {0} of {1} · body systems for the whole crew
+567|Overall status:
+568|Overall status: {0} %.
+569|Bedtime
+570|Today it's best to
+571|Manrope
+572|Keep up sleep, hydration and exercise.
+573|Nothing urgent
+574|24-hour light clock
+575|Circadian rhythm · sleep guide
+577|The whole crew is fit
+578|All systems within their stable parameters.
+579|UTC · MISSION
+580|fit today
+581|in {0} h {1} min
+582|crew average
+583|{0} of {1} fit today
+584|Switch to
+585|Finish your turn before switching people
+586|Crew member
+587|Selected crew member
+588|Attention
+589|Good
+590|Calculating system status…
+591|No findings
+592|7 days
+593|Heart
+594|Details for
+595|Sensor disconnected
+596|Sleep
+597|Everything in range
+598|Mild apnea
+599|Treated arrhythmia
+600|Previous eye changes
+601|Kidney stones
+602|Mission specialist
+603|Herniated disc
+604|Hypertension
+605|Systems engineer
+606|Medical officer
+607|Pilot
+608|Hip prosthesis
+609|Previous thrombosis
+610|Close
+611|Select and copy. On a real mission this travels over the link as a detail packet.
+612|Alerts: no active alerts
+613|Alert center
+614|Signal OK
+615|Sending ·
+616|Sending · {0}
+617|Status of the link with Earth
+618|Mission
+619|Doctor
+620|Doctor on Earth
+621|Dashboard
+622|Tests
+623|Sections
+624|No signal ·
+625|No signal · {0} queued
+626|Space First AID, home
+627|Crew
+628|Assessment
+629|View
+630|Doctor-on-Earth view: exact values and baseline
+631|Crew view: the essentials and what to do
+632|queued
+633|Skip intro
+634|Alerts
+635|More
+636|References
+640|: everything is saved on the spacecraft.
+641|Open Mission Control (Earth)
+642|Medical history
+643|No packets yet.
+644|SIGNAL OK
+645|Mission Control
+646|You'll share this with Earth
+647|Connected
+648|Detail
+649|Orbit details
+650|Waiting
+651|Link with Earth
+652|Overall status and alerts
+653|This stays on the spacecraft
+654|Works without a signal
+655|Spacecraft · {0} queued
+656|So the flight surgeon can review your plan.
+657|Simulated signal loss
+658|What Earth sees
+659|Recommended: helps detect SANS early.
+660|Restore signal
+661|Summary
+662|Delay under 0.1 s
+663|Delay ≈ 1.3 s
+664|Eye checks
+665|NO SIGNAL · saved on the spacecraft
+666|Always on: it's the minimum the team needs.
+667|Simulate signal loss
+668|Offline
+669|Reaction times from each official turn.
+670|Everything is saved on the spacecraft first (SQLite). When there's a signal, the Python engine sends it by priority: alerts first, then summaries and finally the details. Results from the Earth lab come back over the same link.
+671|with Mission Control · {0} packets delivered
+672|with Mission Control: {0} queued, retrying automatically.
+673|Couldn't:
+674|New mission
+675|References and sources
+676|{0} · {1} · day {2} of {3}
+677|End this mission and register a new one? The current mission's data on this spacecraft will be deleted (anything already sent to Earth is kept there).
+678|Hand–eye coordination
+679|Hand circle
+680|Vision test
+681|How are you feeling?
+682|Orbit · PVT
+684|Basner, Mollicone and Dinges 2011 · PVT-B validation: 3 min, 1–4 s intervals, lapse ≥ 355 ms, anticipation < 100 ms
+685|NASA CDSS
+686|NASA Cognition
+688|NASA waivers
+689|NASA EIMO
+690|ESA · Isolation studies at Concordia Station (Antarctica)
+691|Bone · NASA HRR
+693|NASA ExMC · Clinical decision support system (CDSS) architecture, HRP-48032
+694|NASA ExMC · Earth-independent medical operations (EIMO): crew trust and behavioral health
+695|NASA Human Research Roadmap · Radiation cancer report: 600 mSv career limit (NASA-STD-3001)
+696|NASA Human Research Roadmap · SANS evidence report (2022)
+697|NASA Human Research Roadmap · Osteoporosis evidence report: bone density loss of 1 to 1.5 % per month on long missions
+698|NASA Human Research Roadmap · Sleep evidence report: 6.1 h average on the ISS (21 astronauts); the PVT is the test most sensitive to sleep loss
+699|NASA OCHMO-MTB-002 · Medical conditions approved with a waiver in astronauts
+700|NASA Standard Measures · Cognition battery (UPenn, NASA-funded), includes the PVT
+701|NASA · Agha et al. 2020: preflight fitness and viral reactivation in 22 ISS astronauts
+702|NASA · Auñón-Chancellor et al. 2020: jugular venous thrombosis during spaceflight
+703|NASA · SANS hardware and data on the ISS: acuity and Amsler on days 30, 90 and R-30 since 2010; ESA tonometry
+704|NASA · Khine et al. 2018: atrial changes after 6 months on the ISS
+705|NASA · Russell et al. 2023: the value of a CDSS; on Mars, communication takes more than 20 minutes
+706|NASA · Zeitlin et al. 2013 (Curiosity rover): 0.66 Sv on a round trip to Mars, about 1.8 mSv per day in deep space
+707|NASA · Zwart et al. 2016: genotype and B vitamins are associated with eye changes in 49 astronauts
+708|NASA-STD-3001 Vol. 1 Rev C · Crew health standard
+709|NASA/NSBRI 2014 · Impact of sex and gender on adaptation to space
+710|National Academies for NASA · Safe Passage (2001): astronauts tend not to report symptoms
+711|Radiation · NASA HRR
+712|Kidney NTRS
+714|SANS on the ISS
+716|Sex and gender 2014
+717|Sleep · NASA HRR
+718|Thrombosis 2020
+720|Screen calibrated:
+721|% of the lap · mean error
+722|(after 1.5 s) and
+723|) · minimum contrast
+724|. Approximate acuity in logMAR is also calculated using the screen calibration.
+725|100 points per dot
+726|: the mean error against the line (0 px = 100 %, 40 px or more = 0 %).
+727|: up to 10 s there's no penalty; after that it drops to half at 30 s.
+728|: look only at the center dot
+729|: if you don't finish, it's multiplied by how far you got.
+730|Affects the musculoskeletal and cognitive systems if below 70 %
+731|Acuity and contrast · affects the neuro-ocular system (SANS) if below 70 %
+732|Acuity: which way does the C open?
+733|Each correct answer is worth more the smaller or fainter the C is.
+734|Each exit before completing subtracts 5
+735|Score
+736|Score {0} % ({1} out of 10) · {2} eye · smallest C {3} px (≈ logMAR {4}) · minimum contrast {5} % · {6} correct
+737|Loading the hand detector (built into the app, no internet needed)…
+738|Contrast: which way does the C open?
+739|Show which way the C's gap faces using the arrows (keyboard or buttons). Each correct answer makes it smaller, then fainter. Keep going until you miss 2 in a row. You have 5 s per answer. Sit 50 cm from the screen.
+740|Interpreting in Python…
+741|Move the tip of your index finger (or the pointer) to each dot and hold it there until the ring fills. Speed, how centered you land and not leaving early all count.
+742|Camera mode: the blue dot follows the tip of your index finger.
+743|Camera mode: raise your hand in front of the camera. The blue dot follows the tip of your index finger.
+744|Pointer mode: mouse, pen or finger on the screen.
+745|Fine motor skills
+746|Eye
+747|{0} eye: look only at the center dot
+748|{0} eye: {1}
+749|Requesting camera access…
+750|Accuracy
+751|Press "Start"
+752|Test in progress…
+753|Tests ·
+754|Tests · {0}
+755|Dot
+756|Dot {0} of {1}
+757|Go back the other way
+758|Slow answers subtract
+759|No sessions yet: the first one will be your baseline.
+760|Finish (I've marked the areas)
+761|Time
+762|Tap the green dot to start
+763|Tap the green dot and trace the whole circle with your fingertip or the pointer without leaving the line.
+764|Everything looks straight and complete
+766|Full lap
+767|out of 10) · eye
+768|subtracts 3 points each time.
+769|if you reach it in under 0.8 s and in the center. It drops over time (worth 30 % at 4 s) and with distance from the center (down to −40 %).
+770|missed ·
+771|an answer not given within 5 s counts as an error
+772|and a dot you don't reach in 5 s is worth 0. The final score is the average of 12 dots.
+773|· smallest C
+774|⚠ The hand detector couldn't load. Using the pointer instead.
+775|⚠ The camera couldn't be used (permission denied or no camera). The test works with the mouse or a finger.
+778|Correct
+780|Correct {0}
+781|Joy
+782|Good
+783|Face
+785|Face {0} of {1}
+786|Check-in saved: it stays on the spacecraft
+787|NASA definition (2025 behavioral health report). With 2 of 3, a private medical conference is suggested (ISS Medical Checklist, p. 422).
+788|Within your usual range
+789|Distant
+790|Choose another game
+791|Start
+792|Anger
+793|Expressions
+794|Balloon
+797|Balloon {0} of {1}
+796|Oxygen balloon
+798|Save
+799|You saved
+800|Done today
+801|Same as 2 back
+802|Inflate and cash in before it pops. It measures how much risk you take today (BART).
+803|Inflate +1
+804|2-back memory
+805|Fear
+806|Neutral
+807|Normal
+808|Pending today
+809|You lost this balloon's points.
+810|Below your usual range
+811|First game: it will be part of your baseline.
+812|Result
+813|Tense
+814|Tap when the symbol matches the one from two steps before (F2B).
+815|Sadness
+816|Close-knit
+817|You'll see a symbol every 1.6 s. Tap the button when it matches the one from
+818|correct. Happy or neutral faces seen as negative:
+819|pts on this balloon
+820|points. Average pumps on saved balloons:
+821|{0} of 3{1}
+822|{0} of {1} correct. Happy or neutral faces seen as negative: {2}.
+823|{0} pts on this balloon
+824|It popped!
+825|What emotion does each face show? It measures how you perceive emotions (ERT).
+832|3 days in a row
+833|3 minutes · once a day
+834|30 days in a row
+835|5 responses under 250 ms
+836|5 responses under 250 ms in one game
+837|60 seconds · no limit
+838|7 days in a row
+840|Open capsule
+841|Open supply capsule
+842|Moon landing
+843|Apollo 11 launched on July 16, 1969, and entered lunar orbit three days later.
+844|Apollo 8, in December 1968, was the first crewed mission to orbit the Moon.
+845|Arcade
+846|Aurora
+847|Locked
+848|Cadet
+849|Catches
+850|Van Allen belts
+851|Collector
+853|Color {0}
+852|Color
+854|Max combo
+855|Complete the route to the Moon
+856|Complete your official turn
+857|Get 2 golden capsules
+858|Get a ×3 capsule
+859|Consistency
+860|Counts toward your health
+861|GOLDEN CAPSULE ×3
+862|CAPSULE ×3
+863|Supply capsule
+864|Supply capsule:
+865|Golden capsule
+866|Descent
+867|Twelve NASA astronauts walked on the Moon between 1969 and 1972.
+868|Apollo 11's Eagle module landed on July 20, 1969, in the Sea of Tranquility.
+869|On the ISS, astronauts slept an average of 6.1 hours a night (21 astronauts measured with actigraphy).
+870|On the Moon you weigh about one-sixth of what you weigh on Earth.
+872|Streak shield
+873|Radiation shield
+874|Lunar sphere
+875|Deep space
+876|Specialist
+877|Dodge
+878|Dodge 4 red meteors
+879|Dodge 5 meteors in arcade
+880|Dodge red meteors, catch golden capsules
+881|Overall status of
+882|{0}'s overall status: {1}
+883|Stage
+884|Stage {0} of {1}
+885|Lunar explorer
+886|Done
+887|Lunar ice
+888|Hyperfocus
+889|New badge:
+890|Trans-lunar injection
+891|Play 2 arcade games
+892|Play arcade
+893|The International Space Station has been continuously crewed since November 2, 2000.
+894|The ISS circles Earth every 90 minutes: its crew sees about 16 sunrises a day.
+895|The Moon is on average 384,400 km from Earth.
+896|Launch
+897|Lapses
+898|Lunar legend
+899|Reach a ×10 combo

@@ -103,12 +103,14 @@ export function AlertaGrande({ N }) {
           <Escena partes={partes} tormenta={tormenta} />
           <div style={{ display: 'grid', gap: 12, alignContent: 'start' }}>
             <div><span className="cap">Qué pasó</span>
-              <p style={{ fontWeight: 800, marginTop: 4 }}>{r ? r.presentas : acc ? acc.que_es : `Radiación en la cabina: ${a.val}. Evento de partículas solares en curso.`}</p>
+              <p style={{ fontWeight: 800, marginTop: 4 }}>{r ? r.presentas : acc ? acc.que_es : tormenta ? `Radiación en la cabina: ${a.val}. Evento de partículas solares en curso.` : `${N.aName(a)}${a.val ? ': ' + a.val : ''}. Lo detectó el sensor portátil.`}</p>
               {r && <p className="small muted" style={{ marginTop: 4 }}>{r.k.explicacion}</p>}
             </div>
-            <div><span className="cap">Sistemas atacados</span>
-              <div className="sischips">{sistemas.map(s => <span key={s} className="ch bad">{s}</span>)}</div>
-            </div>
+            {sistemas.length > 0 && (
+              <div><span className="cap">Sistemas atacados</span>
+                <div className="sischips">{sistemas.map(s => <span key={s} className="ch bad">{s}</span>)}</div>
+              </div>
+            )}
             {r && (
               <div className="why2"><span className="cap">Signos y síntomas que lo confirman</span>
                 {r.cr.filter(x => x.w).map((x, i) => <div key={i}><span style={{ color: 'var(--bad)' }}>●</span><span><b>{x.n}</b> · {x.w}</span></div>)}

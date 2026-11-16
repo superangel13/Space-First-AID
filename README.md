@@ -21,8 +21,10 @@ No hace falta instalar Python ni nada más: el programa trae todo y funciona sin
 | **Windows** 10 u 11 | El `.exe` con `Setup` en el nombre (instalador) o el otro `.exe` (portable, sin instalar) | 1. Doble clic al archivo. 2. Si aparece «Windows protegió tu PC»: **Más información → Ejecutar de todas formas**. 3. El instalador deja un acceso directo en el escritorio y en el menú Inicio. |
 | **Linux** (x64) | El que termina en `.AppImage` | En la terminal, dentro de la carpeta de descargas: `chmod +x *.AppImage` y luego `./Space*.AppImage`. |
 
-3. La primera vez se ve la animación de entrada y después el **registro de la misión** (destino Luna, Marte u otro; tripulantes de 20 años o más). También puedes elegir **Ver misión demo**.
+3. La primera vez se ve la animación de entrada, se **elige el idioma (español o English)** y después el **registro de la misión** (destino Luna, Marte u otro; tripulantes de 20 años o más). También puedes elegir **Ver misión demo**.
 4. Para las pruebas con la mano, el programa pide permiso para usar la **cámara**.
+
+**Idioma:** toda la plataforma está en español y en inglés. Se elige al abrirla por primera vez y se cambia en cualquier momento con el botón **ES | EN** del encabezado. El traductor está en `app/i18n/` y el diccionario se arma con `herramientas/extraer_textos.py` y `herramientas/i18n/fusionar.py`.
 
 Los avisos de macOS y Windows aparecen porque el programa no está firmado con un certificado de pago. No es un virus.
 

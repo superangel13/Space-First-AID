@@ -298,3 +298,19 @@ main:not(.con-lateral)>.contenido{grid-column:1/-1}
 .accprev{display:grid;gap:6px;background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 .accprev ol{margin:0;padding-left:18px;display:grid;gap:2px}
 .acclist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:10px}
+
+/* ===== Idioma (español / English) ===== */
+.role.idioma button{min-width:38px;padding:5px 10px;letter-spacing:.04em}
+.reg-top{display:flex;align-items:center;gap:10px}
+.reg-top .reg-idioma{margin-left:auto}
+.idioma-pantalla{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background:radial-gradient(120% 90% at 50% 0%,#0E1A2A 0%,var(--bg,#05070A) 60%);animation:idiomaEntra .45s ease both}
+.idioma-caja{width:min(560px,100%);display:grid;justify-items:center;gap:10px;text-align:center}
+.idioma-caja h1{font-size:clamp(26px,4vw,36px);margin-top:6px}
+.idioma-caja>p.muted{margin-top:-6px;font-size:17px}
+.idioma-botones{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;margin:14px 0 6px}
+.idioma-botones .btn{display:grid;gap:4px;justify-items:center;padding:22px 16px;border-radius:18px;font-size:20px}
+.idioma-botones .btn span{font-size:13px;font-weight:600;opacity:.75}
+.idioma-botones .btn:hover{transform:translateY(-2px)}
+@media (max-width:520px){.idioma-botones{grid-template-columns:1fr}}
+@keyframes idiomaEntra{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.idioma-pantalla{animation:none}}

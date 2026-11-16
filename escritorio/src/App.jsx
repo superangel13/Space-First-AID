@@ -1,5 +1,5 @@
 // Space First AID · aplicación (React)
-// 1) Animación de entrada.
+// 1) Animación de entrada y, la primera vez, elegir idioma (español / English).
 // 2) Pregunta al motor de la nave (Python) si hay una misión registrada:
 //    - si no hay, muestra el registro inicial (o la misión demo);
 //    - si hay, carga parámetros y estado y abre directo el Panel.
@@ -10,6 +10,7 @@ import { API } from './api.js';
 import { useEvento, useLatido } from './bus.js';
 import Registro from './Registro.jsx';
 import Intro from './estructura/Intro.jsx';
+import { ElegirIdioma, idiomaElegido } from './Idioma.jsx';
 import Encabezado from './estructura/Encabezado.jsx';
 import { AlertaGrande, BarraAlerta } from './componentes/AlertasFlotantes.jsx';
 import SelectorLateral from './componentes/SelectorLateral.jsx';
@@ -131,6 +132,7 @@ function Aplicacion() {
 export default function App() {
   const [fase, setFase] = useState('cargando');   // cargando | sin-motor | registro | app
   const [introLista, setIntroLista] = useState(false);
+  const [idiomaListo, setIdiomaListo] = useState(idiomaElegido);
   const [destinos, setDestinos] = useState([]);
 
   useEffect(() => {
@@ -159,7 +161,8 @@ export default function App() {
         <button className="btn go" type="button" onClick={() => window.location.reload()}>Reintentar</button>
       </div>
     );
-  } else if (fase === 'registro' && introLista) pantalla = <Registro destinos={destinos} />;
+  } else if (introLista && !idiomaListo && fase !== 'cargando') pantalla = <ElegirIdioma alElegir={() => setIdiomaListo(true)} />;
+  else if (fase === 'registro' && introLista) pantalla = <Registro destinos={destinos} />;
   else if (fase === 'app' && introLista) pantalla = <Aplicacion />;
   return (
     <>

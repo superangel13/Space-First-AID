@@ -1,0 +1,409 @@
+900|Get a ×8 combo
+901|All 6 play on the same day
+902|Moon
+903|Steady hand
+904|Median
+905|Crew goal for today
+906|Today's missions
+907|Fastest
+908|NASA chose the lunar south pole region for Artemis because of possible water ice in permanently shadowed craters.
+909|NASA limits an astronaut's career radiation dose to 600 mSv.
+910|NASA · sleep evidence report
+911|DON'T TAP
+912|Navigator
+913|Nebula
+914|Nova
+915|New stage unlocked
+916|New rank:
+917|New rank: {0}
+918|New record
+919|GET READY
+920|PVT-B · performance score {0} % · baseline {1} ms
+921|To stay in orbit, the ISS travels at about 28,000 km/h.
+922|Plasma
+923|Lunar south pole
+924|Postcard
+926|Postcard {0} of {1}
+927|First contact
+928|Midpoint
+929|Rank
+931|Rank {0} of {1}
+932|Reflexes
+933|Collect 8 postcards
+934|Route completed
+935|Iron routine
+936|IT GOT AWAY
+937|Perfect week
+938|No response
+939|Solar
+940|Just for fun · not measured
+941|They are zones of particles trapped by Earth's magnetic field; the Apollo missions crossed them quickly to limit the dose.
+942|Space
+943|Sleep in orbit
+944|Score 15,000 points in one game
+945|Earth
+946|Tap the screen or press Space when the ring lights up. If you jump the gun, you lose the combo.
+947|United crew
+948|Your attention is the same as always.
+949|Your attention is slower than your normal. Rest a little if you can.
+950|Your first official turn
+951|Official turn
+952|Official turn with no anticipations
+953|Your records
+954|A shield protects your streak if you miss a day
+955|A radio signal takes about 1.3 seconds to travel from the Moon to Earth.
+956|Mission green
+957|Orbital veteran
+958|Back to menu
+959|day
+960|day{0} in a row
+961|vs. your record
+962|{0} of {1} postcards
+963|{0} · {1} · {2}-day{3} streak
+964|{0}{1} vs. your record
+965|You completed all 3 missions!
+966|It was a meteor!
+967|HYPERFOCUS!
+968|You reached the Moon!
+969|Too soon!
+971|· streak of
+972|Low orbit
+973|Lunar orbit
+975|Clinical engine:
+976|No longer meets the criteria
+977|for 1 to 3 days
+978|for more than 3 days
+979|{0} of {1} indicators
+980|: back to normal
+981|Accident handled
+982|Simulated accident
+983|Adjust today's workload.
+984|Handled
+985|Increase the module's ventilation.
+986|Notify Mission Control.
+987|Notify the medical officer; it's reported to Earth.
+988|Isolate yourself in your cabin; wear a mask in common areas.
+989|Drink water and rest.
+990|Drink water: goal of 3 L today.
+991|Drink in small sips and rest for 1 to 2 hours.
+992|Drink salty fluids if you can.
+993|Find a quiet place.
+994|High CO₂ in the cabin
+995|Change in vision
+996|Simulated case:
+997|Simulated case: {0}
+998|Simulated case: {0} · {1}{2}
+999|Fall on the surface
+1000|Stop physical activity and breathe slowly.
+1001|Stop the activity and lie down or strap in horizontally.
+1002|Stop the activity and hold on to a fixed point.
+1003|Kidney pain
+1004|The medical officer decides whether medication is needed.
+1005|Raise your legs.
+1006|High stress
+1007|Simulated air-scrubbing failure
+1008|Fever
+1009|Do the 2-minute guided breathing.
+1010|The spacecraft is back to normal
+1011|Measure blood pressure.
+1012|Measure temperature and oxygen every 4 hours.
+1013|Look at a fixed point and keep your head still.
+1014|Spacecraft
+1015|Don't move: check for pain in the hips, legs and wrists.
+1016|New
+1017|Low oxygen
+1018|Ask about severe headache, vision changes or chest pain.
+1019|Ask about palpitations, dizziness or chest pain.
+1020|Ask how they feel and check for dizziness or fainting.
+1021|High blood pressure
+1022|Low blood pressure
+1023|Blood pressure {0}/{1}
+1024|Very slow pulse
+1025|Very fast pulse
+1026|Pulse {0} bpm
+1027|Repeat the measurement in 5 minutes and notify the medical officer.
+1028|Repeat the check every week.
+1029|Repeat the eye check (Vision section).
+1030|Rest for 5 minutes and repeat the measurement.
+1031|Rest and a pain reliever as directed by the medical officer.
+1032|Rapid breathing
+1033|Check the cabin air (CO₂ and oxygen).
+1034|Check the sensor and measure again.
+1035|Check the air-scrubbing system.
+1036|Check the suit pressure.
+1037|Check oxygen and cabin air.
+1038|Check that the sensor is placed correctly.
+1039|Check whether they're asleep or in deep rest: it may be normal.
+1040|Check whether they took their medication on time.
+1041|Back to normal
+1042|If the hip or leg hurts: immobilize and return to the base.
+1043|If there's a headache or shortness of breath, change modules.
+1044|If there's shortness of breath, notify the medical officer.
+1045|If there's fever or you can't urinate: emergency.
+1046|If there are symptoms, notify the medical officer.
+1047|If it doesn't come down in 10 minutes, notify the medical officer.
+1048|If you'd like, schedule a private call with Earth.
+1049|If it stays high, notify the medical officer.
+1050|If it stays low: emergency oxygen and notify the medical officer.
+1051|Sit down and breathe slowly and deeply.
+1052|Sit down and breathe slowly.
+1053|Keep a bag handy.
+1054|Solar storm
+1055|Simulated solar storm
+1056|Your crewmate helps you get up from your side.
+1057|Portable ultrasound and urine sample.
+1058|Use adjustable glasses if near vision is blurry.
+1059|{0} per min
+1060|{0}: back to normal
+1061|Searching for Mission Control again…
+1062|Connected to Mission Control: sending by priority
+1063|Couldn't change the link:
+1064|Simulated signal loss: everything is saved on the spacecraft
+1065|Offline: everything is saved on the spacecraft
+1066|Move your bedtime 30 minutes earlier.
+1067|Spread your water intake through the day.
+1068|Double-check delicate tasks.
+1069|Avoid screens and bright light before bed.
+1070|Do your Orbit turn at the same time every day.
+1071|Measure your resting pulse when you wake up.
+1072|Readiness
+1073|Prioritize rest this week.
+1074|Resting pulse
+1075|Share demanding tasks with the crew.
+1076|Review the schedule: fewer night tasks.
+1077|Review sleep and workload.
+1078|If it keeps rising, check in with the medical officer.
+1079|could sleep less than 6.4 h a night
+1080|their readiness could drop below 70 %
+1081|their resting pulse could keep rising
+1082|their reaction time could fall outside their range
+1083|Change
+1084|Fit
+1085|Pending
+1086|Check now
+1087|No changes
+1088|No data
+1089|Go at your own pace
+1090|2 of 3: warning
+1091|Adaptation
+1092|Fall on the Moon
+1093|Joint pain and tingling
+1094|Headache
+1095|Back pain
+1096|Severe pain, can't bear weight
+1097|Shortness of breath
+1098|Infection
+1099|Dizziness when moving
+1100|No vital signs coming in from
+1102|No vital signs from {0} since this morning.
+1103|Oxygen
+1104|Palpitations
+1105|Reconnect sensor
+1106|Incomplete kidney
+1107|Reports cramping pain and nausea
+1108|Reports nausea and spinning
+1109|Reports and tests
+1110|Sensor reconnected: data is coming in again
+1111|No signal
+1112|After a spacewalk (DCS)
+1113|Monitor
+1114|Blurred vision
+1115|since this morning.
+1116|Mood and getting along
+1117|Cabin CO₂
+1118|Humidity
+1120|Outside: there's no 24-hour day or night
+1121|Outside: a lunar day lasts about 29.5 days
+1122|Outside: about 16 sunrises a day
+1123|Eye mask and earplugs if there's light or noise. Sleep in your sleeping bag at the same time every day: goal of 8 h.
+1124|Switch to warm light, turn screens down and avoid intense exercise. Try the guided breathing.
+1125|Day
+1126|During the trip the spacecraft may be in sunlight the whole time. Your day is set by the cabin lights and the crew schedule.
+1127|At the base there are about two straight weeks of sunlight and two of darkness. Without the cabin, the body wouldn't know what time it is.
+1128|The Station circles Earth every 90 minutes: 45 of light and 45 of darkness. That's why the cabin lighting is what sets the day.
+1129|Bright blue light
+1130|White light
+1131|Warm, dim light
+1132|Keep bright white light while you work and exercise before the afternoon.
+1133|Darkness
+1134|Turn on the cabin's blue light and open the curtain: it tells your body the day has started.
+1135|Get ready for sleep
+1136|No areas with warnings
+1137|heart
+1138|ear
+1139|kidneys
+1140|{0} · drag to rotate
+1141|· drag to rotate
+1142|DAY
+1143|DAY {0} · {1}:{2}:{3} UTC
+1145|Now
+1147|Now {0} · in 7 days {1} · limit {2}
+1148|Confidence
+1150|Confidence: {0}
+1151|Create preventive alert
+1152|Critical
+1153|Air failure
+1154|Mark as handled
+1155|Training mode
+1156|Training mode: on
+1157|To monitor
+1158|Forecast:
+1159|Forecast: {0} trending down
+1160|Risk forecasts
+1161|NASA protocol
+1162|Try the simulator to see how the system responds, or turn on training mode to get surprise cases.
+1163|High radiation
+1164|Resolved this session
+1165|No active alerts
+1166|No events.
+1167|No risk trends in the next 7 days.
+1168|The whole crew is in range
+1169|Everyone back to normal
+1170|trending down
+1171|days
+1172|rising
+1173|in {0} days
+1174|received by Mission Control
+1175|· in 7 days
+1176|· limit
+1177|Water
+1178|Well done
+1179|Dinner with the crew
+1180|Lunch
+1181|Breakfast
+1182|Wake up and hygiene
+1183|Stop
+1184|Exercise
+1185|Aerobic exercise
+1186|Strength exercise
+1187|Start · 2 min
+1188|Breathe out
+1189|Science experiments
+1190|Spacecraft time
+1191|Spacecraft time {0}:{1} UTC
+1192|Breathe in
+1193|Base maintenance
+1194|Message on its way to Earth
+1195|Personal message from
+1196|Personal message from {0} (private)
+1197|Water goal reached
+1198|Exercise goal reached
+1199|Prototype goals, adjustable by the medical officer. Water helps prevent kidney stones.
+1200|Again · 2 min
+1201|Meeting with Mission Control
+1202|Weekly eye check
+1203|No signal: it goes out as soon as there's a link
+1204|Hold
+1205|Free time and a call home
+1206|Orbit turn · 3 min
+1207|of the day
+1208|breath
+1209|{0} breath{1}
+1210|% · at return
+1211|%) · at return
+1213|Acceleration of up to about 3 g while passing through the atmosphere.
+1214|At return
+1215|Splashdown: end of the mission
+1216|Ascent to lunar orbit and departure for Earth.
+1217|Base on the lunar surface
+1218|Outer Van Allen belt
+1219|Inner Van Allen belt
+1220|Hard deceleration and return to 1 g: blood pressure may drop when standing up.
+1221|Liftoff
+1222|Lunar liftoff
+1223|Distance to Earth
+1224|Mission dose
+1225|Mission day
+1226|Day {0} · at return (day {1})
+1227|Day {0}: {1}
+1228|Earth's magnetic field still deflects some solar particles.
+1229|Trapped high-energy electrons: the second zone of high radiation.
+1230|Entering:
+1231|Entering: {0}
+1232|Cislunar space
+1233|Low-orbit station
+1234|Lunar-orbit station
+1235|Stay on the Moon
+1236|Stay in orbit
+1237|Phase
+1238|Gravity
+1239|Gravity of 0.17 g. No atmosphere or magnetic field: the base's shelter is key during solar storms.
+1240|Go to today (day
+1241|Go to today (day {0})
+1242|Arrival at the Moon
+1243|Outer magnetosphere
+1244|Microgravity (0 g)
+1245|Pause
+1246|Below the Van Allen belts, where the ISS orbits. Microgravity begins.
+1247|Preparing for descent. The Moon blocks part of the sky and radiation drops a little.
+1248|First gravity change after days in microgravity: watch your balance.
+1249|Protons trapped by the magnetic field: the dose rises sharply, so it's crossed quickly.
+1250|Estimated bone loss
+1252|Estimated bone loss {0} % · at return {1} %
+1253|Radiation now
+1254|Career radiation
+1256|Career radiation {0} mSv ({1} %) · at return {2} mSv
+1257|Reentry
+1258|Region between the belts
+1259|Cislunar return
+1260|Repeat trip
+1261|Play trip
+1262|Signal delay
+1263|Leaving Earth
+1264|Without Earth's magnetic protection: constant cosmic rays (about 1.8 mSv per day).
+1265|Earth · 1 g
+1266|Simulated solar storm on day
+1267|Simulated solar storm on day {0}{1}
+1268|Trajectory and environment ·
+1269|Trajectory and environment · {0} days
+1270|Three days back through deep space.
+1271|Transit to the Moon
+1272|Zone
+1273|Zone with fewer trapped particles.
+1274|outer belt
+1275|inner belt
+1276|under 0.1 s
+1277|· at return (day
+1278|Low Earth orbit
+1280|% of 600
+1282|Amsler {0} / {1}
+1283|Crew data · days 1 to
+1284|Crew data · days 1 to {0} ({1} rows)
+1285|Dose mSv
+1286|Day 0
+1287|Today · day
+1289|Today · day {0}
+1290|Lapses ≥355
+1291|Eyes · R-30
+1292|Eyes · day 30
+1293|Eyes · day 90
+1294|Person
+1295|Return ·
+1297|Return · {0}
+1298|Sleep h
+1299|Vision OS / OD
+1300|{0} % of 600
+1306|% of the career limit
+1307|% of the limit.
+1308|(your normal:
+1309|70 % = a good day
+1310|Isolation
+1311|After landing, get up in stages and with fluids.
+1312|Something is below your normal. Below you can see what's dropping and what to do.
+1313|Last night you slept
+1314|History of kidney stones
+1315|History of thrombosis
+1316|Joint
+1317|Good, with something to watch
+1318|Hip
+1319|Change in the check
+1320|Clotting
+1321|Spine
+1322|Combines sleep (35 %), attention (35 %) and resting pulse (30 %) against your own baseline. This prototype's formula; comparing against yourself follows the approach of the
+1323|Combines sleep (35 %), attention (35 %) and resting pulse (30 %) against your own baseline. This prototype's formula; comparing against yourself follows the approach of the {0}.
+1324|Low fitness
+1325|High physical fitness
+1326|Medium fitness
+1327|Complete today's exercise routine.
+1328|Complete the aerobic and strength exercise routine.
+1329|Defenses

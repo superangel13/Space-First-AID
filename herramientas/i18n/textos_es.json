@@ -1,0 +1,5356 @@
+{
+"Accidentes tomados de los Human System Risks de NASA (https://www.nasa.gov/hhp/human-system-risks/). «que_es» resume la página de cada riesgo; el protocolo sigue las medidas que esa página describe y, donde aplica, el ISS Medical Checklist.": [
+"datos/accidentes.json"
+],
+"Activar la remoción de respaldo (cartuchos de hidróxido de litio)": [
+"datos/accidentes.json"
+],
+"Aislar el módulo afectado": [
+"datos/accidentes.json"
+],
+"Al aterrizar, la tripulación puede estar desacondicionada y le cuesta salir sola de la nave o hacer tareas de emergencia en la superficie.": [
+"datos/accidentes.json"
+],
+"Analgésico según el cirujano de vuelo": [
+"datos/accidentes.json"
+],
+"Avisar al centro de control": [
+"datos/accidentes.json"
+],
+"Avisar al cirujano de vuelo": [
+"datos/accidentes.json"
+],
+"Ayudar a salir de la nave": [
+"datos/accidentes.json"
+],
+"Contaminantes químicos por fugas del sistema ambiental o de experimentos, materiales quemados (pirólisis), gases de los plásticos, propelente o productos de microbios. El aire respirable es esencial.": [
+"datos/accidentes.json"
+],
+"Cortar la energía antes de tocar al tripulante": [
+"datos/accidentes.json"
+],
+"Descarga eléctrica": [
+"datos/accidentes.json"
+],
+"Detener la caminata espacial o la despresurización y volver a la presión de la cabina": [
+"datos/accidentes.json"
+],
+"El traje y el esfuerzo de la caminata espacial pueden causar lesiones; las exigencias de las caminatas en la Luna y Marte todavía no se conocen bien.": [
+"datos/accidentes.json"
+],
+"En la nave el CO₂ no se elimina solo: lo quitan equipos como el CDRA, el hidróxido de litio o sistemas de aminas. Si fallan, el CO₂ sube y afecta la salud y el desempeño.": [
+"datos/accidentes.json"
+],
+"Enfermedad por descompresión": [
+"datos/accidentes.json"
+],
+"Exposición a CO₂ alto en la cabina": [
+"datos/accidentes.json"
+],
+"Exposición a polvo lunar o marciano": [
+"datos/accidentes.json"
+],
+"Exposición a sustancias tóxicas": [
+"datos/accidentes.json"
+],
+"Falta de oxígeno por despresurización de la cabina, falla del sistema de soporte vital (ECLSS), exposición tóxica o enfermedad. Afecta la presión dentro del cráneo, la visión, la cognición, el equilibrio y el sueño.": [
+"datos/accidentes.json"
+],
+"Fractura por caída o golpe": [
+"datos/accidentes.json"
+],
+"Frío local y reposo de la zona": [
+"datos/accidentes.json"
+],
+"Hipoxia por despresurización o falla de soporte vital": [
+"datos/accidentes.json"
+],
+"Incorporarse por etapas: sentarse antes de ponerse de pie": [
+"datos/accidentes.json"
+],
+"Inmovilizar la columna": [
+"datos/accidentes.json"
+],
+"Ir a un módulo con presión segura y cerrar la escotilla": [
+"datos/accidentes.json"
+],
+"La gravedad alterada debilita el hueso, y una caída o carga fuerte puede fracturarlo, sobre todo en misiones largas y en superficie planetaria.": [
+"datos/accidentes.json"
+],
+"Las cargas del lanzamiento y del aterrizaje pueden lesionar a la tripulación; las herramientas actuales subestiman las lesiones de aterrizaje y hay pocos datos.": [
+"datos/accidentes.json"
+],
+"Lavar los ojos con agua": [
+"datos/accidentes.json"
+],
+"Lavar ojos y piel si hubo contacto": [
+"datos/accidentes.json"
+],
+"Lesión durante una caminata espacial": [
+"datos/accidentes.json"
+],
+"Lesión por impacto en lanzamiento o aterrizaje": [
+"datos/accidentes.json"
+],
+"Limpiar la superficie y el filtro de aire": [
+"datos/accidentes.json"
+],
+"Medir el oxígeno en sangre con el Bio-Monitor": [
+"datos/accidentes.json"
+],
+"Mejorar la ventilación de la zona": [
+"datos/accidentes.json"
+],
+"No mover cuello ni columna": [
+"datos/accidentes.json"
+],
+"No mover la zona: inmovilizar con férula": [
+"datos/accidentes.json"
+],
+"Pasar de una presión alta a una baja demasiado rápido y sin desnitrogenación forma burbujas de gas en el cuerpo. Puede pasar en una caminata espacial o si la cabina se despresuriza.": [
+"datos/accidentes.json"
+],
+"Ponerse la mascarilla de oxígeno": [
+"datos/accidentes.json"
+],
+"Ponerse la mascarilla de protección respiratoria": [
+"datos/accidentes.json"
+],
+"Por sus propiedades únicas, el polvo de la Luna o de Marte puede dañar los pulmones, el corazón, los ojos o la piel, y afectar el desempeño en misiones de superficie.": [
+"datos/accidentes.json"
+],
+"Quitarse el traje dentro de la esclusa y contener el polvo": [
+"datos/accidentes.json"
+],
+"Registrar dolor de cabeza y cambios en la vista": [
+"datos/accidentes.json"
+],
+"Registrar la exposición": [
+"datos/accidentes.json"
+],
+"Registrar la exposición de cada tripulante": [
+"datos/accidentes.json"
+],
+"Registrar la lesión": [
+"datos/accidentes.json"
+],
+"Respirar oxígeno al 100 %": [
+"datos/accidentes.json"
+],
+"Revisar conciencia, orientación y habla": [
+"datos/accidentes.json"
+],
+"Revisar dolor en articulaciones, hormigueo, mareo y fuerza (examen neurológico)": [
+"datos/accidentes.json"
+],
+"Revisar el monitor de CO₂ y el equipo de remoción (CDRA)": [
+"datos/accidentes.json"
+],
+"Revisar el sistema de soporte vital (ECLSS)": [
+"datos/accidentes.json"
+],
+"Revisar manos, hombros y zonas de presión del traje": [
+"datos/accidentes.json"
+],
+"Revisar pulso y ritmo cardiaco (ECG del Bio-Monitor)": [
+"datos/accidentes.json"
+],
+"Revisar pulso y sensibilidad más allá de la lesión": [
+"datos/accidentes.json"
+],
+"Revisar quemaduras en la entrada y salida de la corriente": [
+"datos/accidentes.json"
+],
+"Revisar respiración y tos": [
+"datos/accidentes.json"
+],
+"Risk of Adverse Health Effects Due to Celestial Dust Exposure (Dust Risk)": [
+"datos/accidentes.json"
+],
+"Risk of Bone Fracture due to Spaceflight-induced Changes to Bone": [
+"datos/accidentes.json"
+],
+"Risk of In-Mission Injury due to Dynamic Loads (Dynamic Loads Risk)": [
+"datos/accidentes.json"
+],
+"Risk of Mission Impacting Injury due to EVA Operations (EVA Risk)": [
+"datos/accidentes.json"
+],
+"Risk of Mission Impacts and Long-Term Health Issues due to Decompression Sickness": [
+"datos/accidentes.json"
+],
+"Risk of Nominal Acute and Chronic Ambient Carbon Dioxide Exposure in Crewed Vehicles (CO2 Risk)": [
+"datos/accidentes.json"
+],
+"Risk of Reduced Crew Health and Performance Due to Hypoxia": [
+"datos/accidentes.json"
+],
+"Risk of Toxic Substance Exposure": [
+"datos/accidentes.json"
+],
+"Risk to Crew Health Due to Electrical Shock": [
+"datos/accidentes.json"
+],
+"Risk to Vehicle Crew Egress Capability as Applied to Earth and Extraterrestrial Landings": [
+"datos/accidentes.json"
+],
+"Salida difícil tras el aterrizaje": [
+"datos/accidentes.json"
+],
+"Separarlo de la fuente con material aislante": [
+"datos/accidentes.json"
+],
+"Signos vitales cada 5 minutos": [
+"datos/accidentes.json"
+],
+"Signos vitales de pie y acostado": [
+"datos/accidentes.json"
+],
+"Suspender la caminata espacial y volver a la esclusa": [
+"datos/accidentes.json"
+],
+"Tomar líquidos": [
+"datos/accidentes.json"
+],
+"Tomar una muestra del aire": [
+"datos/accidentes.json"
+],
+"Tratamiento con presión según el cirujano de vuelo": [
+"datos/accidentes.json"
+],
+"Ultrasonido si está disponible": [
+"datos/accidentes.json"
+],
+"Una corriente eléctrica no intencional a través del cuerpo. La probabilidad es muy baja y la consecuencia más seria esperada es la contracción involuntaria de los músculos.": [
+"datos/accidentes.json"
+],
+"Vigilar la visión, la confusión y el equilibrio": [
+"datos/accidentes.json"
+],
+"Vigilar mareo y desmayo": [
+"datos/accidentes.json"
+],
+"Ascenso a órbita marciana y salida hacia la Tierra.": [
+"datos/destinos.json"
+],
+"Base en la superficie de Marte": [
+"datos/destinos.json"
+],
+"Descenso a Marte": [
+"datos/destinos.json"
+],
+"Despegue de Marte": [
+"datos/destinos.json"
+],
+"Estancia en Marte": [
+"datos/destinos.json"
+],
+"Estancia en una estación a unos 400 km, por debajo de los cinturones de Van Allen. Unas 16 vueltas a la Tierra por día.": [
+"datos/destinos.json"
+],
+"Gravedad de 0.38 g. La atmósfera delgada protege poco: cerca de 0.7 mSv por día en la superficie.": [
+"datos/destinos.json"
+],
+"Igual que la anterior pero la tripulación se queda en órbita alrededor de la Luna, en microgravedad, sin bajar a la superficie.": [
+"datos/destinos.json"
+],
+"Llegada a Marte": [
+"datos/destinos.json"
+],
+"Luna · ida y vuelta con estancia en la base": [
+"datos/destinos.json"
+],
+"Luna · ida y vuelta en órbita lunar (estación Gateway)": [
+"datos/destinos.json"
+],
+"Luna · sobrevuelo ida y vuelta (unos 10 días)": [
+"datos/destinos.json"
+],
+"Marte": [
+"datos/destinos.json"
+],
+"Marte · ida y vuelta con estancia en la superficie": [
+"datos/destinos.json"
+],
+"Preparación del descenso a la superficie.": [
+"datos/destinos.json"
+],
+"Primer cambio de gravedad tras meses en microgravedad.": [
+"datos/destinos.json"
+],
+"Regreso": [
+"datos/destinos.json",
+"escritorio/src/legado/vistas/mision.js"
+],
+"Regreso a la Tierra": [
+"datos/destinos.json",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Salida de la Tierra, cruce de los cinturones de Van Allen, tránsito de unos 3 días, descenso, estancia en la base lunar (0.17 g) y regreso.": [
+"datos/destinos.json"
+],
+"Seis a siete meses de regreso por el espacio profundo.": [
+"datos/destinos.json"
+],
+"Seis a siete meses en el espacio profundo, sin campo magnético: rayos cósmicos todo el tiempo (cerca de 1.8 mSv por día).": [
+"datos/destinos.json"
+],
+"Tránsito a Marte": [
+"datos/destinos.json"
+],
+"Unos 6 a 7 meses de tránsito en el espacio profundo, estancia en la superficie de Marte (0.38 g) y regreso. La señal tarda hasta 13 minutos en cada sentido.": [
+"datos/destinos.json"
+],
+"Viaje corto alrededor de la Luna y regreso directo, sin alunizar, como el plan de Artemis II.": [
+"datos/destinos.json"
+],
+"Órbita baja terrestre · estación espacial": [
+"datos/destinos.json"
+],
+"Órbita de Marte": [
+"datos/destinos.json"
+],
+"Camilia": [
+"datos/mision_demo.json"
+],
+"Comandante": [
+"datos/mision_demo.json",
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Especialista en caminatas espaciales": [
+"datos/mision_demo.json",
+"escritorio/src/datos/antecedentes.js"
+],
+"Grover": [
+"datos/mision_demo.json"
+],
+"Ingeniera de sistemas": [
+"datos/mision_demo.json"
+],
+"Misión demo · Luna ida y vuelta": [
+"datos/mision_demo.json"
+],
+"Misión ficticia para la demostración. Los nombres son del equipo; los datos médicos son inventados.": [
+"datos/mision_demo.json"
+],
+"Oficial médica": [
+"datos/mision_demo.json"
+],
+"Payán": [
+"datos/mision_demo.json"
+],
+"Valentina": [
+"datos/mision_demo.json"
+],
+"6.5 o más: cristales de fosfato de calcio": [
+"datos/muestras.json"
+],
+"61 % de astronautas de la ISS lo excretó": [
+"datos/muestras.json"
+],
+"Acidosis (p. ej., CO₂ retenido)": [
+"datos/muestras.json"
+],
+"Alcalosis (hiperventilación)": [
+"datos/muestras.json"
+],
+"Alta de día: somnolencia": [
+"datos/muestras.json"
+],
+"Analizador de sangre portátil y gasometría": [
+"datos/muestras.json"
+],
+"Anemia: fatiga y menos oxígeno a los tejidos": [
+"datos/muestras.json"
+],
+"Arritmias": [
+"datos/muestras.json"
+],
+"Azúcar alta": [
+"datos/muestras.json"
+],
+"Azúcar alta en sangre": [
+"datos/muestras.json"
+],
+"Baja de noche: ritmo desalineado": [
+"datos/muestras.json"
+],
+"Bajan en horas o días tras una dosis alta": [
+"datos/muestras.json"
+],
+"Bajo en astronautas con cambios oculares": [
+"datos/muestras.json"
+],
+"Calcio": [
+"datos/muestras.json"
+],
+"Calcio liberado del hueso; más calcio en la orina": [
+"datos/muestras.json"
+],
+"Caso de SANS: 626–999 ng/mL en glóbulos rojos": [
+"datos/muestras.json"
+],
+"Cetonas": [
+"datos/muestras.json"
+],
+"Citrato": [
+"datos/muestras.json"
+],
+"Colesterol total": [
+"datos/muestras.json"
+],
+"Comer menos calorías la baja y sube el cortisol": [
+"datos/muestras.json"
+],
+"Cortisol (mañana)": [
+"datos/muestras.json"
+],
+"Cortisol libre": [
+"datos/muestras.json"
+],
+"Cortisol, mañana (7–9 a.m.)": [
+"datos/muestras.json"
+],
+"Cortisol, noche (11 p.m.–12 a.m.)": [
+"datos/muestras.json"
+],
+"Creatinina": [
+"datos/muestras.json"
+],
+"Cálculos de oxalato de calcio": [
+"datos/muestras.json"
+],
+"Daña el endotelio; más riesgo de SANS": [
+"datos/muestras.json"
+],
+"Daña el endotelio; más riesgo de SANS y cardiovascular": [
+"datos/muestras.json"
+],
+"Densidad": [
+"datos/muestras.json"
+],
+"Deshidratación": [
+"datos/muestras.json"
+],
+"Deshidratación o riñón comprometido": [
+"datos/muestras.json"
+],
+"El protocolo de SANS pide menos sal": [
+"datos/muestras.json"
+],
+"En el caso de SANS: 139–196 mg/dL": [
+"datos/muestras.json"
+],
+"En el caso de SANS: 222–278 mg/dL": [
+"datos/muestras.json"
+],
+"Estrés agudo": [
+"datos/muestras.json"
+],
+"Estrés o ritmo desalineado; peor sueño": [
+"datos/muestras.json"
+],
+"Estrés y falta de sueño; suprime la inmunidad": [
+"datos/muestras.json"
+],
+"Estrés; suprime la inmunidad (sube con la falta de sueño)": [
+"datos/muestras.json"
+],
+"Exceso de agua; confusión": [
+"datos/muestras.json"
+],
+"Fatiga, confusión, menos flujo de sangre al cerebro": [
+"datos/muestras.json"
+],
+"Folato": [
+"datos/muestras.json"
+],
+"Glucosa": [
+"datos/muestras.json"
+],
+"Hematocrito": [
+"datos/muestras.json"
+],
+"Hemoglobina": [
+"datos/muestras.json"
+],
+"Herpesvirus (ADN viral)": [
+"datos/muestras.json"
+],
+"Hiperventilación": [
+"datos/muestras.json"
+],
+"Hipoxia: fatiga, náusea, cefalea, cambios de ánimo": [
+"datos/muestras.json"
+],
+"Hueso perdiendo calcio; riesgo de cálculo": [
+"datos/muestras.json"
+],
+"Hueso reabsorbiéndose más rápido": [
+"datos/muestras.json"
+],
+"Indicador de dosis de radiación; menos defensas": [
+"datos/muestras.json"
+],
+"Infección o inflamación": [
+"datos/muestras.json"
+],
+"Infección viral": [
+"datos/muestras.json"
+],
+"Inflamación (sobre todo al regresar a la gravedad)": [
+"datos/muestras.json"
+],
+"Ingesta de calorías insuficiente": [
+"datos/muestras.json"
+],
+"Kit de saliva (tubos y prueba rápida)": [
+"datos/muestras.json"
+],
+"L/día": [
+"datos/muestras.json"
+],
+"Leucocitos": [
+"datos/muestras.json"
+],
+"Linfocitos": [
+"datos/muestras.json"
+],
+"Marcador de estrés y de inmunidad alterada": [
+"datos/muestras.json"
+],
+"Marcador del ritmo circadiano; según la hora": [
+"datos/muestras.json"
+],
+"Mayor tendencia a coágulos (en vuelo cambia la coagulación)": [
+"datos/muestras.json"
+],
+"Melatonina": [
+"datos/muestras.json"
+],
+"Menos de 5.5: cálculos de ácido úrico": [
+"datos/muestras.json"
+],
+"Menos defensas; puede bajar por radiación": [
+"datos/muestras.json"
+],
+"Menos protección contra cristales: riesgo de cálculo (se corrige con citrato de potasio)": [
+"datos/muestras.json"
+],
+"Meta: más de 2–2.5 L/día": [
+"datos/muestras.json"
+],
+"Más pérdida ósea; más reactivación de virus latentes": [
+"datos/muestras.json"
+],
+"Más riesgo cardiovascular": [
+"datos/muestras.json"
+],
+"NTX (resorción ósea)": [
+"datos/muestras.json"
+],
+"Orina (24 h)": [
+"datos/muestras.json"
+],
+"Orina concentrada y deshidratación: se forman cristales": [
+"datos/muestras.json"
+],
+"Orina concentrada: deshidratación": [
+"datos/muestras.json"
+],
+"Orina muy diluida": [
+"datos/muestras.json"
+],
+"Otros laboratorios dan 10–100 µg/24 h": [
+"datos/muestras.json"
+],
+"Oxalato": [
+"datos/muestras.json"
+],
+"Plaquetas": [
+"datos/muestras.json"
+],
+"Posible cálculo": [
+"datos/muestras.json"
+],
+"Potasio": [
+"datos/muestras.json"
+],
+"Proteína C reactiva": [
+"datos/muestras.json"
+],
+"Proteínas antimicrobianas": [
+"datos/muestras.json"
+],
+"Rangos de la tabla de muestras biológicas del documento «Parámetros completo» del equipo. min / max pueden ser por sexo: {\"h\": hombre, \"m\": mujer}. null = no tiene límite de ese lado. «basal» = se compara con el valor propio de la persona. 'cual' = resultado cualitativo.": [
+"datos/muestras.json"
+],
+"Recolección de 24 h, tira reactiva y analizador portátil": [
+"datos/muestras.json"
+],
+"Riesgo de sangrado (dosis alta de radiación)": [
+"datos/muestras.json"
+],
+"Ritmo aplanado": [
+"datos/muestras.json"
+],
+"Ritmo circadiano aplanado": [
+"datos/muestras.json"
+],
+"Riñón comprometido (p. ej., cálculo que obstruye)": [
+"datos/muestras.json"
+],
+"Saliva": [
+"datos/muestras.json"
+],
+"Sangre": [
+"datos/muestras.json"
+],
+"Sangre más concentrada (deshidratación)": [
+"datos/muestras.json"
+],
+"Si una muestra tiene resultado del laboratorio en Tierra, ese manda sobre el análisis previo hecho a bordo.": [
+"datos/muestras.json"
+],
+"Sigue el ritmo circadiano": [
+"datos/muestras.json"
+],
+"Sin problema descrito": [
+"datos/muestras.json"
+],
+"Sodio": [
+"datos/muestras.json"
+],
+"Su horario corrido indica ritmo desalineado": [
+"datos/muestras.json"
+],
+"Sube 100–150 % en vuelo y vuelve al basal al regresar": [
+"datos/muestras.json"
+],
+"Sube en vuelo por la pérdida ósea (balance cercano a −5 g/mes en Skylab)": [
+"datos/muestras.json"
+],
+"Subieron en una misión de 6 meses en la ISS": [
+"datos/muestras.json"
+],
+"Tiende a bajar en vuelo": [
+"datos/muestras.json"
+],
+"Triglicéridos": [
+"datos/muestras.json"
+],
+"Twins Study: de 1 a 19 mg/dL tras aterrizar": [
+"datos/muestras.json"
+],
+"Vitamina D (25-OH)": [
+"datos/muestras.json"
+],
+"Volumen": [
+"datos/muestras.json"
+],
+"mg/día": [
+"datos/muestras.json"
+],
+"no detectado": [
+"datos/muestras.json"
+],
+"Óptimo para evitar cálculos: 5.7–6.3": [
+"datos/muestras.json"
+],
+"A la fecha no hay emergencias conductuales registradas en vuelo": [
+"datos/problemas.json"
+],
+"Abdomen": [
+"datos/problemas.json"
+],
+"Al regresar, vigilar la proteína C reactiva": [
+"datos/problemas.json"
+],
+"Alarma del dosímetro": [
+"datos/problemas.json"
+],
+"Ancho mínimo del borde basal 372–381 µm (subió a 530–550 µm)": [
+"datos/problemas.json"
+],
+"Ante confusión súbita, descartar causas físicas de delirio: CO₂ alto, infección, trauma o medicamentos": [
+"datos/problemas.json"
+],
+"Ante dolor: analgesia y antiemético según el protocolo": [
+"datos/problemas.json"
+],
+"Antiemético e hidratación si hay náusea": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Baja motivación": [
+"datos/problemas.json"
+],
+"Beber agua para producir más de 2.5 L de orina al día": [
+"datos/problemas.json"
+],
+"Biometría hemática seriada (linfocitos)": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Blindaje de 20 g/cm² fuera de la órbita baja por más de 6 meses": [
+"datos/problemas.json"
+],
+"Brunstetter 2018, SANS-related ISS Hardware & Data (calendario de OCT)": [
+"datos/problemas.json"
+],
+"Brunstetter et al. 2024, JAMA Ophthalmology (caso de SANS severo)": [
+"datos/problemas.json"
+],
+"Cabeza y oídos": [
+"datos/problemas.json"
+],
+"Calcio alto en sangre u orina": [
+"datos/problemas.json"
+],
+"Calcio en orina: H < 250, M < 200 mg/día": [
+"datos/problemas.json"
+],
+"Calcio: H < 250, M < 200 mg/día": [
+"datos/problemas.json"
+],
+"Cambios de ánimo": [
+"datos/problemas.json"
+],
+"Cambios de ánimo (ánimo 4 o menos de 10)": [
+"datos/problemas.json"
+],
+"Cara hinchada": [
+"datos/problemas.json"
+],
+"Cara y nariz": [
+"datos/problemas.json"
+],
+"Cardiovascular": [
+"datos/problemas.json"
+],
+"Carga de trabajo": [
+"datos/problemas.json",
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Carga de trabajo (NASA-TLX, 0–100) sin aumento sobre el basal": [
+"datos/problemas.json"
+],
+"Carga de trabajo alta (más de 70 de 100)": [
+"datos/problemas.json"
+],
+"Cefalea": [
+"datos/problemas.json"
+],
+"Cefalea (dolor de cabeza)": [
+"datos/problemas.json"
+],
+"Citrato bajo": [
+"datos/problemas.json"
+],
+"Citrato de potasio como medida preventiva": [
+"datos/problemas.json"
+],
+"Citrato: H > 450, M > 550 mg/día": [
+"datos/problemas.json"
+],
+"Comidas compartidas, invernadero, ejercicio, organizar el propio día": [
+"datos/problemas.json"
+],
+"Conducta": [
+"datos/problemas.json"
+],
+"Conferencias psicológicas privadas": [
+"datos/problemas.json"
+],
+"Conflicto vestibular-visual: el oído interno (otolitos) deja de recibir la señal de gravedad.": [
+"datos/problemas.json"
+],
+"Congestión nasal": [
+"datos/problemas.json"
+],
+"Coordinación ojo-mano menor a 70 %": [
+"datos/problemas.json"
+],
+"Cortisol en saliva: 3.2–22.8 nmol/L en la mañana; < 3.2 de noche": [
+"datos/problemas.json"
+],
+"Cuello": [
+"datos/problemas.json"
+],
+"Daño agudo por protones de un evento de partículas solares (SPE).": [
+"datos/problemas.json"
+],
+"Desajuste circadiano": [
+"datos/problemas.json"
+],
+"Desplazamiento de fluidos hacia la cabeza.": [
+"datos/problemas.json"
+],
+"Deterioro conductual": [
+"datos/problemas.json"
+],
+"Distancia a la Tierra, retraso en la comunicación y encierro.": [
+"datos/problemas.json"
+],
+"Distracción": [
+"datos/problemas.json"
+],
+"Dosis efectiva de carrera < 600 mSv": [
+"datos/problemas.json"
+],
+"Dosis efectiva de un evento solar < 250 mSv": [
+"datos/problemas.json"
+],
+"Duermo mal o menos horas": [
+"datos/problemas.json"
+],
+"Ejercicio resistivo diario (ARED) con cargas de 2 a 3 veces el peso corporal": [
+"datos/problemas.json"
+],
+"El aislamiento, el confinamiento, la monotonía, los conflictos y el poco contacto con casa desgastan el ánimo; el riesgo crece con la duración y la distancia. NASA entrena para tres trastornos: delirio, trastorno de adaptación y neurastenia. En Shuttle–Mir, 2 de 7 astronautas (29 %) tuvieron síntomas depresivos subclínicos.": [
+"datos/problemas.json"
+],
+"Equilibrio y función sensoriomotora dentro de valores clínicos normales para edad y sexo": [
+"datos/problemas.json"
+],
+"Eritema (piel enrojecida)": [
+"datos/problemas.json"
+],
+"Eritema en la piel": [
+"datos/problemas.json"
+],
+"Erupciones": [
+"datos/problemas.json"
+],
+"Erupciones o vesículas en la piel": [
+"datos/problemas.json"
+],
+"Escribir el diario cada día": [
+"datos/problemas.json"
+],
+"Esperado: el mal del espacio es de las condiciones más probables por misión (4.37 en el modelo IMM)": [
+"datos/problemas.json"
+],
+"Estado de ánimo": [
+"datos/problemas.json",
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Estrés (PSS-10 mayor a 13)": [
+"datos/problemas.json"
+],
+"Estrés (PSS-10)": [
+"datos/problemas.json",
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Estrés PSS-10: 0–13": [
+"datos/problemas.json"
+],
+"Estrés por aislamiento y confinamiento": [
+"datos/problemas.json"
+],
+"Evitar tareas críticas en las 2 a 4 h después de despertar": [
+"datos/problemas.json",
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Fatiga": [
+"datos/problemas.json"
+],
+"Fatiga crónica de misión": [
+"datos/problemas.json"
+],
+"Garrett-Bakelman et al. 2019, NASA Twins Study, Science (gasto cardíaco, proteína C reactiva)": [
+"datos/problemas.json"
+],
+"Gasto cardíaco: +10 % en vuelo; presión sistólica y media algo menores": [
+"datos/problemas.json"
+],
+"Generales y sueño": [
+"datos/problemas.json",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Grosor retiniano peripapilar basal ~401–404 µm (subió a 613–636 µm)": [
+"datos/problemas.json"
+],
+"HRP Evidence Report 2025: Behavioral Health (inmunidad y estrés, trastornos, WinSCAT, cohesión)": [
+"datos/problemas.json"
+],
+"HRP Evidence Report: Early-Onset Osteoporosis (pérdida ósea, NTX, ARED, zoledronato, vitamina D)": [
+"datos/problemas.json"
+],
+"Hacer OCT o ultrasonido ocular si cambia la visión": [
+"datos/problemas.json",
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Hacer ejercicio aeróbico diario": [
+"datos/problemas.json"
+],
+"Herpesvirus en saliva: no detectado": [
+"datos/problemas.json"
+],
+"Hidratación suficiente para orinar más de 2.5 L al día (ver Nefrolitiasis)": [
+"datos/problemas.json"
+],
+"Inmunodisregulación": [
+"datos/problemas.json"
+],
+"Inmunológico": [
+"datos/problemas.json",
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Ir al refugio blindado (zona de agua o almacenes) en cuanto llegue la alerta": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"LDL < 160 mg/dL (en el caso fue 139–196)": [
+"datos/problemas.json"
+],
+"Lapsos de PVT sin aumento sobre el basal": [
+"datos/problemas.json"
+],
+"Las hormonas de estrés (cortisol y adrenalina) suprimen la inmunidad. Se reactivan virus latentes como el herpes y suben las citocinas inflamatorias. El mal sueño y la radiación se suman.": [
+"datos/problemas.json"
+],
+"Letargo cuando el trabajo se reduce a vigilar sistemas automáticos; la monotonía lleva a aburrimiento, conflictos y pérdida de energía y motivación.": [
+"datos/problemas.json"
+],
+"Leucocitos 4,000–10,000 /mm³": [
+"datos/problemas.json"
+],
+"Leucocitos 4,000–10,000 /mm³ (hematología en rangos de población sana)": [
+"datos/problemas.json"
+],
+"Linfocitos bajos": [
+"datos/problemas.json"
+],
+"Luz de al menos 100 lux durante la vigilia para sincronizar el ritmo": [
+"datos/problemas.json"
+],
+"Límite a 30 días: órganos hematopoyéticos 250 mGy-Eq; piel 1,500; cristalino 1,000": [
+"datos/problemas.json"
+],
+"Mal sueño (menos de 7 h)": [
+"datos/problemas.json"
+],
+"Malestar en el estómago": [
+"datos/problemas.json"
+],
+"Mandar las imágenes al oftalmólogo en la Tierra (con hasta 13 min de retraso)": [
+"datos/problemas.json"
+],
+"Mantener horarios fijos de sueño con luz adecuada en la cabina": [
+"datos/problemas.json"
+],
+"Mantener la hidratación programada, aunque no haya sed": [
+"datos/problemas.json"
+],
+"Mantener la vitamina D adecuada": [
+"datos/problemas.json"
+],
+"Mantener una orientación visual fija (un «arriba» conocido)": [
+"datos/problemas.json"
+],
+"Mareo espacial": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Medir cortisol y buscar virus en saliva de forma periódica": [
+"datos/problemas.json"
+],
+"Menos horas de sueño (menos de 7 h)": [
+"datos/problemas.json"
+],
+"Menos sed": [
+"datos/problemas.json"
+],
+"Menos volumen urinario (menos de 2.5 L/día)": [
+"datos/problemas.json"
+],
+"Mensajes con la familia (asumiendo el retraso de hasta 13 min)": [
+"datos/problemas.json"
+],
+"Metodología clínica del documento «Parámetros completo» del equipo: por problema, sus signos y síntomas, el sistema afectado, la explicación, la contramedida y protocolo, y los parámetros estables. Regla: algunos indicadores (2 o más) = alerta; todos = emergencia con protocolo.": [
+"datos/problemas.json"
+],
+"Microgravedad de 4 a 6 meses": [
+"datos/problemas.json"
+],
+"Moverse despacio y evitar giros bruscos de cabeza": [
+"datos/problemas.json"
+],
+"Musculoesquelético": [
+"datos/problemas.json"
+],
+"Más calcio en la orina": [
+"datos/problemas.json"
+],
+"Más cortisol, reactivación de virus latentes y citocinas inflamatorias (inmunodisregulación).": [
+"datos/problemas.json"
+],
+"Más estrés y conflictos; la tensión puede descargarse contra el control de Tierra (una tripulación de Salyut cortó la comunicación 24 h). Lo mejoran las comidas compartidas y la autonomía de la tripulación.": [
+"datos/problemas.json"
+],
+"Más somnolencia, fatiga y lapsos de atención, aun habiendo dormido; la sobrecarga prolongada puede causar neurastenia.": [
+"datos/problemas.json"
+],
+"NASA NTRS · Cálculos renales en astronautas": [
+"datos/problemas.json",
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA-STD-3001 Vol. 1 Rev C (límites de hueso, VO₂máx, radiación, sueño, modelo IMM)": [
+"datos/problemas.json"
+],
+"NTX en orina: sube 100–150 % en vuelo": [
+"datos/problemas.json"
+],
+"Nefrolitiasis (cálculo renal)": [
+"datos/problemas.json"
+],
+"Neurológico": [
+"datos/problemas.json"
+],
+"No se describe un problema.": [
+"datos/problemas.json"
+],
+"Náusea": [
+"datos/problemas.json"
+],
+"OCHMO-MTB-002, condiciones médicas con exención (botiquín: antivirales)": [
+"datos/problemas.json"
+],
+"OCT en los días 30 y 90 de vuelo": [
+"datos/problemas.json"
+],
+"Orina sobresaturada por la pérdida ósea y la deshidratación relativa.": [
+"datos/problemas.json"
+],
+"Oxalato: 20–40 mg/día": [
+"datos/problemas.json"
+],
+"PVT diario: si suben los lapsos, mover las tareas críticas": [
+"datos/problemas.json"
+],
+"Palidez": [
+"datos/problemas.json"
+],
+"Piel": [
+"datos/problemas.json"
+],
+"Piernas": [
+"datos/problemas.json"
+],
+"Piernas más delgadas": [
+"datos/problemas.json"
+],
+"Platts et al. 2014, J Womens Health (volumen plasmático y sanguíneo)": [
+"datos/problemas.json"
+],
+"Poca agua": [
+"datos/problemas.json"
+],
+"Poca cooperación": [
+"datos/problemas.json"
+],
+"Poca cooperación (trabajo en equipo 4 o menos de 10)": [
+"datos/problemas.json"
+],
+"Presión intraocular: 14 mmHg, estable": [
+"datos/problemas.json"
+],
+"Proteger el sueño y bajar la carga de trabajo": [
+"datos/problemas.json"
+],
+"Prueba WinSCAT cada mes, comparada con el basal": [
+"datos/problemas.json"
+],
+"Prueba de visión baja (menos de 70 %)": [
+"datos/problemas.json"
+],
+"Pródromo del síndrome agudo por radiación (tormenta solar)": [
+"datos/problemas.json"
+],
+"Pérdida de apetito": [
+"datos/problemas.json"
+],
+"Pérdida esperada: 0.3–0.5 %/mes con ARED; 1–1.5 %/mes sin él": [
+"datos/problemas.json"
+],
+"Pérdida ósea": [
+"datos/problemas.json"
+],
+"Pérdida ósea (eje hueso–riñón)": [
+"datos/problemas.json"
+],
+"Radiación": [
+"datos/problemas.json",
+"escritorio/src/componentes/AlertasFlotantes.jsx",
+"escritorio/src/legado/ui/ambiente.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Radiación (tormenta presente o pasada)": [
+"datos/problemas.json"
+],
+"Redistribución de fluidos": [
+"datos/problemas.json"
+],
+"Reducir la sal de la dieta y vigilar el CO₂ de la cabina": [
+"datos/problemas.json"
+],
+"Reducir tareas críticas las primeras 24 a 72 h": [
+"datos/problemas.json"
+],
+"Refracción y agudeza sin cambio respecto al previo (en el caso severo pasó de −1.00 D a +1.50/+2.00 D)": [
+"datos/problemas.json"
+],
+"Registrar la cefalea y la congestión": [
+"datos/problemas.json"
+],
+"Registrar la dosis de cada tripulante": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Registro diario de ánimo y trabajo en equipo": [
+"datos/problemas.json"
+],
+"Reponer líquidos si hubo vómito": [
+"datos/problemas.json"
+],
+"Respetar el periodo de sueño": [
+"datos/problemas.json",
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Retraimiento social": [
+"datos/problemas.json"
+],
+"Riesgo de síntomas depresivos, retraimiento social y peor desempeño; el ánimo tiende a bajar en el tercer cuarto de la misión.": [
+"datos/problemas.json"
+],
+"Ritmo de sueño alterado": [
+"datos/problemas.json"
+],
+"Riñón (eje hueso–riñón)": [
+"datos/problemas.json"
+],
+"SANS (síndrome neuro-ocular)": [
+"datos/problemas.json"
+],
+"Se duermen unas 6 h aunque hay 8.5 h programadas. Dormir 5 a 6 h deteriora el desempeño en una semana, y la persona no lo nota porque su somnolencia percibida deja de subir. Los cambios de horario desalinean el ritmo circadiano (el día marciano dura 24.65 h). Una carga alta suma fatiga y lapsos aun con sueño suficiente.": [
+"datos/problemas.json"
+],
+"Sensación de cabeza llena": [
+"datos/problemas.json"
+],
+"Siestas o melatonina": [
+"datos/problemas.json"
+],
+"Sin carga mecánica, el hueso se reabsorbe más de lo que se forma. El calcio liberado sale por la orina (balance de calcio cercano a −5 g/mes en Skylab). Con poca agua, la orina se concentra y aparecen cristales.": [
+"datos/problemas.json"
+],
+"Sin gravedad, la sangre y los líquidos suben hacia el tórax y la cabeza.": [
+"datos/problemas.json"
+],
+"Sin síntomas: no hay cefalea intensa ni zumbido de oído": [
+"datos/problemas.json"
+],
+"Sudoración fría": [
+"datos/problemas.json"
+],
+"Sueño insuficiente (menos de 7 h)": [
+"datos/problemas.json"
+],
+"Sueño y conducta": [
+"datos/problemas.json"
+],
+"Sueño ≥ 7 h": [
+"datos/problemas.json"
+],
+"Sueño ≥ 7 h (necesidad individual de 6.1 a 10.3 h)": [
+"datos/problemas.json"
+],
+"Suspender o abortar cualquier EVA": [
+"datos/problemas.json",
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Tabla de muestras biológicas del documento de parámetros (rangos de orina, sangre y saliva)": [
+"datos/problemas.json"
+],
+"Tener tiempo personal y actividades en grupo": [
+"datos/problemas.json"
+],
+"Tolerancia ortostática al regresar a la gravedad": [
+"datos/problemas.json"
+],
+"Tormenta de radiación presente o pasada": [
+"datos/problemas.json"
+],
+"Trabajo en equipo": [
+"datos/problemas.json",
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Ultrasonido para localizar el cálculo": [
+"datos/problemas.json"
+],
+"Urgencia para orinar": [
+"datos/problemas.json"
+],
+"Usar el antiemético del botiquín": [
+"datos/problemas.json"
+],
+"Usar las gafas de corrección que se llevan a bordo": [
+"datos/problemas.json"
+],
+"Usar los antivirales del botiquín ante vesículas o zóster": [
+"datos/problemas.json"
+],
+"Vejiga y pelvis": [
+"datos/problemas.json"
+],
+"Venas del cuello distendidas": [
+"datos/problemas.json"
+],
+"Vigilar NTX y calcio en orina; DXA antes y después del vuelo": [
+"datos/problemas.json"
+],
+"Vigilar la visión (ver SANS)": [
+"datos/problemas.json"
+],
+"Vigilia continua ≤ 16 h": [
+"datos/problemas.json"
+],
+"Vitamina D: carga de 50,000 UI antes del vuelo y 2,000 UI diarias en vuelo": [
+"datos/problemas.json"
+],
+"Volumen de orina > 2.5 L/día": [
+"datos/problemas.json"
+],
+"Volumen plasmático igual al basal; baja esperada ~10 % en mujeres y ~15 % en hombres": [
+"datos/problemas.json"
+],
+"Volumen sanguíneo: baja esperada ~9 %": [
+"datos/problemas.json"
+],
+"Vómito": [
+"datos/problemas.json"
+],
+"WinSCAT dentro del basal": [
+"datos/problemas.json"
+],
+"WinSCAT dentro del basal (en la ISS, 13.2 % de las sesiones salió fuera de lo normal)": [
+"datos/problemas.json"
+],
+"Zumbido de oído": [
+"datos/problemas.json"
+],
+"pH urinario bajo (menos de 5.7)": [
+"datos/problemas.json"
+],
+"Ácido zoledrónico antes del vuelo (el panel RCAP lo considera obligatorio para la misión de 3 años a Marte)": [
+"datos/problemas.json"
+],
+"Ánimo y conducta": [
+"datos/problemas.json",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Ánimo y trabajo en equipo (1–10) estables": [
+"datos/problemas.json"
+],
+"Ánimo y trabajo en equipo (1–10) estables respecto al basal": [
+"datos/problemas.json"
+],
+"Órbita (PVT) menor a 70 %": [
+"datos/problemas.json"
+],
+"ISS Medical Checklist (JSC-48522): fiebre = más de 37.8 °C": [
+"datos/umbrales.json"
+],
+"Oxígeno en sangre": [
+"datos/umbrales.json",
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Presión diastólica": [
+"datos/umbrales.json"
+],
+"Presión sistólica": [
+"datos/umbrales.json"
+],
+"Pulso": [
+"datos/umbrales.json",
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Respiración": [
+"datos/umbrales.json",
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Temperatura": [
+"datos/umbrales.json",
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/legado/nucleo/signos.js",
+"escritorio/src/legado/ui/ambiente.js"
+],
+"Umbrales que usan el servidor de la nave (Python) y la pantalla. Cambiar aquí cambia ambos. 'aviso' = nivel 1, 'critico' = nivel 2.": [
+"datos/umbrales.json"
+],
+"por min": [
+"datos/umbrales.json",
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Space First AID": [
+"escritorio/index.html",
+"nave/config.py",
+"nave/enlace.py",
+"nave/servidor.py"
+],
+"El motor en Python no responde. Cierra el programa y vuelve a abrirlo.": [
+"escritorio/src/App.jsx"
+],
+"La vista del médico no recibe datos nuevos. La nave los sigue guardando en la bitácora y los manda cuando vuelva la señal ({0} en espera).": [
+"escritorio/src/App.jsx"
+],
+"No hay conexión con el motor de la nave": [
+"escritorio/src/App.jsx"
+],
+"Reintentar": [
+"escritorio/src/App.jsx"
+],
+"Sin conexión con la nave": [
+"escritorio/src/App.jsx"
+],
+"Ver la bitácora": [
+"escritorio/src/App.jsx"
+],
+"1 · Datos de la misión": [
+"escritorio/src/Registro.jsx"
+],
+"2 · Tripulación": [
+"escritorio/src/Registro.jsx"
+],
+"= 0) return setError(`La edad del tripulante ${0} no puede ser menor a 20 años.`); setEnviando(true); try { await API.post('mision', {1}); window.location.reload(); } catch (e) {2} return undefined; }; return (": [
+"escritorio/src/Registro.jsx"
+],
+"Alta": [
+"escritorio/src/Registro.jsx"
+],
+"Antecedentes médicos": [
+"escritorio/src/Registro.jsx"
+],
+"Antes de despegar": [
+"escritorio/src/Registro.jsx"
+],
+"Baja": [
+"escritorio/src/Registro.jsx"
+],
+"Carga una misión ficticia: Luna ida y vuelta, 180 días, con Grover, Payán, Valentina y Camilia (datos inventados).": [
+"escritorio/src/Registro.jsx"
+],
+"Condición física": [
+"escritorio/src/Registro.jsx"
+],
+"Continuar: registrar a la tripulación": [
+"escritorio/src/Registro.jsx"
+],
+"Destino": [
+"escritorio/src/Registro.jsx"
+],
+"Duración": [
+"escritorio/src/Registro.jsx"
+],
+"Duración en días": [
+"escritorio/src/Registro.jsx"
+],
+"Edad": [
+"escritorio/src/Registro.jsx"
+],
+"Escribe el nombre de la misión.": [
+"escritorio/src/Registro.jsx"
+],
+"Falta el nombre del tripulante": [
+"escritorio/src/Registro.jsx"
+],
+"Falta el nombre del tripulante {0}.": [
+"escritorio/src/Registro.jsx"
+],
+"Fecha de inicio (día 1)": [
+"escritorio/src/Registro.jsx"
+],
+"Hombre": [
+"escritorio/src/Registro.jsx"
+],
+"Iniciar misión": [
+"escritorio/src/Registro.jsx"
+],
+"La duración debe ser de al menos 1 día.": [
+"escritorio/src/Registro.jsx"
+],
+"La edad del tripulante": [
+"escritorio/src/Registro.jsx"
+],
+"La edad del tripulante {0} no puede ser menor a 20 años.": [
+"escritorio/src/Registro.jsx"
+],
+"Listo": [
+"escritorio/src/Registro.jsx",
+"escritorio/src/legado/vistas/midia.js",
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Los antecedentes activan vigilancias según lo que NASA aprueba con seguimiento (por ejemplo, cálculos renales: hidratación y prueba de orina periódica).": [
+"escritorio/src/Registro.jsx"
+],
+"Media": [
+"escritorio/src/Registro.jsx"
+],
+"Mujer": [
+"escritorio/src/Registro.jsx"
+],
+"Nombre": [
+"escritorio/src/Registro.jsx"
+],
+"Nombre de la misión": [
+"escritorio/src/Registro.jsx"
+],
+"Opcional": [
+"escritorio/src/Registro.jsx"
+],
+"Otros antecedentes o alergias": [
+"escritorio/src/Registro.jsx"
+],
+"Paso 1 de 2": [
+"escritorio/src/Registro.jsx"
+],
+"Registra el destino, la duración y a cada tripulante con sus antecedentes médicos. De este registro dependen las vigilancias, los umbrales y la trayectoria.": [
+"escritorio/src/Registro.jsx"
+],
+"Registro de la misión": [
+"escritorio/src/Registro.jsx"
+],
+"Rol": [
+"escritorio/src/Registro.jsx"
+],
+"Sexo": [
+"escritorio/src/Registro.jsx"
+],
+"Tripulante {0}": [
+"escritorio/src/Registro.jsx"
+],
+"Tripulantes": [
+"escritorio/src/Registro.jsx"
+],
+"Uno menos": [
+"escritorio/src/Registro.jsx"
+],
+"Uno más": [
+"escritorio/src/Registro.jsx"
+],
+"Ver misión demo": [
+"escritorio/src/Registro.jsx"
+],
+"no puede ser menor a 20 años.": [
+"escritorio/src/Registro.jsx"
+],
+"{0} días": [
+"escritorio/src/Registro.jsx"
+],
+"¿Solo quieres verla funcionar?": [
+"escritorio/src/Registro.jsx"
+],
+"Error": [
+"escritorio/src/api.js"
+],
+"Accidente": [
+"escritorio/src/componentes/Accidentes.jsx",
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Elige un accidente: los signos vitales de {0} cambian y se abre la ventana con el protocolo del accidente, igual que en las emergencias.": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+"Protocolo": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+"Protocolo y simulación de accidentes": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+"Quitar accidente": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+"Riesgos humanos del vuelo espacial · NASA": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+"Simular en {0}": [
+"escritorio/src/componentes/Accidentes.jsx",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Ver todos los protocolos de accidentes ({0})": [
+"escritorio/src/componentes/Accidentes.jsx"
+],
+". Evento de partículas solares en curso.": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Abrir el centro de alertas": [
+"escritorio/src/componentes/AlertasFlotantes.jsx",
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Emergencia": [
+"escritorio/src/componentes/AlertasFlotantes.jsx",
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"Entendido, la estamos atendiendo": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"NASA-STD-3001 · documento de parámetros": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Parámetros estables a vigilar": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Paso {0}.": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Protocolo del accidente": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Protocolo y contramedida": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Qué pasó": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Radiación en la cabina:": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Radiación en la cabina: {0}. Evento de partículas solares en curso.": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Signos y síntomas que lo confirman": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Sistemas atacados": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Tormenta de radiación: todos al refugio": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Ver": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"más": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"· y {0} más": [
+"escritorio/src/componentes/AlertasFlotantes.jsx"
+],
+"Advertencia": [
+"escritorio/src/componentes/Avisos.jsx",
+"escritorio/src/vistas/Panel.jsx"
+],
+"Alerta": [
+"escritorio/src/componentes/Avisos.jsx",
+"escritorio/src/componentes/Sistemas.jsx",
+"escritorio/src/estructura/PanelEnlace.jsx",
+"escritorio/src/legado/nucleo/signos.js",
+"escritorio/src/vistas/Panel.jsx",
+"nave/servidor.py"
+],
+"Contexto que suma riesgo:": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"El motor no encuentra 2 de 3 indicios de ninguna condición.": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Ningún problema del documento de parámetros tiene 2 o más indicadores.": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Nivel reducido:": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Protocolo de NASA ({0} pasos)": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Señal de alarma: {0}": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Sin advertencias": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Sin riesgos activos": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"Ver indicadores, protocolo y fuentes": [
+"escritorio/src/componentes/Avisos.jsx"
+],
+"de 3": [
+"escritorio/src/componentes/Avisos.jsx",
+"escritorio/src/legado/juegos/mente.js",
+"escritorio/src/legado/juegos/orbita.js"
+],
+"{0} de 3": [
+"escritorio/src/componentes/Avisos.jsx",
+"escritorio/src/legado/juegos/orbita.js"
+],
+"7 h o más": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Actígrafo": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Analizando muestra…": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Analizar {0}": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Camiseta inteligente · Agencia Espacial Canadiense": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Conectado · en vivo": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Conectado · listo": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Conectado · sincronizado hoy 06:00": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Datos que llegan solos · sin capturar a mano": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Dispositivos conectados de {0}": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"En rango": [
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/vistas/Panel.jsx"
+],
+"Fuera de rango": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Lecturas simuladas": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Parámetro estable": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Presión": [
+"escritorio/src/componentes/Dispositivos.jsx",
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js",
+"escritorio/src/legado/ui/ambiente.js"
+],
+"Promedio 7 días": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Reloj de muñeca · sueño y actividad": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Revisa que la camiseta esté puesta y la banda encendida.": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Sangre, orina y saliva · Agencia Espacial Canadiense": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Sin datos de anoche": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Sin señal del sensor": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Sueño anoche": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"sin lectura": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"vs. tu basal": [
+"escritorio/src/componentes/Dispositivos.jsx"
+],
+"Análisis a bordo · previo": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Captura al menos un valor.": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Ejemplo alterado": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Ejemplo normal": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Equipo a bordo:": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Fecha y hora de la toma": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Guardando y analizando en Python…": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Guardar análisis de a bordo y enviar a la Tierra": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Laboratorio": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Laboratorio en Tierra · vigente": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Muestra": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Muestra {0} guardada": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Muestras de orina, sangre y saliva": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Resultados vigentes": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Sin muestras todavía para esta persona.": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"Tipo de muestra": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"es-MX": [
+"escritorio/src/componentes/Muestras.jsx",
+"escritorio/src/legado/nucleo/utilidades.js",
+"escritorio/src/legado/ui/anillos.js"
+],
+"menos de": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"menos de {0}": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"más de": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"más de {0}": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"se compara con tu basal": [
+"escritorio/src/componentes/Muestras.jsx",
+"nave/motor/valoracion.py"
+],
+"{0} · {1} · en cola para la Tierra": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"· en cola para la Tierra": [
+"escritorio/src/componentes/Muestras.jsx"
+],
+"8.5 h para dormir": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Anoche": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Conviene revisar a": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Conviene revisar a {0}.": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Despertar": [
+"escritorio/src/componentes/PanelResumen.jsx",
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Dormir": [
+"escritorio/src/componentes/PanelResumen.jsx",
+"escritorio/src/legado/ui/circadiano.js",
+"escritorio/src/legado/vistas/midia.js"
+],
+"Día {0} de {1} · sistemas del cuerpo de toda la tripulación": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Estado general:": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Estado general: {0} %.": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Hora de dormir": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Hoy conviene": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Manrope": [
+"escritorio/src/componentes/PanelResumen.jsx",
+"escritorio/src/estructura/PanelEnlace.jsx",
+"escritorio/src/legado/vistas/mision.js",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Mantengan sueño, hidratación y ejercicio.": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Nada urgente": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Reloj de luz de 24 horas": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Ritmo circadiano · guía de sueño": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Sora": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Toda la tripulación está en forma": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Todos los sistemas dentro de sus parámetros estables.": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"UTC · MISIÓN": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"en forma hoy": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"en {0} h {1} min": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"promedio de la tripulación": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"{0} de {1} en forma hoy": [
+"escritorio/src/componentes/PanelResumen.jsx"
+],
+"Cambiar a": [
+"escritorio/src/componentes/SelectorLateral.jsx"
+],
+"Termina tu turno antes de cambiar de persona": [
+"escritorio/src/componentes/SelectorLateral.jsx",
+"escritorio/src/legado/ui/selector.js"
+],
+"Tripulante": [
+"escritorio/src/componentes/SelectorLateral.jsx",
+"escritorio/src/estructura/Encabezado.jsx",
+"nave/servidor.py"
+],
+"Tripulante seleccionado": [
+"escritorio/src/componentes/SelectorLateral.jsx"
+],
+"Atención": [
+"escritorio/src/componentes/Sistemas.jsx",
+"escritorio/src/componentes/Tripulantes.jsx",
+"escritorio/src/legado/nucleo/predicciones.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Bien": [
+"escritorio/src/componentes/Sistemas.jsx",
+"escritorio/src/vistas/Mente.jsx"
+],
+"Calculando el estado de los sistemas…": [
+"escritorio/src/componentes/Sistemas.jsx"
+],
+"Sin hallazgos": [
+"escritorio/src/componentes/Sistemas.jsx",
+"nave/servidor.py"
+],
+"7 días": [
+"escritorio/src/componentes/Tripulantes.jsx"
+],
+"Corazón": [
+"escritorio/src/componentes/Tripulantes.jsx",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Detalle de": [
+"escritorio/src/componentes/Tripulantes.jsx"
+],
+"Sensor desconectado": [
+"escritorio/src/componentes/Tripulantes.jsx",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Sueño": [
+"escritorio/src/componentes/Tripulantes.jsx",
+"escritorio/src/legado/nucleo/predicciones.js",
+"escritorio/src/legado/vistas/midia.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Todo en su rango": [
+"escritorio/src/componentes/Tripulantes.jsx"
+],
+"Apnea leve": [
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Arritmia tratada": [
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Cambios oculares previos": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Cálculos renales": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Especialista de misión": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Hernia de disco": [
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Hipertensión": [
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ingeniera / ingeniero de sistemas": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Oficial médica / médico": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Piloto": [
+"escritorio/src/datos/antecedentes.js",
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Prótesis de cadera": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Trombosis previa": [
+"escritorio/src/datos/antecedentes.js"
+],
+"Cerrar": [
+"escritorio/src/estructura/Capas.jsx",
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Selecciona y copia. En la misión real esto viaja por el enlace como paquete de detalle.": [
+"escritorio/src/estructura/Capas.jsx"
+],
+"Alertas: sin alertas activas": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Centro de alertas": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Con señal": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Enviando ·": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Enviando · {0}": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Estado del enlace con la Tierra": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Misión": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx",
+"escritorio/src/legado/vistas/mision.js",
+"escritorio/src/vistas/Mision.jsx"
+],
+"Médico": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Médico en Tierra": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Panel": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"Pruebas": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx",
+"escritorio/src/estructura/Subnav.jsx"
+],
+"Secciones": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"Sin señal ·": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Sin señal · {0} en cola": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Space First AID, inicio": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Tripulación": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx",
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Valoración": [
+"escritorio/src/estructura/Encabezado.jsx",
+"escritorio/src/estructura/NavInferior.jsx",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Vista": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Vista médico en Tierra: valores exactos y línea base": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Vista tripulante: lo esencial y qué hacer": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"en cola": [
+"escritorio/src/estructura/Encabezado.jsx"
+],
+"Saltar intro": [
+"escritorio/src/estructura/Intro.jsx"
+],
+"Alertas": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"Más": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"Referencias": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"], ['tripulacion', 'Tripulación',": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"], ['valoracion', 'Valoración',": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+"], ]; const MAS = [ ['mision', 'Misión',": [
+"escritorio/src/estructura/NavInferior.jsx"
+],
+": todo se guarda en la nave.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Abrir el centro de control (Tierra)": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Antecedentes": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Aún no hay paquetes.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"CON SEÑAL": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Centro de control": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Compartirás esto con la Tierra": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Conectado": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Detalle": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Detalle de Órbita": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"En espera": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Enlace con la Tierra": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Estado general y alertas": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Esto se queda en la nave": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Funciona sin señal": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Nave · {0} en cola": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Para que el médico de vuelo revise tu plan.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Pérdida de señal simulada": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Qué ve la Tierra": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Recomendado: ayuda a detectar SANS a tiempo.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Recuperar señal": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Resumen": [
+"escritorio/src/estructura/PanelEnlace.jsx",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Retardo menor a 0.1 s": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Retardo ≈ 1.3 s": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Revisiones de ojos": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"SIN SEÑAL · se guarda en la nave": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Siempre activo: es lo mínimo que el equipo necesita.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Simular pérdida de señal": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Sin conexión": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Tiempos de reacción de cada turno oficial.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"Todo se guarda primero en la nave (SQLite). Cuando hay señal, el motor en Python lo envía por prioridad: alertas, luego resúmenes y al final el detalle. Los resultados del laboratorio en Tierra regresan por el mismo enlace.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"con el centro de control · {0} paquetes entregados": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"con el centro de control: {0} en cola, se reintenta solo.": [
+"escritorio/src/estructura/PanelEnlace.jsx"
+],
+"No se pudo:": [
+"escritorio/src/estructura/Pie.jsx"
+],
+"Nueva misión": [
+"escritorio/src/estructura/Pie.jsx"
+],
+"Referencias y fuentes": [
+"escritorio/src/estructura/Pie.jsx"
+],
+"{0} · {1} · día {2} de {3}": [
+"escritorio/src/estructura/Pie.jsx"
+],
+"¿Terminar esta misión y registrar una nueva? Se borran los datos de la misión actual en esta nave (lo ya enviado a la Tierra se conserva allá).": [
+"escritorio/src/estructura/Pie.jsx"
+],
+"Coordinación ojo-mano": [
+"escritorio/src/estructura/Subnav.jsx",
+"escritorio/src/legado/juegos/manos.js",
+"escritorio/src/vistas/Tripulacion.jsx",
+"nave/motor/clinico.py",
+"nave/motor/pruebas.py"
+],
+"Círculo con la mano": [
+"escritorio/src/estructura/Subnav.jsx",
+"escritorio/src/legado/juegos/manos.js",
+"escritorio/src/vistas/Tripulacion.jsx",
+"nave/motor/pruebas.py"
+],
+"Prueba de visión": [
+"escritorio/src/estructura/Subnav.jsx",
+"escritorio/src/legado/juegos/manos.js",
+"escritorio/src/vistas/Tripulacion.jsx",
+"nave/motor/clinico.py",
+"nave/motor/pruebas.py"
+],
+"¿Cómo te sientes?": [
+"escritorio/src/estructura/Subnav.jsx",
+"escritorio/src/vistas/Mente.jsx",
+"nave/motor/pruebas.py"
+],
+"Órbita · PVT": [
+"escritorio/src/estructura/Subnav.jsx",
+"nave/motor/pruebas.py"
+],
+"Agha 2020": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Basner, Mollicone y Dinges 2011 · Validación de la PVT-B: 3 min, intervalos de 1 a 4 s, lapso ≥ 355 ms, anticipación < 100 ms": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"CDSS de NASA": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Cognition de NASA": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Curiosity RAD 2013": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Dispensas NASA": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"EIMO de NASA": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"ESA · Estudios de aislamiento en la estación Concordia (Antártida)": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Hueso · NASA HRR": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Khine 2018": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA ExMC · Arquitectura del sistema de apoyo a decisiones clínicas (CDSS), HRP-48032": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA ExMC · Operaciones médicas independientes de la Tierra (EIMO): confianza de la tripulación y salud conductual": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA Human Research Roadmap · Reporte de cáncer por radiación: límite de carrera de 600 mSv (NASA-STD-3001)": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA Human Research Roadmap · Reporte de evidencia SANS (2022)": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA Human Research Roadmap · Reporte de evidencia de osteoporosis: pérdida de densidad ósea de 1 a 1.5 % por mes en misiones largas": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA Human Research Roadmap · Reporte de evidencia de sueño: 6.1 h promedio en la ISS (21 astronautas); la PVT es la prueba más sensible a la falta de sueño": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA OCHMO-MTB-002 · Condiciones médicas aprobadas con dispensa en astronautas": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA Standard Measures · batería Cognition (UPenn, financiada por NASA), incluye la PVT": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Agha et al. 2020: condición física previa y reactivación viral en 22 astronautas de la ISS": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Auñón-Chancellor et al. 2020: trombosis venosa yugular durante el vuelo espacial": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Hardware y datos de SANS en la ISS: agudeza y Amsler los días 30, 90 y R-30 desde 2010; tonometría de la ESA": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Khine et al. 2018: cambios auriculares tras 6 meses en la ISS": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Russell et al. 2023: valor de un CDSS; en Marte la comunicación tarda más de 20 minutos": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Zeitlin et al. 2013 (rover Curiosity): 0.66 Sv en un viaje redondo a Marte, cerca de 1.8 mSv por día en el espacio profundo": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA · Zwart et al. 2016: genotipo y vitaminas B se asocian con cambios oculares en 49 astronautas": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA-STD-3001 Vol. 1 Rev C · Norma de salud de la tripulación": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"NASA/NSBRI 2014 · Impacto del sexo y el género en la adaptación al espacio": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"National Academies para NASA · Safe Passage (2001): los astronautas tienden a no reportar síntomas": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Radiación · NASA HRR": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Riñón NTRS": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Russell 2023": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"SANS en la ISS": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Safe Passage": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Sexo y género 2014": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Sueño · NASA HRR": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Trombosis 2020": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Zwart 2016": [
+"escritorio/src/legado/datos/fuentes.js"
+],
+"Pantalla calibrada:": [
+"escritorio/src/legado/juegos/calibracion.js"
+],
+"% de la vuelta · error medio": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"(después de 1.5 s) y": [
+"escritorio/src/legado/juegos/manos.js"
+],
+") · contraste mínimo": [
+"escritorio/src/legado/juegos/manos.js"
+],
+". Se calcula también la agudeza aproximada en logMAR con la calibración de la pantalla.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"100 puntos por punto": [
+"escritorio/src/legado/juegos/manos.js"
+],
+": el error medio contra la línea (0 px = 100 %, 40 px o más = 0 %).": [
+"escritorio/src/legado/juegos/manos.js"
+],
+": hasta 10 s no resta; después baja hasta la mitad a los 30 s.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+": mira solo el punto central": [
+"escritorio/src/legado/juegos/manos.js"
+],
+": si no terminas, se multiplica por lo que recorriste.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Afecta los sistemas musculoesquelético y cognitivo si baja de 70 %": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Agudeza y contraste · afecta el sistema neuro-ocular (SANS) si baja de 70 %": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Agudeza: ¿hacia dónde abre la C?": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Cada acierto suma más entre más pequeña o tenue es la C.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Cada salida antes de completar resta 5": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Calificación": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Calificación {0} % ({1} de 10) · ojo {2} · C más pequeña {3} px (≈ logMAR {4}) · contraste mínimo {5} % · {6} aciertos${lentas?": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Cargando el detector de manos (incluido en la app, sin internet)…": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Contraste: ¿hacia dónde abre la C?": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Indica hacia dónde está la abertura de la C con las flechas (teclado o botones). Cada acierto la hace más pequeña; después, más tenue. Sigue hasta que fallas 2 veces seguidas. Tienes 5 s por respuesta. Siéntate a 50 cm de la pantalla.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Interpretando en Python…": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Lleva la punta del dedo índice (o el puntero) a cada punto y quédate encima hasta que se llene el anillo. Cuentan la rapidez, qué tan centrado llegas y que no te salgas antes de tiempo.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Modo cámara: el punto azul sigue la punta de tu dedo índice.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Modo cámara: levanta la mano frente a la cámara. El punto azul sigue la punta de tu dedo índice.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Modo puntero: ratón, lápiz o dedo en la pantalla.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Motricidad fina": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Ojo": [
+"escritorio/src/legado/juegos/manos.js",
+"escritorio/src/vistas/Manos.jsx"
+],
+"Ojo {0}: mira solo el punto central": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Ojo {0}: {1}": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Pidiendo acceso a la cámara…": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Precisión": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Presiona «Iniciar»": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Prueba en curso…": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Pruebas ·": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Pruebas · {0}": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Punto": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Punto {0} de {1}": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Regresar en sentido contrario": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Responder lento resta": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Sin sesiones todavía: la primera será tu línea base.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Terminar (ya marqué las zonas)": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Tiempo": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Toca el punto verde para empezar": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Toca el punto verde y recorre el círculo completo con la punta del dedo o el puntero, sin salirte de la línea.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Todo se ve recto y completo": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Tu línea base: ${0} ${1}": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"Vuelta completa": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"de 10) · ojo": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"resta 3 puntos cada vez.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"si llegas en menos de 0.8 s y al centro. Baja con el tiempo (a los 4 s vale 30 %) y con la distancia al centro (hasta −40 %).": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"sin alcanzar ·": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"una respuesta sin contestar en 5 s cuenta como error": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"y un punto que no alcanzas en 5 s vale 0. El puntaje final es el promedio de 12 puntos.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"· C más pequeña": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"⚠ No se pudo cargar el detector de manos. Se usa el puntero.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"⚠ No se pudo usar la cámara (permiso negado o no hay cámara). La prueba funciona con el ratón o el dedo.": [
+"escritorio/src/legado/juegos/manos.js"
+],
+"${0} de ${1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"${0} pts en este globo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Aciertos": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Aciertos ${0}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Aciertos {0}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Alegría": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Buena": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Cara": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Cara ${0} de ${1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Cara {0} de {1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Check-in guardado: se queda en la nave": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Definición de NASA (reporte de salud conductual 2025). Con 2 de 3 se sugiere una conferencia médica privada (ISS Medical Checklist, pág. 422).": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Dentro de tu rango habitual": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Distante": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Elegir otro juego": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Empezar": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Enojo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Expresiones": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Globo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Globo ${0} de ${1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Globo de oxígeno": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Globo {0} de {1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Guardar": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Guardaste": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Hecho hoy": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Igual que 2 atrás": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Infla y cobra antes de que reviente. Mide cuánto riesgo tomas hoy (BART).": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Inflar +1": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Memoria 2 atrás": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Miedo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Neutral": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Normal": [
+"escritorio/src/legado/juegos/mente.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Pendiente hoy": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Perdiste los puntos de este globo.": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Por debajo de tu rango habitual": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Primera partida: será parte de tu línea base.": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Resultado": [
+"escritorio/src/legado/juegos/mente.js",
+"escritorio/src/vistas/Manos.jsx"
+],
+"Tensa": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Toca cuando el símbolo sea igual al de dos pasos antes (F2B).": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Tristeza": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Unida": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"Verás un símbolo cada 1.6 s. Toca el botón cuando sea igual al de": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"correctas. Caras alegres o neutrales vistas como negativas:": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"pts en este globo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"puntos. Infladas promedio en globos guardados:": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"{0} de 3{1}": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"{0} de {1} correctas. Caras alegres o neutrales vistas como negativas: {2}.": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"{0} pts en este globo": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"¡Reventó!": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"¿Qué emoción muestra cada cara? Mide cómo percibes las emociones (ERT).": [
+"escritorio/src/legado/juegos/mente.js"
+],
+"${0} de 3": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"${done?'✓ Hecho · vuelve mañana':": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"${esc(s.n)}${owned?'':s.crate?' · solo en cápsulas':' · se desbloquea en '+RANKS[s.req][1]}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"${g.crate?'Cápsula abierta:": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"${played===CREW.length?'¡Los 6 completaron su turno!':": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"':all?'¡Cápsula de suministros lista!':'Cápsula de suministros'}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"3 días seguidos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"3 minutos · una vez al día": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"30 días seguidos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"5 respuestas de menos de 250 ms": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"5 respuestas de menos de 250 ms en una partida": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"60 segundos · sin límite": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"7 días seguidos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+":' · rango máximo'}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Abrir cápsula": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Abrir cápsula de suministros": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Alunizaje": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Apolo 11 despegó el 16 de julio de 1969 y entró en órbita lunar tres días después.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Apolo 8, en diciembre de 1968, fue la primera misión con tripulación en orbitar la Luna.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Arcade": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Aurora": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Bloqueada": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cadete": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Capturas": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cinturones de Van Allen": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Coleccionista": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Color": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Color {0}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Combo máx.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Completa la ruta a la Luna": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Completa tu turno oficial": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Consigue 2 cápsulas doradas": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Consigue una cápsula ×3": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Constancia": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cuenta para tu salud": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"CÁPSULA DORADA ×3": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"CÁPSULA ×3": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cápsula de suministros": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cápsula de suministros:": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Cápsula dorada": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Descenso": [
+"escritorio/src/legado/juegos/orbita.js",
+"escritorio/src/legado/vistas/mision.js"
+],
+"Doce astronautas de NASA caminaron sobre la Luna entre 1969 y 1972.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"El módulo Eagle de Apolo 11 alunizó el 20 de julio de 1969 en el Mar de la Tranquilidad.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"En la ISS, los astronautas durmieron en promedio 6.1 horas por noche (21 astronautas medidos con actigrafía).": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"En la Luna pesas cerca de una sexta parte de lo que pesas en la Tierra.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Enter": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Escudo de racha": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Escudo de radiación": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Esfera lunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Espacio profundo": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Especialista": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Esquiva": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Esquiva 4 meteoros rojos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Esquiva 5 meteoros en arcade": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Esquiva meteoros rojos, atrapa cápsulas doradas": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Estado general de": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Estado general de {0}: {1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Etapa": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Etapa {0} de {1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Explorador lunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Hecho": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Hielo lunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Hiperfoco": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Insignia nueva:": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Inyección translunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Juega 2 partidas de arcade": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Jugar arcade": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"La Estación Espacial Internacional tiene tripulación sin interrupción desde el 2 de noviembre de 2000.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"La ISS da una vuelta a la Tierra cada 90 minutos: su tripulación ve unos 16 amaneceres al día.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"La Luna está en promedio a 384,400 km de la Tierra.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Lanzamiento": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Lapsos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Leyenda lunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Llega a combo ×10": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Logra un combo de ×8": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Los 6 juegan el mismo día": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Luna": [
+"escritorio/src/legado/juegos/orbita.js",
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Mano firme": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Mediana": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Meta de la tripulación hoy": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Misiones de hoy": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Más rápida": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"NASA eligió la región del polo sur lunar para Artemis por el posible hielo de agua en cráteres en sombra permanente.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"NASA limita la dosis de radiación de toda la carrera de un astronauta a 600 mSv.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"NASA · reporte de evidencia de sueño": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"NO TOQUES": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Navegante": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nebulosa": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nova": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nueva etapa desbloqueada": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nuevo rango:": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nuevo rango: {0}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Nuevo récord": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"PREPÁRATE": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"PVT-B · puntaje de desempeño ${0} % · línea base ${1} ms": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Para mantenerse en órbita, la ISS viaja a unos 28,000 km/h.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Plasma": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Polo sur lunar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Postal": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Postal ${0} de ${1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Postal {0} de {1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Primer contacto": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Punto medio": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Rango": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Rango ${0} de ${1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Rango {0} de {1}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Reflejos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Reúne 8 postales": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Ruta completada": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Rutina de hierro": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"SE ESCAPÓ": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Semana perfecta": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Sin respuesta": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Solar": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Solo diversión · no se mide": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Son zonas de partículas atrapadas por el campo magnético de la Tierra; las misiones Apolo los cruzaron rápido para limitar la dosis.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Space": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Sueño en órbita": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Suma 15,000 puntos en una partida": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tierra": [
+"escritorio/src/legado/juegos/orbita.js",
+"escritorio/src/vistas/Orbita.jsx",
+"tierra/centro_control.py"
+],
+"Toca la pantalla o presiona Espacio cuando se encienda el anillo. Si te adelantas, pierdes el combo.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tripulación unida": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tu atención está como siempre.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tu atención está más lenta que tu normal. Si puedes, descansa un poco.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tu primer turno oficial": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Turno oficial": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Turno oficial sin anticipaciones": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Tus récords": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Un escudo protege tu racha si fallas un día": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Una señal de radio tarda cerca de 1.3 segundos en llegar de la Luna a la Tierra.": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Verde misión": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Veterano orbital": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Volver al menú": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"día": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"día{0} seguidos": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"vs tu récord": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"{0} de {1} postales": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"{0} · {1} · racha de {2} día{3}": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"{0}{1} vs tu récord": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡Completaste las 3 misiones!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡Era un meteoro!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡HIPERFOCO!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡Llegaste a la Luna!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡Muy pronto!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"¡Subiste a '+RANKS[nr][1]+'!": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"· racha de": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Órbita baja": [
+"escritorio/src/legado/juegos/orbita.js"
+],
+"Órbita lunar": [
+"escritorio/src/legado/juegos/orbita.js",
+"escritorio/src/legado/vistas/mision.js"
+],
+"Escape": [
+"escritorio/src/legado/main.js"
+],
+"Motor clínico:": [
+"escritorio/src/legado/motor/clinico.js"
+],
+"Ya no cumple los criterios": [
+"escritorio/src/legado/motor/clinico.js"
+],
+"desde hace 1 a 3 días": [
+"escritorio/src/legado/motor/clinico.js"
+],
+"desde hace más de 3 días": [
+"escritorio/src/legado/motor/clinico.js"
+],
+"{0} de {1} indicadores": [
+"escritorio/src/legado/motor/clinico.js"
+],
+": de regreso a la normalidad": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Accidente atendido": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Accidente simulado": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Ajusta la carga de trabajo de hoy.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Atendida": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Aumenta la ventilación del módulo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Avisa al centro de control.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Avisa al oficial médico; se reporta a la Tierra.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Aíslate en tu cabina; cubrebocas en áreas comunes.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Bebe agua y descansa.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Bebe agua: meta de 3 L hoy.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Bebe en sorbos pequeños y descansa 1 a 2 horas.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Bebe líquidos con sal si puedes.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Busca un lugar tranquilo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"CO₂ alto en la cabina": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Cambio en la vista": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Caso simulado:": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Caso simulado: {0}": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Caso simulado: {0} · {1}{2}": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Caída en la superficie": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Detén la actividad física y respira lento.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Detén la actividad y recuéstate o sujétate en horizontal.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Detén la actividad y sujétate a un punto fijo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Dolor renal": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"El oficial médico decide si hay medicamento.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Eleva las piernas.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Estrés alto": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Falla simulada en la limpieza de aire": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Fiebre": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Haz la respiración guiada de Mi día (2 minutos).": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"La nave vuelve a la normalidad": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Mide la presión.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Mide temperatura y oxígeno cada 4 horas.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Mira un punto fijo y mantén la cabeza quieta.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Nave": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"No te muevas: revisa dolor en cadera, piernas y muñecas.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Nueva": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Oxígeno bajo": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Pregunta por dolor de cabeza fuerte, cambios en la vista o dolor de pecho.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Pregunta por palpitaciones, mareo o dolor de pecho.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Pregúntale cómo se siente y busca mareo o desmayo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Presión alta": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Presión baja": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Presión {0}/{1}": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Pulso muy lento": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Pulso muy rápido": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Pulso {0} lpm": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Repite la medición en 5 minutos y avisa al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Repite la revisión cada semana.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Repite la revisión de ojos (sección Visión).": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Reposa 5 minutos y repite la medición.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Reposo y analgésico según el oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Respiración rápida": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa el aire de la cabina (CO₂ y oxígeno).": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa el sensor y vuelve a medir.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa el sistema que limpia el aire.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa la presión del traje.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa oxígeno y aire de la cabina.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa que el sensor esté bien colocado.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa si está dormido o en reposo profundo: puede ser normal.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Revisa si tomó su medicamento a tiempo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Se normalizó": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Si duele la cadera o la pierna: inmoviliza y regresa a la base.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si hay dolor de cabeza o falta de aire, cambia de módulo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si hay falta de aire, avisa al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si hay fiebre o no puedes orinar: emergencia.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si hay síntomas, avisa al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si no baja en 10 minutos, avisa al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si quieres, agenda una llamada privada con la Tierra.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si sigue alta, avisa al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Si sigue bajo: oxígeno de emergencia y aviso al oficial médico.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Siéntate y respira lento y profundo.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Siéntate y respira lento.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Ten una bolsa a la mano.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Tormenta solar": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/legado/vistas/alertas.js",
+"nave/motor/clinico.py"
+],
+"Tormenta solar simulada": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Tu compañero te ayuda a levantarte de lado.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Ultrasonido portátil y muestra de orina.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"Usa lentes de ajuste si ves borroso de cerca.": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"{0} por min": [
+"escritorio/src/legado/nucleo/alertas.js"
+],
+"{0}: de regreso a la normalidad": [
+"escritorio/src/legado/nucleo/alertas.js",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Buscando de nuevo al centro de control…": [
+"escritorio/src/legado/nucleo/enlace.js"
+],
+"Conexión con el centro de control: enviando por prioridad": [
+"escritorio/src/legado/nucleo/enlace.js"
+],
+"No se pudo cambiar el enlace:": [
+"escritorio/src/legado/nucleo/enlace.js"
+],
+"Pérdida de señal simulada: todo se guarda en la nave": [
+"escritorio/src/legado/nucleo/enlace.js"
+],
+"Sin conexión: todo se guarda en la nave": [
+"escritorio/src/legado/nucleo/enlace.js"
+],
+"Adelanta 30 minutos la hora de dormir.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Bebe agua repartida en el día.": [
+"escritorio/src/legado/nucleo/predicciones.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Doble verificación en tareas delicadas.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Evita pantallas y luz intensa antes de dormir.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Haz el turno de Órbita cada día a la misma hora.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Mide el pulso en reposo al despertar.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Preparación": [
+"escritorio/src/legado/nucleo/predicciones.js",
+"escritorio/src/legado/vistas/panel.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Prioriza el descanso esta semana.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Pulso en reposo": [
+"escritorio/src/legado/nucleo/predicciones.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Reparte las tareas exigentes con la tripulación.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Revisa la agenda: menos tareas nocturnas.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Revisa sueño y carga de trabajo.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Si sigue subiendo, revisión con el oficial médico.": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"podría dormir menos de 6.4 h por noche": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"su preparación podría bajar de 70 %": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"su pulso en reposo podría seguir subiendo": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"su tiempo de reacción podría salir de su rango": [
+"escritorio/src/legado/nucleo/predicciones.js"
+],
+"Cambio": [
+"escritorio/src/legado/nucleo/puntuaciones.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"En forma": [
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"Pendiente": [
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"Revisar ahora": [
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"Sin cambios": [
+"escritorio/src/legado/nucleo/puntuaciones.js",
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Sin datos": [
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"Ve a tu ritmo": [
+"escritorio/src/legado/nucleo/puntuaciones.js"
+],
+"2 de 3: advertencia": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Adaptación": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Caída en la Luna": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Dolor articular y hormigueo": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Dolor de cabeza": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Dolor de espalda": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Dolor intenso, no apoya": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Falta de aire": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Infección": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Mareo al moverse": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"No llegan signos vitales de": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"No llegan signos vitales de ${0} desde esta mañana.": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"No llegan signos vitales de {0} desde esta mañana.": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Oxígeno": [
+"escritorio/src/legado/nucleo/signos.js",
+"escritorio/src/legado/ui/ambiente.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Palpitaciones": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Reconectar sensor": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Renal incompleto": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Reporta cólico y náusea": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Reporta náusea y giro": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Reporta y pruebas": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Sensor reconectado: llegan datos otra vez": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Sin señal": [
+"escritorio/src/legado/nucleo/signos.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tras caminata (DCS)": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Vigilar": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Vista borrosa": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"desde esta mañana.": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"Ánimo y convivencia": [
+"escritorio/src/legado/nucleo/signos.js"
+],
+"CO₂ en cabina": [
+"escritorio/src/legado/ui/ambiente.js"
+],
+"Humedad": [
+"escritorio/src/legado/ui/ambiente.js"
+],
+"=f.de&&x": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Afuera: no hay día ni noche de 24 h": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Afuera: un día lunar dura unos 29.5 días": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Afuera: unos 16 amaneceres al día": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Antifaz y tapones si hay luz o ruido. Duerme en tu saco, a la misma hora todos los días: meta de 8 h.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Cambia a luz cálida, baja las pantallas y evita el ejercicio intenso. Prueba la respiración guiada.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Día": [
+"escritorio/src/legado/ui/circadiano.js",
+"escritorio/src/legado/vistas/mision.js",
+"escritorio/src/legado/vistas/persona.js"
+],
+"En el viaje la nave puede estar con sol todo el tiempo. Tu día lo marcan la luz de la cabina y el horario de la tripulación.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"En la base hay cerca de dos semanas seguidas de luz solar y dos de oscuridad. Sin la cabina, el cuerpo no sabría qué hora es.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"La Estación da una vuelta a la Tierra cada 90 minutos: 45 de luz y 45 de oscuridad. Por eso la luz de la cabina es la que marca el día.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Luz azul brillante": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Luz blanca": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Luz cálida y tenue": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Mantén luz blanca intensa mientras trabajas y haz tu ejercicio antes de la tarde.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Oscuridad": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Prende la luz azul de la cabina y abre la cortina: le dice a tu cuerpo que empezó el día.": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Preparar el sueño": [
+"escritorio/src/legado/ui/circadiano.js"
+],
+"Sin zonas con aviso": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"corazón": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"oído": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"riñones": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"{0} · arrastra para girar": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"· arrastra para girar": [
+"escritorio/src/legado/ui/cuerpo3d.js"
+],
+"DÍA": [
+"escritorio/src/legado/ui/encabezado.js"
+],
+"DÍA {0} · {1}:{2}:{3} UTC": [
+"escritorio/src/legado/ui/encabezado.js"
+],
+"':S.online?'enviándose ahora…':'en cola, sale con prioridad cuando haya señal'):'registrada en la bitácora de la nave'} · Guía rápida del prototipo": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Ahora": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Ahora ${0} · en 7 días ${1} · límite ${2}": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Ahora {0} · en 7 días {1} · límite {2}": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Confianza": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Confianza ${0}": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Confianza {0}": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Crear alerta preventiva": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Críticas": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Falla del aire": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Marcar atendida": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Modo entrenamiento": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Modo entrenamiento: activo": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Para vigilar": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Pronóstico:": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Pronóstico: {0} a la baja": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Pronósticos de riesgo": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Protocolo de NASA": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Prueba el simulador para ver cómo responde el sistema, o activa el modo entrenamiento para recibir casos sorpresa.": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Radiación alta": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Resueltas en esta sesión": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Sin alertas activas": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Sin eventos.": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Sin tendencias de riesgo en los próximos 7 días.": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Toda la tripulación en rango": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Todos de regreso a la normalidad": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"a la baja": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"días": [
+"escritorio/src/legado/vistas/alertas.js",
+"escritorio/src/legado/vistas/mision.js"
+],
+"en aumento": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"en {0} días": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"recibida por el centro de control": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"· en 7 días": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"· límite": [
+"escritorio/src/legado/vistas/alertas.js"
+],
+"Agua": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Bien hecho": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Cena con la tripulación": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Comida": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Desayuno": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Despertar e higiene": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Detener": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Ejercicio": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Ejercicio aeróbico": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Ejercicio de fuerza": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Empezar · 2 min": [
+"escritorio/src/legado/vistas/midia.js",
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Exhala": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Experimentos científicos": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Hora de la nave": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Hora de la nave {0}:{1} UTC": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Inhala": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Mantenimiento de la base": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Mensaje en camino a la Tierra": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Mensaje personal de": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Mensaje personal de {0} (privado)": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Meta de agua cumplida": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Meta de ejercicio cumplida": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Metas del prototipo, ajustables por el oficial médico. El agua ayuda a prevenir cálculos renales.": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Otra vez · 2 min": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Reunión con el centro de control": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Revisión de ojos semanal": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Sin señal: sale en cuanto haya enlace": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Sostén": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Tiempo libre y llamada a casa": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"Turno de Órbita · 3 min": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"del día": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"respiración": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"{0} respiración{1}": [
+"escritorio/src/legado/vistas/midia.js"
+],
+"% · al regreso": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"%) · al regreso": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"0?z.g.toFixed(2)+' g · gravedad parcial':'Microgravedad (0 g)'],['Radiación ahora',`": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Aceleración de hasta unas 3 g al atravesar la atmósfera.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Al regreso": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Amerizaje: fin de la misión": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Ascenso a órbita lunar y salida hacia la Tierra.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Base en la superficie lunar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Cinturón externo de Van Allen": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Cinturón interno de Van Allen": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Desaceleración intensa y regreso a 1 g: la presión puede bajar al ponerse de pie.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Despegue": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Despegue lunar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Distancia a la Tierra": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Dosis de la misión": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Día de misión": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Día {0} · al regreso (día {1})": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Día {0}: {1}": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"El campo magnético de la Tierra todavía desvía parte de las partículas solares.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Electrones de alta energía atrapados: segunda zona de radiación alta.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Entra a:": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Entra a: {0}": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Espacio cislunar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Estación en órbita baja": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Estación en órbita lunar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Estancia en la Luna": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Estancia en órbita": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Fase": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Gravedad": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Gravedad de 0.17 g. Sin atmósfera ni campo magnético: el refugio de la base es clave en tormentas solares.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Ir a hoy (día": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Ir a hoy (día {0})": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Llegada a la Luna": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Magnetosfera exterior": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Microgravedad (0 g)": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Pausar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Por debajo de los cinturones de Van Allen, donde orbita la ISS. Empieza la microgravedad.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Preparación del descenso. La Luna tapa parte del cielo y baja un poco la radiación.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Primer cambio de gravedad tras días en microgravedad: cuidado con el equilibrio.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Protones atrapados por el campo magnético: la dosis sube mucho y se cruza rápido.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Pérdida ósea estimada": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Pérdida ósea estimada ${0} % · al regreso ${1} %": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Pérdida ósea estimada {0} % · al regreso {1} %": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Radiación ahora": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Radiación de carrera": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Radiación de carrera ${0} mSv (${1} %) · al regreso ${2} mSv": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Radiación de carrera {0} mSv ({1} %) · al regreso {2} mSv": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Reentrada": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Región entre cinturones": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Regreso cislunar": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Repetir viaje": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Reproducir viaje": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Retraso de la señal": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Salida de la Tierra": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Sin la protección magnética de la Tierra: rayos cósmicos todo el tiempo (cerca de 1.8 mSv por día).": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Tierra · 1 g": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Tormenta solar simulada en día": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Tormenta solar simulada en día {0}{1}": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Trayectoria y entorno ·": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Trayectoria y entorno · {0} días": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Tres días de vuelta por el espacio profundo.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Tránsito a la Luna": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Zona": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Zona con menos partículas atrapadas.": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"cinturón externo": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"cinturón interno": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"menos de 0.1 s": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"· al regreso (día": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"Órbita baja terrestre": [
+"escritorio/src/legado/vistas/mision.js"
+],
+"${0} % de 600": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"% de 600": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Amsler": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Amsler {0} / {1}": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Datos de la tripulación · días 1 a": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Datos de la tripulación · días 1 a {0} ({1} filas)": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Dosis mSv": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Día 0": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Hoy · día": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Hoy · día ${0}": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Hoy · día {0}": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Lapsos ≥355": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Ojos · R-30": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Ojos · día 30": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Ojos · día 90": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Persona": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Regreso ·": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Regreso · ${0}": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Regreso · {0}": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Sueño h": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"Visión OI / OD": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"{0} % de 600": [
+"escritorio/src/legado/vistas/panel.js"
+],
+"${0} % del límite de carrera": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"${0} · valores exactos del día ${1}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"${0}70 % = buen día": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"${0}Pronóstico 7 días (tendencia de 10 días)": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"${0}Tu normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"% del límite de carrera": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"% del límite.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"(tu normal:": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"70 % = buen día": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Aislamiento": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Al aterrizar, incorporarse por etapas y con líquidos.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Algo está por debajo de tu normal. Abajo ves qué está bajando y qué hacer.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Anoche dormiste": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Antecedente de cálculos": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Antecedente de trombosis": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Articulación": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Bien, con algo que vigilar": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Cadera": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Cambio en la revisión": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Coagulación": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Columna": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Combina sueño (35 %), atención (35 %) y pulso en reposo (30 %) frente a tu propia línea base. Fórmula de este prototipo; comparar contra uno mismo sigue el enfoque del": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Combina sueño (35 %), atención (35 %) y pulso en reposo (30 %) frente a tu propia línea base. Fórmula de este prototipo; comparar contra uno mismo sigue el enfoque del {0}.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Condición baja": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Condición física alta": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Condición media": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Cumple tu rutina de ejercicio de hoy.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Cumplir la rutina de ejercicio aeróbico y de fuerza.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Defensas": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Dormiste bien": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Dormiste menos de lo que necesitas": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Dosis acumulada": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Dosis de radiación acumulada": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Día 30 completado · siguen el día 90 y R-30": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Día {0}{1}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ejercicios de carga sin interrupciones.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"El mareo al ponerse de pie después del vuelo fue más frecuente en mujeres en los datos de NASA.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"En 22 astronautas de la ISS, una mejor condición física previa se asoció con menos reactivación de virus latentes.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"En la ISS se detectó un coágulo en la yugular de un astronauta, tratado con guía desde la Tierra.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"En microgravedad el hueso libera calcio y se bebe menos. NASA aprueba este antecedente con vigilancia y es uno de los escenarios del CDSS.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Evento solar (ejemplo)": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Faltan las mediciones de hoy": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Fuera de lo normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Haz tu revisión de ojos semanal.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Haz tu turno de Órbita: muestra si el sueño te está afectando.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Hidratación durante el día y prueba de orina periódica.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Hoy": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Hoy prioriza descansar": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"La columna se alarga en microgravedad y las cargas pueden agravar una hernia.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"La vista se revisa en días programados, no a diario.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Lapsos ≥355 ms": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Las dos pruebas salieron bien en ambos ojos.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Llevas": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Llevas {0} en toda tu carrera: {1} % del límite. {2}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Límite de carrera de NASA: 600 mSv. Las dosis de esta demostración son de ejemplo.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Límite de carrera de NASA: 600 mSv. Las dosis de esta demostración son de ejemplo. {0}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Mediana D1–14": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Medición dos veces por semana y medicamento a la misma hora.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Medida": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Medido con el juego Órbita, que aplica la prueba de reacción PVT-B de NASA sin preguntarte cómo te sientes.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Medido con el juego Órbita, que aplica la prueba de reacción PVT-B de NASA sin preguntarte cómo te sientes. {0} · {1}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Mismas pruebas y calendario que en la ISS.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Mismas pruebas y calendario que en la ISS. {0}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"NASA aprueba la apnea leve, pero en vuelo se duerme menos que en la Tierra.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"NASA encontró que la genética y las vitaminas B hacen a algunos astronautas más propensos a cambios oculares.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"NASA ha aprobado astronautas con hipertensión y antihipertensivos a bordo.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"NASA ha aprobado astronautas con reemplazo de cadera, vigilando la pérdida ósea.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Notaste un cambio en la vista": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Oxígeno normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"PRONÓSTICO": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Plan general": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ponte el sensor para registrar esta métrica.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ponte el sensor y haz tu turno de Órbita para calcular tu preparación.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Por debajo de su normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Por qué": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Presión arterial": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Pronóstico 7 días (tendencia de 10 días)": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Prótesis": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Pulso en reposo alto": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Rango p10–p90": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Registra tu pulso hoy.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Registro diario del pulso y guía si hay palpitaciones.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Regla del prototipo: aviso si baja 4 puntos de tu línea base; el oficial médico puede ajustarla.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Regla del prototipo: aviso si baja 4 puntos de tu línea base; el oficial médico puede ajustarla. {0}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Repite la revisión mañana a la misma hora y avisa al oficial médico.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Revisa si hay dolor o hinchazón en cuello, brazos o piernas.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Revisión de ojos pendiente": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Revisión de ojos semanal, además de los días 30, 90 y R-30.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ritmo cardiaco": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Riñón": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Saturación baja hoy": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Se compara con tu propia línea base de los primeros 14 días.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Se compara con tu propia línea base de los primeros 14 días. {0}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Seguimiento con Órbita": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Sensor portátil · en vivo": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Sin antecedentes marcados.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Sin datos de hoy": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Solo vista médico en Tierra": [
+"escritorio/src/legado/vistas/persona.js",
+"escritorio/src/vistas/Panel.jsx"
+],
+"Sueño y atención": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Todo listo para un día exigente": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Toma dos minutos por ojo. Hazla en la sección Visión.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Toma tu medicamento a la misma hora.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tras 6 meses en la ISS la aurícula izquierda cambia de forma temporal. NASA aprueba arritmias tratadas con seguimiento.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu atención está como siempre": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu atención está más lenta": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu corazón está en calma": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu oxígeno bajó un poco": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu oxígeno está bajo": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu preparación es buena, pero hoy hay que vigilar:": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu preparación es buena, pero hoy hay que vigilar: {0}.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu pulso en reposo es": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu pulso en reposo es {0} (tu normal: {1} lpm). {2}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu pulso en reposo está alto": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu rango habitual (días 1 a 14)": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu saturación es": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu saturación es {0} (tu normal: {1} %). {2}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu sueño, tu atención y tu corazón están en tu rango habitual.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu tiempo de reacción típico hoy fue": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tu tiempo de reacción típico hoy fue {0} (tu normal: {1} ms). {2}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Turno diario de Órbita: si tu atención baja varios días, ajustar el descanso.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Tus ojos no muestran cambios": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ultrasonido programado y señales de alarma: dolor o hinchazón en cuello, brazos o piernas.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Ve a tu ritmo hoy": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Vigilancia por antecedente": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Visión": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Visión · revisiones": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Vía aérea": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"de 600 mSv": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"en toda tu carrera:": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"pulso en reposo": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"z = cuántas desviaciones típicas se aleja hoy de su propia variación en los días 1 a 14.": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0} % del límite de carrera": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0} · valores exactos del día {1}": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0}); function renderPMed(c){const el=$('#pMed');el.hidden=S.role!=='med';if(el.hidden)return;const e=today(c); const rows=[['Sueño','sl','h',1,-1],['Pulso en reposo','hr','lpm',0,1],['SpO₂','sp','%',0,-1],['PVT-B mediana','rt','ms',0,1],['Lapsos ≥355 ms','lap','',0,1]]; el.innerHTML=`": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0}70 % = buen día": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0}Pronóstico 7 días (tendencia de 10 días)": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"{0}Tu normal": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"· valores exactos del día": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Órbita · PVT-B": [
+"escritorio/src/legado/vistas/persona.js"
+],
+"Evitar tareas de precisión hasta repetirla": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Mandar las imágenes al oftalmólogo en la Tierra": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Mover las tareas críticas si suben los lapsos": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"No se pudo guardar la prueba:": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Prueba de nuevo en rango": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Repetir la prueba": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Repetir la prueba más tarde": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Revisar fatiga y coordinación": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Revisar sueño, fatiga y adaptación sensoriomotora": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Usar las gafas de corrección de a bordo": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"menor a 70 %": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"{0} menor a 70 %": [
+"escritorio/src/legado/vistas/pruebas.js"
+],
+"Antes del vuelo se marcan antecedentes y la app activa vigilancias concretas: riñón, vista, coagulación, ritmo cardiaco, columna. Cada una dice qué hacer, por qué y con qué fuente. Todo se compara contra la propia línea base (días 1 a 14) y se ve en el mapa del cuerpo.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Con la Tierra a segundos o minutos de distancia, la tripulación necesita enterarse sola de un problema, saber qué hacer y ver venir los riesgos antes de que lleguen.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Detectar, predecir y actuar": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Dos vistas de los mismos datos. El tripulante ve anillos, una frase y qué hacer hoy. El médico en Tierra ve valores exactos, mediana, rango p10–p90 y desviación z, y puede exportarlos. Todo funciona sin señal y se sincroniza por prioridad.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"El hueco": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"El juego aplica las reglas de la PVT-B, pero este formato con puntos todavía no está validado.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"El índice de preparación (35 / 35 / 30) y el aviso de oxígeno (−4 puntos) son reglas de este prototipo, ajustables por el oficial médico.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"En la ISS la agudeza visual y la rejilla de Amsler se revisan en días fijos: 30 y 90 de vuelo y 30 días antes de regresar. En misiones más largas o lejanas puede pasar mucho tiempo entre revisiones, y algunos astronautas son más propensos.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Fuentes, calendario de revisiones de ojos, límite de radiación de 600 mSv y reglas de la PVT-B (3 min, intervalos de 1 a 4 s, lapso ≥ 355 ms, anticipación < 100 ms).": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Hacer la revisión": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Interfaz para quien no es médico": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Jugar Órbita": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"La arquitectura CDSS de NASA busca que la tripulación decida con autonomía cuando la comunicación tarda (en Marte, más de 20 minutos). La información tiene que adaptarse a quién la usa.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"La trayectoria es un modelo educativo: solo el límite de 600 mSv, los 1.8 mSv por día en el espacio profundo y la pérdida ósea de 1 a 1.5 % por mes vienen de fuentes publicadas.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Las 6 personas y todos sus datos son de ejemplo, generados con una semilla fija.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Las dosis de radiación diarias son de ejemplo.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Las mismas dos pruebas en 2 minutos por ojo, con calendario, historial contra el día 30, aviso cuando algo cambia y revisión semanal para quien tiene antecedentes. No sustituye la imagen médica.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Los astronautas tienden a no reportar síntomas para no perder misiones, y los cuestionarios de ánimo dependen de que la persona quiera contestar. NASA considera la confianza de la tripulación indispensable en misiones independientes de la Tierra.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Los pronósticos son una tendencia lineal de los últimos 10 días: muestran hacia dónde va algo, no un diagnóstico.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Los signos vitales en vivo, los escenarios del simulador y el entorno de la nave son simulados; los umbrales de alerta y las guías rápidas son del prototipo.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Mente: tríada basada en la definición de cambio conductual de NASA; juegos adaptados de la batería Cognition (Basner 2015).": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Motor clínico: síntomas y signos de cada condición tomados del ISS Medical Checklist de NASA (JSC-48522) y de sus fichas de condición médica; pasos de cada protocolo resumidos del checklist. La regla de 2 de 3 (advertencia) y 3 de 3 (alerta) es del sistema y orienta: no sustituye al cirujano de vuelo.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"NASA ya aprueba astronautas con condiciones médicas mediante dispensas, y sus estudios muestran que la condición física, la genética o el sexo cambian el riesgo en vuelo. Un sistema de apoyo a decisiones necesita partir de la línea base de cada persona.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Nuestra respuesta": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Perfil de riesgo previo al vuelo": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"SANS: cambios en la vista": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Salud mental sin vigilancia": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Signos vitales en vivo con alertas automáticas, un muñeco 3D que marca la zona del cuerpo afectada, guías de pasos simples, un simulador de casos para entrenar, pronósticos a 7 días y la trayectoria completa a la Luna con la radiación y la pérdida ósea proyectadas para cada tripulante.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Ver la vista del médico": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Ver un perfil": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"{0}); $('#simList').innerHTML=[['r','Fuentes, calendario de revisiones de ojos, límite de radiación de 600 mSv y reglas de la PVT-B (3 min, intervalos de 1 a 4 s, lapso ≥ 355 ms, anticipación": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Órbita: un juego diario de 3 minutos que por dentro es la PVT-B, la prueba de reacción de NASA más sensible a la falta de sueño. Sin preguntas de ánimo. Rangos, rachas, misiones, postales y cápsulas hacen que la gente quiera volver. Los datos se quedan en la nave: a la Tierra solo va \"en forma\" o \"necesita descanso\", salvo que el tripulante comparta más.": [
+"escritorio/src/legado/vistas/referencias.js"
+],
+"Bitácora de alertas": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Detecta, predice y guía": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Elige a una persona y una situación. Sus signos vitales cambian poco a poco y el sistema la detecta solo.": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Entorno de la nave": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Generar caso aleatorio": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Las alertas salen solas de los signos vitales en vivo, de las revisiones de ojos, del entorno de la nave y de los pronósticos. Cada una dice qué hacer en pasos simples y se envía a la Tierra con prioridad.": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Pronósticos": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Regresar a todos a la normalidad": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Si la tendencia sigue igual, esto es lo que podría pasar. Puedes convertir un pronóstico en alerta preventiva.": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Simulado": [
+"escritorio/src/vistas/Alertas.jsx",
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Simulador de casos": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Tendencia de los últimos 10 días · próximos 7": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Toda la nave": [
+"escritorio/src/vistas/Alertas.jsx"
+],
+"Abajo": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Arriba": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Completa la prueba para ver tu puntaje contra tu línea base (tus primeras 3 sesiones).": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Cámara (mano)": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Cómo se califica": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Cómo se controla": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Derecha": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Historial": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Iniciar": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Interpretado por Python": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Izquierda": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Ojo derecho": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Ojo izquierdo": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Ratón o dedo": [
+"escritorio/src/vistas/Manos.jsx"
+],
+"Arrastra la luz hacia donde estás hoy: a la derecha si te sientes bien, a la izquierda si no tanto; arriba con energía, abajo cansado.": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Cognición": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Con energía": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Convivencia": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Elige un juego": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Guardar check-in": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Juegos de la mente": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Mal": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"NASA define un cambio conductual como cualquier baja en el ánimo, la cognición, la moral o la convivencia que afecte el desempeño. Aquí se miden esas tres cosas con un check-in de 10 segundos y juegos cortos. Todo se queda en la nave salvo que tú lo compartas.": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Salud mental sin vigilancia · batería Cognition de NASA": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Sin energía": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Tríada conductual": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Tu clima interior": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Versiones cortas de pruebas de la batería Cognition de NASA": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"¿Cómo está la convivencia hoy?": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Ánimo": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Ánimo · convivencia · cognición": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Últimos 14 días": [
+"escritorio/src/vistas/Mente.jsx"
+],
+"Agenda": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Aire y entorno de la nave": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Dos minutos para bajar el ritmo antes de dormir o después de una tarea pesada.": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Enviar": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Escribe a tu familia…": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Herramientas de la tripulación": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Lo práctico para cada tripulante: metas del día, agenda, una pausa para respirar, el aire de la nave y mensajes a casa.": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Mensaje a casa": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Metas de hoy": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Mi día": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Privado: viaja cifrado por el enlace y la app no lo lee. Llega con el retraso de la señal.": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"Respira": [
+"escritorio/src/vistas/MiDia.jsx"
+],
+"1 día/s": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"20 días/s": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"5 días/s": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Bitácora del viaje": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Cada tripulante en este punto": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Día de la misión": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Ir a hoy": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Modelo educativo. Datos publicados: límite de carrera de 600 mSv (NASA), unos 1.8 mSv por día en el espacio profundo (medido por la nave del rover Curiosity) y pérdida ósea de 1 a 1.5 % por mes en microgravedad (NASA). Las demás tasas por zona son aproximaciones del modelo; el efecto de la gravedad lunar en el hueso aún no se conoce y el modelo usa la mitad.": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Simular tormenta solar": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Trayectoria Tierra–Luna": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Trayectoria y entorno": [
+"escritorio/src/vistas/Mision.jsx"
+],
+"Velocidad": [
+"escritorio/src/vistas/Mision.jsx"
+],
+", salvo que compartas más en": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+". Nadie ve tu puntaje.": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Bitácora": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Color del anillo": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Cómo mide sin preguntar": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"El turno oficial sigue las reglas de la": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Enlace": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Insignias": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Juego diario · por dentro es la prueba de reacción de NASA": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"PVT (psychomotor vigilance test) · prueba de vigilancia psicomotora": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Postal de la ruta": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Puntos": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Puntos, insignias y tiempos son tuyos. A la Tierra solo va si estás": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Ruta a la Luna": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Ruta de la Tierra a la Luna": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Se desbloquean al subir de rango o en las cápsulas de suministros.": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Tu privacidad": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"de NASA: 3 minutos, el anillo se enciende cada 1 a 4 s, una respuesta de 355 ms o más es un lapso y una de menos de 100 ms es anticipación. Es la prueba más sensible a la falta de sueño.": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"en forma": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Órbita": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Órbita: toca cuando se encienda el anillo": [
+"escritorio/src/vistas/Orbita.jsx"
+],
+"Abrir la trayectoria →": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Arrastra para girar · toca a una persona": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Consola de la tripulación · valores exactos": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Entre paréntesis: cambio contra la mediana de los días 1 a 14 de cada persona. Color: más de 1 o 2 desviaciones de su propia variación (z).": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Gemelo digital de la tripulación · en vivo": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Misión · día": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Posición de la nave": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Prototipo con datos de ejemplo. El índice de preparación es una fórmula de este prototipo (sueño 35 %, atención 35 %, corazón 30 %) que compara a cada persona con su propia línea base. Los círculos de cada tripulante están en Tripulación.": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Registrar síntomas": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Revisiones de ojos del calendario de NASA en la ISS": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Toca a una persona para ver su estado": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Ver datos en CSV": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Ver su detalle": [
+"escritorio/src/vistas/Panel.jsx"
+],
+"Cada uno parte de un hueco documentado en el sistema médico de NASA para misiones lejanas y se apoya en fuentes oficiales. A = norma, documento oficial o estudio sólido. B = estudio en pocos astronautas.": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"Fuentes": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"Los 4 puntos que resolvemos": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"Qué es real y qué es de ejemplo": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"Reiniciar la demostración": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"Totalmente verificable · solo NASA y ESA": [
+"escritorio/src/vistas/Referencias.jsx"
+],
+"); } function RegistroReciente({0}) { const a = N.AUTO[c.id] || {1}, p = N.PRU[c.id] || {2}; const filas = [ ['Carga de trabajo', a.carga, '/100'], ['Estrés (PSS-10)', a.pss, '/40'], ['Estado de ánimo', a.animo, '/10'], ['Trabajo en equipo', a.equipo, '/10'], ['Órbita (PVT)', p.pvt, ' %'], ['Coordinación ojo-mano', p.alcance, ' %'], ['Prueba de visión', p.vision_c, ' %'], ['Círculo con la mano', p.trazo, ' %'], ]; return (": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"0 a 100 · calculado en Python con el documento de parámetros": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Arrastra para girar": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Avisos y riesgos": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Cada problema del documento de parámetros se evalúa con sus signos y síntomas: algunos = alerta, todos = emergencia con el protocolo.": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Estado de salud de cada tripulante": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Estado general": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Hacer pruebas": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Lo que el sistema ve": [
+"escritorio/src/vistas/Tripulacion.jsx",
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Mantén tu horario de sueño, hidratación y ejercicio.": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Modelo 3D": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Perfil previo al vuelo": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Qué hacer hoy": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Registrar en Valoración": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Registro personal y pruebas": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Sensor portátil": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Signos vitales en vivo": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Sin alertas": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Sistemas del cuerpo": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Toca a una persona para abrir su página: sistemas del cuerpo, signos vitales, avisos y riesgos, y su modelo 3D.": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Ver su detalle →": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"{0} · día {1}": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Órbita (PVT)": [
+"escritorio/src/vistas/Tripulacion.jsx",
+"nave/motor/clinico.py"
+],
+"Últimos valores": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"← Toda la tripulación": [
+"escritorio/src/vistas/Tripulacion.jsx"
+],
+"Algunos (alerta)": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Aún no hay nada registrado. Si todo está bien, no necesitas registrar nada.": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Borrar todo": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Cuántos indicadores": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Datos simulados": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Elige un problema del documento de parámetros. Los datos de {0} se alteran (signos, síntomas, muestras, registro personal y pruebas) y el motor en Python los evalúa: con algunos signos y síntomas manda una alerta; con todos, abre la ventana de emergencia con el protocolo.": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Elige una zona del cuerpo": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Espalda": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Estable respecto a tu basal": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Frente": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Guardado. El motor ya lo tomó en cuenta.": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Guardando y evaluando en Python…": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Guardar registro personal": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Guardar y evaluar": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Historial de registros": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Inmunológico · cognitivo-conductual": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Intensidad": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Lo registra el tripulante": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Mapa del cuerpo": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"NASA-TLX: 0 a 100, sin aumento sobre tu basal": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"No se pudo simular:": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Para practicar": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Problema": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Quitar": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Quitar simulación de {0}": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registra lo que notas tocando el cuerpo y tu registro personal; los signos vitales, el sueño y las muestras llegan solos de los dispositivos. Todo se cruza con el documento de parámetros en el motor clínico de la nave.": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro borrado": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro de signos y síntomas de": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro de signos y síntomas de {0}${principal ?": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro guardado": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro personal": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Registro personal guardado": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Se alterará": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Si baja:": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Si sube:": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Signos y síntomas": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Signos, síntomas, registro personal y muestras · se procesa en Python": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Simulación de emergencias": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Simulación:": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Simulación: {0} en {1}": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Simular tormenta de radiación (refugio)": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Sin registros todavía.": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Sin signos ni síntomas": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Terminar tormenta solar": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Toca la zona": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Toca la zona donde notas algo, o «Generales y sueño» / «Ánimo y conducta».": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Todos (emergencia)": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Tu registro": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Vacío": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Ver avisos completos": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"síntoma": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"todos los indicadores": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"{ setMsg('Guardando y evaluando en Python…'); try { await API.post('autoreporte', {0}); await N.syncClin(c); setMsg('Guardado. El motor ya lo tomó en cuenta.'); N.toast('Registro personal guardado'); } catch (e) {1} }; return (": [
+"escritorio/src/vistas/Valoracion.jsx"
+],
+"Application Support": [
+"nave/config.py"
+],
+"Library": [
+"nave/config.py"
+],
+"Sin misión": [
+"nave/enlace.py"
+],
+"Coordinación ojo-mano baja": [
+"nave/motor/clinico.py"
+],
+"Documento de parámetros": [
+"nave/motor/clinico.py"
+],
+"El dosímetro marcó dosis alta": [
+"nave/motor/clinico.py"
+],
+"Prueba de visión baja": [
+"nave/motor/clinico.py"
+],
+"Pérdida ósea estimada {0} % (modelo de la misión)": [
+"nave/motor/clinico.py"
+],
+"Sensor: dormiste {0} h (parámetro: 7 h o más)": [
+"nave/motor/clinico.py"
+],
+"Sin cefalea intensa ni zumbido de oído registrados": [
+"nave/motor/clinico.py"
+],
+"Tormenta solar en curso o reciente": [
+"nave/motor/clinico.py"
+],
+"Un indicador aislado: no basta para una alerta.": [
+"nave/motor/clinico.py"
+],
+"análisis a bordo": [
+"nave/motor/clinico.py"
+],
+"laboratorio en Tierra": [
+"nave/motor/clinico.py"
+],
+"{0} días en microgravedad ({1} meses)": [
+"nave/motor/clinico.py"
+],
+"Órbita (PVT) baja: sueño": [
+"nave/motor/clinico.py"
+],
+"({0}{1} % contra tu línea base).": [
+"nave/motor/pruebas.py"
+],
+"Calificación de {0} %: dentro de lo esperado.": [
+"nave/motor/pruebas.py"
+],
+"Calificación de {0} %: menos de {1} %. Se manda una alerta": [
+"nave/motor/pruebas.py"
+],
+"Emociones": [
+"nave/motor/pruebas.py"
+],
+"Globos (riesgo)": [
+"nave/motor/pruebas.py"
+],
+"Memoria 2-back": [
+"nave/motor/pruebas.py"
+],
+"Registro guardado.": [
+"nave/motor/pruebas.py"
+],
+"el sistema neuro-ocular (SANS)": [
+"nave/motor/pruebas.py"
+],
+"el sueño (fatiga crónica de misión)": [
+"nave/motor/pruebas.py"
+],
+"la motricidad fina": [
+"nave/motor/pruebas.py"
+],
+"los sistemas musculoesquelético y cognitivo": [
+"nave/motor/pruebas.py"
+],
+"Fuera de rango:": [
+"nave/motor/valoracion.py"
+],
+"Registrado: se compara con tu basal": [
+"nave/motor/valoracion.py"
+],
+"Todo dentro del rango": [
+"nave/motor/valoracion.py"
+],
+"más de {0} {1}": [
+"nave/motor/valoracion.py"
+],
+"Captura al menos un valor": [
+"nave/servidor.py"
+],
+"El centro de control no responde": [
+"nave/servidor.py"
+],
+"Elige un destino de la lista": [
+"nave/servidor.py"
+],
+"Elige un tripulante y un problema": [
+"nave/servidor.py"
+],
+"Error interno del servidor": [
+"nave/servidor.py"
+],
+"Faltan tripulante o prueba": [
+"nave/servidor.py"
+],
+"JSON inválido": [
+"nave/servidor.py",
+"tierra/centro_control.py"
+],
+"La duración debe estar entre 1 y 1000 días": [
+"nave/servidor.py"
+],
+"La edad de {0} no puede ser menor a 20 años": [
+"nave/servidor.py"
+],
+"Location": [
+"nave/servidor.py",
+"tierra/centro_control.py"
+],
+"Misión sin nombre": [
+"nave/servidor.py"
+],
+"Muestra de {0} {1} de {2} (análisis a bordo): {3}": [
+"nave/servidor.py"
+],
+"Método no permitido": [
+"nave/servidor.py"
+],
+"No existe": [
+"nave/servidor.py"
+],
+"No se pudo aplicar un resultado de Tierra:": [
+"nave/servidor.py"
+],
+"Nueva misión registrada: {0} · {1} · {2} días · {3} tripulantes": [
+"nave/servidor.py"
+],
+"Paquete": [
+"nave/servidor.py"
+],
+"Registra al menos un valor": [
+"nave/servidor.py"
+],
+"Registra de 1 a 6 tripulantes": [
+"nave/servidor.py"
+],
+"Registro personal de {0}: carga {1}, estrés {2}, ánimo {3}, equipo {4}": [
+"nave/servidor.py"
+],
+"Simulación de emergencia: {0} en {1} ({2})": [
+"nave/servidor.py"
+],
+"Sin señal con la Tierra.": [
+"nave/servidor.py"
+],
+"Tipo de muestra inválido": [
+"nave/servidor.py"
+],
+"Tripulante desconocido": [
+"nave/servidor.py"
+],
+"Aún no llegan paquetes de la nave.": [
+"tierra/centro_control.py"
+],
+"Datos": [
+"tierra/centro_control.py"
+],
+"Enviar resultado de laboratorio": [
+"tierra/centro_control.py"
+],
+"No hay muestras pendientes de laboratorio.": [
+"tierra/centro_control.py"
+],
+"Resultado enviado a la nave": [
+"tierra/centro_control.py"
+],
+"Resultado guardado. Se enviará a la nave en el siguiente contacto.": [
+"tierra/centro_control.py"
+]
+}

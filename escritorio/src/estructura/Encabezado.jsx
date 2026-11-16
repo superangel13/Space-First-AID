@@ -1,6 +1,7 @@
 // Encabezado: marca, secciones, conexión con la Tierra, vista (tripulante o médico) y sirena de alertas.
 import { useCallback, useEffect, useState } from 'react';
 import { useEvento, useLatido } from '../bus.js';
+import { SelectorIdioma } from '../Idioma.jsx';
 
 export const SECCIONES = [
   ['panel', 'Panel'], ['tripulacion', 'Tripulación'], ['valoracion', 'Valoración'],
@@ -74,6 +75,7 @@ export default function Encabezado({ N, grupo, abrirEnlace }) {
             <button type="button" aria-pressed={rol === 'crew'} onClick={() => cambiarRol('crew')}><span className="l">Tripulante</span><span className="s">Tripulante</span></button>
             <button type="button" aria-pressed={rol === 'med'} onClick={() => cambiarRol('med')}><span className="l">Médico en Tierra</span><span className="s">Médico</span></button>
           </div>
+          <SelectorIdioma />
           <Sirena N={N} />
         </div>
       </div>

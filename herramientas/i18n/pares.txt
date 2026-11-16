@@ -1,0 +1,113 @@
+# español<TAB>English · textos que la app arma al vuelo (los reporta window.SFA_I18N.faltan())
+de	of
+y	and
+mujer	female
+hombre	male
+1 de 2	1 of 2
+1 día	1 day
+2 días	2 days
+{0} mSv/día	{0} mSv/day
+Misión demo	Demo mission
+Luna ida y vuelta	Moon round trip
+ida y vuelta con estancia en la base	round trip with a stay at the base
+ida y vuelta en órbita lunar (estación Gateway)	round trip in lunar orbit (Gateway station)
+sobrevuelo ida y vuelta (unos 10 días)	round-trip flyby (about 10 days)
+estación espacial	space station
+ida y vuelta con estancia en la superficie	round trip with a stay on the surface
+Alertas: {0} activas, {1} críticas	Alerts: {0} active, {1} critical
+Alertas: {0} activas	Alerts: {0} active
+Resultados del Bio-Analyzer	Bio-Analyzer results
+rangos del documento de parámetros	ranges from the parameters document
+Dentro del rango ({0} a {1})	Within range ({0} to {1})
+Dentro del rango ({0})	Within range ({0})
+Fuera del rango ({0} a {1})	Out of range ({0} to {1})
+Fuera del rango ({0})	Out of range ({0})
+Dentro del rango	Within range
+Fuera del rango	Out of range
+Turno de hoy completado	Today's turn completed
+Listo para la misión de hoy	Ready for today's mission
+Hecho · vuelve mañana	Done · come back tomorrow
+{0} XP · faltan {1} para {2}	{0} XP · {1} to go for {2}
+Completa las 3 misiones para abrirla.	Complete the 3 missions to open it.
+{0} de {1}. Se cuenta quién jugó, nunca los puntajes.	{0} of {1}. It counts who played, never the scores.
+Se cuenta quién jugó, nunca los puntajes.	It counts who played, never the scores.
+solo en cápsulas	only in capsules
+se desbloquea en {0}	unlocks at {0}
+rango máximo	max rank
+Crítica	Critical
+detectada por el sensor	detected by the sensor
+registrada en la bitácora de la nave	logged in the spacecraft log
+Guía rápida del prototipo	Prototype quick guide
+enviándose ahora…	sending now…
+en cola, sale con prioridad cuando haya señal	queued, goes out with priority when there's a signal
+Ya está fuera de su rango y la tendencia sigue	It's already out of range and the trend continues
+Si sigue igual, en	If nothing changes, in
+Lo detectó el sensor portátil.	Detected by the wearable sensor.
+Enviada a la Tierra con prioridad 1.	Sent to Earth with priority 1.
+· Enviada a la Tierra con prioridad 1.	· Sent to Earth with priority 1.
+con el centro de control ·	with Mission Control ·
+con el centro de control	with Mission Control
+Sin partidas	No games yet
+pero fuera de la meta en el espacio	but outside the in-space goal
+Seleccionado	Selected
+Seleccionada	Selected
+lpm	bpm
+{0} lpm	{0} bpm
+1 aviso	1 warning
+2 avisos	2 warnings
+Cognitivo-conductual	Cognitive-behavioral
+Neuro-ocular	Neuro-ocular
+alto	high
+bajo	low
+alta	high
+baja	low
+media	medium
+moderado	moderate
+leve	mild
+intenso	intense
+derecho	right
+izquierdo	left
+orina	urine
+sangre	blood
+saliva	saliva
+pulmones	lungs
+cerebro	brain
+huesos	bones
+algunos indicadores	some indicators
+caso simulado	simulated case
+desde hoy	since today
+revisión de ojos	eye check
+sin alteraciones	no changes
+tendencia activa	active trend
+parcial	partial
+completo	complete
+cerrada	closed
+hace {0} s	{0} s ago
+hace {0} min	{0} min ago
+hace {0} h	{0} h ago
+oscuridad	darkness
+ahora	now
+{0} g · gravedad parcial	{0} g · partial gravity
+gravedad parcial	partial gravity
+necesitas descanso	need rest
+0–13 bajo · 14–26 moderado · 27–40 alto	0–13 low · 14–26 moderate · 27–40 high
+Fuente	Source
+paquetes entregados	packets delivered
+Enviado	Sent
+1 vigilancia	1 watch item
+2 vigilancias	2 watch items
+pH arterial	Arterial pH
+Siguiente	Next
+Cansancio	Tiredness
+mareo	dizziness
+Check-ins bajos	Low check-ins
+CO₂ alto	High CO₂
+magnetosfera	magnetosphere
+PUNTO 01	POINT 01
+PUNTO +	POINT +
+FC reposo bpm	Resting HR bpm
+PVT-B mediana ms	PVT-B median ms
+Óptimo para evitar cálculos	Optimal for preventing stones
+FC reposo	Resting HR
+bono de racha	streak bonus
+avanzas a {0}	you advance to {0}

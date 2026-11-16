@@ -1,0 +1,429 @@
+1|Activate backup CO₂ removal (lithium hydroxide canisters)
+2|Isolate the affected module
+3|After landing, the crew may be deconditioned and struggle to exit the vehicle on their own or perform emergency tasks on the surface.
+4|Pain reliever as directed by the flight surgeon
+5|Notify Mission Control
+6|Notify the flight surgeon
+7|Help them exit the vehicle
+8|Chemical contaminants from environmental-system or experiment leaks, burned materials (pyrolysis), off-gassing plastics, propellant or microbial by-products. Breathable air is essential.
+9|Cut the power before touching the crew member
+10|Electrical shock
+11|Stop the spacewalk or depressurization and return to cabin pressure
+12|The suit and the effort of a spacewalk can cause injuries; the demands of spacewalks on the Moon and Mars are still not well understood.
+13|On a spacecraft, CO₂ doesn't go away on its own: equipment such as the CDRA, lithium hydroxide or amine systems removes it. If they fail, CO₂ rises and affects health and performance.
+14|Decompression sickness
+15|High cabin CO₂ exposure
+16|Lunar or Martian dust exposure
+17|Toxic substance exposure
+18|Lack of oxygen from cabin depressurization, life-support (ECLSS) failure, toxic exposure or illness. It affects intracranial pressure, vision, cognition, balance and sleep.
+19|Fracture from a fall or impact
+20|Local cold and rest for the area
+21|Hypoxia from depressurization or life-support failure
+22|Get up in stages: sit before standing
+23|Immobilize the spine
+24|Move to a module with safe pressure and close the hatch
+25|Altered gravity weakens bone, and a fall or heavy load can fracture it, especially on long missions and on planetary surfaces.
+26|Launch and landing loads can injure the crew; current tools underestimate landing injuries and data are scarce.
+27|Rinse the eyes with water
+28|Wash eyes and skin if there was contact
+29|Injury during a spacewalk
+30|Impact injury during launch or landing
+31|Clean the surface and the air filter
+32|Measure blood oxygen with the Bio-Monitor
+33|Improve ventilation in the area
+34|Do not move the neck or spine
+35|Do not move the area: immobilize with a splint
+36|Going from high to low pressure too quickly and without denitrogenation forms gas bubbles in the body. It can happen during a spacewalk or if the cabin depressurizes.
+37|Put on the oxygen mask
+38|Put on the respiratory protection mask
+39|Because of its unique properties, lunar or Martian dust can damage the lungs, heart, eyes or skin and affect performance on surface missions.
+40|Take off the suit inside the airlock and contain the dust
+41|Record headache and vision changes
+42|Record the exposure
+43|Record each crew member's exposure
+44|Record the injury
+45|Breathe 100 % oxygen
+46|Check consciousness, orientation and speech
+47|Check for joint pain, tingling, dizziness and strength (neurological exam)
+48|Check the CO₂ monitor and the removal equipment (CDRA)
+49|Check the life-support system (ECLSS)
+50|Check hands, shoulders and suit pressure points
+51|Check pulse and heart rhythm (Bio-Monitor ECG)
+52|Check pulse and sensation beyond the injury
+53|Check for burns at the current's entry and exit points
+54|Check breathing and cough
+65|Difficult egress after landing
+66|Separate them from the source with insulating material
+67|Vital signs every 5 minutes
+68|Vital signs standing and lying down
+69|Stop the spacewalk and return to the airlock
+70|Drink fluids
+71|Take an air sample
+72|Pressure treatment as directed by the flight surgeon
+73|Ultrasound if available
+74|An unintended electrical current through the body. The likelihood is very low, and the most serious expected consequence is involuntary muscle contraction.
+75|Monitor vision, confusion and balance
+76|Watch for dizziness and fainting
+77|Ascent to Mars orbit and departure for Earth.
+78|Base on the surface of Mars
+79|Descent to Mars
+80|Liftoff from Mars
+81|Stay on Mars
+82|A stay on a station about 400 km up, below the Van Allen belts. About 16 orbits of Earth per day.
+83|Gravity of 0.38 g. The thin atmosphere offers little protection: about 0.7 mSv per day on the surface.
+84|Same as the previous one, but the crew stays in orbit around the Moon, in microgravity, without landing on the surface.
+85|Arrival at Mars
+86|Moon · round trip with a stay at the base
+87|Moon · round trip in lunar orbit (Gateway station)
+88|Moon · round-trip flyby (about 10 days)
+89|Mars
+90|Mars · round trip with a stay on the surface
+91|Preparing for descent to the surface.
+92|First gravity change after months in microgravity.
+93|Return
+94|Return to Earth
+95|Departure from Earth, crossing the Van Allen belts, a transit of about 3 days, descent, a stay at the lunar base (0.17 g) and return.
+96|Six to seven months back through deep space.
+97|Six to seven months in deep space, with no magnetic field: constant cosmic rays (about 1.8 mSv per day).
+98|Transit to Mars
+99|About 6 to 7 months of transit through deep space, a stay on the surface of Mars (0.38 g) and return. The signal takes up to 13 minutes each way.
+100|A short trip around the Moon and straight back, without landing, like the Artemis II plan.
+101|Low Earth orbit · space station
+102|Mars orbit
+104|Commander
+105|Spacewalk specialist
+107|Systems engineer
+108|Demo mission · Moon round trip
+110|Medical officer
+113|6.5 or higher: calcium phosphate crystals
+114|61 % of ISS astronauts excreted it
+115|Acidosis (e.g., retained CO₂)
+116|Alkalosis (hyperventilation)
+117|High during the day: sleepiness
+118|Portable blood analyzer and blood gas test
+119|Anemia: fatigue and less oxygen to the tissues
+120|Arrhythmias
+121|High sugar
+122|High blood sugar
+123|Low at night: misaligned rhythm
+124|Drop within hours or days after a high dose
+125|Low in astronauts with eye changes
+126|Calcium
+127|Calcium released from bone; more calcium in the urine
+128|SANS case: 626–999 ng/mL in red blood cells
+129|Ketones
+130|Citrate
+131|Total cholesterol
+132|Eating fewer calories lowers it and raises cortisol
+133|Cortisol (morning)
+134|Free cortisol
+135|Cortisol, morning (7–9 a.m.)
+136|Cortisol, night (11 p.m.–12 a.m.)
+137|Creatinine
+138|Calcium oxalate stones
+139|Damages the endothelium; higher SANS risk
+140|Damages the endothelium; higher SANS and cardiovascular risk
+141|Specific gravity
+142|Dehydration
+143|Dehydration or impaired kidney function
+144|The SANS protocol calls for less salt
+145|In the SANS case: 139–196 mg/dL
+146|In the SANS case: 222–278 mg/dL
+147|Acute stress
+148|Stress or misaligned rhythm; poorer sleep
+149|Stress and lack of sleep; suppresses immunity
+150|Stress; suppresses immunity (rises with lack of sleep)
+151|Excess water; confusion
+152|Fatigue, confusion, less blood flow to the brain
+153|Folate
+154|Glucose
+155|Hematocrit
+156|Hemoglobin
+157|Herpesvirus (viral DNA)
+158|Hyperventilation
+159|Hypoxia: fatigue, nausea, headache, mood changes
+160|Bone losing calcium; stone risk
+161|Bone being resorbed faster
+162|Radiation dose indicator; weaker defenses
+163|Infection or inflammation
+164|Viral infection
+165|Inflammation (especially on return to gravity)
+166|Insufficient calorie intake
+167|Saliva kit (tubes and rapid test)
+168|L/day
+169|White blood cells
+170|Lymphocytes
+171|Marker of stress and altered immunity
+172|Circadian rhythm marker; depends on the time of day
+173|Greater tendency to clot (clotting changes in flight)
+174|Melatonin
+175|Below 5.5: uric acid stones
+176|Weaker defenses; can drop with radiation
+177|Less protection against crystals: stone risk (corrected with potassium citrate)
+178|Goal: more than 2–2.5 L/day
+179|More bone loss; more reactivation of latent viruses
+180|Higher cardiovascular risk
+181|NTX (bone resorption)
+182|Urine (24 h)
+183|Concentrated urine and dehydration: crystals form
+184|Concentrated urine: dehydration
+185|Very diluted urine
+186|Other labs report 10–100 µg/24 h
+187|Oxalate
+188|Platelets
+189|Possible stone
+190|Potassium
+191|C-reactive protein
+192|Antimicrobial proteins
+194|24-h collection, dipstick and portable analyzer
+195|Bleeding risk (high radiation dose)
+196|Flattened rhythm
+197|Flattened circadian rhythm
+198|Impaired kidney function (e.g., an obstructing stone)
+199|Saliva
+200|Blood
+201|More concentrated blood (dehydration)
+202|If a sample has a result from the lab on Earth, it overrides the earlier onboard analysis.
+203|Follows the circadian rhythm
+204|No problem described
+205|Sodium
+206|A shifted schedule indicates a misaligned rhythm
+207|Rises 100–150 % in flight and returns to baseline after return
+208|Rises in flight due to bone loss (balance close to −5 g/month on Skylab)
+209|Rose during a 6-month ISS mission
+210|Tends to drop in flight
+211|Triglycerides
+212|Twins Study: from 1 to 19 mg/dL after landing
+213|Vitamin D (25-OH)
+214|Volume
+215|mg/day
+216|not detected
+217|Optimal for preventing stones: 5.7–6.3
+218|To date, no behavioral emergencies have been recorded in flight
+219|Abdomen
+220|On return, monitor C-reactive protein
+221|Dosimeter alarm
+222|Minimum basal rim width 372–381 µm (rose to 530–550 µm)
+223|With sudden confusion, rule out physical causes of delirium: high CO₂, infection, trauma or medications
+224|For pain: analgesia and antiemetic per protocol
+225|Antiemetic and hydration if there is nausea
+226|Low motivation
+227|Drink water to produce more than 2.5 L of urine a day
+228|Serial complete blood counts (lymphocytes)
+229|20 g/cm² shielding outside low Earth orbit for more than 6 months
+230|Brunstetter 2018, SANS-related ISS Hardware & Data (OCT schedule)
+231|Brunstetter et al. 2024, JAMA Ophthalmology (severe SANS case)
+232|Head and ears
+233|High calcium in blood or urine
+234|Urine calcium: M < 250, F < 200 mg/day
+235|Calcium: M < 250, F < 200 mg/day
+236|Mood changes
+237|Mood changes (mood 4 or less out of 10)
+238|Puffy face
+239|Face and nose
+240|Cardiovascular
+241|Workload
+242|Workload (NASA-TLX, 0–100) with no increase over baseline
+243|High workload (more than 70 out of 100)
+244|Headache
+245|Headache
+246|Low citrate
+247|Potassium citrate as a preventive measure
+248|Citrate: M > 450, F > 550 mg/day
+249|Shared meals, greenhouse, exercise, planning one's own day
+250|Behavior
+251|Private psychological conferences
+252|Vestibular–visual conflict: the inner ear (otoliths) stops receiving the gravity signal.
+253|Nasal congestion
+254|Hand–eye coordination below 70 %
+255|Saliva cortisol: 3.2–22.8 nmol/L in the morning; < 3.2 at night
+256|Neck
+257|Acute damage from protons in a solar particle event (SPE).
+258|Circadian misalignment
+259|Headward fluid shift.
+260|Behavioral decline
+261|Distance from Earth, communication delay and confinement.
+262|Distraction
+263|Career effective dose < 600 mSv
+264|Effective dose from a solar event < 250 mSv
+265|I sleep poorly or fewer hours
+266|Daily resistive exercise (ARED) with loads of 2 to 3 times body weight
+267|Isolation, confinement, monotony, conflict and little contact with home wear down mood; the risk grows with duration and distance. NASA trains for three disorders: delirium, adjustment disorder and neurasthenia. On Shuttle–Mir, 2 of 7 astronauts (29 %) had subclinical depressive symptoms.
+268|Balance and sensorimotor function within normal clinical values for age and sex
+269|Erythema (reddened skin)
+270|Skin erythema
+271|Rashes
+272|Skin rashes or blisters
+273|Write in the journal every day
+274|Expected: space sickness is one of the most likely conditions per mission (4.37 in the IMM model)
+275|Mood
+276|Stress (PSS-10 above 13)
+277|Stress (PSS-10)
+278|PSS-10 stress: 0–13
+279|Isolation and confinement stress
+280|Avoid critical tasks in the 2 to 4 h after waking
+281|Fatigue
+282|Chronic mission fatigue
+283|Garrett-Bakelman et al. 2019, NASA Twins Study, Science (cardiac output, C-reactive protein)
+284|Cardiac output: +10 % in flight; systolic and mean pressure slightly lower
+285|General and sleep
+286|Baseline peripapillary retinal thickness ~401–404 µm (rose to 613–636 µm)
+287|HRP Evidence Report 2025: Behavioral Health (immunity and stress, disorders, WinSCAT, cohesion)
+288|HRP Evidence Report: Early-Onset Osteoporosis (bone loss, NTX, ARED, zoledronate, vitamin D)
+289|Get an OCT or ocular ultrasound if vision changes
+290|Do aerobic exercise every day
+291|Herpesvirus in saliva: not detected
+292|Enough hydration to urinate more than 2.5 L a day (see Kidney stones)
+293|Immune dysregulation
+294|Immune
+295|Go to the shielded shelter (water or storage area) as soon as the alert arrives
+296|LDL < 160 mg/dL (139–196 in the case)
+297|PVT lapses with no increase over baseline
+298|Stress hormones (cortisol and adrenaline) suppress immunity. Latent viruses such as herpes reactivate and inflammatory cytokines rise. Poor sleep and radiation add to it.
+299|Lethargy when the work comes down to monitoring automated systems; monotony leads to boredom, conflict and loss of energy and motivation.
+300|White blood cells 4,000–10,000 /mm³
+301|White blood cells 4,000–10,000 /mm³ (blood counts within healthy-population ranges)
+302|Low lymphocytes
+303|At least 100 lux of light while awake to entrain the rhythm
+304|30-day limit: blood-forming organs 250 mGy-Eq; skin 1,500; lens 1,000
+305|Poor sleep (less than 7 h)
+306|Upset stomach
+307|Send the images to the ophthalmologist on Earth (with up to a 13-min delay)
+308|Keep fixed sleep schedules with proper cabin lighting
+309|Keep to the hydration schedule, even without thirst
+310|Keep vitamin D at an adequate level
+311|Keep a fixed visual orientation (a known "up")
+312|Space motion sickness
+313|Measure cortisol and test saliva for viruses periodically
+314|Fewer hours of sleep (less than 7 h)
+315|Less thirst
+316|Lower urine volume (less than 2.5 L/day)
+317|Messages with family (allowing for the up-to-13-min delay)
+319|4 to 6 months of microgravity
+320|Move slowly and avoid sudden head turns
+321|Musculoskeletal
+322|More calcium in the urine
+323|More cortisol, reactivation of latent viruses and inflammatory cytokines (immune dysregulation).
+324|More stress and conflict; tension can be taken out on Mission Control (one Salyut crew cut off communication for 24 h). Shared meals and crew autonomy help.
+325|More sleepiness, fatigue and attention lapses, even after sleeping; prolonged overload can cause neurasthenia.
+326|NASA NTRS · Kidney stones in astronauts
+327|NASA-STD-3001 Vol. 1 Rev C (limits for bone, VO₂max, radiation, sleep, IMM model)
+328|Urine NTX: rises 100–150 % in flight
+329|Nephrolithiasis (kidney stone)
+330|Neurological
+331|No problem is described.
+332|Nausea
+333|OCHMO-MTB-002, waivered medical conditions (medical kit: antivirals)
+334|OCT on flight days 30 and 90
+335|Urine supersaturated from bone loss and relative dehydration.
+336|Oxalate: 20–40 mg/day
+337|Daily PVT: if lapses go up, move critical tasks
+338|Pallor
+339|Skin
+340|Legs
+341|Thinner legs
+342|Platts et al. 2014, J Womens Health (plasma and blood volume)
+343|Low water intake
+344|Poor cooperation
+345|Poor cooperation (teamwork 4 or less out of 10)
+346|Intraocular pressure: 14 mmHg, stable
+347|Protect sleep and reduce the workload
+348|WinSCAT test every month, compared with baseline
+349|Low vision test (below 70 %)
+350|Prodromal acute radiation syndrome (solar storm)
+351|Loss of appetite
+352|Expected loss: 0.3–0.5 %/month with ARED; 1–1.5 %/month without it
+353|Bone loss
+354|Bone loss (bone–kidney axis)
+355|Radiation
+356|Radiation (current or past storm)
+357|Fluid redistribution
+358|Reduce dietary salt and monitor cabin CO₂
+359|Reduce critical tasks during the first 24 to 72 h
+360|Refraction and acuity unchanged from before (in the severe case it went from −1.00 D to +1.50/+2.00 D)
+361|Record headache and congestion
+362|Record each crew member's dose
+363|Daily log of mood and teamwork
+364|Replace fluids if there was vomiting
+365|Respect the sleep period
+366|Social withdrawal
+367|Risk of depressive symptoms, social withdrawal and poorer performance; mood tends to drop in the third quarter of the mission.
+368|Disrupted sleep rhythm
+369|Kidney (bone–kidney axis)
+370|SANS (spaceflight-associated neuro-ocular syndrome)
+371|Crews sleep about 6 h even though 8.5 h are scheduled. Sleeping 5 to 6 h impairs performance within a week, and people don't notice because their perceived sleepiness stops rising. Schedule shifts misalign the circadian rhythm (a Martian day lasts 24.65 h). A high workload adds fatigue and lapses even with enough sleep.
+372|Feeling of fullness in the head
+373|Naps or melatonin
+374|Without mechanical loading, bone is resorbed faster than it is formed. The released calcium leaves in the urine (calcium balance close to −5 g/month on Skylab). With little water, urine becomes concentrated and crystals appear.
+375|Without gravity, blood and fluids shift up toward the chest and head.
+376|No symptoms: no severe headache or ringing in the ears
+377|Cold sweat
+378|Insufficient sleep (less than 7 h)
+379|Sleep and behavior
+380|Sleep ≥ 7 h
+381|Sleep ≥ 7 h (individual need of 6.1 to 10.3 h)
+382|Suspend or abort any EVA
+383|Biological sample table from the parameters document (urine, blood and saliva ranges)
+384|Have personal time and group activities
+385|Orthostatic tolerance on return to gravity
+386|Current or past radiation storm
+387|Teamwork
+388|Ultrasound to locate the stone
+389|Urinary urgency
+390|Use the antiemetic from the medical kit
+391|Use the corrective glasses carried on board
+392|Use the antivirals from the medical kit for blisters or shingles
+393|Bladder and pelvis
+394|Distended neck veins
+395|Monitor urine NTX and calcium; DXA before and after flight
+396|Monitor vision (see SANS)
+397|Continuous wakefulness ≤ 16 h
+398|Vitamin D: 50,000 IU loading dose before flight and 2,000 IU daily in flight
+399|Urine volume > 2.5 L/day
+400|Plasma volume equal to baseline; expected drop ~10 % in women and ~15 % in men
+401|Blood volume: expected drop ~9 %
+402|Vomiting
+403|WinSCAT within baseline
+404|WinSCAT within baseline (on the ISS, 13.2 % of sessions came out abnormal)
+405|Ringing in the ears
+406|Low urine pH (below 5.7)
+407|Zoledronic acid before flight (the RCAP panel considers it mandatory for the 3-year Mars mission)
+408|Mood and behavior
+409|Stable mood and teamwork (1–10)
+410|Mood and teamwork (1–10) stable relative to baseline
+411|Orbit (PVT) below 70 %
+412|ISS Medical Checklist (JSC-48522): fever = above 37.8 °C
+413|Blood oxygen
+414|Diastolic pressure
+415|Systolic pressure
+416|Pulse
+417|Respiration
+418|Temperature
+420|per min
+422|The Python engine isn't responding. Close the program and open it again.
+423|The doctor's view isn't receiving new data. The spacecraft keeps saving it in the log and will send it when the signal returns ({0} waiting).
+424|No connection to the spacecraft engine
+425|Retry
+426|No connection to the spacecraft
+427|View the log
+428|1 · Mission details
+429|2 · Crew
+431|High
+432|Medical history
+433|Before liftoff
+434|Low
+435|Loads a fictional mission: Moon round trip, 180 days, with Grover, Payán, Valentina and Camilia (made-up data).
+436|Physical condition
+437|Continue: register the crew
+438|Destination
+439|Duration
+440|Duration in days
+441|Age
+442|Enter the mission name.
+443|Crew member's name is missing
+444|Crew member {0}'s name is missing.
+445|Start date (day 1)
+446|Male
+447|Start mission
+448|The duration must be at least 1 day.
+449|Crew member's age

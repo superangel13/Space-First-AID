@@ -1,0 +1,395 @@
+1330|You slept well
+1331|You slept less than you need
+1332|Accumulated dose
+1333|Accumulated radiation dose
+1334|Day 30 completed · day 90 and R-30 are next
+1335|Day {0}{1}
+1336|Load-bearing exercise without interruptions.
+1337|Dizziness on standing after flight was more frequent in women in NASA data.
+1338|In 22 ISS astronauts, better preflight fitness was associated with less reactivation of latent viruses.
+1339|On the ISS, a clot was found in an astronaut's jugular vein and treated with guidance from Earth.
+1340|In microgravity, bone releases calcium and people drink less. NASA approves this history with monitoring, and it is one of the CDSS scenarios.
+1341|Solar event (example)
+1342|Today's measurements are missing
+1343|Out of the ordinary
+1344|Do your weekly eye check.
+1345|Do your Orbit turn: it shows whether sleep is affecting you.
+1346|Hydration throughout the day and periodic urine tests.
+1347|Today
+1348|Make rest a priority today
+1349|The spine lengthens in microgravity, and loads can worsen a herniated disc.
+1350|Vision is checked on scheduled days, not daily.
+1351|Lapses ≥355 ms
+1352|Both tests came out fine in both eyes.
+1353|You have
+1354|You have {0} over your whole career: {1} % of the limit. {2}
+1355|NASA career limit: 600 mSv. The doses in this demo are examples.
+1356|NASA career limit: 600 mSv. The doses in this demo are examples. {0}
+1357|Median D1–14
+1358|Measurements twice a week and medication at the same time.
+1359|Measure
+1360|Measured with the Orbit game, which applies NASA's PVT-B reaction test without asking how you feel.
+1361|Measured with the Orbit game, which applies NASA's PVT-B reaction test without asking how you feel. {0} · {1}
+1362|Same tests and schedule as on the ISS.
+1363|Same tests and schedule as on the ISS. {0}
+1364|NASA approves mild apnea, but people sleep less in flight than on Earth.
+1365|NASA found that genetics and B vitamins make some astronauts more prone to eye changes.
+1366|NASA has approved astronauts with hypertension, with antihypertensives on board.
+1367|NASA has approved astronauts with hip replacements, monitoring bone loss.
+1368|You noticed a change in your vision
+1369|Normal oxygen
+1370|FORECAST
+1371|Overall plan
+1372|Put on the sensor to record this metric.
+1373|Put on the sensor and do your Orbit turn to calculate your readiness.
+1374|Below their normal
+1375|Why
+1376|Blood pressure
+1377|7-day forecast (10-day trend)
+1378|Prosthesis
+1379|High resting pulse
+1380|p10–p90 range
+1381|Record your pulse today.
+1382|Daily pulse log and guidance if there are palpitations.
+1383|Prototype rule: alert if it drops 4 points below your baseline; the medical officer can adjust it.
+1384|Prototype rule: alert if it drops 4 points below your baseline; the medical officer can adjust it. {0}
+1385|Repeat the check tomorrow at the same time and notify the medical officer.
+1386|Check for pain or swelling in the neck, arms or legs.
+1387|Eye check pending
+1388|Weekly eye check, in addition to days 30, 90 and R-30.
+1389|Heart rhythm
+1390|Kidney
+1391|Low saturation today
+1392|It's compared with your own baseline from the first 14 days.
+1393|It's compared with your own baseline from the first 14 days. {0}
+1394|Follow-up with Orbit
+1395|Wearable sensor · live
+1396|No medical history marked.
+1397|No data today
+1398|Doctor-on-Earth view only
+1399|Sleep and attention
+1400|All set for a demanding day
+1401|Takes two minutes per eye. Do it in the Vision section.
+1402|Take your medication at the same time.
+1403|After 6 months on the ISS, the left atrium temporarily changes shape. NASA approves treated arrhythmias with follow-up.
+1404|Your attention is the same as always
+1405|Your attention is slower
+1406|Your heart is calm
+1407|Your normal
+1408|Your oxygen dropped a little
+1409|Your oxygen is low
+1410|Your readiness is good, but today keep an eye on:
+1411|Your readiness is good, but today keep an eye on: {0}.
+1412|Your resting pulse is
+1413|Your resting pulse is {0} (your normal: {1} bpm). {2}
+1414|Your resting pulse is high
+1415|Your usual range (days 1 to 14)
+1416|Your saturation is
+1417|Your saturation is {0} (your normal: {1} %). {2}
+1418|Your sleep, attention and heart are within your usual range.
+1419|Your typical reaction time today was
+1420|Your typical reaction time today was {0} (your normal: {1} ms). {2}
+1421|Daily Orbit turn: if your attention drops for several days, adjust your rest.
+1422|Your eyes show no changes
+1423|Scheduled ultrasound and red flags: pain or swelling in the neck, arms or legs.
+1424|Go at your own pace today
+1425|Monitoring based on medical history
+1426|Vision
+1427|Vision · checks
+1428|Airway
+1429|of 600 mSv
+1430|over your whole career:
+1431|resting pulse
+1432|z = how many standard deviations today is from their own variation on days 1 to 14.
+1433|{0} % of the career limit
+1434|{0} · exact values for day {1}
+1436|{0}70 % = a good day
+1437|{0}7-day forecast (10-day trend)
+1438|{0}Your normal
+1439|· exact values for day
+1440|Orbit · PVT-B
+1441|Avoid precision tasks until it's repeated
+1442|Send the images to the ophthalmologist on Earth
+1443|Move critical tasks if lapses go up
+1444|The test couldn't be saved:
+1445|Test back in range
+1446|Repeat the test
+1447|Repeat the test later
+1448|Check fatigue and coordination
+1449|Check sleep, fatigue and sensorimotor adaptation
+1450|Use the onboard corrective glasses
+1451|below 70 %
+1452|{0} below 70 %
+1453|Before flight, medical history is marked and the app turns on specific monitoring: kidney, vision, clotting, heart rhythm, spine. Each one says what to do, why and from which source. Everything is compared against the person's own baseline (days 1 to 14) and shown on the body map.
+1454|With Earth seconds or minutes away, the crew needs to find out about a problem on its own, know what to do and see risks coming before they arrive.
+1455|Detect, predict and act
+1456|Two views of the same data. The crew member sees rings, one sentence and what to do today. The doctor on Earth sees exact values, the median, the p10–p90 range and the z deviation, and can export them. Everything works without a signal and syncs by priority.
+1457|The gap
+1458|The game applies the PVT-B rules, but this points-based format hasn't been validated yet.
+1459|The readiness index (35 / 35 / 30) and the oxygen alert (−4 points) are rules of this prototype, adjustable by the medical officer.
+1460|On the ISS, visual acuity and the Amsler grid are checked on fixed days: flight days 30 and 90 and 30 days before return. On longer or more distant missions, a lot of time can pass between checks, and some astronauts are more prone to changes.
+1461|Sources, eye-check schedule, 600 mSv radiation limit and PVT-B rules (3 min, 1–4 s intervals, lapse ≥ 355 ms, anticipation < 100 ms).
+1462|Do the check
+1463|An interface for non-doctors
+1464|Play Orbit
+1465|NASA's CDSS architecture aims to let the crew decide autonomously when communication is delayed (on Mars, more than 20 minutes). Information has to adapt to whoever is using it.
+1466|The trajectory is an educational model: only the 600 mSv limit, the 1.8 mSv per day in deep space and the 1 to 1.5 % bone loss per month come from published sources.
+1467|The 6 people and all their data are examples, generated with a fixed seed.
+1468|The daily radiation doses are examples.
+1469|The same two tests in 2 minutes per eye, with a schedule, a history compared with day 30, an alert when something changes and a weekly check for people with a history. It doesn't replace medical imaging.
+1470|Astronauts tend not to report symptoms so they don't lose missions, and mood questionnaires depend on the person being willing to answer. NASA considers crew trust essential on Earth-independent missions.
+1471|The forecasts are a linear trend of the last 10 days: they show where something is heading, not a diagnosis.
+1472|Live vital signs, simulator scenarios and the spacecraft environment are simulated; alert thresholds and quick guides belong to the prototype.
+1473|Mind: a triad based on NASA's definition of behavioral change; games adapted from the Cognition battery (Basner 2015).
+1474|Clinical engine: the symptoms and signs for each condition come from NASA's ISS Medical Checklist (JSC-48522) and its medical condition sheets; the steps of each protocol are summarized from the checklist. The 2-of-3 (warning) and 3-of-3 (alert) rule belongs to the system and is guidance: it doesn't replace the flight surgeon.
+1475|NASA already approves astronauts with medical conditions through waivers, and its studies show that fitness, genetics or sex change the risk in flight. A decision-support system needs to start from each person's baseline.
+1476|Our answer
+1477|Preflight risk profile
+1478|SANS: vision changes
+1479|Mental health without surveillance
+1480|Live vital signs with automatic alerts, a 3D figure that marks the affected body area, simple step-by-step guides, a case simulator for training, 7-day forecasts and the full trajectory to the Moon with projected radiation and bone loss for each crew member.
+1481|See the doctor's view
+1482|See a profile
+1484|Orbit: a 3-minute daily game that, underneath, is the PVT-B, NASA's reaction test that is most sensitive to sleep loss. No mood questions. Ranks, streaks, missions, postcards and capsules make people want to come back. The data stays on the spacecraft: only "fit" or "needs rest" goes to Earth, unless the crew member shares more.
+1485|Alert log
+1486|Detects, predicts and guides
+1487|Choose a person and a situation. Their vital signs change little by little and the system detects it on its own.
+1488|Spacecraft environment
+1489|Generate random case
+1490|Alerts come on their own from live vital signs, eye checks, the spacecraft environment and forecasts. Each one says what to do in simple steps and is sent to Earth with priority.
+1491|Forecasts
+1492|Return everyone to normal
+1493|If the trend continues, this is what could happen. You can turn a forecast into a preventive alert.
+1494|Simulated
+1495|Case simulator
+1496|Trend over the last 10 days · next 7
+1497|Whole spacecraft
+1498|Down
+1499|Up
+1500|Complete the test to see your score against your baseline (your first 3 sessions).
+1501|Camera (hand)
+1502|How it's scored
+1503|How it's controlled
+1504|Right
+1505|History
+1506|Start
+1507|Interpreted by Python
+1508|Left
+1509|Right eye
+1510|Left eye
+1511|Mouse or finger
+1512|Drag the light to where you are today: right if you feel good, left if not so much; up if you have energy, down if you're tired.
+1513|Cognition
+1514|Energized
+1515|Getting along
+1516|Choose a game
+1517|Save check-in
+1518|Mind games
+1519|Bad
+1520|NASA defines a behavioral change as any drop in mood, cognition, morale or getting along with others that affects performance. Here those three things are measured with a 10-second check-in and short games. Everything stays on the spacecraft unless you share it.
+1521|Mental health without surveillance · NASA Cognition battery
+1522|No energy
+1523|Behavioral triad
+1524|Your inner weather
+1525|Short versions of tests from NASA's Cognition battery
+1526|How is everyone getting along today?
+1527|Mood
+1528|Mood · getting along · cognition
+1529|Last 14 days
+1530|Schedule
+1531|Spacecraft air and environment
+1532|Two minutes to slow down before sleeping or after a heavy task.
+1533|Send
+1534|Write to your family…
+1535|Crew tools
+1536|The practical things for each crew member: daily goals, schedule, a breathing break, the spacecraft's air and messages home.
+1537|Message home
+1538|Today's goals
+1539|My day
+1540|Private: it travels encrypted over the link and the app doesn't read it. It arrives with the signal delay.
+1541|Breathe
+1542|1 day/s
+1543|20 days/s
+1544|5 days/s
+1545|Trip log
+1546|Each crew member at this point
+1547|Mission day
+1548|Go to today
+1549|Educational model. Published data: 600 mSv career limit (NASA), about 1.8 mSv per day in deep space (measured by the Curiosity rover's spacecraft) and bone loss of 1 to 1.5 % per month in microgravity (NASA). The other rates by zone are model approximations; the effect of lunar gravity on bone is still unknown, and the model uses half.
+1550|Simulate solar storm
+1551|Earth–Moon trajectory
+1552|Trajectory and environment
+1553|Speed
+1554|, unless you share more in
+1555|. Nobody sees your score.
+1556|Log
+1557|Ring color
+1558|How it measures without asking
+1559|The official turn follows the rules of
+1560|Link
+1561|Badges
+1562|Daily game · underneath, it's NASA's reaction test
+1563|PVT (psychomotor vigilance test)
+1564|Route postcard
+1565|Points
+1566|Points, badges and times are yours. Earth only learns whether you're
+1567|Route to the Moon
+1568|Route from Earth to the Moon
+1569|They unlock when you rank up or in supply capsules.
+1570|Your privacy
+1571|NASA's: 3 minutes, the ring lights up every 1 to 4 s, a response of 355 ms or more is a lapse and one under 100 ms is an anticipation. It's the test most sensitive to sleep loss.
+1572|fit
+1573|Orbit
+1574|Orbit: tap when the ring lights up
+1575|Open the trajectory →
+1576|Drag to rotate · tap a person
+1577|Crew console · exact values
+1578|In parentheses: change from each person's median for days 1 to 14. Color: more than 1 or 2 deviations from their own variation (z).
+1579|Crew digital twin · live
+1580|Mission · day
+1581|Spacecraft position
+1582|Prototype with example data. The readiness index is this prototype's formula (sleep 35 %, attention 35 %, heart 30 %) that compares each person with their own baseline. Each crew member's circles are in Crew.
+1583|Record symptoms
+1584|Eye checks from NASA's ISS schedule
+1585|Tap a person to see their status
+1586|View data as CSV
+1587|View details
+1588|Each one starts from a documented gap in NASA's medical system for distant missions and is backed by official sources. A = standard, official document or solid study. B = study in few astronauts.
+1589|Sources
+1590|The 4 problems we solve
+1591|What's real and what's an example
+1592|Restart the demo
+1593|Fully verifiable · NASA and ESA only
+1595|0 to 100 · calculated in Python with the parameters document
+1596|Drag to rotate
+1597|Warnings and risks
+1598|Each problem in the parameters document is evaluated with its signs and symptoms: some = alert, all = emergency with the protocol.
+1599|Health status of each crew member
+1600|Overall status
+1601|Take tests
+1602|What the system sees
+1603|Keep up your sleep schedule, hydration and exercise.
+1604|3D model
+1605|Preflight profile
+1606|What to do today
+1607|Record in Assessment
+1608|Personal log and tests
+1609|Wearable sensor
+1610|Live vital signs
+1611|No alerts
+1612|Body systems
+1613|Tap a person to open their page: body systems, vital signs, warnings and risks, and their 3D model.
+1614|View details →
+1615|{0} · day {1}
+1616|Orbit (PVT)
+1617|Latest values
+1618|← Whole crew
+1619|Some (alert)
+1620|Nothing recorded yet. If everything is fine, you don't need to record anything.
+1621|Clear all
+1622|How many indicators
+1623|Simulated data
+1624|Choose a problem from the parameters document. {0}'s data is altered (signs, symptoms, samples, personal log and tests) and the Python engine evaluates it: with some signs and symptoms it sends an alert; with all of them, it opens the emergency window with the protocol.
+1625|Choose an area of the body
+1626|Back
+1627|Stable relative to your baseline
+1628|Front
+1629|Saved. The engine has already taken it into account.
+1630|Saving and evaluating in Python…
+1631|Save personal log
+1632|Save and evaluate
+1633|Log history
+1634|Immune · cognitive-behavioral
+1635|Intensity
+1636|Recorded by the crew member
+1637|Body map
+1638|NASA-TLX: 0 to 100, with no increase over your baseline
+1639|Couldn't simulate:
+1640|For practice
+1641|Problem
+1642|Remove
+1643|Remove {0}'s simulation
+1644|Record what you notice by tapping the body and in your personal log; vital signs, sleep and samples arrive on their own from the devices. Everything is cross-checked against the parameters document in the spacecraft's clinical engine.
+1645|Log cleared
+1646|Signs and symptoms log for
+1648|Log saved
+1649|Personal log
+1650|Personal log saved
+1651|Will be altered
+1652|If it drops:
+1653|If it rises:
+1654|Signs and symptoms
+1655|Signs, symptoms, personal log and samples · processed in Python
+1656|Emergency simulation
+1657|Simulation:
+1658|Simulation: {0} on {1}
+1659|Simulate radiation storm (shelter)
+1660|No logs yet.
+1661|No signs or symptoms
+1662|End solar storm
+1663|Tap the area
+1664|Tap the area where you notice something, or "General and sleep" / "Mood and behavior".
+1665|All (emergency)
+1666|Your log
+1667|Empty
+1668|View all warnings
+1669|symptom
+1670|all indicators
+1674|No mission
+1675|Low hand–eye coordination
+1676|Parameters document
+1677|The dosimeter recorded a high dose
+1678|Low vision test
+1679|Estimated bone loss {0} % (mission model)
+1680|Sensor: you slept {0} h (parameter: 7 h or more)
+1681|No severe headache or ringing in the ears recorded
+1682|Solar storm in progress or recent
+1683|A single indicator: not enough for an alert.
+1684|onboard analysis
+1685|Earth lab
+1686|{0} days in microgravity ({1} months)
+1687|Low Orbit (PVT): sleep
+1688|({0}{1} % against your baseline).
+1689|Score of {0} %: within what's expected.
+1690|Score of {0} %: below {1} %. An alert is sent
+1691|Emotions
+1692|Balloons (risk)
+1693|2-back memory
+1694|Log saved.
+1695|the neuro-ocular system (SANS)
+1696|sleep (chronic mission fatigue)
+1697|fine motor skills
+1698|the musculoskeletal and cognitive systems
+1699|Out of range:
+1700|Recorded: compared with your baseline
+1701|Everything within range
+1702|more than {0} {1}
+1703|Enter at least one value
+1704|Mission Control isn't responding
+1705|Choose a destination from the list
+1706|Choose a crew member and a problem
+1707|Internal server error
+1708|Crew member or test missing
+1709|Invalid JSON
+1710|The duration must be between 1 and 1000 days
+1711|{0}'s age can't be under 20
+1713|Unnamed mission
+1714|Sample {1} ({0}) from {2} (onboard analysis): {3}
+1715|Method not allowed
+1716|Doesn't exist
+1717|Couldn't apply an Earth result:
+1718|New mission registered: {0} · {1} · {2} days · {3} crew members
+1719|Packet
+1720|Enter at least one value
+1721|Register 1 to 6 crew members
+1722|{0}'s personal log: workload {1}, stress {2}, mood {3}, team {4}
+1723|Emergency simulation: {0} on {1} ({2})
+1724|No signal with Earth.
+1725|Invalid sample type
+1726|Unknown crew member
+1727|No packets have arrived from the spacecraft yet.
+1728|Data
+1729|Send lab result
+1730|No samples waiting for the lab.
+1731|Result sent to the spacecraft
+1732|Result saved. It will be sent to the spacecraft at the next contact.
