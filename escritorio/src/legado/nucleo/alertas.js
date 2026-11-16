@@ -15,7 +15,7 @@ const AT={
  calculo:{n:'Dolor renal',part:'kidney',steps:['Reposo y analgésico según el oficial médico.','Bebe agua: meta de 3 L hoy.','Ultrasonido portátil y muestra de orina.','Si hay fiebre o no puedes orinar: emergencia.']},
  sans:{n:'Cambio en la vista',part:'eyes',steps:['Repite la revisión de ojos (sección Visión).','Usa lentes de ajuste si ves borroso de cerca.','Avisa al oficial médico; se reporta a la Tierra.','Repite la revisión cada semana.']},
  caida:{n:'Caída en la superficie',part:'legs',steps:['No te muevas: revisa dolor en cadera, piernas y muñecas.','Revisa la presión del traje.','Tu compañero te ayuda a levantarte de lado.','Si duele la cadera o la pierna: inmoviliza y regresa a la base.']},
- tormenta:{n:'Tormenta solar',part:'body',steps:['Suspende toda actividad fuera de la base.','Toda la tripulación al refugio blindado.','Revisa tu dosímetro cada hora.','Quédate hasta que termine la alerta.']},
+ tormenta:{n:'Tormenta solar',part:'body',steps:['Ir al refugio blindado (zona de agua o almacenes) en cuanto llegue la alerta','Suspender o abortar cualquier EVA','Antiemético e hidratación si hay náusea','Registrar la dosis de cada tripulante','Biometría hemática seriada (linfocitos)']},
  co2:{n:'CO₂ alto en la cabina',part:null,steps:['Revisa el sistema que limpia el aire.','Aumenta la ventilación del módulo.','Si hay dolor de cabeza o falta de aire, cambia de módulo.','Avisa al centro de control.']},
 };
 const AL={list:[],hist:[],init:true,snooze:{},training:false,trainT:null};

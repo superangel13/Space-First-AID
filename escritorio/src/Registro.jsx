@@ -18,7 +18,7 @@ function TarjetaTripulante({ i, t, cambiar }) {
       <label className="fl">Rol<select value={t.rol} onChange={set('rol')}>{ROLES.map(r => <option key={r}>{r}</option>)}</select></label>
       <div className="reg-row3">
         <label className="fl">Sexo<select value={t.sexo} onChange={set('sexo')}><option value="">—</option><option value="f">Mujer</option><option value="m">Hombre</option></select></label>
-        <label className="fl">Edad<input type="number" min={18} max={80} value={t.edad} onChange={set('edad')} /></label>
+        <label className="fl">Edad<input type="number" min={20} max={80} value={t.edad} onChange={set('edad')} onBlur={e => { if (e.target.value !== '' && +e.target.value < 20) cambiar({ ...t, edad: '20' }); }} /></label>
         <label className="fl">Condición física<select value={t.condicion} onChange={set('condicion')}><option value="alta">Alta</option><option value="media">Media</option><option value="baja">Baja</option></select></label>
       </div>
       <div className="fl"><span>Antecedentes médicos</span>
@@ -60,6 +60,8 @@ export default function Registro({ destinos }) {
     const falta = lista.findIndex(t => !t.nombre);
     if (falta >= 0) return setError(`Falta el nombre del tripulante ${falta + 1}.`);
     if (!(duracion >= 1)) return setError('La duración debe ser de al menos 1 día.');
+    const menor = lista.findIndex(t => t.edad != null && t.edad < 20);
+    if (menor >= 0) return setError(`La edad del tripulante ${menor + 1} no puede ser menor a 20 años.`);
     setEnviando(true);
     try {
       await API.post('mision', { nombre: nombre.trim(), destino, duracion, fecha_inicio: inicio, tripulantes: lista });
@@ -82,7 +84,7 @@ export default function Registro({ destinos }) {
         <h1>Registro de la misión</h1>
         <p className="muted">Registra el destino, la duración y a cada tripulante con sus antecedentes médicos. De este registro dependen las vigilancias, los umbrales y la trayectoria.</p>
         <div className="reg-demo card pad">
-          <div><b>¿Solo quieres verla funcionar?</b><p className="muted small">Carga una misión ficticia: Luna ida y vuelta, 180 días, con Grover, Payán, Valentina y Camilia.</p></div>
+          <div><b>¿Solo quieres verla funcionar?</b><p className="muted small">Carga una misión ficticia: Luna ida y vuelta, 180 días, con Grover, Payán, Valentina y Camilia (datos inventados).</p></div>
           <button className="btn go" type="button" onClick={verDemo} disabled={enviando}>Ver misión demo</button>
         </div>
 

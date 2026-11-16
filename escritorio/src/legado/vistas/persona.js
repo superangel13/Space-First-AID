@@ -19,29 +19,11 @@ function info(c,k){const L=mLvl(c,k),p=mPct(c,k);
     oxy:{title:L==='good'?'Oxígeno normal':L==='warn'?'Tu oxígeno bajó un poco':'Tu oxígeno está bajo',say:`Tu saturación es ${v} (tu normal: ${b.sp} %). ${L==='good'?'Todo bien.':'Siéntate, respira lento y vuelve a medir en 2 minutos. Si sigue igual, avisa al oficial médico.'}`,why:`Regla del prototipo: aviso si baja 4 puntos de tu línea base; el oficial médico puede ajustarla. ${sLink('cdss')}`},
     rad:{title:'Dosis de radiación acumulada',say:`Llevas ${v} en toda tu carrera: ${p} % del límite. ${p<50?'Vas bien.':'Reduce el tiempo en zonas con poco blindaje.'}`,why:`Límite de carrera de NASA: 600 mSv. Las dosis de esta demostración son de ejemplo. ${sLink('cancer')}`},
     eye:{title:L==='good'?'Tus ojos no muestran cambios':L==='warn'?'Notaste un cambio en la vista':'Revisión de ojos pendiente',say:L==='good'?'Las dos pruebas salieron bien en ambos ojos.':L==='warn'?'Repite la revisión mañana a la misma hora y avisa al oficial médico.':'Toma dos minutos por ojo. Hazla en la sección Visión.',why:`Mismas pruebas y calendario que en la ISS. ${sLink('sanshw')}`}}[k]}
-function renderPersona(){const c=cur(),e=today(c),s=estadoDe(c),A=alerts(c);
-  $('#pAv').textContent=c.n[0];$('#pAv').style.color=c.col;$('#pName').textContent=c.n;$('#pRole').textContent=`${c.r} · día ${DAY}`;$('#pSt').className='st '+s.l;$('#pSt').textContent=s.t;
-  const tips=RULES.filter(r=>r.k(c)&&r.tip).slice(0,2).map(r=>({l:'good',h:r.t,t:r.tip}));
-  const todo=[...A.map(a=>({l:a.l,h:a.t,t:a.do})),...tips];
-  $('#pTodo').innerHTML=(todo.length?todo:[{l:'good',h:'Todo en tu rango',t:'Haz tu turno de Órbita y mantén tu horario de sueño.'}]).slice(0,4).map(x=>`<div class="act ${x.l}"><span class="ic" style="color:${COL[x.l]}">${x.l==='good'?'✓':'!'}</span><div><b>${esc(x.h)}</b><span class="t">${esc(x.t)}</span></div></div>`).join('');
-  $('#mlist').innerHTML=MKEYS.map(k=>{const p=mPct(c,k),L=mLvl(c,k),col=k==='ready'?COL[L]:MET[k].col;
-    return `<button type="button" data-k="${k}" aria-pressed="${S.metric===k}">${ring(42,[{pct:p,col}],5,`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${col}" stroke-width="2.2">${MI[k]}</svg>`)}<span style="min-width:0"><span class="mn">${MET[k].n}</span><span class="ms">${MET[k].sub}</span></span><span class="mv" style="color:${L==='bad'||L==='warn'?COL[L]:'var(--text)'}">${mVal(c,k)}</span></button>`}).join('');
-  $$('#mlist button').forEach(b=>b.onclick=()=>{S.metric=b.dataset.k;save();renderPersona()});
-  const k=S.metric,I=info(c,k),p=mPct(c,k),L=mLvl(c,k),big=k==='ready'?236:innerWidth<760?196:212,vv=mVal(c,k).split(' ');
-  const center=k==='ready'?`<div><div class="rv" style="font-size:46px">${p==null?'—':p+'<small>%</small>'}</div><div class="ru">preparación</div></div>`:k==='eye'?`<div><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="${MET.eye.col}" stroke-width="2">${MI.eye}</svg><div class="ru">${eyeState(c).w}</div></div>`:`<div><div class="rv" style="font-size:46px">${vv[0]}</div><div class="ru">${vv[1]?vv[1]+' · ':''}${MET[k].sub}</div></div>`;
-  $('#bigRing').innerHTML=k==='ready'?ring(big,[{pct:SC.sleep(c,e),col:'#5B9DFF'},{pct:SC.mind(c,e),col:'#A28CFF'},{pct:SC.heart(c,e),col:'#FF6B7D'}],16,center,5):ring(big,[{pct:p,col:MET[k].col}],18,center);
-  $('#fCap').innerHTML=`<span style="color:${k==='ready'?COL[L]:MET[k].col}">●</span> ${MET[k].n} · ${esc(c.n)}`;$('#fTitle').textContent=I.title;$('#fSay').textContent=I.say;$('#fWhy').innerHTML=I.why;
-  const box=(cap,val,col)=>`<div><span class="cap"${col?` style="color:${col}"`:''}>${cap}</span><span class="num">${val}</span></div>`;
-  let brk='';
-  if(k==='ready')brk=[['Sueño',SC.sleep(c,e),'#5B9DFF'],['Atención',SC.mind(c,e),'#A28CFF'],['Corazón',SC.heart(c,e),'#FF6B7D']].map(([n,v,cl])=>box(n,(v??'—')+'<span class="muted" style="font-size:13px"> /100</span>',cl)).join('');
-  else if(k==='eye')brk=box('Ojo izq.',`${c.vis.OI.lc??'—'}/6`)+box('Ojo der.',`${c.vis.OD.lc??'—'}/6`)+box('Siguiente','Día 90');
-  else{const key=MET[k].k,v=e[key],w=c.days.slice(-7).map(x=>x[key]).filter(x=>x!=null),f=x=>x==null?'—':key==='sl'?(+x).toFixed(1):key==='dose'?(+x).toFixed(0):Math.round(x);
-    if(key==='dose')brk=box('Hoy',f(v))+box('Por día',c.rate.toFixed(2))+box('Límite','600');
-    else if(S.role==='med'){const z=v==null?null:(v-c.base[key])/c.sd[key];brk=box('Hoy',f(v))+box('Mediana base',f(c.base[key]))+box('z',z==null?'—':(z>=0?'+':'')+z.toFixed(1))}
-    else brk=box('Hoy',f(v))+box('Tu normal',f(c.base[key]))+box('Prom. 7 días',w.length?f(mean(w)):'—')}
-  $('#fBrk').innerHTML=brk;
+/* Detalle de la persona: lo que pinta el núcleo dentro de la página de React
+   (signos vitales en vivo, perfil previo al vuelo y modelo 3D). */
+function renderPersona(){if(!$('#pVit'))return;const c=cur();
   $('#pVit').innerHTML=offBox(c)+`<div class="vgrid5">${VORDER.map(x=>vtile(c,x)).join('')}</div>`;$('#pVitCap').textContent=LV[c.id].on?'Sensor portátil · en vivo':'Sin señal';bindRecon($('#pVit'));updateVitals();
-  drawChart(c,k);renderPMed(c);drawBody(c);renderProfile(c);renderCrewGrid();renderSelHead();renderDx();t3SoloKick();animate($('#v-tripulacion'))}
+  renderProfile(c);t3SoloKick()}
 
 /* gráfica con banda de línea base y cursor */
 let CH=null;
@@ -78,10 +60,10 @@ function drawChart(c,k){const svg=$('#chart'),W=Math.max(300,svg.clientWidth||64
   const dash=c2=>`<i style="background:none;border-top:2px dashed ${c2};height:0;border-radius:0"></i>`;
   $('#cLeg').innerHTML=(key&&key!=='dose'?`<span><i style="background:rgba(238,242,246,.14)"></i>Tu rango habitual (días 1 a 14)</span><span>${dash('#8B96A6')}Tu normal</span>`:k==='ready'?`<span>${dash('#34E39A')}70 % = buen día</span>`:'')+(key!=='dose'?`<span><i style="background:#F5B841;clip-path:polygon(50% 0,100% 100%,0 100%)"></i>Fuera de lo normal</span>`:'')+(F?`<span>${dash(col)}Pronóstico 7 días (tendencia de 10 días)</span>`:'')}
 const chartEl=$('#chart');
-chartEl.addEventListener('pointermove',ev=>{if(!CH)return;const r=chartEl.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width*CH.W;let best=CH.pts[0];CH.pts.forEach(p=>{if(Math.abs(p[0]-x)<Math.abs(best[0]-x))best=p});
+if(chartEl)chartEl.addEventListener('pointermove',ev=>{if(!CH)return;const r=chartEl.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width*CH.W;let best=CH.pts[0];CH.pts.forEach(p=>{if(Math.abs(p[0]-x)<Math.abs(best[0]-x))best=p});
   const tip=$('#tip');tip.hidden=false;tip.style.left=(best[0]/CH.W*r.width)+'px';tip.style.top=(best[1]/CH.H*r.height)+'px';tip.innerHTML=`<span>Día ${best[3]}${best[4]?' · pronóstico':''}</span>${esc(CH.f(best[2]))}`;
   const cl=$('#chart .cross'),hd=$('#chart .hdot');if(!cl||!hd)return;cl.setAttribute('x1',best[0]);cl.setAttribute('x2',best[0]);cl.setAttribute('opacity',.25);hd.setAttribute('cx',best[0]);hd.setAttribute('cy',best[1]);hd.setAttribute('opacity',1)});
-chartEl.addEventListener('pointerleave',()=>{$('#tip').hidden=true;const cl=$('#chart .cross'),hd=$('#chart .hdot');if(cl)cl.setAttribute('opacity',0);if(hd)hd.setAttribute('opacity',0)});
+if(chartEl)chartEl.addEventListener('pointerleave',()=>{$('#tip').hidden=true;const cl=$('#chart .cross'),hd=$('#chart .hdot');if(cl)cl.setAttribute('opacity',0);if(hd)hd.setAttribute('opacity',0)});
 function renderPMed(c){const el=$('#pMed');el.hidden=S.role!=='med';if(el.hidden)return;const e=today(c);
   const rows=[['Sueño','sl','h',1,-1],['Pulso en reposo','hr','lpm',0,1],['SpO₂','sp','%',0,-1],['PVT-B mediana','rt','ms',0,1],['Lapsos ≥355 ms','lap','',0,1]];
   el.innerHTML=`<div class="rowb"><div><span class="cap">Solo vista médico en Tierra</span><h3 style="margin-top:4px">${esc(c.n)} · valores exactos del día ${DAY}</h3></div></div><div class="tscroll"><table class="tbl" style="min-width:560px"><thead><tr><th>Medida</th><th>Hoy</th><th>Mediana D1–14</th><th>Rango p10–p90</th><th>Cambio</th><th>z</th></tr></thead><tbody>`+

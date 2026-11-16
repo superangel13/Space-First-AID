@@ -1,0 +1,889 @@
+{
+  "_nota": "Metodología clínica del documento «Parámetros completo» del equipo: por problema, sus signos y síntomas, el sistema afectado, la explicación, la contramedida y protocolo, y los parámetros estables. Regla: algunos indicadores (2 o más) = alerta; todos = emergencia con protocolo.",
+  "sistemas": {
+    "inmunologico": {
+      "nombre": "Inmunológico",
+      "color": "#34E39A"
+    },
+    "cardiovascular": {
+      "nombre": "Cardiovascular",
+      "color": "#FF6B7D"
+    },
+    "neuro_ocular": {
+      "nombre": "Neuro-ocular",
+      "color": "#2DD4BF"
+    },
+    "cognitivo": {
+      "nombre": "Cognitivo-conductual",
+      "color": "#A28CFF"
+    },
+    "radiacion": {
+      "nombre": "Radiación",
+      "color": "#F7D154"
+    },
+    "musculo": {
+      "nombre": "Musculoesquelético",
+      "color": "#5B9DFF"
+    }
+  },
+  "sintomas": [
+    {
+      "id": "palidez",
+      "n": "Palidez",
+      "clase": "signo",
+      "zona": "cara"
+    },
+    {
+      "id": "sudor_frio",
+      "n": "Sudoración fría",
+      "clase": "signo",
+      "zona": "gen"
+    },
+    {
+      "id": "vomito",
+      "n": "Vómito",
+      "clase": "signo",
+      "zona": "abd"
+    },
+    {
+      "id": "nausea",
+      "n": "Náusea",
+      "clase": "sintoma",
+      "zona": "abd"
+    },
+    {
+      "id": "malestar_estomago",
+      "n": "Malestar en el estómago",
+      "clase": "sintoma",
+      "zona": "abd"
+    },
+    {
+      "id": "perdida_apetito",
+      "n": "Pérdida de apetito",
+      "clase": "sintoma",
+      "zona": "abd"
+    },
+    {
+      "id": "cefalea",
+      "n": "Cefalea (dolor de cabeza)",
+      "clase": "sintoma",
+      "zona": "cabeza",
+      "dolor": true
+    },
+    {
+      "id": "cabeza_llena",
+      "n": "Sensación de cabeza llena",
+      "clase": "sintoma",
+      "zona": "cabeza"
+    },
+    {
+      "id": "zumbido",
+      "n": "Zumbido de oído",
+      "clase": "sintoma",
+      "zona": "cabeza"
+    },
+    {
+      "id": "cara_hinchada",
+      "n": "Cara hinchada",
+      "clase": "signo",
+      "zona": "cara"
+    },
+    {
+      "id": "congestion",
+      "n": "Congestión nasal",
+      "clase": "sintoma",
+      "zona": "cara"
+    },
+    {
+      "id": "venas_cuello",
+      "n": "Venas del cuello distendidas",
+      "clase": "signo",
+      "zona": "cuello"
+    },
+    {
+      "id": "piernas_delgadas",
+      "n": "Piernas más delgadas",
+      "clase": "signo",
+      "zona": "piernas"
+    },
+    {
+      "id": "menos_sed",
+      "n": "Menos sed",
+      "clase": "sintoma",
+      "zona": "gen"
+    },
+    {
+      "id": "urgencia_orinar",
+      "n": "Urgencia para orinar",
+      "clase": "sintoma",
+      "zona": "pelvis"
+    },
+    {
+      "id": "erupciones",
+      "n": "Erupciones o vesículas en la piel",
+      "clase": "signo",
+      "zona": "piel"
+    },
+    {
+      "id": "eritema",
+      "n": "Eritema (piel enrojecida)",
+      "clase": "signo",
+      "zona": "piel"
+    },
+    {
+      "id": "fatiga",
+      "n": "Fatiga",
+      "clase": "sintoma",
+      "zona": "gen"
+    },
+    {
+      "id": "mal_sueno",
+      "n": "Duermo mal o menos horas",
+      "clase": "sintoma",
+      "zona": "gen"
+    },
+    {
+      "id": "ritmo_sueno",
+      "n": "Ritmo de sueño alterado",
+      "clase": "sintoma",
+      "zona": "gen"
+    },
+    {
+      "id": "cambios_animo",
+      "n": "Cambios de ánimo",
+      "clase": "sintoma",
+      "zona": "mente"
+    },
+    {
+      "id": "baja_motivacion",
+      "n": "Baja motivación",
+      "clase": "sintoma",
+      "zona": "mente"
+    },
+    {
+      "id": "distraccion",
+      "n": "Distracción",
+      "clase": "sintoma",
+      "zona": "mente"
+    },
+    {
+      "id": "poca_cooperacion",
+      "n": "Poca cooperación",
+      "clase": "signo",
+      "zona": "mente"
+    },
+    {
+      "id": "retraimiento",
+      "n": "Retraimiento social",
+      "clase": "signo",
+      "zona": "mente"
+    }
+  ],
+  "zonas": {
+    "cabeza": "Cabeza y oídos",
+    "cara": "Cara y nariz",
+    "cuello": "Cuello",
+    "abd": "Abdomen",
+    "pelvis": "Vejiga y pelvis",
+    "piernas": "Piernas",
+    "piel": "Piel",
+    "gen": "Generales y sueño",
+    "mente": "Ánimo y conducta"
+  },
+  "problemas": [
+    {
+      "id": "mareo",
+      "n": "Mareo espacial",
+      "sistema_doc": "Neurológico",
+      "sistemas": [
+        "neuro_ocular"
+      ],
+      "parte": "ear",
+      "explicacion": "Conflicto vestibular-visual: el oído interno (otolitos) deja de recibir la señal de gravedad.",
+      "indicadores": [
+        {
+          "n": "Palidez",
+          "tipo": "sintoma",
+          "id": "palidez"
+        },
+        {
+          "n": "Sudoración fría",
+          "tipo": "sintoma",
+          "id": "sudor_frio"
+        },
+        {
+          "n": "Vómito",
+          "tipo": "sintoma",
+          "id": "vomito"
+        },
+        {
+          "n": "Náusea",
+          "tipo": "sintoma",
+          "id": "nausea"
+        },
+        {
+          "n": "Malestar en el estómago",
+          "tipo": "sintoma",
+          "id": "malestar_estomago"
+        },
+        {
+          "n": "Cefalea",
+          "tipo": "sintoma",
+          "id": "cefalea"
+        }
+      ],
+      "protocolo": [
+        "Moverse despacio y evitar giros bruscos de cabeza",
+        "Mantener una orientación visual fija (un «arriba» conocido)",
+        "Usar el antiemético del botiquín",
+        "Reponer líquidos si hubo vómito",
+        "Reducir tareas críticas las primeras 24 a 72 h"
+      ],
+      "parametros": [
+        "Equilibrio y función sensoriomotora dentro de valores clínicos normales para edad y sexo",
+        "Esperado: el mal del espacio es de las condiciones más probables por misión (4.37 en el modelo IMM)"
+      ],
+      "fuentes": [
+        "std3001"
+      ]
+    },
+    {
+      "id": "sans",
+      "n": "SANS (síndrome neuro-ocular)",
+      "sistema_doc": "Neurológico",
+      "sistemas": [
+        "neuro_ocular"
+      ],
+      "parte": "eyes",
+      "explicacion": "Desplazamiento de fluidos hacia la cabeza.",
+      "indicadores": [
+        {
+          "n": "Prueba de visión baja (menos de 70 %)",
+          "tipo": "prueba",
+          "id": "vision_c",
+          "menor": 70
+        },
+        {
+          "n": "Sin síntomas: no hay cefalea intensa ni zumbido de oído",
+          "tipo": "sin_sintomas",
+          "ids": [
+            "zumbido"
+          ],
+          "cefalea_max": 6
+        },
+        {
+          "n": "Microgravedad de 4 a 6 meses",
+          "tipo": "contexto",
+          "id": "dias_microgravedad",
+          "min": 120
+        }
+      ],
+      "protocolo": [
+        "Usar las gafas de corrección que se llevan a bordo",
+        "Hacer OCT o ultrasonido ocular si cambia la visión",
+        "Reducir la sal de la dieta y vigilar el CO₂ de la cabina",
+        "Mandar las imágenes al oftalmólogo en la Tierra (con hasta 13 min de retraso)"
+      ],
+      "parametros": [
+        "Refracción y agudeza sin cambio respecto al previo (en el caso severo pasó de −1.00 D a +1.50/+2.00 D)",
+        "Presión intraocular: 14 mmHg, estable",
+        "Grosor retiniano peripapilar basal ~401–404 µm (subió a 613–636 µm)",
+        "Ancho mínimo del borde basal 372–381 µm (subió a 530–550 µm)",
+        "LDL < 160 mg/dL (en el caso fue 139–196)",
+        "OCT en los días 30 y 90 de vuelo"
+      ],
+      "fuentes": [
+        "brunstetter2018",
+        "brunstetter2024"
+      ]
+    },
+    {
+      "id": "fluidos",
+      "n": "Redistribución de fluidos",
+      "sistema_doc": "Cardiovascular",
+      "sistemas": [
+        "cardiovascular"
+      ],
+      "parte": "heart",
+      "explicacion": "Sin gravedad, la sangre y los líquidos suben hacia el tórax y la cabeza.",
+      "indicadores": [
+        {
+          "n": "Cara hinchada",
+          "tipo": "sintoma",
+          "id": "cara_hinchada"
+        },
+        {
+          "n": "Venas del cuello distendidas",
+          "tipo": "sintoma",
+          "id": "venas_cuello"
+        },
+        {
+          "n": "Piernas más delgadas",
+          "tipo": "sintoma",
+          "id": "piernas_delgadas"
+        },
+        {
+          "n": "Congestión nasal",
+          "tipo": "sintoma",
+          "id": "congestion"
+        },
+        {
+          "n": "Sensación de cabeza llena",
+          "tipo": "sintoma",
+          "id": "cabeza_llena"
+        },
+        {
+          "n": "Cefalea",
+          "tipo": "sintoma",
+          "id": "cefalea"
+        },
+        {
+          "n": "Menos sed",
+          "tipo": "sintoma",
+          "id": "menos_sed"
+        }
+      ],
+      "protocolo": [
+        "Mantener la hidratación programada, aunque no haya sed",
+        "Hacer ejercicio aeróbico diario",
+        "Vigilar la visión (ver SANS)",
+        "Registrar la cefalea y la congestión"
+      ],
+      "parametros": [
+        "Volumen plasmático igual al basal; baja esperada ~10 % en mujeres y ~15 % en hombres",
+        "Volumen sanguíneo: baja esperada ~9 %",
+        "Gasto cardíaco: +10 % en vuelo; presión sistólica y media algo menores",
+        "Tolerancia ortostática al regresar a la gravedad"
+      ],
+      "fuentes": [
+        "platts2014",
+        "twins2019"
+      ]
+    },
+    {
+      "id": "hueso",
+      "n": "Pérdida ósea (eje hueso–riñón)",
+      "sistema_doc": "Musculoesquelético",
+      "sistemas": [
+        "musculo"
+      ],
+      "parte": "bones",
+      "explicacion": "Sin carga mecánica, el hueso se reabsorbe más de lo que se forma. El calcio liberado sale por la orina (balance de calcio cercano a −5 g/mes en Skylab). Con poca agua, la orina se concentra y aparecen cristales.",
+      "indicadores": [
+        {
+          "n": "Pérdida ósea",
+          "tipo": "contexto",
+          "id": "hueso_pct",
+          "min": 1.5
+        },
+        {
+          "n": "Calcio alto en sangre u orina",
+          "tipo": "lab",
+          "analitos": [
+            "calcio_o",
+            "calcio_s"
+          ],
+          "dir": "alto"
+        },
+        {
+          "n": "Poca agua",
+          "tipo": "contexto",
+          "id": "agua_ml",
+          "max": 2000,
+          "o_lab": {
+            "analitos": [
+              "volumen"
+            ],
+            "dir": "bajo_meta"
+          }
+        }
+      ],
+      "protocolo": [
+        "Ejercicio resistivo diario (ARED) con cargas de 2 a 3 veces el peso corporal",
+        "Ácido zoledrónico antes del vuelo (el panel RCAP lo considera obligatorio para la misión de 3 años a Marte)",
+        "Vitamina D: carga de 50,000 UI antes del vuelo y 2,000 UI diarias en vuelo",
+        "Hidratación suficiente para orinar más de 2.5 L al día (ver Nefrolitiasis)",
+        "Vigilar NTX y calcio en orina; DXA antes y después del vuelo"
+      ],
+      "parametros": [
+        "DXA de cadera y columna ≥ 95 % del previo; cuello femoral ≥ 90 %",
+        "Pérdida esperada: 0.3–0.5 %/mes con ARED; 1–1.5 %/mes sin él",
+        "NTX en orina: sube 100–150 % en vuelo",
+        "Calcio en orina: H < 250, M < 200 mg/día"
+      ],
+      "fuentes": [
+        "osteo"
+      ]
+    },
+    {
+      "id": "inmuno",
+      "n": "Inmunodisregulación",
+      "sistema_doc": "Inmunológico",
+      "sistemas": [
+        "inmunologico"
+      ],
+      "parte": "body",
+      "explicacion": "Las hormonas de estrés (cortisol y adrenalina) suprimen la inmunidad. Se reactivan virus latentes como el herpes y suben las citocinas inflamatorias. El mal sueño y la radiación se suman.",
+      "indicadores": [
+        {
+          "n": "Estrés (PSS-10 mayor a 13)",
+          "tipo": "auto",
+          "id": "pss",
+          "mayor": 13
+        },
+        {
+          "n": "Mal sueño (menos de 7 h)",
+          "tipo": "sueno",
+          "max": 7
+        },
+        {
+          "n": "Radiación (tormenta presente o pasada)",
+          "tipo": "contexto",
+          "id": "tormenta"
+        },
+        {
+          "n": "Erupciones",
+          "tipo": "sintoma",
+          "id": "erupciones"
+        }
+      ],
+      "protocolo": [
+        "Medir cortisol y buscar virus en saliva de forma periódica",
+        "Mantener la vitamina D adecuada",
+        "Usar los antivirales del botiquín ante vesículas o zóster",
+        "Proteger el sueño y bajar la carga de trabajo",
+        "Al regresar, vigilar la proteína C reactiva"
+      ],
+      "parametros": [
+        "Leucocitos 4,000–10,000 /mm³ (hematología en rangos de población sana)",
+        "Herpesvirus en saliva: no detectado",
+        "Cortisol en saliva: 3.2–22.8 nmol/L en la mañana; < 3.2 de noche",
+        "Estrés PSS-10: 0–13"
+      ],
+      "fuentes": [
+        "bmed2025",
+        "ochmo"
+      ]
+    },
+    {
+      "id": "fatiga",
+      "n": "Fatiga crónica de misión",
+      "sistema_doc": "Sueño y conducta",
+      "sistemas": [
+        "cognitivo"
+      ],
+      "parte": "brain",
+      "explicacion": "Se duermen unas 6 h aunque hay 8.5 h programadas. Dormir 5 a 6 h deteriora el desempeño en una semana, y la persona no lo nota porque su somnolencia percibida deja de subir. Los cambios de horario desalinean el ritmo circadiano (el día marciano dura 24.65 h). Una carga alta suma fatiga y lapsos aun con sueño suficiente.",
+      "indicadores": [
+        {
+          "n": "Sueño insuficiente (menos de 7 h)",
+          "tipo": "sueno",
+          "max": 7
+        },
+        {
+          "n": "Carga de trabajo alta (más de 70 de 100)",
+          "tipo": "auto",
+          "id": "carga",
+          "mayor": 70
+        },
+        {
+          "n": "Desajuste circadiano",
+          "tipo": "sintoma",
+          "id": "ritmo_sueno"
+        },
+        {
+          "n": "Órbita (PVT) menor a 70 %",
+          "tipo": "prueba",
+          "id": "pvt",
+          "menor": 70
+        }
+      ],
+      "protocolo": [
+        "Respetar el periodo de sueño",
+        "Luz de al menos 100 lux durante la vigilia para sincronizar el ritmo",
+        "PVT diario: si suben los lapsos, mover las tareas críticas",
+        "Evitar tareas críticas en las 2 a 4 h después de despertar",
+        "Siestas o melatonina"
+      ],
+      "parametros": [
+        "Sueño ≥ 7 h (necesidad individual de 6.1 a 10.3 h)",
+        "Vigilia continua ≤ 16 h",
+        "Lapsos de PVT sin aumento sobre el basal",
+        "Carga de trabajo (NASA-TLX, 0–100) sin aumento sobre el basal"
+      ],
+      "fuentes": [
+        "sleep2016"
+      ]
+    },
+    {
+      "id": "conducta",
+      "n": "Deterioro conductual",
+      "sistema_doc": "Conducta",
+      "sistemas": [
+        "cognitivo"
+      ],
+      "parte": "brain",
+      "explicacion": "El aislamiento, el confinamiento, la monotonía, los conflictos y el poco contacto con casa desgastan el ánimo; el riesgo crece con la duración y la distancia. NASA entrena para tres trastornos: delirio, trastorno de adaptación y neurastenia. En Shuttle–Mir, 2 de 7 astronautas (29 %) tuvieron síntomas depresivos subclínicos.",
+      "indicadores": [
+        {
+          "n": "Cambios de ánimo (ánimo 4 o menos de 10)",
+          "tipo": "auto",
+          "id": "animo",
+          "menor_igual": 4,
+          "o_sintoma": "cambios_animo"
+        },
+        {
+          "n": "Baja motivación",
+          "tipo": "sintoma",
+          "id": "baja_motivacion"
+        },
+        {
+          "n": "Distracción",
+          "tipo": "sintoma",
+          "id": "distraccion"
+        },
+        {
+          "n": "Fatiga",
+          "tipo": "sintoma",
+          "id": "fatiga"
+        },
+        {
+          "n": "Poca cooperación (trabajo en equipo 4 o menos de 10)",
+          "tipo": "auto",
+          "id": "equipo",
+          "menor_igual": 4,
+          "o_sintoma": "poca_cooperacion"
+        }
+      ],
+      "protocolo": [
+        "Prueba WinSCAT cada mes, comparada con el basal",
+        "Registro diario de ánimo y trabajo en equipo",
+        "Conferencias psicológicas privadas",
+        "Comidas compartidas, invernadero, ejercicio, organizar el propio día",
+        "Ante confusión súbita, descartar causas físicas de delirio: CO₂ alto, infección, trauma o medicamentos"
+      ],
+      "parametros": [
+        "WinSCAT dentro del basal (en la ISS, 13.2 % de las sesiones salió fuera de lo normal)",
+        "Ánimo y trabajo en equipo (1–10) estables respecto al basal",
+        "A la fecha no hay emergencias conductuales registradas en vuelo"
+      ],
+      "fuentes": [
+        "bmed2025"
+      ]
+    },
+    {
+      "id": "renal",
+      "n": "Nefrolitiasis (cálculo renal)",
+      "sistema_doc": "Riñón (eje hueso–riñón)",
+      "sistemas": [
+        "musculo"
+      ],
+      "parte": "kidney",
+      "explicacion": "Orina sobresaturada por la pérdida ósea y la deshidratación relativa.",
+      "indicadores": [
+        {
+          "n": "Más calcio en la orina",
+          "tipo": "lab",
+          "analitos": [
+            "calcio_o"
+          ],
+          "dir": "alto"
+        },
+        {
+          "n": "Menos volumen urinario (menos de 2.5 L/día)",
+          "tipo": "lab",
+          "analitos": [
+            "volumen"
+          ],
+          "dir": "bajo_meta"
+        },
+        {
+          "n": "pH urinario bajo (menos de 5.7)",
+          "tipo": "lab",
+          "analitos": [
+            "ph"
+          ],
+          "dir": "bajo_meta"
+        },
+        {
+          "n": "Citrato bajo",
+          "tipo": "lab",
+          "analitos": [
+            "citrato"
+          ],
+          "dir": "bajo"
+        },
+        {
+          "n": "Náusea",
+          "tipo": "sintoma",
+          "id": "nausea"
+        },
+        {
+          "n": "Vómito",
+          "tipo": "sintoma",
+          "id": "vomito"
+        },
+        {
+          "n": "Urgencia para orinar",
+          "tipo": "sintoma",
+          "id": "urgencia_orinar"
+        }
+      ],
+      "protocolo": [
+        "Beber agua para producir más de 2.5 L de orina al día",
+        "Citrato de potasio como medida preventiva",
+        "Ante dolor: analgesia y antiemético según el protocolo",
+        "Ultrasonido para localizar el cálculo"
+      ],
+      "parametros": [
+        "Volumen de orina > 2.5 L/día",
+        "pH urinario 5.7–6.3",
+        "Calcio: H < 250, M < 200 mg/día",
+        "Citrato: H > 450, M > 550 mg/día",
+        "Oxalato: 20–40 mg/día"
+      ],
+      "fuentes": [
+        "renal_ntrs",
+        "osteo"
+      ]
+    },
+    {
+      "id": "aislamiento",
+      "n": "Estrés por aislamiento y confinamiento",
+      "sistema_doc": "Conducta",
+      "sistemas": [
+        "cognitivo",
+        "inmunologico"
+      ],
+      "parte": "brain",
+      "explicacion": "Distancia a la Tierra, retraso en la comunicación y encierro.",
+      "indicadores": [
+        {
+          "n": "Menos horas de sueño (menos de 7 h)",
+          "tipo": "sueno",
+          "max": 7
+        },
+        {
+          "n": "Ritmo de sueño alterado",
+          "tipo": "sintoma",
+          "id": "ritmo_sueno"
+        },
+        {
+          "n": "Retraimiento social",
+          "tipo": "sintoma",
+          "id": "retraimiento"
+        },
+        {
+          "n": "Órbita (PVT) menor a 70 %",
+          "tipo": "prueba",
+          "id": "pvt",
+          "menor": 70
+        },
+        {
+          "n": "Coordinación ojo-mano menor a 70 %",
+          "tipo": "prueba",
+          "id": "alcance",
+          "menor": 70
+        },
+        {
+          "n": "Fatiga",
+          "tipo": "sintoma",
+          "id": "fatiga"
+        }
+      ],
+      "protocolo": [
+        "Mantener horarios fijos de sueño con luz adecuada en la cabina",
+        "Escribir el diario cada día",
+        "Mensajes con la familia (asumiendo el retraso de hasta 13 min)",
+        "Tener tiempo personal y actividades en grupo"
+      ],
+      "parametros": [
+        "Estrés PSS-10: 0–13",
+        "Sueño ≥ 7 h",
+        "WinSCAT dentro del basal",
+        "Ánimo y trabajo en equipo (1–10) estables"
+      ],
+      "fuentes": [
+        "bmed2025"
+      ]
+    },
+    {
+      "id": "radiacion",
+      "n": "Pródromo del síndrome agudo por radiación (tormenta solar)",
+      "sistema_doc": "Radiación",
+      "sistemas": [
+        "radiacion",
+        "inmunologico"
+      ],
+      "parte": "body",
+      "explicacion": "Daño agudo por protones de un evento de partículas solares (SPE).",
+      "indicadores": [
+        {
+          "n": "Tormenta de radiación presente o pasada",
+          "tipo": "contexto",
+          "id": "tormenta"
+        },
+        {
+          "n": "Alarma del dosímetro",
+          "tipo": "contexto",
+          "id": "dosimetro"
+        },
+        {
+          "n": "Vómito",
+          "tipo": "sintoma",
+          "id": "vomito"
+        },
+        {
+          "n": "Náusea",
+          "tipo": "sintoma",
+          "id": "nausea"
+        },
+        {
+          "n": "Eritema en la piel",
+          "tipo": "sintoma",
+          "id": "eritema"
+        },
+        {
+          "n": "Linfocitos bajos",
+          "tipo": "lab",
+          "analitos": [
+            "linfocitos"
+          ],
+          "dir": "bajo"
+        },
+        {
+          "n": "Pérdida de apetito",
+          "tipo": "sintoma",
+          "id": "perdida_apetito"
+        },
+        {
+          "n": "Fatiga",
+          "tipo": "sintoma",
+          "id": "fatiga"
+        }
+      ],
+      "protocolo": [
+        "Ir al refugio blindado (zona de agua o almacenes) en cuanto llegue la alerta",
+        "Suspender o abortar cualquier EVA",
+        "Antiemético e hidratación si hay náusea",
+        "Registrar la dosis de cada tripulante",
+        "Biometría hemática seriada (linfocitos)"
+      ],
+      "parametros": [
+        "Dosis efectiva de un evento solar < 250 mSv",
+        "Límite a 30 días: órganos hematopoyéticos 250 mGy-Eq; piel 1,500; cristalino 1,000",
+        "Dosis efectiva de carrera < 600 mSv",
+        "Leucocitos 4,000–10,000 /mm³",
+        "Blindaje de 20 g/cm² fuera de la órbita baja por más de 6 meses"
+      ],
+      "fuentes": [
+        "std3001"
+      ],
+      "requiere": [
+        0,
+        1
+      ]
+    }
+  ],
+  "fuentes": {
+    "std3001": {
+      "t": "NASA-STD-3001 Vol. 1 Rev C (límites de hueso, VO₂máx, radiación, sueño, modelo IMM)",
+      "u": "https://standards.nasa.gov/sites/default/files/standards/NASA/C//nasa-std-3001-vol-1-rev-c-signature.pdf"
+    },
+    "ochmo": {
+      "t": "OCHMO-MTB-002, condiciones médicas con exención (botiquín: antivirales)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2024/09/ochmo-mtb-002-waivered-health-conditions.pdf"
+    },
+    "brunstetter2018": {
+      "t": "Brunstetter 2018, SANS-related ISS Hardware & Data (calendario de OCT)",
+      "u": "https://ntrs.nasa.gov/citations/20180004916"
+    },
+    "brunstetter2024": {
+      "t": "Brunstetter et al. 2024, JAMA Ophthalmology (caso de SANS severo)",
+      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11273286/"
+    },
+    "platts2014": {
+      "t": "Platts et al. 2014, J Womens Health (volumen plasmático y sanguíneo)",
+      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4236093/"
+    },
+    "osteo": {
+      "t": "HRP Evidence Report: Early-Onset Osteoporosis (pérdida ósea, NTX, ARED, zoledronato, vitamina D)",
+      "u": "https://humanresearchroadmap.nasa.gov/evidence/reports/Osteo.pdf"
+    },
+    "bmed2025": {
+      "t": "HRP Evidence Report 2025: Behavioral Health (inmunidad y estrés, trastornos, WinSCAT, cohesión)",
+      "u": "https://humanresearchroadmap.nasa.gov/evidence/reports/HRP-ER-BMED-HFBP-20250210.pdf"
+    },
+    "sleep2016": {
+      "t": "HRP Evidence Report 2016: Sleep Loss, Circadian Desynchronization and Work Overload",
+      "u": "https://humanresearchroadmap.nasa.gov/evidence/reports/Sleep.pdf"
+    },
+    "twins2019": {
+      "t": "Garrett-Bakelman et al. 2019, NASA Twins Study, Science (gasto cardíaco, proteína C reactiva)",
+      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7580864/"
+    },
+    "renal_ntrs": {
+      "t": "NASA NTRS · Cálculos renales en astronautas",
+      "u": "https://ntrs.nasa.gov/citations/20150020958"
+    },
+    "tabla": {
+      "t": "Tabla de muestras biológicas del documento de parámetros (rangos de orina, sangre y saliva)",
+      "u": null
+    }
+  },
+  "autoreporte": {
+    "carga": {
+      "n": "Carga de trabajo",
+      "min": 0,
+      "max": 100,
+      "paso": 5,
+      "problema": "inmuno",
+      "sube": "Más somnolencia, fatiga y lapsos de atención, aun habiendo dormido; la sobrecarga prolongada puede causar neurastenia.",
+      "baja": "Letargo cuando el trabajo se reduce a vigilar sistemas automáticos; la monotonía lleva a aburrimiento, conflictos y pérdida de energía y motivación."
+    },
+    "pss": {
+      "n": "Estrés (PSS-10)",
+      "min": 0,
+      "max": 40,
+      "paso": 1,
+      "rangos": [
+        [
+          0,
+          13,
+          "bajo"
+        ],
+        [
+          14,
+          26,
+          "moderado"
+        ],
+        [
+          27,
+          40,
+          "alto"
+        ]
+      ],
+      "problema": "inmuno",
+      "sube": "Más cortisol, reactivación de virus latentes y citocinas inflamatorias (inmunodisregulación).",
+      "baja": "No se describe un problema."
+    },
+    "animo": {
+      "n": "Estado de ánimo",
+      "min": 1,
+      "max": 10,
+      "paso": 1,
+      "problema": "conducta",
+      "baja": "Riesgo de síntomas depresivos, retraimiento social y peor desempeño; el ánimo tiende a bajar en el tercer cuarto de la misión.",
+      "sube": "No se describe un problema."
+    },
+    "equipo": {
+      "n": "Trabajo en equipo",
+      "min": 1,
+      "max": 10,
+      "paso": 1,
+      "problema": "conducta",
+      "baja": "Más estrés y conflictos; la tensión puede descargarse contra el control de Tierra (una tripulación de Salyut cortó la comunicación 24 h). Lo mejoran las comidas compartidas y la autonomía de la tripulación.",
+      "sube": "No se describe un problema."
+    }
+  }
+}

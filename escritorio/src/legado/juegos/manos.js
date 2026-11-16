@@ -12,22 +12,21 @@
    ===================================================================== */
 const MW=720,MH=480;
 const MN={
-  alcance:{n:'Seguir puntos con la mano',cap:'Coordinación ojo-mano',d:'Lleva la punta del dedo índice (o el puntero) a cada punto y quédate encima hasta que se llene el anillo. Cuentan la rapidez, qué tan centrado llegas y que no te salgas antes de tiempo.',
+  alcance:{n:'Coordinación ojo-mano',cap:'Afecta los sistemas musculoesquelético y cognitivo si baja de 70 %',d:'Lleva la punta del dedo índice (o el puntero) a cada punto y quédate encima hasta que se llene el anillo. Cuentan la rapidez, qué tan centrado llegas y que no te salgas antes de tiempo.',
     score:'<b>100 puntos por punto</b> si llegas en menos de 0.8 s y al centro. Baja con el tiempo (a los 4 s vale 30 %) y con la distancia al centro (hasta −40 %). <b>Cada salida antes de completar resta 5</b> y un punto que no alcanzas en 5 s vale 0. El puntaje final es el promedio de 12 puntos.'},
   trazo:{n:'Círculo con la mano',cap:'Motricidad fina',d:'Toca el punto verde y recorre el círculo completo con la punta del dedo o el puntero, sin salirte de la línea.',
     score:'<b>Precisión</b>: el error medio contra la línea (0 px = 100 %, 40 px o más = 0 %). <b>Vuelta completa</b>: si no terminas, se multiplica por lo que recorriste. <b>Tiempo</b>: hasta 10 s no resta; después baja hasta la mitad a los 30 s. <b>Regresar en sentido contrario</b> resta 3 puntos cada vez.'},
-  letra_c:{n:'La C abierta',cap:'Agudeza y contraste visual',d:'Indica hacia dónde está la abertura de la C con las flechas (teclado o botones). Cada acierto la hace más pequeña; después, más tenue. Sigue hasta que fallas 2 veces seguidas. Tienes 5 s por respuesta. Siéntate a 50 cm de la pantalla.',
-    score:'Cada acierto suma más entre más pequeña o tenue es la C. <b>Responder lento resta</b> (después de 1.5 s) y <b>una respuesta sin contestar en 5 s cuenta como error</b>. Se calcula también la agudeza aproximada en logMAR con la calibración de la pantalla.'},
-  amsler:{n:'Rejilla de Amsler',cap:'SANS · retina',d:'Tápate un ojo y mira fijo el punto central a 30 cm. Si alguna zona se ve ondulada, borrosa o falta, márcala tocándola. Luego repite con el otro ojo.',
-    score:'Se cuenta cuántas zonas marcaste. <b>0 zonas = normal</b>. Cualquier zona marcada es un aviso para repetir con el otro ojo y revisar con el oficial médico (protocolo SANS de la ISS).'}};
+  letra_c:{n:'Prueba de visión',cap:'Agudeza y contraste · afecta el sistema neuro-ocular (SANS) si baja de 70 %',d:'Indica hacia dónde está la abertura de la C con las flechas (teclado o botones). Cada acierto la hace más pequeña; después, más tenue. Sigue hasta que fallas 2 veces seguidas. Tienes 5 s por respuesta. Siéntate a 50 cm de la pantalla.',
+    score:'Cada acierto suma más entre más pequeña o tenue es la C. <b>Responder lento resta</b> (después de 1.5 s) y <b>una respuesta sin contestar en 5 s cuenta como error</b>. Se calcula también la agudeza aproximada en logMAR con la calibración de la pantalla.'}};
 const TR={modo:'puntero',stream:null,lm:null,raf:null,ex:null,ptr:null,test:'alcance',ojo:'OD',last:null,cargando:false};
 
 function renderManos(test){TR.test=test||TR.test;const t=MN[TR.test],c=cur();
   $('#mnCap').textContent=`Pruebas · ${t.cap}`;$('#mnTitle').textContent=t.n;$('#mnDesc').textContent=t.d;$('#mnScore').innerHTML=t.score;
-  $('#mnOjo').hidden=!['amsler','letra_c'].includes(TR.test);
+  $('#mnOjo').hidden=TR.test!=='letra_c';
   $$('#mnOjo button').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.o===TR.ojo);b.onclick=()=>{TR.ojo=b.dataset.o;renderManos()}});
   $$('#mnModo button').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.m===TR.modo);b.onclick=()=>b.dataset.m==='camara'?activarCamara():usarPuntero()});
-  $('#mnModo').hidden=['letra_c','amsler'].includes(TR.test);
+  const conCamara=['alcance','trazo'].includes(TR.test);$('#mnModo').hidden=!conCamara;
+  if(!conCamara)apagarCamara();
   $('#mnGo').onclick=iniciarPrueba;
   if(!TR.ex)mnStatus(TR.modo==='camara'?'Modo cámara: el punto azul sigue la punta de tu dedo índice.':'Modo puntero: ratón, lápiz o dedo en la pantalla.');
   const cv=$('#mnCanvas'),pos=e=>{const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*MW/r.width,y:(e.clientY-r.top)*MH/r.height}};
@@ -37,7 +36,8 @@ function renderManos(test){TR.test=test||TR.test;const t=MN[TR.test],c=cur();
   historialManos(c);
   if(!TR.raf)TR.raf=requestAnimationFrame(mnLoop)}
 function mnStatus(t){$('#mnStatus').innerHTML=t}
-function usarPuntero(){if(TR.stream){TR.stream.getTracks().forEach(t=>t.stop());TR.stream=null}TR.modo='puntero';$('#mnVideo').hidden=true;renderManos()}
+function apagarCamara(){if(TR.stream){TR.stream.getTracks().forEach(t=>t.stop());TR.stream=null}TR.lm=null;TR.ptr=null;TR.modo='puntero';const v=$('#mnVideo');if(v){v.hidden=true;v.srcObject=null}}
+function usarPuntero(){apagarCamara();renderManos()}
 async function activarCamara(){if(TR.modo==='camara'||TR.cargando)return;TR.cargando=true;mnStatus('Pidiendo acceso a la cámara…');
   try{TR.stream=await navigator.mediaDevices.getUserMedia({video:{width:640,height:480,facingMode:'user'}})}
   catch(e){TR.cargando=false;mnStatus('⚠ No se pudo usar la cámara (permiso negado o no hay cámara). La prueba funciona con el ratón o el dedo.');return}
@@ -48,7 +48,7 @@ async function activarCamara(){if(TR.modo==='camara'||TR.cargando)return;TR.carg
     TR.modo='camara';mnStatus('Modo cámara: levanta la mano frente a la cámara. El punto azul sigue la punta de tu dedo índice.')}
   catch(e){console.warn(e);mnStatus('⚠ No se pudo cargar el detector de manos. Se usa el puntero.');TR.stream.getTracks().forEach(t=>t.stop());TR.stream=null;v.hidden=true;TR.modo='puntero'}
   TR.cargando=false;renderManos()}
-function pararManos(){pararEjercicio();if(TR.raf){cancelAnimationFrame(TR.raf);TR.raf=null}}
+function pararManos(){pararEjercicio();apagarCamara();if(TR.raf){cancelAnimationFrame(TR.raf);TR.raf=null}}
 function pararEjercicio(){TR.ex=null;$('#mnCtl').hidden=true;$('#mnCtl').innerHTML='';$('#mnDirs').hidden=true;document.removeEventListener('keydown',teclaC)}
 function mnLoop(ts){if(CUR!==TR.test){TR.raf=null;return}
   if(TR.modo==='camara'&&TR.lm){const v=$('#mnVideo');if(v.readyState>=2&&v.currentTime!==TR.last){TR.last=v.currentTime;
@@ -60,7 +60,7 @@ function mnLoop(ts){if(CUR!==TR.test){TR.raf=null;return}
 function fondo(ctx,claro){ctx.clearRect(0,0,MW,MH);if(claro){ctx.fillStyle='#F4F6FB';ctx.fillRect(0,0,MW,MH)}else if(TR.modo!=='camara'){const g=ctx.createRadialGradient(MW/2,MH/2,40,MW/2,MH/2,MW*.7);g.addColorStop(0,'#0F1622');g.addColorStop(1,'#05070A');ctx.fillStyle=g;ctx.fillRect(0,0,MW,MH)}else{ctx.fillStyle='rgba(5,7,10,.35)';ctx.fillRect(0,0,MW,MH)}}
 function txt(ctx,t,x,y,size,col,peso){ctx.fillStyle=col||'#EEF2F6';ctx.font=`${peso||700} ${size||16}px Manrope,system-ui,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,x,y)}
 function reposo(ctx){fondo(ctx,TR.test==='amsler'||TR.test==='letra_c');const cl=TR.test==='amsler'||TR.test==='letra_c';txt(ctx,MN[TR.test].n,MW/2,MH/2-14,24,cl?'#1D2440':'#EEF2F6',800);txt(ctx,'Presiona «Iniciar»',MW/2,MH/2+20,15,cl?'#5B6687':'#8B96A6')}
-function iniciarPrueba(){pararEjercicio();try{snd(1,.01)}catch(e){}TR.ex=({alcance:exAlcance,trazo:exTrazo,letra_c:exLetraC,amsler:exAmsler})[TR.test]();$('#mnRes').innerHTML='<span class="muted">Prueba en curso…</span>'}
+function iniciarPrueba(){pararEjercicio();try{snd(1,.01)}catch(e){}TR.ex=({alcance:exAlcance,trazo:exTrazo,letra_c:exLetraC})[TR.test]();$('#mnRes').innerHTML='<span class="muted">Prueba en curso…</span>'}
 
 /* ---- 1. Seguir puntos ---- */
 function exAlcance(){const N=12,R=34,DW=280,LIM=5000;let i=0,tg=null,t0=0,dw=0,last=performance.now(),fin=false,sal=0,dentro=false,dmin=1e9;const pts=[],tiempos=[],precis=[];let fallos=0;
@@ -76,7 +76,7 @@ function exAlcance(){const N=12,R=34,DW=280,LIM=5000;let i=0,tg=null,t0=0,dw=0,l
       const left=Math.max(0,1-(performance.now()-t0)/LIM);ctx.fillStyle='rgba(255,255,255,.08)';ctx.fillRect(40,MH-22,MW-80,5);ctx.fillStyle=left<.3?'#FF5468':'#5B9DFF';ctx.fillRect(40,MH-22,(MW-80)*left,5);
       txt(ctx,`Punto ${i} de ${N}`,MW/2,26,14,'#8B96A6');if(pts.length)txt(ctx,`${Math.round(mean(pts))} pts`,MW-60,26,14,'#EEF2F6',800)},
     done:()=>fin,
-    result(){const sc=Math.max(0,Math.round(mean(pts)-sal*5/N));return{prueba:'alcance',puntaje:sc,unidad:'pts',detalle:{aciertos:tiempos.length,fallos,salidas:sal,tiempo_medio_ms:tiempos.length?Math.round(mean(tiempos)):null,distancia_media_px:precis.length?+mean(precis).toFixed(1):null},
+    result(){const sc=Math.max(0,Math.round(mean(pts)-sal*5/N));return{prueba:'alcance',puntaje:sc,unidad:'%',detalle:{aciertos:tiempos.length,fallos,salidas:sal,tiempo_medio_ms:tiempos.length?Math.round(mean(tiempos)):null,distancia_media_px:precis.length?+mean(precis).toFixed(1):null},
       texto:`${tiempos.length} de ${N} puntos · ${fallos} sin alcanzar · ${sal} salidas · tiempo medio ${tiempos.length?Math.round(mean(tiempos)):'—'} ms · ${precis.length?mean(precis).toFixed(0):'—'} px del centro`}}}}
 
 /* ---- 2. Círculo con la mano ---- */
@@ -94,18 +94,18 @@ function exTrazo(){const cx=MW/2,cy=MH/2,R=160,sx=cx,sy=cy-R;let empezo=false,ac
     done:()=>fin,
     result(){const m=errs.length?mean(errs):99,cov=Math.min(1,Math.abs(acc)/(2*Math.PI)),t=(performance.now()-t0)/1000,fp=Math.max(0,1-m/40),ft=t<=10?1:Math.max(.5,1-(t-10)/20*.5);
       const sc=Math.max(0,Math.round(100*fp*cov*ft-reversa*3));
-      return{prueba:'trazo',puntaje:sc,unidad:'pts',detalle:{error_medio_px:+m.toFixed(1),vuelta_pct:Math.round(cov*100),segundos:+t.toFixed(1),reversas:reversa,tiempo_agotado:agot},
+      return{prueba:'trazo',puntaje:sc,unidad:'%',detalle:{error_medio_px:+m.toFixed(1),vuelta_pct:Math.round(cov*100),segundos:+t.toFixed(1),reversas:reversa,tiempo_agotado:agot},
         texto:`${agot?'Tiempo agotado · ':''}${Math.round(cov*100)} % de la vuelta · error medio ${m.toFixed(1)} px · ${t.toFixed(1)} s${reversa?` · ${reversa} regresos`:''}`}}}}
 
 /* ---- 3. La C abierta (sigue hasta que fallas) ---- */
 let _respC=null;
 function teclaC(e){const m={ArrowUp:3,ArrowRight:0,ArrowDown:1,ArrowLeft:2}[e.key];if(m!==undefined&&_respC){e.preventDefault();_respC(m)}}
-function exLetraC(){let fase='tam',tam=110,con=1,dir=0,mal=0,mejor=null,mejorC=null,fin=false,fb=0,fbOk=true,t0=performance.now(),pts=0,aciertos=0,lentas=0;const LIM=5000;
+function exLetraC(){let fase='tam',tam=110,con=1,dir=0,mal=0,mejor=null,mejorC=null,fin=false,fb=0,fbOk=true,t0=performance.now(),pts=0,aciertos=0,lentas=0,pasosT=0,pasosC=0;const LIM=5000;
   const nueva=()=>{dir=Math.floor(Math.random()*4);t0=performance.now()};nueva();
   const resp=d=>{if(fin)return;const ok=d===dir,t=performance.now()-t0;fbOk=ok;fb=performance.now();
     if(ok){aciertos++;const dif=fase==='tam'?Math.log2(110/tam)+1:Math.log2(1/con)+4,pen=t>1500?Math.min(.6,(t-1500)/3500*.6):0;if(pen)lentas++;pts+=Math.round(10*dif*(1-pen));snd(700,.05)}else snd(180,.1,'triangle',.06);
-    if(fase==='tam'){if(ok){mejor=tam;mal=0;tam=Math.round(tam*.78);if(tam<6){fase='con';mal=0}}else if(++mal>=2){fase='con';mal=0}}
-    else{if(ok){mejorC=con;mal=0;con*=.6;if(con<.008)fin=true}else if(++mal>=2)fin=true}
+    if(fase==='tam'){if(ok){mejor=tam;mal=0;pasosT++;tam=Math.round(tam*.78);if(tam<6){fase='con';mal=0}}else if(++mal>=2){fase='con';mal=0}}
+    else{if(ok){mejorC=con;mal=0;pasosC++;con*=.6;if(con<.008)fin=true}else if(++mal>=2)fin=true}
     nueva()};
   _respC=resp;$('#mnDirs').hidden=false;$$('#mnDirs [data-d]').forEach(b=>b.onclick=()=>resp(+b.dataset.d));document.addEventListener('keydown',teclaC);
   return{sinPuntero:true,update(now){if(!fin&&now-t0>LIM)resp(-1)},
@@ -117,8 +117,9 @@ function exLetraC(){let fase='tam',tam=110,con=1,dir=0,mal=0,mejor=null,mejorC=n
       if(performance.now()-fb<350)txt(ctx,fbOk?'✓':'✗',MW-40,MH/2,34,fbOk?'#1F9D63':'#D6404F',800)},
     done:()=>fin,
     result(){const gap=(mejor||120)/5/pxmm(),am=Math.atan(gap/500)*180/Math.PI*60,lm=Math.max(-.3,Math.log10(am)),cc=mejorC?+(mejorC*100).toFixed(1):100;
-      return{prueba:'vision_c',puntaje:pts,unidad:'pts',detalle:{ojo:TR.ojo,c_minima_px:mejor,logmar:+lm.toFixed(2),contraste_pct:cc,aciertos,lentas},logmar:+lm.toFixed(2),
-        texto:`Ojo ${TR.ojo==='OI'?'izquierdo':'derecho'} · C más pequeña ${mejor??'—'} px (≈ logMAR ${lm.toFixed(2)}) · contraste mínimo ${cc} % · ${aciertos} aciertos${lentas?` · ${lentas} lentas`:''}`}}}}
+      const pct=Math.max(0,Math.min(100,Math.round(Math.min(1,pasosT/12)*70+Math.min(1,pasosC/9)*30-lentas*2)));
+      return{prueba:'vision_c',puntaje:pct,unidad:'%',detalle:{ojo:TR.ojo,puntos:pts,c_minima_px:mejor,logmar:+lm.toFixed(2),contraste_pct:cc,aciertos,lentas},logmar:+lm.toFixed(2),
+        texto:`Calificación ${pct} % (${(pct/10).toFixed(1)} de 10) · ojo ${TR.ojo==='OI'?'izquierdo':'derecho'} · C más pequeña ${mejor??'—'} px (≈ logMAR ${lm.toFixed(2)}) · contraste mínimo ${cc} % · ${aciertos} aciertos${lentas?` · ${lentas} lentas`:''}`}}}}
 
 /* ---- 4. Rejilla de Amsler ---- */
 function exAmsler(){const n=20,cell=20,gx=(MW-n*cell)/2,gy=(MH-n*cell)/2,mk=new Set();let fin=false;
@@ -141,7 +142,7 @@ async function terminarPrueba(r){const c=cur(),v=c.vis[TR.ojo]||(c.vis[TR.ojo]={
   const R=await enviarPrueba(c,r.prueba,r.puntaje,r.detalle);
   if(R){$('#mnRes').innerHTML=`<div class="banner b${R.nivel}"><div><div class="big num">${r.puntaje} <span style="font-size:15px">${r.unidad}</span></div><div class="small">${esc(r.texto)}</div><div style="margin-top:6px;font-weight:700">${esc(R.mensaje)}</div>${R.base!=null?`<div class="small muted">Tu línea base: ${Math.round(R.base)} ${r.unidad}</div>`:''}</div></div>`;if(R.nivel)toast(`${MN[TR.test].n}: ${R.mensaje}`)}
   syncClin(c);historialManos(c)}
-const PRU_ID={alcance:'alcance',trazo:'trazo',letra_c:'vision_c',amsler:'amsler'};
+const PRU_ID={alcance:'alcance',trazo:'trazo',letra_c:'vision_c'};
 async function historialManos(c){const id=PRU_ID[TR.test];try{const r=await API.get('pruebas/'+c.id),h=r.pruebas.filter(x=>x.prueba===id);
   $('#mnHistN').textContent=h.length?`${h.length} sesiones`:'';
-  $('#mnHist').innerHTML=h.slice(0,10).map(x=>`<div><time>D${x.dia??'—'}</time><i style="background:${['#34E39A','#F5B841','#FF5468'][x.nivel]}"></i><span>${x.puntaje} ${MN[TR.test].n==='Rejilla de Amsler'?'zonas':'pts'}${x.detalle&&x.detalle.ojo?` · ojo ${x.detalle.ojo==='OI'?'izq.':'der.'}`:''}</span></div>`).join('')||'<p class="muted small">Sin sesiones todavía: la primera será tu línea base.</p>'}catch(e){}}
+  $('#mnHist').innerHTML=h.slice(0,10).map(x=>`<div><time>D${x.dia??'—'}</time><i style="background:${['#34E39A','#F5B841','#FF5468'][x.nivel]}"></i><span>${x.puntaje} ${'%'}${x.detalle&&x.detalle.ojo?` · ojo ${x.detalle.ojo==='OI'?'izq.':'der.'}`:''}</span></div>`).join('')||'<p class="muted small">Sin sesiones todavía: la primera será tu línea base.</p>'}catch(e){}}

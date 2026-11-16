@@ -1,14 +1,34 @@
-// Video de entrada con el logo
-// Estructura transcrita de la versión web original (app/index.html).
-export default function Intro() {
+// Video de entrada con el logo. Se ve al abrir la app (antes del registro o del panel);
+// al terminar, o con «Saltar intro», llama a `alTerminar`.
+import { useEffect, useRef, useState } from 'react';
+
+export default function Intro({ alTerminar }) {
+  const video = useRef(null);
+  const [saliendo, setSaliendo] = useState(false);
+  const [oculto, setOculto] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const terminado = useRef(false);
+
+  const terminar = () => {
+    if (terminado.current) return;
+    terminado.current = true;
+    setSaliendo(true);
+    setTimeout(() => { setOculto(true); try { video.current.pause(); } catch (e) { /* ya estaba en pausa */ } if (alTerminar) alTerminar(); }, 750);
+  };
+
+  useEffect(() => {
+    if (oculto) { terminado.current = true; if (alTerminar) alTerminar(); return undefined; }
+    const v = video.current;
+    const p = v.play();
+    if (p && p.catch) p.catch(terminar);
+    const t = setTimeout(terminar, 7200);
+    return () => clearTimeout(t);
+  }, []);   // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (oculto) return null;
   return (
-    <>
-    <div id={"intro"} aria-hidden={"true"}>
-      <video id={"introV"} src={"media/logo-reveal.mp4"} muted playsInline preload={"auto"} />
-      <button type={"button"} id={"skip"}>
-        {"Saltar intro"}
-      </button>
+    <div id="intro" className={saliendo ? 'out' : ''} aria-hidden="true" onClick={terminar}>
+      <video id="introV" ref={video} src="media/logo-reveal.mp4" muted playsInline preload="auto" onEnded={() => setTimeout(terminar, 200)} onError={terminar} />
+      <button type="button" id="skip" onClick={terminar}>Saltar intro</button>
     </div>
-    </>
   );
 }

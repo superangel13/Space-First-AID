@@ -60,7 +60,7 @@ def leer_mision():
 
 
 def _borrar_todo(con):
-    for t in ("evaluaciones", "reportes_sintomas", "signos", "pruebas", "muestras", "alertas", "estado", "tripulantes", "mision"):
+    for t in ("evaluaciones", "reportes_sintomas", "signos", "pruebas", "muestras", "alertas", "estado", "autoreportes", "tripulantes", "mision"):
         con.execute(f"DELETE FROM {t}")
 
 
@@ -88,6 +88,8 @@ def crear_mision(d, demo=False):
             n = (t.get("nombre") or "").strip()
             if not n:
                 raise ErrorAPI(400, f"Falta el nombre del tripulante {i + 1}")
+            if t.get("edad") not in (None, "") and int(t["edad"]) < 20:
+                raise ErrorAPI(400, f"La edad de {n} no puede ser menor a 20 años")
             tid = t.get("id") or _slug(n)
             while tid in ids:
                 tid += str(i)
@@ -119,7 +121,8 @@ def guardar_muestra(d, origen="a_bordo"):
     valores = {k: v for k, v in (d.get("valores") or {}).items() if v not in (None, "")}
     if not valores:
         raise ErrorAPI(400, "Captura al menos un valor")
-    res = valoracion.interpretar(tipo, valores)
+    sexo = (bd.fila("SELECT sexo FROM tripulantes WHERE id=?", (tid,)) or {}).get("sexo")
+    res = valoracion.interpretar(tipo, valores, sexo)
     codigo = d.get("codigo") or _codigo(tipo)
     mid = bd.ejecutar("INSERT INTO muestras(codigo,tripulante,tipo,origen,tomada,registrada,valores,resultado,nivel) VALUES(?,?,?,?,?,?,?,?,?)",
                       (codigo, tid, tipo, origen, d.get("tomada") or bd.ahora(), bd.ahora(), bd.js(valores), bd.js(res), res["nivel"]))
@@ -150,11 +153,25 @@ def muestras_de(tid):
 
 
 # ------------------------------------------------------------------ motor
+def ultimo_autoreporte(tid):
+    r = bd.fila("SELECT carga, pss, animo, equipo, creado FROM autoreportes WHERE tripulante=? ORDER BY id DESC LIMIT 1", (tid,))
+    return r or {}
+
+
+def ultimas_pruebas(tid):
+    """Última calificación (0-100 %) de cada prueba."""
+    out = {}
+    for r in bd.filas("SELECT prueba, puntaje FROM pruebas WHERE tripulante=? ORDER BY id", (tid,)):
+        out[r["prueba"]] = r["puntaje"]
+    return out
+
+
 def evaluar(d):
     tid = d.get("tripulante")
     ctx = d.get("contexto") or {}
     labs = valoracion.labs_para_motor(valoracion.vigentes(muestras_de(tid))) if tid else {}
-    res = clinico.evaluar(ctx, labs)
+    auto, pr = ultimo_autoreporte(tid), ultimas_pruebas(tid)
+    res, sistemas = clinico.evaluar(ctx, labs, auto, pr)
     if d.get("reporte"):
         bd.ejecutar("INSERT INTO reportes_sintomas(tripulante,creado,sintomas,preguntas) VALUES(?,?,?,?)",
                     (tid, bd.ahora(), bd.js(ctx.get("sintomas") or {}), bd.js(ctx.get("preguntas") or {})))
@@ -164,7 +181,7 @@ def evaluar(d):
     if not ult or ult["resumen"] != resumen:
         bd.ejecutar("INSERT INTO evaluaciones(tripulante,creado,nivel,resumen,resultado) VALUES(?,?,?,?,?)",
                     (tid, bd.ahora(), max([r["lvl"] for r in res] or [0]), resumen, bd.js(act)))
-    return {"resultados": res, "labs": labs}
+    return {"resultados": res, "labs": labs, "sistemas": sistemas, "autoreporte": auto, "pruebas": pr}
 
 
 def guardar_prueba(d):
@@ -181,6 +198,94 @@ def guardar_prueba(d):
                    {"tipo": "prueba", "tripulante": t["nombre"] if t else tid, "prueba": prueba, "puntaje": d.get("puntaje"), "nivel": r["nivel"]})
     r["historial"] = hist + [d.get("puntaje")]
     return r
+
+
+def guardar_autoreporte(d, simulado=False):
+    tid = d.get("tripulante")
+    if not bd.fila("SELECT id FROM tripulantes WHERE id=?", (tid,)):
+        raise ErrorAPI(400, "Tripulante desconocido")
+    v = {}
+    for k, (lo, hi) in {"carga": (0, 100), "pss": (0, 40), "animo": (1, 10), "equipo": (1, 10)}.items():
+        x = d.get(k)
+        if x in (None, ""):
+            continue
+        x = float(x)
+        if not lo <= x <= hi:
+            raise ErrorAPI(400, f"{k} debe estar entre {lo} y {hi}")
+        v[k] = x
+    if not v:
+        raise ErrorAPI(400, "Registra al menos un valor")
+    previo = ultimo_autoreporte(tid)
+    fila = {k: v.get(k, previo.get(k)) for k in ("carga", "pss", "animo", "equipo")}
+    bd.ejecutar("INSERT INTO autoreportes(tripulante,creado,carga,pss,animo,equipo,simulado) VALUES(?,?,?,?,?,?,?)",
+                (tid, bd.ahora(), fila["carga"], fila["pss"], fila["animo"], fila["equipo"], 1 if simulado else 0))
+    if not simulado:
+        nombre = bd.fila("SELECT nombre FROM tripulantes WHERE id=?", (tid,))["nombre"]
+        enlace.encolar(3, f"Registro personal de {nombre}: carga {fila['carga']}, estrés {fila['pss']}, ánimo {fila['animo']}, equipo {fila['equipo']}",
+                       {"tipo": "autoreporte", "tripulante": nombre, **fila})
+    return fila
+
+
+def _valor_fuera(a, direccion, sexo):
+    lo, hi = valoracion.rango(a, sexo)
+    if direccion == "alto":
+        return round((hi or (lo or 1) * 2) * 1.3, 3)
+    if direccion == "bajo":
+        return round((lo or 1) * 0.6, 3)
+    return round(a["meta_min"] - (a["meta_min"] - (lo or 0)) * 0.5, 3)   # bajo_meta
+
+
+def simular(d):
+    """Altera los datos de un tripulante para un problema del documento.
+    parcial = algunos indicadores (alerta) · completo = todos (emergencia)."""
+    tid, pid, modo = d.get("tripulante"), d.get("problema"), d.get("modo") or "completo"
+    t = bd.fila("SELECT * FROM tripulantes WHERE id=?", (tid,))
+    p = next((x for x in clinico.base()["problemas"] if x["id"] == pid), None)
+    if not t or not p:
+        raise ErrorAPI(400, "Elige un tripulante y un problema")
+    inds = p["indicadores"]
+    if modo == "parcial":
+        inds = inds[:max(2, len(inds) // 2)] if len(inds) > 2 else inds[:2]
+    sintomas, contexto, labs, auto, pruebas_sim = {}, {}, {}, {}, {}
+    analitos = {a["id"]: (tipo, a) for tipo, T in valoracion.parametros()["tipos"].items() for a in T["analitos"]}
+    for ind in inds:
+        t_ = ind["tipo"]
+        if t_ == "sintoma":
+            sintomas[ind["id"]] = {"v": 7, "on": "hoy"}
+        elif t_ == "sueno":
+            contexto["sl"] = 5.4
+        elif t_ == "auto":
+            auto[ind["id"]] = ind["mayor"] + 8 if "mayor" in ind else 3
+        elif t_ == "prueba":
+            pruebas_sim[ind["id"]] = 55
+        elif t_ == "lab" or (t_ == "contexto" and ind.get("o_lab")):
+            spec = ind if t_ == "lab" else ind["o_lab"]
+            aid = spec["analitos"][0]
+            tipo, a = analitos[aid]
+            labs.setdefault(tipo, {})[aid] = _valor_fuera(a, spec["dir"], t["sexo"])
+            if t_ == "contexto":
+                contexto["agua_ml"] = 1250
+        elif t_ == "contexto":
+            k = ind["id"]
+            contexto[{"dias_microgravedad": "dias_microgravedad", "hueso_pct": "hueso_pct"}.get(k, k)] = \
+                True if k in ("tormenta", "dosimetro") else ind.get("min", 0) * 1.2
+    for tipo, valores in labs.items():
+        guardar_muestra({"tipo": tipo, "tripulante": tid, "valores": valores, "codigo": f"SIM-{tipo[:3].upper()}-{tid[:4].upper()}"})
+    if auto:
+        guardar_autoreporte(dict(auto, tripulante=tid), simulado=True)
+    for k, v in pruebas_sim.items():
+        bd.ejecutar("INSERT INTO pruebas(tripulante,creado,dia,prueba,puntaje,nivel,detalle) VALUES(?,?,?,?,?,?,?)",
+                    (tid, bd.ahora(), None, k, v, 1, bd.js({"simulada": True})))
+    enlace.encolar(2, f"Simulación de emergencia: {p['n']} en {t['nombre']} ({modo})", {"tipo": "simulacion", "tripulante": t["nombre"], "problema": p["n"], "modo": modo})
+    return {"problema": pid, "modo": modo, "sintomas": sintomas, "contexto": contexto}
+
+
+def borrar_simulacion(tid):
+    with bd.conexion() as con:
+        con.execute("DELETE FROM muestras WHERE tripulante=? AND codigo LIKE 'SIM-%'", (tid,))
+        con.execute("DELETE FROM autoreportes WHERE tripulante=? AND simulado=1", (tid,))
+        con.execute("DELETE FROM pruebas WHERE tripulante=? AND detalle LIKE '%simulada%'", (tid,))
+    return {"ok": True}
 
 
 # ------------------------------------------------------------------ HTTP
@@ -313,6 +418,17 @@ class Manejador(BaseHTTPRequestHandler):
         if partes[0] == "signos" and len(partes) == 2 and m == "GET":
             n = min(500, int((q.get("n") or ["60"])[0]))
             return {"signos": bd.filas("SELECT * FROM signos WHERE tripulante=? ORDER BY id DESC LIMIT ?", (partes[1], n))}
+        if r == "autoreporte" and m == "POST":
+            return guardar_autoreporte(d)
+        if partes[0] == "autoreporte" and len(partes) == 2 and m == "GET":
+            return {"ultimo": ultimo_autoreporte(partes[1]),
+                    "historial": bd.filas("SELECT * FROM autoreportes WHERE tripulante=? AND simulado=0 ORDER BY id DESC LIMIT 30", (partes[1],))}
+        if r == "simular" and m == "POST":
+            return simular(d)
+        if partes[0] == "simular" and len(partes) == 2 and m == "DELETE":
+            return borrar_simulacion(partes[1])
+        if r == "problemas" and m == "GET":
+            return clinico.base()
         if r == "pruebas" and m == "POST":
             return guardar_prueba(d)
         if partes[0] == "pruebas" and len(partes) == 2 and m == "GET":

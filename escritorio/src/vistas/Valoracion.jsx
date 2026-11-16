@@ -1,14 +1,19 @@
-// Sección Valoración: registro de síntomas tocando el cuerpo (sin escribir) y muestras de laboratorio.
-// Lo capturado se manda al motor clínico en Python, que lo cruza con signos, pruebas y muestras.
+// Sección Valoración: lo que registra el tripulante y la simulación de emergencias.
+//  - Signos y síntomas tocando el cuerpo (catálogo del documento de parámetros).
+//  - Registro personal: carga de trabajo, estrés (PSS-10), ánimo y trabajo en equipo.
+//  - Muestras de orina, sangre y saliva con los rangos del documento.
+//  - Simulación de emergencias: se elige un problema y se alteran los datos del tripulante.
+// Todo se manda al motor clínico en Python.
 import { useEffect, useReducer, useRef, useState } from 'react';
+import { API } from '../api.js';
 import { useLatido } from '../bus.js';
 import { ResumenAvisos } from '../componentes/Avisos.jsx';
 import Muestras from '../componentes/Muestras.jsx';
 
-// Zonas que se pueden tocar en la silueta, de frente y de espalda.
+// Regiones de la silueta → zona del catálogo de síntomas.
 const ZONAS = {
-  f: [['head', 'ellipse', 100, 34, 24, 28], ['eyes', 'rect', 80, 30, 40, 10], ['throat', 'rect', 88, 62, 24, 20], ['chest', 'rect', 66, 84, 68, 62], ['abd', 'rect', 70, 148, 60, 52], ['pelvis', 'rect', 72, 202, 56, 34], ['arms', 'arms'], ['legs', 'legs']],
-  b: [['headb', 'rect', 82, 40, 36, 40], ['upback', 'rect', 66, 84, 68, 60], ['lowback', 'rect', 72, 146, 56, 46], ['flank', 'flank'], ['legsb', 'legs']],
+  f: [['cabeza', 'ellipse', 100, 34, 24, 28], ['cara', 'rect', 80, 30, 40, 22], ['cuello', 'rect', 88, 62, 24, 20], ['gen', 'rect', 66, 84, 68, 62], ['abd', 'rect', 70, 148, 60, 52], ['pelvis', 'rect', 72, 202, 56, 34], ['piel', 'arms'], ['piernas', 'legs']],
+  b: [['cabeza', 'rect', 82, 40, 36, 40], ['piel', 'rect', 66, 84, 68, 60], ['pelvis', 'rect', 72, 146, 56, 46], ['pelvis', 'flank'], ['piernas', 'legs']],
 };
 const SILUETA = 'M100 8c14 0 24 11 24 26 0 12-6 21-14 25v8c18 2 34 8 38 22l10 70c2 12 4 30 6 44 1 8-8 10-10 2l-10-60-4 4 2 46c0 8-2 14-4 22l-6 150c0 10-14 10-14 0l-6-130h-4l-6 130c0 10-14 10-14 0l-6-150c-2-8-4-14-4-22l2-46-4-4-10 60c-2 8-11 6-10-2 2-14 4-32 6-44l10-70c4-14 20-20 38-22v-8c-8-4-14-13-14-25 0-15 10-26 24-26z';
 const colorNivel = v => (v >= 7 ? 'var(--bad)' : v >= 4 ? 'var(--warn)' : 'var(--good)');
@@ -31,16 +36,15 @@ function Opciones({ opciones, valor, elegir }) {
   );
 }
 
+/* ---------- signos y síntomas ---------- */
 function RegistroSintomas({ N }) {
-  useLatido();
   const [, repintar] = useReducer(n => n + 1, 0);
   const [lado, setLado] = useState('f');
   const [zona, setZona] = useState(null);
   const espera = useRef(null);
-  const { SX, SXZ, SXQ, NIV, ONS } = N;
+  const P = window.PROB, { SX, NIV, ONS } = N;
   const c = N.cur(), estado = N.sxState(c), R = estado.cur;
 
-  // Tras cada cambio: guardar y pedir al motor una vista previa (sin levantar alertas todavía).
   const cambio = () => {
     N.save(); repintar();
     clearTimeout(espera.current);
@@ -49,31 +53,21 @@ function RegistroSintomas({ N }) {
   useEffect(() => () => clearTimeout(espera.current), []);
 
   const presente = id => R.items[id] && R.items[id].v > 0;
-  const zonaActiva = z => (z === 'gen' ? SXZ.gen[1] : (SXZ.f[z] || SXZ.b[z] || [0, []])[1]).some(presente);
-  const Z = zona === 'gen' ? SXZ.gen : zona ? (SXZ[lado][zona] || SXZ.f[zona] || SXZ.b[zona]) : null;
+  const deZona = z => P.sintomas.filter(x => x.zona === z);
+  const zonaActiva = z => deZona(z).some(x => presente(x.id));
   const ids = Object.keys(R.items).filter(presente);
-  const preguntas = Object.entries(SXQ).filter(([, q]) => q.if.some(presente));
-
   const alternar = id => {
-    if (presente(id)) delete R.items[id];
-    else R.items[id] = { v: 5, on: 'hoy', pat: SX[id].pain ? 'va' : null };
+    if (presente(id)) delete R.items[id]; else R.items[id] = { v: 5, on: 'hoy', pat: SX[id].pain ? 'va' : null };
     N.snd(620, 0.05); cambio();
   };
   const guardar = async () => {
-    const res = await N.syncClin(c, false, true);            // evalúa en Python y guarda el reporte en SQLite
+    const res = await N.syncClin(c, false, true);
     const principal = res.find(r => r.lvl), nivel = principal ? principal.lvl : 0;
-    const texto = ids.length
-      ? `${ids.length} síntoma${ids.length > 1 ? 's' : ''}: ${ids.map(id => SX[id].n.toLowerCase()).join(', ')}${principal ? ` → ${principal.k.n}` : ''}`
-      : 'Sin síntomas';
-    estado.hist.unshift({ t: Date.now(), txt: texto, lvl: nivel, items: JSON.parse(JSON.stringify(estado.cur)) });
+    const texto = ids.length ? `${ids.length} registrado${ids.length > 1 ? 's' : ''}: ${ids.map(id => SX[id].n.toLowerCase()).join(', ')}${principal ? ` → ${principal.k.n}` : ''}` : 'Sin signos ni síntomas';
+    estado.hist.unshift({ t: Date.now(), txt: texto, lvl: nivel });
     estado.hist.length = Math.min(estado.hist.length, 60);
-    N.qpush({
-      p: nivel >= 2 ? 1 : 2, c: `Registro de síntomas de ${c.n}${principal ? ` · ${principal.k.n}` : ''}`,
-      data: { tipo: 'sintomas', tripulante: c.n, registro: estado.cur, evaluacion: res.filter(r => r.hit).map(r => ({ condicion: r.k.n, indicios: r.hit, nivel: r.lvl, senal_alarma: r.red })) },
-    });
-    N.save();
-    N.toast(principal ? `${principal.lvl >= 2 ? 'Alerta' : 'Advertencia'}: ${principal.k.n}` : 'Registro guardado');
-    N.render();
+    N.qpush({ p: nivel >= 2 ? 1 : 2, c: `Registro de signos y síntomas de ${c.n}${principal ? ` · ${principal.k.n}` : ''}`, data: { tipo: 'sintomas', tripulante: c.n, registro: estado.cur } });
+    N.save(); N.toast(principal ? `${principal.lvl >= 2 ? 'Emergencia' : 'Alerta'}: ${principal.k.n}` : 'Registro guardado'); N.render();
   };
   const borrar = () => { estado.cur = { items: {}, q: {} }; N.save(); N.syncClin(c); N.toast('Registro borrado'); repintar(); };
 
@@ -90,44 +84,44 @@ function RegistroSintomas({ N }) {
           </div>
           <svg id="bmSvg" viewBox="0 0 200 420" aria-label="Mapa del cuerpo">
             <path d={SILUETA} fill="#121A24" stroke="#26344A" strokeWidth="1.5" />
-            {ZONAS[lado].map(z => <Zona key={z[0]} z={z} elegir={setZona} clase={['rg', zonaActiva(z[0]) && 'on', zona === z[0] && 'sel'].filter(Boolean).join(' ')} />)}
+            {ZONAS[lado].map((z, i) => <Zona key={i} z={z} elegir={setZona} clase={['rg', zonaActiva(z[0]) && 'on', zona === z[0] && 'sel'].filter(Boolean).join(' ')} />)}
             <text x="100" y="418" textAnchor="middle" fill="#5A6576" fontSize="11" fontFamily="Manrope" fontWeight="700">{lado === 'f' ? 'FRENTE' : 'ESPALDA'}</text>
           </svg>
-          <button className="btn ghost sm" type="button" onClick={() => setZona('gen')}>Síntomas generales, sueño y ánimo</button>
+          <div className="row" style={{ gap: 8, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button className="btn ghost sm" type="button" onClick={() => setZona('gen')}>Generales y sueño</button>
+            <button className="btn ghost sm" type="button" onClick={() => setZona('mente')}>Ánimo y conducta</button>
+          </div>
         </div>
 
         <div style={{ display: 'grid', gap: 14, alignContent: 'start' }}>
           <div className="card pad" style={{ display: 'grid', gap: 12 }}>
-            <div className="rowb"><h3>{Z ? Z[0] : 'Elige una zona del cuerpo'}</h3><span className="cap">Toca lo que sientes</span></div>
+            <div className="rowb"><h3>{zona ? P.zonas[zona] : 'Elige una zona del cuerpo'}</h3><span className="cap">Signos y síntomas</span></div>
             <div className="sxc">
-              {Z ? Z[1].map(id => <button type="button" key={id} aria-pressed={!!presente(id)} onClick={() => alternar(id)}>{SX[id].n}</button>)
-                : <p className="muted small">Toca la zona donde sientes algo, o “Síntomas generales”.</p>}
+              {zona ? deZona(zona).map(x => (
+                <button type="button" key={x.id} aria-pressed={!!presente(x.id)} onClick={() => alternar(x.id)}>
+                  {x.n}<small className="sxk">{x.clase === 'signo' ? 'signo' : 'síntoma'}</small>
+                </button>
+              )) : <p className="muted small">Toca la zona donde notas algo, o «Generales y sueño» / «Ánimo y conducta».</p>}
             </div>
           </div>
           <div className="card pad" style={{ display: 'grid', gap: 10 }}>
-            <div className="rowb"><h3>Tu registro</h3><span className="cap">{ids.length ? `${ids.length} síntoma${ids.length > 1 ? 's' : ''}` : 'Vacío'}</span></div>
+            <div className="rowb"><h3>Tu registro</h3><span className="cap">{ids.length ? `${ids.length} registrado${ids.length > 1 ? 's' : ''}` : 'Vacío'}</span></div>
             <div style={{ display: 'grid', gap: 8 }}>
               {ids.length ? ids.map(id => {
                 const x = R.items[id];
                 return (
                   <div className="sxi" key={id}>
-                    <div className="rowb"><b>{SX[id].n}</b><button className="btn ghost sm" type="button" aria-label="Quitar" onClick={() => { delete R.items[id]; cambio(); }}>Quitar</button></div>
+                    <div className="rowb"><b>{SX[id].n}</b><button className="btn ghost sm" type="button" onClick={() => { delete R.items[id]; cambio(); }}>Quitar</button></div>
                     <div className="sl">
-                      <span className="muted small">0</span>
+                      <span className="muted small">1</span>
                       <input type="range" min="1" max="10" value={x.v} aria-label="Intensidad" onChange={e => { x.v = +e.target.value; cambio(); }} />
                       <span className="muted small">10</span>
                       <span className="lv" style={{ color: colorNivel(x.v) }}>{x.v}/10 · {NIV(x.v)}</span>
                     </div>
-                    {SX[id].pain && <Opciones opciones={[['va', 'Va y viene'], ['const', 'Constante']]} valor={x.pat} elegir={p => { x.pat = p; cambio(); }} />}
                     <Opciones opciones={Object.entries(ONS).map(([k, l]) => [k, l[0].toUpperCase() + l.slice(1)])} valor={x.on} elegir={o => { x.on = o; cambio(); }} />
                   </div>
                 );
-              }) : <p className="muted small">Aún no hay síntomas. Si todo está bien, no necesitas registrar nada.</p>}
-            </div>
-            <div style={{ display: 'grid', gap: 8 }}>
-              {preguntas.map(([k, q]) => (
-                <div className="qcard" key={k}><span>{q.n}</span><Opciones opciones={[[true, 'Sí'], [false, 'No']]} valor={R.q[k]} elegir={v => { R.q[k] = v; cambio(); }} /></div>
-              ))}
+              }) : <p className="muted small">Aún no hay nada registrado. Si todo está bien, no necesitas registrar nada.</p>}
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               <button className="btn go" type="button" onClick={guardar}>Guardar y evaluar</button>
@@ -139,40 +133,118 @@ function RegistroSintomas({ N }) {
         <div className="card pad" style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
           <div className="rowb"><h3>Lo que el sistema ve</h3><span className="cap">Resumen</span></div>
           <ResumenAvisos N={N} />
-          <a className="btn ghost sm" href="#tripulacion" style={{ justifySelf: 'start' }}>Ver avisos completos</a>
+          <a className="btn ghost sm" href={'#tripulacion/' + c.id} style={{ justifySelf: 'start' }}>Ver avisos completos</a>
         </div>
       </div>
-      <Historial N={N} estado={estado} />
+      <div className="card pad" style={{ display: 'grid', gap: 10 }}>
+        <h3>Historial de registros</h3>
+        <div className="alog">
+          {estado.hist.length ? estado.hist.slice(0, 20).map((h, i) => (
+            <div key={i}><time>{N.hhmm(h.t)}</time><i style={{ background: ['#34E39A', '#F5B841', '#FF5468'][h.lvl] }} /><span>{h.txt}</span></div>
+          )) : <p className="muted small">Sin registros todavía.</p>}
+        </div>
+      </div>
     </>
   );
 }
 
-function Historial({ N, estado }) {
+/* ---------- registro personal ---------- */
+export function RegistroPersonal({ N }) {
+  const c = N.cur(), A = window.PROB.autoreporte, previo = N.AUTO[c.id] || {};
+  const inicial = () => ({ carga: previo.carga ?? 50, pss: previo.pss ?? 10, animo: previo.animo ?? 7, equipo: previo.equipo ?? 7 });
+  const [v, setV] = useState(inicial);
+  const [msg, setMsg] = useState('');
+  useEffect(() => { setV(inicial()); setMsg(''); }, [c.id]);   // eslint-disable-line react-hooks/exhaustive-deps
+  const nivelPss = x => (x <= 13 ? ['bajo', 'var(--good)'] : x <= 26 ? ['moderado', 'var(--warn)'] : ['alto', 'var(--bad)']);
+  const aviso = k => {
+    const x = v[k];
+    if (k === 'carga') return x > 70 ? ['Si sube: ' + A.carga.sube, 'var(--warn)'] : x < 20 ? ['Si baja: ' + A.carga.baja, 'var(--warn)'] : null;
+    if (k === 'pss') return x > 13 ? ['Si sube: ' + A.pss.sube, nivelPss(x)[1]] : null;
+    return x <= 4 ? ['Si baja: ' + A[k].baja, 'var(--warn)'] : null;
+  };
+  const guardar = async () => {
+    setMsg('Guardando y evaluando en Python…');
+    try { await API.post('autoreporte', { tripulante: c.id, ...v }); await N.syncClin(c); setMsg('Guardado. El motor ya lo tomó en cuenta.'); N.toast('Registro personal guardado'); }
+    catch (e) { setMsg(e.message); }
+  };
   return (
-    <div className="card pad" style={{ display: 'grid', gap: 10 }}>
-      <h3>Historial de registros</h3>
-      <div className="alog">
-        {estado.hist.length ? estado.hist.slice(0, 20).map((h, i) => (
-          <div key={i}><time>{N.hhmm(h.t)}</time><i style={{ background: ['#34E39A', '#F5B841', '#FF5468'][h.lvl] }} /><span>{h.txt}</span></div>
-        )) : <p className="muted small">Sin registros todavía.</p>}
+    <div className="card pad" style={{ display: 'grid', gap: 14 }}>
+      <div className="rowb"><div><span className="cap">Lo registra el tripulante</span><h2 style={{ fontSize: 22, marginTop: 4 }}>Registro personal</h2></div><span className="cap">Inmunológico · cognitivo-conductual</span></div>
+      <div className="autogrid">
+        {['carga', 'pss', 'animo', 'equipo'].map(k => {
+          const m = A[k], av = aviso(k);
+          return (
+            <div className="auto" key={k}>
+              <div className="rowb"><b>{m.n}</b><span className="num">{v[k]}<small> / {m.max}</small>{k === 'pss' && <em style={{ color: nivelPss(v.pss)[1] }}> · {nivelPss(v.pss)[0]}</em>}</span></div>
+              <input type="range" min={m.min} max={m.max} step={m.paso} value={v[k]} aria-label={m.n} onChange={e => setV({ ...v, [k]: +e.target.value })} />
+              <p className="small" style={{ color: av ? av[1] : 'var(--muted)' }}>{av ? av[0] : k === 'pss' ? '0–13 bajo · 14–26 moderado · 27–40 alto' : k === 'carga' ? 'NASA-TLX: 0 a 100, sin aumento sobre tu basal' : 'Estable respecto a tu basal'}</p>
+            </div>
+          );
+        })}
       </div>
+      <div className="row" style={{ gap: 10, flexWrap: 'wrap' }}><button className="btn go" type="button" onClick={guardar}>Guardar registro personal</button><span className="small muted">{msg}</span></div>
+    </div>
+  );
+}
+
+/* ---------- simulación de emergencias ---------- */
+function Simulador({ N }) {
+  const c = N.cur(), P = window.PROB.problemas;
+  const [pid, setPid] = useState(P[0].id);
+  const [modo, setModo] = useState('completo');
+  const [ocupado, setOcupado] = useState(false);
+  const sim = N.S.sim[c.id];
+  const p = P.find(x => x.id === pid);
+  const simular = async () => {
+    setOcupado(true);
+    try { await N.simularProblema(c, pid, modo); N.toast(`Simulación: ${p.n} en ${c.n}`); } catch (e) { N.toast('No se pudo simular: ' + e.message); }
+    setOcupado(false);
+  };
+  const quitar = async () => { setOcupado(true); try { await N.quitarSimulacion(c); N.toast(`${c.n}: de regreso a la normalidad`); } finally { setOcupado(false); } };
+  return (
+    <div className="card pad sim" style={{ display: 'grid', gap: 14 }}>
+      <div className="rowb"><div><span className="cap">Para practicar</span><h2 style={{ fontSize: 22, marginTop: 4 }}>Simulación de emergencias</h2></div><span className="tagx">Datos simulados</span></div>
+      <p className="muted small">Elige un problema del documento de parámetros. Los datos de {c.n} se alteran (signos, síntomas, muestras, registro personal y pruebas) y el motor en Python los evalúa: con algunos signos y síntomas manda una alerta; con todos, abre la ventana de emergencia con el protocolo.</p>
+      <div className="simgrid">
+        <label className="fl">Problema
+          <select value={pid} onChange={e => setPid(e.target.value)}>{P.map(x => <option key={x.id} value={x.id}>{x.n}</option>)}</select>
+        </label>
+        <div className="fl"><span>Cuántos indicadores</span>
+          <div className="seg">
+            <button type="button" aria-pressed={modo === 'parcial'} onClick={() => setModo('parcial')}>Algunos (alerta)</button>
+            <button type="button" aria-pressed={modo === 'completo'} onClick={() => setModo('completo')}>Todos (emergencia)</button>
+          </div>
+        </div>
+      </div>
+      <div className="simind">
+        <span className="cap">Se alterará</span>
+        <ul className="small">{(modo === 'completo' ? p.indicadores : p.indicadores.slice(0, Math.max(2, Math.floor(p.indicadores.length / 2)))).map((x, i) => <li key={i}>{x.n}</li>)}</ul>
+      </div>
+      <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>
+        <button className="btn go" type="button" disabled={ocupado} onClick={simular}>Simular en {c.n}</button>
+        <button className="btn ghost sm" type="button" disabled={ocupado} style={{ color: 'var(--rad)' }} onClick={() => N.shipScen('tormenta')}>{N.SHIP.tormenta ? 'Terminar tormenta solar' : 'Simular tormenta de radiación (refugio)'}</button>
+        {sim && <button className="btn ghost sm" type="button" disabled={ocupado} onClick={quitar}>Quitar simulación de {c.n}</button>}
+      </div>
+      {sim && <p className="small" style={{ color: 'var(--warn)' }}>Simulación activa en {c.n}: {P.find(x => x.id === sim.problema).n} ({sim.modo === 'completo' ? 'todos los indicadores' : 'algunos indicadores'}).</p>}
     </div>
   );
 }
 
 export default function Valoracion({ oculto, N }) {
+  useLatido();
   return (
     <section className="page" id="v-valoracion" hidden={oculto}>
       <div className="ptitle">
         <div>
-          <span className="cap">Síntomas y muestras · se procesa en Python</span>
+          <span className="cap">Signos, síntomas, registro personal y muestras · se procesa en Python</span>
           <h1>Valoración</h1>
-          <p>Registra cómo te sientes tocando el cuerpo y captura los resultados de orina, sangre y saliva. Todo se cruza en el motor clínico de la nave.</p>
+          <p>Registra lo que notas tocando el cuerpo, tu registro personal y los resultados de orina, sangre y saliva. Todo se cruza con el documento de parámetros en el motor clínico de la nave.</p>
         </div>
-        <div className="pick" data-pick="" />
       </div>
       {N && <RegistroSintomas N={N} />}
+      {N && <RegistroPersonal N={N} />}
       <Muestras N={N} visible={!oculto} />
+      {N && <Simulador N={N} />}
     </section>
   );
 }

@@ -95,6 +95,18 @@ CREATE TABLE IF NOT EXISTS alertas (
   motivo        TEXT
 );
 
+-- Registro personal del tripulante (documento de parámetros)
+CREATE TABLE IF NOT EXISTS autoreportes (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  tripulante    TEXT NOT NULL,
+  creado        TEXT NOT NULL,
+  carga         REAL,                                 -- carga de trabajo 0-100
+  pss           REAL,                                 -- estrés PSS-10 0-40
+  animo         REAL,                                 -- 1-10
+  equipo        REAL,                                 -- trabajo en equipo 1-10
+  simulado      INTEGER NOT NULL DEFAULT 0
+);
+
 -- Cola de envío a la Tierra: se manda por prioridad cuando hay señal.
 CREATE TABLE IF NOT EXISTS cola_enlace (
   id            INTEGER PRIMARY KEY AUTOINCREMENT,

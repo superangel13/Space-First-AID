@@ -1,60 +1,42 @@
 // Panel: el círculo principal de toda la tripulación y la guía de sueño por ritmo circadiano.
 import { useEffect, useState } from 'react';
 import { useLatido } from '../bus.js';
-import Anillo from './Anillo.jsx';
+import { CirculosSistemas, promedioTripulacion } from './Sistemas.jsx';
 
 const lista = a => a.map(x => x.c.n).join(', ').replace(/, ([^,]*)$/, ' y $1');
 
-/** Estado de toda la tripulación en un solo círculo, y qué conviene hacer hoy. */
+/** Estado de toda la tripulación: un círculo por sistema del cuerpo, y qué conviene hacer hoy. */
 export function ResumenTripulacion({ N }) {
   useLatido();
-  const [ancho, setAncho] = useState(window.innerWidth);
-  useEffect(() => {
-    const f = () => setAncho(window.innerWidth);
-    window.addEventListener('resize', f);
-    return () => window.removeEventListener('resize', f);
-  }, []);
   if (!N) return <div className="card hero" />;
-  const { CREW, SC } = N;
-  const conDatos = CREW.filter(c => N.ready(c) != null);
-  const promedio = f => Math.round(N.mean(conDatos.map(f)));
-  const sueno = promedio(c => SC.sleep(c, N.today(c))), atencion = promedio(c => SC.mind(c, N.today(c)));
-  const corazon = promedio(c => SC.heart(c, N.today(c))), total = promedio(N.ready);
+  const { CREW } = N;
+  const sis = promedioTripulacion(N);
+  const total = sis ? Math.round(N.mean(N.SIS_ORDEN.map(k => sis[k].valor))) : null;
   const estados = CREW.map(c => ({ c, s: N.estadoDe(c) }));
   const enForma = estados.filter(x => x.s.l === 'good').length;
   const revisar = estados.filter(x => x.s.l === 'bad' || x.s.l === 'warn');
-  const sinDatos = estados.filter(x => x.s.l === 'none');
-  const tam = ancho < 760 ? 210 : 236;
   const orden = { bad: 0, warn: 1, none: 2 };
   const acciones = CREW.flatMap(c => N.alerts(c).map(a => ({ c, a }))).sort((x, y) => orden[x.a.l] - orden[y.a.l]).slice(0, 4);
   return (
-    <div className="card hero">
-      <Anillo tam={tam} grosor={tam < 230 ? 15 : 17} hueco={5} items={[{ pct: sueno, col: '#5B9DFF' }, { pct: atencion, col: '#A28CFF' }, { pct: corazon, col: '#FF6B7D' }]}>
-        <div><div className="rv" style={{ fontSize: tam < 230 ? 46 : 54 }}>{total}<small>%</small></div><div className="ru">tripulación</div></div>
-      </Anillo>
-      <div>
-        <span className="cap">Día {N.DAY} de {N.LEN} · misión de larga duración</span>
-        <h1>{enForma === CREW.length ? 'Toda la tripulación está en forma' : `${enForma} de ${CREW.length} en forma hoy`}</h1>
-        <p className="muted">
-          {revisar.length ? `Conviene revisar a ${lista(revisar)}.` : 'Sueño, atención y corazón dentro del rango de cada persona.'}
-          {sinDatos.length ? ` ${lista(sinDatos)} no tiene datos de hoy.` : ''}
-        </p>
-        <div className="lg3">
-          {[['Sueño', sueno, '#5B9DFF'], ['Atención', atencion, '#A28CFF'], ['Corazón', corazon, '#FF6B7D']].map(([n, v, col]) => (
-            <div key={n}><span className="k"><i style={{ background: col }} />{n}</span><span className="num">{v}</span></div>
-          ))}
+    <div className="card hero hero-sis">
+      <div className="hero-top">
+        <div>
+          <span className="cap">Día {N.DAY} de {N.LEN} · sistemas del cuerpo de toda la tripulación</span>
+          <h1>{enForma === CREW.length ? 'Toda la tripulación está en forma' : `${enForma} de ${CREW.length} en forma hoy`}</h1>
+          <p className="muted">{revisar.length ? `Conviene revisar a ${lista(revisar)}.` : 'Todos los sistemas dentro de sus parámetros estables.'}{total != null ? ` Estado general: ${total} %.` : ''}</p>
+        </div>
+        <div className="hside">
+          <span className="cap" style={{ display: 'block', marginBottom: 10 }}>Hoy conviene</span>
+          <div className="actions">
+            {acciones.length ? acciones.map(({ c, a }, i) => (
+              <div key={i} className={'act ' + a.l}><span className="ic" style={{ color: c.col }}>{c.n[0]}</span><div><b>{c.n} · {a.t}</b><span className="t">{a.do}</span></div></div>
+            )) : (
+              <div className="act good"><span className="ic">✓</span><div><b>Nada urgente</b><span className="t">Mantengan sueño, hidratación y ejercicio.</span></div></div>
+            )}
+          </div>
         </div>
       </div>
-      <div className="hside">
-        <span className="cap" style={{ display: 'block', marginBottom: 10 }}>Hoy conviene</span>
-        <div className="actions">
-          {acciones.length ? acciones.map(({ c, a }, i) => (
-            <div key={i} className={'act ' + a.l}><span className="ic" style={{ color: c.col }}>{c.n[0]}</span><div><b>{c.n} · {a.t}</b><span className="t">{a.do}</span></div></div>
-          )) : (
-            <div className="act good"><span className="ic">✓</span><div><b>Nada urgente</b><span className="t">Mantengan horarios de sueño y turnos de Órbita.</span></div></div>
-          )}
-        </div>
-      </div>
+      <CirculosSistemas N={N} sis={sis} tam={104} />
     </div>
   );
 }
@@ -135,7 +117,7 @@ export function GuiaDeSueno({ N }) {
           <div><span className="cap">Anoche</span><b className="num">{promedio != null ? promedio.toFixed(1) + ' h' : '—'}</b><small>promedio de la tripulación</small></div>
         </div>
         <div className="circ-out">{fuera.orb ? <OrbitaMini /> : null}<div><b>{fuera.t}</b><p className="muted small">{fuera.d}</p></div></div>
-        <div className="circ-act"><a className="btn ghost sm" href="#midia">Respiración guiada antes de dormir</a></div>
+        
       </div>
     </div>
   );

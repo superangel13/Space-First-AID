@@ -1,82 +1,95 @@
-"""Interpreta muestras de orina, sangre y saliva con datos/muestras.json.
-Regla: si una muestra tiene resultado del laboratorio en Tierra, ese manda
-sobre el análisis previo hecho a bordo."""
+"""Interpreta muestras de orina, sangre y saliva con los rangos del documento de
+parámetros (datos/muestras.json). Los rangos pueden ser distintos para hombre y mujer.
+Regla: si una muestra tiene resultado del laboratorio en Tierra, ese manda sobre el
+análisis previo hecho a bordo."""
 from ..datos import cargar
-
-ESCALA = ["negativo", "trazas", "+", "++", "+++"]
 
 
 def parametros():
     return cargar("muestras")
 
 
-def _fuera(v, rango, lado):
-    if not rango:
-        return False
-    lo, hi = rango
-    return (lo is not None and v < lo) if lado == "bajo" else (hi is not None and v > hi)
+def _por_sexo(v, sexo):
+    if isinstance(v, dict):
+        return v.get("m" if sexo == "f" else "h")
+    return v
 
 
-def interpretar_analito(a, valor):
-    """Devuelve {valor, nivel, texto, alto} para un analito."""
+def rango(a, sexo):
+    return _por_sexo(a.get("min"), sexo), _por_sexo(a.get("max"), sexo)
+
+
+def texto_rango(a, sexo):
+    lo, hi = rango(a, sexo)
+    u = a.get("unidad", "")
+    if a.get("basal"):
+        return "se compara con tu basal"
+    if lo is not None and hi is not None:
+        return f"{lo} a {hi} {u}".strip()
+    if hi is not None:
+        return f"menos de {hi} {u}".strip()
+    if lo is not None:
+        return f"más de {lo} {u}".strip()
+    return ""
+
+
+def interpretar_analito(a, valor, sexo):
+    """{valor, nivel, lado, texto, nombre, unidad, problemas} o None."""
     if valor in (None, ""):
         return None
+    base = {"nombre": a["nombre"], "unidad": a.get("unidad", ""), "problemas": a.get("problemas", [])}
     if a["tipo"] == "cual":
-        if valor not in ESCALA:
-            return None
-        i = ESCALA.index(valor)
-        nivel = 2 if "critico_desde" in a and i >= ESCALA.index(a["critico_desde"]) else \
-                1 if "aviso_desde" in a and i >= ESCALA.index(a["aviso_desde"]) else 0
-        texto = "Negativo" if i == 0 else f"Positivo ({valor})" if nivel else f"{valor}"
-        return {"valor": valor, "nivel": nivel, "texto": texto + (f" · {a['nota']}" if nivel and a.get("nota") else ""), "alto": nivel > 0}
+        normal = a.get("normal")
+        anormal = str(valor) != normal
+        return dict(base, valor=valor, nivel=1 if anormal else 0, lado="alto" if anormal else None,
+                    texto=(f"{valor}: {a.get('sube', '')}" if anormal else f"{valor} (normal)"))
     try:
         v = float(valor)
     except (TypeError, ValueError):
         return None
-    nivel, lado = 0, None
-    for lado_ in ("bajo", "alto"):
-        if _fuera(v, a.get("critico"), lado_):
-            nivel, lado = 2, lado_
-            break
-    if not nivel:
-        for lado_ in ("bajo", "alto"):
-            if _fuera(v, a.get("aviso"), lado_):
-                nivel, lado = 1, lado_
-                break
-    if not nivel:
-        for lado_ in ("bajo", "alto"):
-            if _fuera(v, a.get("normal"), lado_):
-                lado = lado_
-                break
-    lo, hi = a.get("normal", [None, None])
-    rango = f"normal {lo} a {hi} {a.get('unidad', '')}".strip()
-    if lado is None:
-        texto = f"Dentro de lo normal ({rango})"
+    if a.get("basal"):
+        return dict(base, valor=v, nivel=0, lado=None, texto="Registrado: se compara con tu basal")
+    lo, hi = rango(a, sexo)
+    lado = "bajo" if lo is not None and v < lo else "alto" if hi is not None and v > hi else None
+    if lado == "alto" and a.get("solo_baja"):
+        lado = None
+    meta = None
+    if a.get("meta_min") is not None and v < a["meta_min"]:
+        meta = "bajo_meta"
+    if a.get("meta_max") is not None and v > a["meta_max"]:
+        meta = "alto_meta"
+    nivel = 0
+    if lado:
+        nivel = 1
+        lim = lo if lado == "bajo" else hi
+        if lim and abs(v - lim) / abs(lim) > 0.25:      # muy lejos del rango
+            nivel = 2
+    if lado == "bajo":
+        texto = f"Bajo ({texto_rango(a, sexo)}): {a.get('baja', '')}"
+    elif lado == "alto":
+        texto = f"Alto ({texto_rango(a, sexo)}): {a.get('sube', '')}"
+    elif meta:
+        texto = f"Dentro del rango, pero fuera de la meta en el espacio ({a.get('espacio', '')})"
     else:
-        texto = f"{'Alto' if lado == 'alto' else 'Bajo'} ({rango})"
-        if lado == "alto" and a.get("nota_alto"):
-            texto += f" · {a['nota_alto']}"
-    return {"valor": v, "nivel": nivel, "texto": texto, "alto": lado == "alto", "fuera": lado is not None}
+        texto = f"Dentro del rango ({texto_rango(a, sexo)})"
+    return dict(base, valor=v, nivel=nivel, lado=lado, meta=meta, texto=texto)
 
 
-def interpretar(tipo, valores):
+def interpretar(tipo, valores, sexo=None):
     P = parametros()["tipos"][tipo]
     res, nivel = {}, 0
     for a in P["analitos"]:
-        r = interpretar_analito(a, valores.get(a["id"]))
+        r = interpretar_analito(a, valores.get(a["id"]), sexo)
         if r:
-            r["nombre"] = a["nombre"]
-            r["unidad"] = a.get("unidad", "")
             res[a["id"]] = r
             nivel = max(nivel, r["nivel"])
-    fuera = [r["nombre"] for r in res.values() if r["nivel"] or r.get("fuera")]
-    resumen = "Todo dentro de lo normal" if not fuera else "Fuera de rango: " + ", ".join(fuera)
+    fuera = [r["nombre"] for r in res.values() if r["nivel"]]
+    resumen = "Todo dentro del rango" if not fuera else "Fuera de rango: " + ", ".join(fuera)
     return {"analitos": res, "nivel": nivel, "resumen": resumen}
 
 
 def vigentes(muestras):
-    """De todas las muestras de un tripulante, se queda con la versión que manda:
-    por código, Tierra gana sobre a bordo; entre iguales, la más reciente."""
+    """Por código, Tierra gana sobre a bordo; entre iguales, la más reciente."""
     por_codigo = {}
     for m in muestras:
         k = m["codigo"]
@@ -90,7 +103,7 @@ def vigentes(muestras):
 def labs_para_motor(muestras_vigentes):
     """Último valor de cada analito (para que el motor clínico lo cruce)."""
     out = {}
-    for m in muestras_vigentes:                       # ya vienen de la más nueva a la más vieja
+    for m in muestras_vigentes:
         for aid, r in ((m.get("resultado") or {}).get("analitos") or {}).items():
             if aid not in out:
                 out[aid] = dict(r, origen=m["origen"], codigo=m["codigo"])

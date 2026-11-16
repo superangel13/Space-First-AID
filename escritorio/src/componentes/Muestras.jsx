@@ -9,8 +9,16 @@ import { useLatido } from '../bus.js';
 const ahoraLocal = () => new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 16);
 const COLOR_NIVEL = ['var(--good)', 'var(--warn)', 'var(--bad)'];
 
-function Campo({ a, valor, cambiar, escala }) {
+const porSexo = (v, sexo) => (v && typeof v === 'object' ? v[sexo === 'f' ? 'm' : 'h'] : v);
+function textoRango(a, sexo) {
+  if (a.basal) return 'se compara con tu basal';
+  const lo = porSexo(a.min, sexo), hi = porSexo(a.max, sexo);
+  return lo != null && hi != null ? `${lo}–${hi}` : hi != null ? `menos de ${hi}` : lo != null ? `más de ${lo}` : '';
+}
+
+function Campo({ a, valor, cambiar, P, sexo }) {
   if (a.tipo === 'cual') {
+    const escala = P[a.escala] || P.escala_cualitativa;
     return (
       <label className="fl">{a.nombre}
         <select value={valor ?? ''} onChange={e => cambiar(e.target.value)}>
@@ -19,10 +27,9 @@ function Campo({ a, valor, cambiar, escala }) {
       </label>
     );
   }
-  const [lo, hi] = a.normal || ['', ''];
   return (
-    <label className="fl">{a.nombre}{a.unidad && <span className="muted"> ({a.unidad})</span>}
-      <input type="number" step="any" inputMode="decimal" placeholder={`normal ${lo}–${hi}`} value={valor ?? ''} onChange={e => cambiar(e.target.value)} />
+    <label className="fl" title={a.espacio || ''}>{a.nombre}{a.unidad && <span className="muted"> ({a.unidad})</span>}
+      <input type="number" step="any" inputMode="decimal" placeholder={textoRango(a, sexo)} value={valor ?? ''} onChange={e => cambiar(e.target.value)} />
     </label>
   );
 }
@@ -71,14 +78,18 @@ export default function Muestras({ N, visible }) {
   const T = P.tipos[tipo];
 
   const ejemplo = alterado => {
-    const v = {};
-    T.analitos.forEach(a => {
-      if (a.tipo === 'cual') { v[a.id] = alterado && ['sangre', 'leucocitos', 'nitritos', 'vzv'].includes(a.id) ? (a.id === 'sangre' ? '++' : '+') : 'negativo'; return; }
-      const [lo, hi] = a.normal;
-      const medio = lo + (hi - lo) * (0.35 + Math.random() * 0.3);
-      const alto = alterado && ['calcio', 'leucocitos_s', 'cortisol', 'densidad'].includes(a.id);
+    const sexo = N.cur().sex, v = {};
+    T.analitos.forEach((a, i) => {
+      if (a.tipo === 'cual') { v[a.id] = alterado && i % 2 === 0 ? (P[a.escala] || P.escala_cualitativa)[1] : a.normal; return; }
+      if (a.basal) return;
+      let lo = porSexo(a.min, sexo), hi = porSexo(a.max, sexo);
+      if (lo == null) lo = hi * 0.5;
+      if (hi == null) hi = lo * 1.6;
       const dec = String(a.paso || 1).includes('.') ? String(a.paso).split('.')[1].length : 0;
-      v[a.id] = (alto ? hi * (a.id === 'densidad' ? 1.006 : 1.35) : medio).toFixed(dec);
+      let x = lo + (hi - lo) * (0.35 + Math.random() * 0.3);
+      if (a.meta_min != null) x = Math.max(x, a.meta_min + (a.meta_max ? (a.meta_max - a.meta_min) / 2 : 0.3));
+      if (alterado && i % 2 === 0) x = a.min == null || (a.max != null && i % 4 === 0) ? hi * 1.3 : lo * 0.7;
+      v[a.id] = x.toFixed(dec);
     });
     setValores(v);
   };
@@ -111,11 +122,11 @@ export default function Muestras({ N, visible }) {
           ))}
         </div>
       </div>
-      <p className="muted small">Equipo a bordo: <b>{T.equipo_a_bordo}</b>. {P.regla_origen} <span className="tagx">Parámetros de ejemplo</span></p>
+      <p className="muted small">Equipo a bordo: <b>{T.equipo_a_bordo}</b>. Rangos del documento de parámetros{N.cur().sex ? ` para ${N.cur().sex === 'f' ? 'mujer' : 'hombre'}` : ''}. {P.regla_origen}</p>
       <div className="mugrid">
         <form className="muform" autoComplete="off" onSubmit={guardar}>
           <div className="mufields">
-            {T.analitos.map(a => <Campo key={a.id} a={a} escala={P.escala_cualitativa} valor={valores[a.id]} cambiar={x => setValores({ ...valores, [a.id]: x })} />)}
+            {T.analitos.map(a => <Campo key={a.id} a={a} P={P} sexo={N.cur().sex} valor={valores[a.id]} cambiar={x => setValores({ ...valores, [a.id]: x })} />)}
           </div>
           <label className="fl">Fecha y hora de la toma<input type="datetime-local" value={tomada} onChange={e => setTomada(e.target.value)} /></label>
           <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>

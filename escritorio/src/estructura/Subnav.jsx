@@ -1,7 +1,7 @@
 // Subnavegación de la sección Pruebas: las 6 pruebas en el orden en que conviene hacerlas.
 export const PRUEBAS = [
-  ['animo', '¿Cómo te sientes?'], ['orbita', 'Órbita · PVT'], ['alcance', 'Seguir puntos'],
-  ['trazo', 'Círculo con la mano'], ['letra_c', 'La C abierta'], ['amsler', 'Rejilla de Amsler'],
+  ['animo', '¿Cómo te sientes?'], ['orbita', 'Órbita · PVT'], ['alcance', 'Coordinación ojo-mano'],
+  ['trazo', 'Círculo con la mano'], ['letra_c', 'Prueba de visión'],
 ];
 
 export default function Subnav({ ruta }) {

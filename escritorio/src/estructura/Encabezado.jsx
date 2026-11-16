@@ -4,7 +4,7 @@ import { useEvento, useLatido } from '../bus.js';
 
 export const SECCIONES = [
   ['panel', 'Panel'], ['tripulacion', 'Tripulación'], ['valoracion', 'Valoración'],
-  ['pruebas', 'Pruebas'], ['mision', 'Misión'], ['midia', 'Mi día'],
+  ['pruebas', 'Pruebas'], ['mision', 'Misión'],
 ];
 
 /** Sirena: gira 0.6 s con un aviso y 1.5 s con una emergencia (se repite mientras no se atienda). */

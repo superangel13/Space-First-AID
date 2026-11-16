@@ -92,5 +92,102 @@
     ],
     "duracion_defecto": 180,
     "gravedad_estancia": 0
+  },
+  {
+    "id": "marte",
+    "nombre": "Marte · ida y vuelta con estancia en la superficie",
+    "descripcion": "Unos 6 a 7 meses de tránsito en el espacio profundo, estancia en la superficie de Marte (0.38 g) y regreso. La señal tarda hasta 13 minutos en cada sentido.",
+    "zonas": [
+      "atm",
+      "leo",
+      "vin",
+      "slot",
+      "vout",
+      "mag",
+      "cis",
+      "lor",
+      "dsc",
+      "sur",
+      "asc",
+      "ret",
+      "ree"
+    ],
+    "zona_estancia": "sur",
+    "duraciones": [
+      500,
+      900,
+      1000
+    ],
+    "duracion_defecto": 900,
+    "gravedad_estancia": 0.38,
+    "planeta": "Marte",
+    "ajustes": {
+      "cis": {
+        "n": "Tránsito a Marte",
+        "ph": "Tránsito a Marte",
+        "dur": 200,
+        "dr": 1.8,
+        "km": [
+          120000,
+          225000000
+        ],
+        "d": "Seis a siete meses en el espacio profundo, sin campo magnético: rayos cósmicos todo el tiempo (cerca de 1.8 mSv por día)."
+      },
+      "lor": {
+        "n": "Órbita de Marte",
+        "ph": "Llegada a Marte",
+        "dur": 3,
+        "dr": 1.0,
+        "km": [
+          225000000,
+          225000000
+        ],
+        "d": "Preparación del descenso a la superficie."
+      },
+      "dsc": {
+        "n": "Descenso a Marte",
+        "ph": "Llegada a Marte",
+        "g": 0.38,
+        "dr": 1.0,
+        "km": [
+          225000000,
+          225000000
+        ],
+        "d": "Primer cambio de gravedad tras meses en microgravedad."
+      },
+      "sur": {
+        "n": "Base en la superficie de Marte",
+        "ph": "Estancia en Marte",
+        "g": 0.38,
+        "dr": 0.7,
+        "km": [
+          225000000,
+          225000000
+        ],
+        "d": "Gravedad de 0.38 g. La atmósfera delgada protege poco: cerca de 0.7 mSv por día en la superficie."
+      },
+      "asc": {
+        "n": "Despegue de Marte",
+        "ph": "Regreso",
+        "dur": 2,
+        "dr": 1.0,
+        "km": [
+          225000000,
+          225000000
+        ],
+        "d": "Ascenso a órbita marciana y salida hacia la Tierra."
+      },
+      "ret": {
+        "n": "Regreso a la Tierra",
+        "ph": "Regreso",
+        "dur": 200,
+        "dr": 1.8,
+        "km": [
+          225000000,
+          60000
+        ],
+        "d": "Seis a siete meses de regreso por el espacio profundo."
+      }
+    }
   }
 ]

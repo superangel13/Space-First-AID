@@ -197,7 +197,7 @@ function finish(){const c=cur(),g=game(c),G2=GS;G2.done=true;
   const nb=[],give=k=>{if(!g.badges.includes(k)){g.badges.push(k);nb.push(k)}};
   if(G2.mode==='oficial')give('first');if(g.streak>=3)give('streak3');if(g.streak>=7)give('streak7');if(g.streak>=30)give('streak30');if(G2.mode==='oficial'&&G2.fs===0&&G2.rts.length>=10)give('clean');if(G2.golds>0)give('gold');if(G2.maxCombo>=10)give('combo10');if(G2.fast>=5)give('reflex');if(G2.dodged>=5)give('dodge');if(g.route+1>=8)give('collector');if(g.route>=ROUTE.length-1)give('moon');if(CREW.every(x=>playedToday(game(x))))give('crew');
   save();const nr=rankOf(g.xp),up=nr>oldR,nx=RANKS[nr+1],span=(nx?nx[0]:g.xp+1)-RANKS[nr][0],pct=nx?(g.xp-RANKS[nr][0])/span*100:100,from=up?0:clamp((oldXP-RANKS[nr][0])/span*100,0,100),ms=SC.mind(c,today(c));
-  if(first){qpush({p:2,c:`Estado general de ${c.n}: ${estadoDe(c).t.toLowerCase()}`});if(med!=null)enviarPrueba(c,'pvt',Math.round(med),{lapsos:G2.lapses,anticipaciones:G2.fs,respuestas:G2.rts.length}).then(r=>{if(r&&r.nivel)toast('PVT: '+r.mensaje)})}
+  if(first){qpush({p:2,c:`Estado general de ${c.n}: ${estadoDe(c).t.toLowerCase()}`});if(med!=null)enviarPrueba(c,'pvt',calificacionPVT(med,G2.lapses,G2.fs),{mediana_ms:Math.round(med),lapsos:G2.lapses,anticipaciones:G2.fs,respuestas:G2.rts.length}).then(r=>{if(r&&r.nivel)toast('PVT: '+r.mensaje)})}
   renderOrbita(true);
   const all=g.mis.every(k=>g.mdone.includes(k));
   $('#gBox').innerHTML=`<span class="cap">${G2.mode==='oficial'?'Turno oficial completado · día '+DAY:'Arcade terminado'}</span>
@@ -218,3 +218,8 @@ function finish(){const c=cur(),g=game(c),G2=GS;G2.done=true;
   chord(newBest?[523,659,784,1047]:[523,659,784],110);burst(col0(),newBest?120:60,newBest);if(up)setTimeout(()=>{toast(`Nuevo rango: ${RANKS[nr][1]}`);burst('#F7D154',120,true);chord([659,880,1175,1568],90)},900);
   if(newPost!=null)setTimeout(()=>snd(1320,.25,'sine',.08),600)}
 
+
+/* Calificación del turno oficial (0-100 %): baja con cada lapso (respuesta de 355 ms o más),
+   con cada anticipación y con la mediana de reacción por arriba de 280 ms.
+   Menos de 70 % afecta el sueño (fatiga crónica de misión). */
+function calificacionPVT(mediana,lapsos,anticipaciones){return Math.max(0,Math.min(100,Math.round(100-lapsos*4-anticipaciones*5-Math.max(0,mediana-280)*.25)))}

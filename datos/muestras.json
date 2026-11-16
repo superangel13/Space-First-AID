@@ -1,44 +1,65 @@
 {
-  "_nota": "PARÁMETROS DE EJEMPLO (ficticios) para probar el sistema. Se reemplazan por los valores de referencia verificados. Tipos: 'num' = número con rango; 'cual' = resultado cualitativo (negativo, trazas, +, ++, +++).",
+  "_nota": "Rangos de la tabla de muestras biológicas del documento «Parámetros completo» del equipo. min / max pueden ser por sexo: {\"h\": hombre, \"m\": mujer}. null = no tiene límite de ese lado. «basal» = se compara con el valor propio de la persona. 'cual' = resultado cualitativo.",
   "regla_origen": "Si una muestra tiene resultado del laboratorio en Tierra, ese manda sobre el análisis previo hecho a bordo.",
+  "escala_cualitativa": ["negativo", "positivo"],
+  "escala_virus": ["no detectado", "detectado"],
   "tipos": {
     "orina": {
-      "nombre": "Orina",
-      "equipo_a_bordo": "Tira reactiva y analizador portátil",
+      "nombre": "Orina (24 h)",
+      "equipo_a_bordo": "Recolección de 24 h, tira reactiva y analizador portátil",
       "analitos": [
-        {"id": "ph", "nombre": "pH", "tipo": "num", "unidad": "", "normal": [5.0, 7.5], "aviso": [4.5, 8.0], "paso": 0.5},
-        {"id": "densidad", "nombre": "Densidad", "tipo": "num", "unidad": "", "normal": [1.005, 1.025], "aviso": [1.003, 1.030], "paso": 0.001, "nota_alto": "Orina concentrada: posible deshidratación"},
-        {"id": "sangre", "nombre": "Sangre", "tipo": "cual", "aviso_desde": "trazas", "critico_desde": "++", "nota": "Sangre en orina: se cruza con el motor (cálculo renal, infección)"},
-        {"id": "leucocitos", "nombre": "Leucocitos", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
-        {"id": "nitritos", "nombre": "Nitritos", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++"},
-        {"id": "proteina", "nombre": "Proteína", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
-        {"id": "glucosa", "nombre": "Glucosa", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++"},
-        {"id": "calcio", "nombre": "Calcio en orina", "tipo": "num", "unidad": "mg/día", "normal": [100, 250], "aviso": [50, 300], "critico": [null, 400], "nota_alto": "Calcio alto en orina: el hueso libera calcio en microgravedad y favorece cálculos"}
+        {"id": "volumen", "nombre": "Volumen", "tipo": "num", "unidad": "L/día", "min": 0.5, "max": 4, "meta_min": 2.5, "paso": 0.1, "espacio": "Meta: más de 2–2.5 L/día", "baja": "Orina concentrada y deshidratación: se forman cristales", "sube": "Sin problema descrito", "problemas": ["renal", "hueso"]},
+        {"id": "ph", "nombre": "pH", "tipo": "num", "unidad": "", "min": 4.5, "max": 8.0, "meta_min": 5.7, "meta_max": 6.3, "paso": 0.1, "espacio": "Óptimo para evitar cálculos: 5.7–6.3", "baja": "Menos de 5.5: cálculos de ácido úrico", "sube": "6.5 o más: cristales de fosfato de calcio", "problemas": ["renal"]},
+        {"id": "calcio_o", "nombre": "Calcio", "tipo": "num", "unidad": "mg/día", "min": null, "max": {"h": 250, "m": 200}, "espacio": "Sube en vuelo por la pérdida ósea (balance cercano a −5 g/mes en Skylab)", "baja": "Sin problema descrito", "sube": "Hueso perdiendo calcio; riesgo de cálculo", "problemas": ["hueso", "renal"]},
+        {"id": "citrato", "nombre": "Citrato", "tipo": "num", "unidad": "mg/día", "min": {"h": 450, "m": 550}, "max": null, "espacio": "Tiende a bajar en vuelo", "baja": "Menos protección contra cristales: riesgo de cálculo (se corrige con citrato de potasio)", "sube": "Sin problema descrito", "problemas": ["renal"]},
+        {"id": "oxalato", "nombre": "Oxalato", "tipo": "num", "unidad": "mg/día", "min": 20, "max": 40, "baja": "Sin problema descrito", "sube": "Cálculos de oxalato de calcio", "problemas": ["renal"]},
+        {"id": "densidad", "nombre": "Densidad", "tipo": "num", "unidad": "", "min": 1.005, "max": 1.030, "paso": 0.001, "baja": "Orina muy diluida", "sube": "Orina concentrada: deshidratación", "problemas": ["renal", "fluidos"]},
+        {"id": "glucosa_o", "nombre": "Glucosa", "tipo": "cual", "escala": "escala_cualitativa", "normal": "negativo", "sube": "Azúcar alta en sangre", "problemas": ["renal"]},
+        {"id": "cetonas", "nombre": "Cetonas", "tipo": "cual", "escala": "escala_cualitativa", "normal": "negativo", "sube": "Ingesta de calorías insuficiente", "problemas": ["renal"]},
+        {"id": "sangre_o", "nombre": "Sangre", "tipo": "cual", "escala": "escala_cualitativa", "normal": "negativo", "sube": "Posible cálculo", "problemas": ["renal"]},
+        {"id": "cortisol_o", "nombre": "Cortisol libre", "tipo": "num", "unidad": "mcg/24 h", "min": 3.5, "max": 45, "espacio": "Otros laboratorios dan 10–100 µg/24 h", "baja": "Sin problema descrito", "sube": "Estrés y falta de sueño; suprime la inmunidad", "problemas": ["aislamiento", "inmuno"]},
+        {"id": "ntx", "nombre": "NTX (resorción ósea)", "tipo": "num", "unidad": "nmol BCE/mmol creat.", "basal": true, "espacio": "Sube 100–150 % en vuelo y vuelve al basal al regresar", "sube": "Hueso reabsorbiéndose más rápido", "problemas": ["hueso"]},
+        {"id": "sulfatoximelatonina", "nombre": "6-sulfatoximelatonina", "tipo": "num", "unidad": "ng/mL", "basal": true, "espacio": "Marcador del ritmo circadiano; según la hora", "sube": "Su horario corrido indica ritmo desalineado", "baja": "Su horario corrido indica ritmo desalineado", "problemas": ["fatiga"]}
       ]
     },
     "sangre": {
       "nombre": "Sangre",
-      "equipo_a_bordo": "Analizador de sangre portátil (gota de sangre)",
+      "equipo_a_bordo": "Analizador de sangre portátil y gasometría",
       "analitos": [
-        {"id": "hemoglobina", "nombre": "Hemoglobina", "tipo": "num", "unidad": "g/dL", "normal": [12.0, 17.0], "aviso": [11.0, 18.0], "critico": [8.0, null], "paso": 0.1},
-        {"id": "leucocitos_s", "nombre": "Leucocitos", "tipo": "num", "unidad": "mil/µL", "normal": [4.0, 11.0], "aviso": [3.5, 12.0], "critico": [2.0, 20.0], "paso": 0.1, "nota_alto": "Leucocitos altos: posible infección"},
-        {"id": "glucosa_s", "nombre": "Glucosa", "tipo": "num", "unidad": "mg/dL", "normal": [70, 110], "aviso": [60, 140], "critico": [50, 250]},
-        {"id": "creatinina", "nombre": "Creatinina", "tipo": "num", "unidad": "mg/dL", "normal": [0.6, 1.2], "aviso": [0.5, 1.5], "critico": [null, 2.0], "paso": 0.1, "nota_alto": "Función del riñón: revisar con el cirujano de vuelo"},
-        {"id": "calcio_s", "nombre": "Calcio", "tipo": "num", "unidad": "mg/dL", "normal": [8.6, 10.3], "aviso": [8.2, 10.8], "critico": [7.5, 12.0], "paso": 0.1},
-        {"id": "potasio", "nombre": "Potasio", "tipo": "num", "unidad": "mmol/L", "normal": [3.5, 5.0], "aviso": [3.2, 5.3], "critico": [2.8, 6.0], "paso": 0.1},
-        {"id": "sodio", "nombre": "Sodio", "tipo": "num", "unidad": "mmol/L", "normal": [135, 145], "aviso": [132, 148], "critico": [125, 155]}
+        {"id": "hemoglobina", "nombre": "Hemoglobina", "tipo": "num", "unidad": "g/dL", "min": {"h": 13, "m": 12}, "max": {"h": 17, "m": 15}, "paso": 0.1, "baja": "Anemia: fatiga y menos oxígeno a los tejidos", "sube": "Sangre más concentrada (deshidratación)", "problemas": ["fluidos", "fatiga"]},
+        {"id": "hematocrito", "nombre": "Hematocrito", "tipo": "num", "unidad": "%", "min": {"h": 40, "m": 36}, "max": {"h": 52, "m": 47}, "baja": "Anemia: fatiga", "sube": "Deshidratación", "problemas": ["fluidos"]},
+        {"id": "leucocitos", "nombre": "Leucocitos", "tipo": "num", "unidad": "/mm³", "min": 4000, "max": 10000, "paso": 100, "baja": "Menos defensas; puede bajar por radiación", "sube": "Infección o inflamación", "problemas": ["inmuno", "radiacion"]},
+        {"id": "linfocitos", "nombre": "Linfocitos", "tipo": "num", "unidad": "%", "min": 18, "max": 52, "espacio": "Bajan en horas o días tras una dosis alta", "baja": "Indicador de dosis de radiación; menos defensas", "sube": "Infección viral", "problemas": ["radiacion", "inmuno"]},
+        {"id": "plaquetas", "nombre": "Plaquetas", "tipo": "num", "unidad": "/mm³", "min": 150000, "max": 400000, "paso": 1000, "baja": "Riesgo de sangrado (dosis alta de radiación)", "sube": "Mayor tendencia a coágulos (en vuelo cambia la coagulación)", "problemas": ["radiacion", "fluidos"]},
+        {"id": "sodio", "nombre": "Sodio", "tipo": "num", "unidad": "mmol/L", "min": 135, "max": 145, "espacio": "El protocolo de SANS pide menos sal", "baja": "Exceso de agua; confusión", "sube": "Deshidratación", "problemas": ["fluidos", "sans"]},
+        {"id": "potasio", "nombre": "Potasio", "tipo": "num", "unidad": "mmol/L", "min": 3.5, "max": 5, "paso": 0.1, "baja": "Arritmias; baja el citrato urinario", "sube": "Arritmias", "problemas": ["fluidos", "renal"]},
+        {"id": "calcio_s", "nombre": "Calcio", "tipo": "num", "unidad": "mg/dL", "min": 8.5, "max": 10.2, "paso": 0.1, "baja": "Calambres; debilidad", "sube": "Calcio liberado del hueso; más calcio en la orina", "problemas": ["hueso"]},
+        {"id": "glucosa_s", "nombre": "Glucosa", "tipo": "num", "unidad": "mg/dL", "min": 65, "max": 110, "espacio": "Comer menos calorías la baja y sube el cortisol", "baja": "Fatiga, confusión, menos flujo de sangre al cerebro", "sube": "Azúcar alta", "problemas": ["conducta", "fatiga"]},
+        {"id": "bun", "nombre": "BUN", "tipo": "num", "unidad": "mg/dL", "min": 8, "max": 21, "baja": "Sin problema descrito", "sube": "Deshidratación o riñón comprometido", "problemas": ["renal"]},
+        {"id": "creatinina", "nombre": "Creatinina", "tipo": "num", "unidad": "mg/dL", "min": 0.8, "max": 1.3, "paso": 0.1, "baja": "Sin problema descrito", "sube": "Riñón comprometido (p. ej., cálculo que obstruye)", "problemas": ["renal"]},
+        {"id": "colesterol", "nombre": "Colesterol total", "tipo": "num", "unidad": "mg/dL", "min": null, "max": 200, "espacio": "En el caso de SANS: 222–278 mg/dL", "baja": "Sin problema descrito", "sube": "Daña el endotelio; más riesgo de SANS y cardiovascular", "problemas": ["sans", "fluidos"]},
+        {"id": "ldl", "nombre": "LDL", "tipo": "num", "unidad": "mg/dL", "min": null, "max": 160, "espacio": "En el caso de SANS: 139–196 mg/dL", "baja": "Sin problema descrito", "sube": "Daña el endotelio; más riesgo de SANS", "problemas": ["sans"]},
+        {"id": "hdl", "nombre": "HDL", "tipo": "num", "unidad": "mg/dL", "min": 40, "max": 60, "solo_baja": true, "baja": "Más riesgo cardiovascular", "sube": "Sin problema descrito", "problemas": ["fluidos"]},
+        {"id": "trigliceridos", "nombre": "Triglicéridos", "tipo": "num", "unidad": "mg/dL", "min": null, "max": 150, "baja": "Sin problema descrito", "sube": "Más riesgo cardiovascular", "problemas": ["fluidos"]},
+        {"id": "vitamina_d", "nombre": "Vitamina D (25-OH)", "tipo": "num", "unidad": "ng/mL", "min": 30, "max": null, "espacio": "Baja en vuelo; se suplementa (20–30 insuficiencia; < 20 deficiencia)", "baja": "Más pérdida ósea; más reactivación de virus latentes", "sube": "Sin problema descrito", "problemas": ["hueso", "inmuno"]},
+        {"id": "folato", "nombre": "Folato", "tipo": "num", "unidad": "ng/mL", "basal": true, "espacio": "Caso de SANS: 626–999 ng/mL en glóbulos rojos", "baja": "Bajo en astronautas con cambios oculares", "sube": "Sin problema descrito", "problemas": ["sans"]},
+        {"id": "pcr", "nombre": "Proteína C reactiva", "tipo": "num", "unidad": "mg/dL", "basal": true, "espacio": "Twins Study: de 1 a 19 mg/dL tras aterrizar", "baja": "Sin problema descrito", "sube": "Inflamación (sobre todo al regresar a la gravedad)", "problemas": ["inmuno"]},
+        {"id": "ph_arterial", "nombre": "pH arterial", "tipo": "num", "unidad": "", "min": 7.35, "max": 7.45, "paso": 0.01, "baja": "Acidosis (p. ej., CO₂ retenido)", "sube": "Alcalosis (hiperventilación)", "problemas": ["conducta"]},
+        {"id": "paco2", "nombre": "PaCO₂", "tipo": "num", "unidad": "mmHg", "min": 35, "max": 45, "baja": "Hiperventilación", "sube": "CO₂ alto: cefalea, delirio; puede agravar SANS", "problemas": ["sans", "conducta"]},
+        {"id": "pao2", "nombre": "PaO₂", "tipo": "num", "unidad": "mmHg", "min": 80, "max": 100, "solo_baja": true, "baja": "Hipoxia: fatiga, náusea, cefalea, cambios de ánimo", "sube": "Sin problema descrito", "problemas": ["fatiga", "conducta"]},
+        {"id": "cortisol_s", "nombre": "Cortisol (mañana)", "tipo": "num", "unidad": "µg/dL", "min": 6, "max": 23, "baja": "Ritmo aplanado", "sube": "Estrés; suprime la inmunidad (sube con la falta de sueño)", "problemas": ["aislamiento", "inmuno"]}
       ]
     },
     "saliva": {
       "nombre": "Saliva",
-      "equipo_a_bordo": "Kit de saliva (prueba rápida)",
+      "equipo_a_bordo": "Kit de saliva (tubos y prueba rápida)",
       "analitos": [
-        {"id": "cortisol", "nombre": "Cortisol (mañana)", "tipo": "num", "unidad": "nmol/L", "normal": [5, 25], "aviso": [3, 30], "paso": 0.5, "nota_alto": "Cortisol alto: estrés sostenido"},
-        {"id": "ebv", "nombre": "Virus Epstein-Barr (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "+++", "nota": "Reactivación viral: se cruza con el motor (herpes)"},
-        {"id": "vzv", "nombre": "Virus varicela-zóster (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++", "nota": "Reactivación de varicela-zóster: se cruza con el motor (herpes)"},
-        {"id": "hsv1", "nombre": "Herpes simple 1 (ADN)", "tipo": "cual", "aviso_desde": "+", "critico_desde": "++"}
+        {"id": "cortisol_am", "nombre": "Cortisol, mañana (7–9 a.m.)", "tipo": "num", "unidad": "nmol/L", "min": 3.2, "max": 22.8, "paso": 0.1, "espacio": "Sigue el ritmo circadiano", "baja": "Ritmo circadiano aplanado", "sube": "Estrés agudo", "problemas": ["fatiga", "aislamiento"]},
+        {"id": "cortisol_pm", "nombre": "Cortisol, noche (11 p.m.–12 a.m.)", "tipo": "num", "unidad": "nmol/L", "min": null, "max": 3.2, "paso": 0.1, "baja": "Sin problema descrito", "sube": "Estrés o ritmo desalineado; peor sueño", "problemas": ["fatiga", "aislamiento"]},
+        {"id": "herpes", "nombre": "Herpesvirus (ADN viral)", "tipo": "cual", "escala": "escala_virus", "normal": "no detectado", "espacio": "61 % de astronautas de la ISS lo excretó", "sube": "Detectado: inmunidad deprimida", "problemas": ["inmuno"]},
+        {"id": "melatonina", "nombre": "Melatonina", "tipo": "num", "unidad": "pg/mL", "basal": true, "espacio": "Marcador del ritmo circadiano; según la hora", "baja": "Baja de noche: ritmo desalineado", "sube": "Alta de día: somnolencia", "problemas": ["fatiga"]},
+        {"id": "antimicrobianas", "nombre": "Proteínas antimicrobianas", "tipo": "num", "unidad": "µg/mL", "basal": true, "espacio": "Subieron en una misión de 6 meses en la ISS", "baja": "Sin problema descrito", "sube": "Marcador de estrés y de inmunidad alterada", "problemas": ["inmuno", "aislamiento"]}
       ]
     }
-  },
-  "escala_cualitativa": ["negativo", "trazas", "+", "++", "+++"]
+  }
 }

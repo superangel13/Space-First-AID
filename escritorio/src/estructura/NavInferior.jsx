@@ -12,7 +12,6 @@ const PRINCIPALES = [
 ];
 const MAS = [
   ['mision', 'Misión', <><circle cx="5" cy="17" r="3" /><circle cx="19" cy="6" r="2.2" /><path d="M8 15c4-1 7-4 9-7" strokeDasharray="2 2.5" /></>],
-  ['midia', 'Mi día', <><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></>],
   ['alertas', 'Alertas', <path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0" />],
   ['referencias', 'Referencias', <><path d="M6 3h9l4 4v14H6z" /><path d="M9 12h7M9 16h7M9 8h3" /></>],
 ];

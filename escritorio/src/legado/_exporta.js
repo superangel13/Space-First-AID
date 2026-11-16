@@ -3,5 +3,5 @@ export {
   alCambiarRuta, render, CREW, S, save, cur, today, DAY, LEN, DESTINO, AL, LV, LINK, EV, estadoDe, alerts, ready, readyE, SC,
   ring, COL, ICO, esc, toast, evalKB, presentas, clinDe, syncClin, evaluarServidor, toggleLink, sondearEnlace, qpush, queue,
   who, aName, aSteps, closeA, mzAt, mean, spark, lvlR, enviarPrueba, faseLuz, FASES_LUZ, afuera, PRUEBAS_RUTAS, snd, RM, hhmm, ago,
-  sxState, SX, SXZ, SXQ, NIV, ONS, partsFor, updateVitals, animate, siren, buzz,
+  sxState, SX, SXQ, NIV, ONS, SIS, SIS_ORDEN, AUTO, PRU, LABS, simularProblema, quitarSimulacion, shipScen, SHIP, MZ, kmAt, drAt, mDose, partsFor, updateVitals, animate, siren, buzz,
 };
