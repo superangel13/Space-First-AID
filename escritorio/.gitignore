@@ -1,6 +1,6 @@
-node_modules/
-dist/
-salida/
-motor/
+/node_modules/
+/dist/
+/salida/
+/motor/
 public/vendor/
 public/media/
